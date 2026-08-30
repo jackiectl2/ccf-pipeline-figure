@@ -1,0 +1,1118 @@
+{
+ "picked_utc": "2026-08-26T14:43:56.201Z",
+ "images": [
+  {
+   "file": "amnesia-adjacent/2502.05167-nolima-long-context-evaluation-beyond-litera/10-HaystackPipeline.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "document stacks",
+    "actor icon",
+    "loop-back arrow",
+    "highlighted removals",
+    "stage annotations"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/2510.27246-beyond-a-million-tokens-benchmarking-and-enh/00-method.png",
+   "model_kind": "architecture",
+   "model_quality": 5,
+   "devices": [
+    "training and inference swimlanes",
+    "memory stores",
+    "colour-coded module boxes",
+    "buffer stack",
+    "retrieval loop",
+    "response path"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/2601.16690-emembench-interactive-benchmarking-of-episod/00-intro_fig.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "actor icon",
+    "closed-loop arrows",
+    "two swimlanes",
+    "state store",
+    "prompt bubble",
+    "game screenshot inset"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/2606.05761-subtlememory-a-benchmark-for-fine-grained-re/01-data_construction.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "numbered stage banners",
+    "five tinted columns",
+    "filter checkpoints",
+    "icons per source",
+    "data-composition blocks"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/2606.17328-memtrace-probing-what-final-accuracy-misses/01-benchmark_protocol_schematic.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "actor icons",
+    "source-session card",
+    "classification and audit stages",
+    "time-window probes",
+    "score loop",
+    "diagnostic cards",
+    "dashed groups"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/2505.06120-llms-get-lost-in-multi-turn-conversation/01-LIC_simulator_flat_v3.png",
+   "model_kind": "pipeline",
+   "model_quality": 4,
+   "devices": [
+    "actor icons",
+    "decision branches",
+    "feedback loop",
+    "start-end nodes",
+    "status-color legend"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/2505.06120-llms-get-lost-in-multi-turn-conversation/02-LIC_Conv_Types_v3.png",
+   "model_kind": "taxonomy",
+   "model_quality": 4,
+   "devices": [
+    "category row",
+    "instruction blocks",
+    "turn-by-turn grid",
+    "color-coded shard types"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/2606.17328-memtrace-probing-what-final-accuracy-misses/00-teaser_knowledge_point_probe.png",
+   "model_kind": "conceptual",
+   "model_quality": 4,
+   "devices": [
+    "session timeline",
+    "conversation boxes",
+    "fresh and aged grouping",
+    "comparison panels",
+    "status icons"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/2410.10813-longmemeval-benchmarking-chat-assistants-on/01-main_annotation_pipeline.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "three labeled panels",
+    "downward stage arrows",
+    "chat transcript blocks",
+    "history-stack diagram"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/2505.06120-llms-get-lost-in-multi-turn-conversation/52-LIC_Sharding_Process_v2.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "numbered_stages",
+    "colored_segments",
+    "icons",
+    "rejection_row"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2406.11011-data-shapley-in-one-training-run/03-flowchart-4.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "side-by-side workflows",
+    "document icons",
+    "dashed grouping panels",
+    "loop arrows",
+    "actor icon legend"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2502.00640-collabllm-from-passive-responders-to-active/00-first_v7b.png",
+   "model_kind": "architecture",
+   "model_quality": 5,
+   "devices": [
+    "actor icons",
+    "dashed subsystem box",
+    "numbered flow labels",
+    "feedback loop",
+    "stacked samples"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2502.11089-native-sparse-attention-hardware-aligned-and/00-fig2.png",
+   "model_kind": "architecture",
+   "model_quality": 5,
+   "devices": [
+    "dashed grouping boxes",
+    "token strips",
+    "parallel attention branches",
+    "attention mask grids",
+    "gated output"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2505.00702-rayzer-a-self-supervised-large-view-synthesi/01-model3.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "tinted stage columns",
+    "camera estimator",
+    "token grids",
+    "scene reconstructor",
+    "rendering decoder",
+    "loss feedback"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2505.05469-generating-physically-stable-and-buildable-b/01-overview_brickgpt.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "numbered token sequences",
+    "dashed grouping boxes",
+    "training and inference swimlanes",
+    "validation feedback loop",
+    "staged outputs"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2508.10333-reconvla-reconstructive-vision-language-acti/02-arch.jpg",
+   "model_kind": "architecture",
+   "model_quality": 5,
+   "devices": [
+    "dashed grouping boxes",
+    "token legend",
+    "encoder tokenizer and projector boxes",
+    "LLM block",
+    "cross-group arrows"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2512.08924-efficiently-reconstructing-dynamic-scenes-on/04-method_v6.png",
+   "model_kind": "architecture",
+   "model_quality": 5,
+   "devices": [
+    "video thumbnails",
+    "token strip",
+    "encoder and decoder boxes",
+    "colour-coded query fields",
+    "trajectory arrows"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2512.08924-efficiently-reconstructing-dynamic-scenes-on/18-method_full_supp_mat.png",
+   "model_kind": "architecture",
+   "model_quality": 5,
+   "devices": [
+    "video frame strip",
+    "query input block",
+    "encoder block stack",
+    "global scene representation",
+    "cross-attention decoder",
+    "prediction output head"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2601.08828-motion-attribution-for-video-generation/00-pipeline.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "stacked swimlanes",
+    "tinted stage colours",
+    "stage banners",
+    "matrix blocks",
+    "loss arrows",
+    "media icon"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2408.00714-sam-2-segment-anything-in-images-and-videos/00-teaser_ai.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "three labeled panels",
+    "memory bank",
+    "encoder-decoder blocks",
+    "feedback arrows",
+    "small frame insets"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2408.00714-sam-2-segment-anything-in-images-and-videos/02-sam-v-model_20240715.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "tinted modules",
+    "memory bank",
+    "skip arrows",
+    "image stack input",
+    "mask output"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2408.00714-sam-2-segment-anything-in-images-and-videos/34-pvs_vs_vos_boldtext.png",
+   "model_kind": "pipeline",
+   "model_quality": 4,
+   "devices": [
+    "image_thumbnails",
+    "labeled_boxes",
+    "arrows",
+    "branch_merge"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2408.00714-sam-2-segment-anything-in-images-and-videos/38-guidelines_pdfx.png",
+   "model_kind": "pipeline",
+   "model_quality": 4,
+   "devices": [
+    "actor_lanes",
+    "stage_panels",
+    "image_sequences",
+    "arrows",
+    "decision_boxes"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/01-arch6_compressed.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "nested model box",
+    "crop-to-token sequence",
+    "cross-layer connector arrows",
+    "verbatim output box"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/03-crops-figures.png",
+   "model_kind": "data_flow",
+   "model_quality": 4,
+   "devices": [
+    "magnified crop insets",
+    "cross-reference arrows",
+    "token grid",
+    "input-image panels"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2411.04997-llm2clip-powerful-language-model-unlocks-ric/00-teaser.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "contrastive pair branches",
+    "fine-tuning arrow",
+    "LLM module stack",
+    "vision encoder stack",
+    "CLIP-loss connection",
+    "small analytic inset"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2412.03572-navigation-world-models/00-CDiTv6.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "nested module stack",
+    "residual arrows",
+    "conditioning side path",
+    "repetition label"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2502.11089-native-sparse-attention-hardware-aligned-and/01-fig3.png",
+   "model_kind": "data_flow",
+   "model_quality": 4,
+   "devices": [
+    "nested loop arrows",
+    "memory grid",
+    "load nodes",
+    "compute-on-SRAM block",
+    "tensor strips"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2503.11651-vggt-visual-geometry-grounded-transformer/00-architecture_v4.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "input image stacks",
+    "repeated attention block",
+    "branched output heads",
+    "tinted modules"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2503.14858-1000-layer-networks-for-self-supervised-rl-s/00-architecture_flat_v2.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "repeated layer blocks",
+    "skip connection",
+    "multiplicity labels",
+    "tinted modules"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2505.00702-rayzer-a-self-supervised-large-view-synthesi/00-framework3.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "encoder and decoder walls",
+    "scene representation",
+    "camera icons",
+    "loss feedback arrow",
+    "tinted regions"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2505.06120-llms-get-lost-in-multi-turn-conversation/01-LIC_simulator_flat_v3.png",
+   "model_kind": "pipeline",
+   "model_quality": 4,
+   "devices": [
+    "actor icons",
+    "decision branches",
+    "feedback loop",
+    "start-end nodes",
+    "status-color legend"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2505.06120-llms-get-lost-in-multi-turn-conversation/02-LIC_Conv_Types_v3.png",
+   "model_kind": "taxonomy",
+   "model_quality": 4,
+   "devices": [
+    "category row",
+    "instruction blocks",
+    "turn-by-turn grid",
+    "color-coded shard types"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2505.10465-superposition-yields-robust-neural-scaling/01-Fig-2-2.png",
+   "model_kind": "data_flow",
+   "model_quality": 4,
+   "devices": [
+    "typed data blocks",
+    "matrix operators",
+    "dashed transformations",
+    "weight heatmap insets"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2506.05347-neural-inverse-rendering-from-propagating-li/00-method.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "layered optical schematic",
+    "sensor and ray arrows",
+    "equation boxes",
+    "small signal-curve insets"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2506.12229-infini-gram-mini-exact-n-gram-search-at-the/04-fm-index-v2.png",
+   "model_kind": "data_flow",
+   "model_quality": 4,
+   "devices": [
+    "suffix list",
+    "sort arrow",
+    "suffix array",
+    "transform arrow",
+    "wavelet tree"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2506.12229-infini-gram-mini-exact-n-gram-search-at-the/06-algo.png",
+   "model_kind": "pipeline",
+   "model_quality": 4,
+   "devices": [
+    "numbered stage panels",
+    "framed steps",
+    "locate arrows",
+    "reconstruction graph",
+    "direction annotation"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2512.08924-efficiently-reconstructing-dynamic-scenes-on/00-teaser_v8.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "video strip",
+    "encoder and decoder boxes",
+    "query rays",
+    "colour-coded trajectories",
+    "3D scene backdrop"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2512.14692-native-and-compact-structured-latents-for-3d/01-representation.png",
+   "model_kind": "conceptual",
+   "model_quality": 4,
+   "devices": [
+    "numbered mini-panels",
+    "dashed grouping boxes",
+    "dual-grid diagrams",
+    "material attribute stack",
+    "symbol legend"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2512.14692-native-and-compact-structured-latents-for-3d/02-scvae_v3.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "dashed grouping boxes",
+    "encoder and decoder branches",
+    "stacked residual blocks",
+    "skip arrows",
+    "layer stacks"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2406.06144-language-models-resist-alignment-evidence-fr/01-exp1_recon.png",
+   "model_kind": "conceptual",
+   "model_quality": 3,
+   "devices": [
+    "model-state nodes",
+    "dataset boxes",
+    "dual paths",
+    "process arrows",
+    "colour-coded branches"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2502.00640-collabllm-from-passive-responders-to-active/05-flow_v2.png",
+   "model_kind": "data_flow",
+   "model_quality": 3,
+   "devices": [
+    "paired data stacks",
+    "chosen-rejected arrows",
+    "actor icons",
+    "SFT and DPO swimlanes"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2502.06768-train-for-the-worst-plan-for-the-best-unders/00-figure_1_3.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "time arrow",
+    "token state blocks",
+    "converging colored paths"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2502.06768-train-for-the-worst-plan-for-the-best-unders/01-figure_1_4.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "parallel swimlanes",
+    "time arrow",
+    "colored transition arrows",
+    "token state blocks"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2504.13837-does-reinforcement-learning-really-incentivi/00-overview2.png",
+   "model_kind": "conceptual",
+   "model_quality": 3,
+   "devices": [
+    "paired search trees",
+    "faded branches",
+    "bidirectional comparison arrows",
+    "color-coded outcomes"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2505.05469-generating-physically-stable-and-buildable-b/00-dataset_brickgpt.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "mesh-to-brick arrow",
+    "rendered view bank",
+    "stability check panels",
+    "caption box",
+    "dataset sample grid"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2505.06120-llms-get-lost-in-multi-turn-conversation/52-LIC_Sharding_Process_v2.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "numbered_stages",
+    "colored_segments",
+    "icons",
+    "rejection_row"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2506.12229-infini-gram-mini-exact-n-gram-search-at-the/03-overview-v2.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "corpus and storage blocks",
+    "query arrows",
+    "index box",
+    "result document panel",
+    "dashed subsystem group"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2508.10333-reconvla-reconstructive-vision-language-acti/01-comparison.jpg",
+   "model_kind": "conceptual",
+   "model_quality": 3,
+   "devices": [
+    "three comparison lanes",
+    "action boxes",
+    "bounding-box token",
+    "reconstruction token",
+    "denoiser stack"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2512.12567-optimal-mistake-bounds-for-transductive-onli/00-tree-function.png",
+   "model_kind": "conceptual",
+   "model_quality": 3,
+   "devices": [
+    "binary tree",
+    "edge labels",
+    "node labels",
+    "leaf markers"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2512.12567-optimal-mistake-bounds-for-transductive-onli/01-tree-path.png",
+   "model_kind": "conceptual",
+   "model_quality": 3,
+   "devices": [
+    "binary tree",
+    "highlighted path",
+    "edge labels",
+    "leaf markers"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2512.12567-optimal-mistake-bounds-for-transductive-onli/02-tree-naming-convention.png",
+   "model_kind": "conceptual",
+   "model_quality": 3,
+   "devices": [
+    "binary tree",
+    "highlighted path",
+    "prefix labels",
+    "leaf markers"
+   ],
+   "human": null,
+   "note": ""
+  },
+  {
+   "file": "award-figs/2512.14692-native-and-compact-structured-latents-for-3d/00-overview_v5.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "3D object icons",
+    "large chevron arrows",
+    "tinted stage blocks"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2601.15165-the-flexibility-trap-rethinking-the-value-of/01-illustrate.png",
+   "model_kind": "data_flow",
+   "model_quality": 3,
+   "devices": [
+    "token nodes",
+    "parallel comparison lanes",
+    "bypass arrow",
+    "crossed-out branch"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2602.15515-the-obfuscation-atlas-mapping-where-honesty/00-headline_figure.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "verbatim prompt box",
+    "branching policy bands",
+    "code output blocks",
+    "verdict matrix"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2406.06144-language-models-resist-alignment-evidence-fr/00-main_recon.png",
+   "model_kind": "conceptual",
+   "model_quality": 2,
+   "devices": [
+    "contribution text box",
+    "physical analogy",
+    "model timeline",
+    "compression arrows",
+    "rate annotations"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2407.10490-learning-dynamics-of-llm-finetuning/05-proposed_method.png",
+   "model_kind": "pipeline",
+   "model_quality": 2,
+   "devices": [
+    "branching arrows",
+    "model checkpoints",
+    "brace-grouped variants",
+    "stage labels"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2410.02355-alphaedit-null-space-constrained-knowledge-e/01-introfjf3.png",
+   "model_kind": "conceptual",
+   "model_quality": 2,
+   "devices": [
+    "parallel method lanes",
+    "equation blocks",
+    "large transition arrows",
+    "colour-coded objectives"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2505.05469-generating-physically-stable-and-buildable-b/02-force_model.png",
+   "model_kind": "conceptual",
+   "model_quality": 2,
+   "devices": [
+    "side-by-side model panels",
+    "colour-coded force arrows",
+    "direction legend",
+    "mapping arrow"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2406.06144-language-models-resist-alignment-evidence-fr/02-exp2.png",
+   "model_kind": "conceptual",
+   "model_quality": 1,
+   "devices": [
+    "model-state nodes",
+    "inverse mapping box",
+    "bidirectional performance axis",
+    "training arrow"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "award-figs/2512.12567-optimal-mistake-bounds-for-transductive-onli/03-LittlestoneTree.png",
+   "model_kind": "conceptual",
+   "model_quality": 1,
+   "devices": [
+    "binary tree",
+    "highlighted path",
+    "dashed branches",
+    "callout equation"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d0c0348e5-02.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "agent_icons",
+    "phase_regions",
+    "feedback_loop",
+    "input_output_blocks"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d0e006a51-03.png",
+   "model_kind": "architecture",
+   "model_quality": 5,
+   "devices": [
+    "stage_rows",
+    "stores",
+    "operators",
+    "LLM_blocks",
+    "arrows"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d22036e7f-00.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "module_groups",
+    "agent_boxes",
+    "task_panels",
+    "arrows",
+    "feedback_loops"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d2300d20d-01.png",
+   "model_kind": "architecture",
+   "model_quality": 5,
+   "devices": [
+    "paired_panels",
+    "containment",
+    "graph_icons",
+    "arrows",
+    "checkmarks"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d2300d20d-02.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "numbered_modules",
+    "task_boxes",
+    "metric_stages",
+    "arrows",
+    "containment"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d24024d22-01.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "representation_blocks",
+    "3d_structures",
+    "arrows",
+    "diffusion_module"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d24024d22-02.png",
+   "model_kind": "pipeline",
+   "model_quality": 5,
+   "devices": [
+    "waveforms",
+    "embedding_grids",
+    "codebooks",
+    "model_block",
+    "arrows"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d080331c1-02.png",
+   "model_kind": "pipeline",
+   "model_quality": 4,
+   "devices": [
+    "stage_regions",
+    "model_blocks",
+    "reward_boxes",
+    "arrows"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d0e006a51-00.png",
+   "model_kind": "conceptual",
+   "model_quality": 4,
+   "devices": [
+    "paired_panels",
+    "corpus_icons",
+    "graph",
+    "LLM_blocks",
+    "arrows"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d0e006a51-02.png",
+   "model_kind": "pipeline",
+   "model_quality": 4,
+   "devices": [
+    "numbered_modules",
+    "dataset_icons",
+    "metric_icons",
+    "arrows"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d1c0022da-00.png",
+   "model_kind": "conceptual",
+   "model_quality": 4,
+   "devices": [
+    "paired_panels",
+    "corpus_icons",
+    "graph",
+    "LLM_blocks",
+    "arrows"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d1c026eb9-01.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "agent_box",
+    "hypergraph",
+    "query_answer_blocks",
+    "feedback_arrow"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d1c026eb9-03.png",
+   "model_kind": "data_flow",
+   "model_quality": 4,
+   "devices": [
+    "documents",
+    "hypergraph",
+    "token_boxes",
+    "arrows",
+    "feedback_loop"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d2103d4d6-03.png",
+   "model_kind": "pipeline",
+   "model_quality": 4,
+   "devices": [
+    "stage_groups",
+    "image_clusters",
+    "arrows",
+    "prompt_boxes"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d2300113d-00.png",
+   "model_kind": "architecture",
+   "model_quality": 4,
+   "devices": [
+    "service_boxes",
+    "actors",
+    "knowledge_base",
+    "bidirectional_arrows"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d2300113d-02.png",
+   "model_kind": "pipeline",
+   "model_quality": 4,
+   "devices": [
+    "two_lanes",
+    "database_icons",
+    "model_blocks",
+    "arrows",
+    "outputs"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d06030b63-01.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "agent_boxes",
+    "stage_regions",
+    "arrows",
+    "feedback_loops"
+   ],
+   "human": "star",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d080331c1-00.png",
+   "model_kind": "pipeline",
+   "model_quality": 3,
+   "devices": [
+    "stage_regions",
+    "model_blocks",
+    "reward_boxes",
+    "arrows"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d2300113d-01.png",
+   "model_kind": "conceptual",
+   "model_quality": 3,
+   "devices": [
+    "three_panels",
+    "retriever_blocks",
+    "model_blocks",
+    "arrows"
+   ],
+   "human": "keep",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d06030b63-03.png",
+   "model_kind": "data_flow",
+   "model_quality": 1,
+   "devices": [
+    "labeled_actions",
+    "model_icons",
+    "arrows"
+   ],
+   "human": "drop",
+   "note": ""
+  },
+  {
+   "file": "amnesia-adjacent/img/d06030b63-04.png",
+   "model_kind": "data_flow",
+   "model_quality": 1,
+   "devices": [
+    "input_boxes",
+    "agent_box",
+    "arrows",
+    "feedback_icon"
+   ],
+   "human": "drop",
+   "note": ""
+  }
+ ]
+}

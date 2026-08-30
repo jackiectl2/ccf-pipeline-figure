@@ -1,0 +1,712 @@
+{
+  "opened_count": 77,
+  "role_counts": {
+    "conceptual": 10,
+    "data_plot": 41,
+    "hybrid": 5,
+    "qualitative": 20,
+    "table_image": 1,
+    "unopenable": 0
+  },
+  "figures": [
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/00-LIC_Teaser.png",
+      "role": "hybrid",
+      "confidence": 0.96,
+      "note": "metric diagram is paired with best- and worst-case conversation fragments",
+      "devices": [
+        "inline_score_gauge",
+        "turn_by_turn_dialogue",
+        "colour_per_stage"
+      ],
+      "layout": "three columns: reliability plane, then two dialogue outcomes",
+      "text_density": "low"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/01-LIC_simulator_flat_v3.png",
+      "role": "conceptual",
+      "confidence": 0.96,
+      "note": "simulation is shown as staged actors passing revealed shards",
+      "devices": [
+        "numbered_stage_banners",
+        "icon_per_actor",
+        "sharded_information_bar",
+        "colour_per_stage"
+      ],
+      "layout": "left-to-right staged simulator flow",
+      "text_density": "medium"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/02-LIC_Conv_Types_v3.png",
+      "role": "conceptual",
+      "confidence": 0.96,
+      "note": "colored shards make disclosure schedules explicit",
+      "devices": [
+        "turn_by_turn_dialogue",
+        "sharded_information_bar",
+        "colour_per_stage"
+      ],
+      "layout": "condition columns over six turn rows",
+      "text_density": "low"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/03-LIC_Tasks_v2.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "illustrative full instructions are split into yellow shard rows"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/15-llama.png",
+      "role": "qualitative",
+      "confidence": 0.99,
+      "note": "brand logo only; the caption's table is not pictured"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/16-ai2.png",
+      "role": "qualitative",
+      "confidence": 0.99,
+      "note": "brand logo only; the caption's table is not pictured"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/17-claude.png",
+      "role": "qualitative",
+      "confidence": 0.99,
+      "note": "brand logo only; the caption's table is not pictured"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/18-openai.png",
+      "role": "qualitative",
+      "confidence": 0.99,
+      "note": "brand logo only; the caption's table is not pictured"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/19-llama.png",
+      "role": "qualitative",
+      "confidence": 0.99,
+      "note": "brand logo only; the caption's table is not pictured"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/20-llama.png",
+      "role": "qualitative",
+      "confidence": 0.99,
+      "note": "brand logo only; the caption's table is not pictured"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/21-openai.png",
+      "role": "qualitative",
+      "confidence": 0.99,
+      "note": "brand logo only; the caption's table is not pictured"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/22-claude.png",
+      "role": "qualitative",
+      "confidence": 0.99,
+      "note": "brand logo only; the caption's table is not pictured"
+    },
+    {
+      "file": "2410.10813-longmemeval-benchmarking-chat-assistants-on/00-main_examples.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "examples contrast single-session, cross-session, and knowledge-update questions"
+    },
+    {
+      "file": "2410.10813-longmemeval-benchmarking-chat-assistants-on/01-main_annotation_pipeline.png",
+      "role": "conceptual",
+      "confidence": 0.96,
+      "note": "question and evidence construction are diagrammed as a data pipeline",
+      "devices": [
+        "numbered_stage_banners",
+        "session_timeline",
+        "turn_by_turn_dialogue",
+        "dashed_boundary_grouping"
+      ],
+      "layout": "three left-to-right construction panels",
+      "text_density": "high"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/00-One-hop-depth.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy curves sweep placement depth or final-token distance"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/01-Two-hop-depth.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy curves sweep placement depth or final-token distance"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/02-One-hop-last2K.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy curves sweep placement depth or final-token distance"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/03-Two-hop-last2K.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy curves sweep placement depth or final-token distance"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/04-One-hop-depth_raw.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy curves sweep placement depth or final-token distance"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/05-Two-hop-depth_raw.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy curves sweep placement depth or final-token distance"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/06-One-hop-last2K_raw.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy curves sweep placement depth or final-token distance"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/07-Two-hop-last2K_raw.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy curves sweep placement depth or final-token distance"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/08-distractor_effect.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy curves sweep placement depth or final-token distance"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/09-full_vs_last2K_demonstration.png",
+      "role": "conceptual",
+      "confidence": 0.96,
+      "note": "placement policy is drawn as colored long-context bars with red ticks",
+      "devices": [
+        "context_window_bar",
+        "needle_marker",
+        "before_after_lanes"
+      ],
+      "layout": "two stacked horizontal placement strips",
+      "text_density": "low"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/10-HaystackPipeline.png",
+      "role": "conceptual",
+      "confidence": 0.96,
+      "note": "document filtering and insertion are drawn as a haystack pipeline",
+      "devices": [
+        "scrolling_document_glyph",
+        "needle_marker",
+        "index_retrieve_read_stages",
+        "feedback_loop_arrow"
+      ],
+      "layout": "left-to-right filtering-and-evaluation pipeline",
+      "text_density": "medium"
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/11-onehop_vs_twohop.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2410.02694-helmet-how-to-evaluate-long-context-language/00-teaser.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2410.02694-helmet-how-to-evaluate-long-context-language/01-length_model_eval.png",
+      "role": "table_image",
+      "confidence": 0.96,
+      "note": "colored score matrix is rendered as a table image"
+    },
+    {
+      "file": "2304.15004-are-emergent-abilities-of-large-language-mod/00-wei_2022_emergence_fig2.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2304.15004-are-emergent-abilities-of-large-language-mod/01-toy_analytical_model_try2.png",
+      "role": "hybrid",
+      "confidence": 0.96,
+      "note": "metric transformation is diagrammed alongside its plotted consequence",
+      "devices": [
+        "causal_arrow_chain",
+        "magnified_inset",
+        "multi_panel_metric_transform"
+      ],
+      "layout": "six-panel causal chain with inset plots",
+      "text_density": "medium"
+    },
+    {
+      "file": "2304.15004-are-emergent-abilities-of-large-language-mod/02-multiplication_acc_log_vs_model_size_by_temp_by_.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2304.15004-are-emergent-abilities-of-large-language-mod/03-addition_acc_log_vs_model_size_by_temp_by_target.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2304.15004-are-emergent-abilities-of-large-language-mod/04-emergence_percent_pie.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2304.15004-are-emergent-abilities-of-large-language-mod/05-metric_given_emergent_pie.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2304.15004-are-emergent-abilities-of-large-language-mod/06-score_vs_model_size_by_task_split_shot_other_met.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2304.15004-are-emergent-abilities-of-large-language-mod/07-score_vs_model_size_by_task_split_shot_other_met.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/00-figure1.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "performance plot varies document position, count, or architecture"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/01-qa_example.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "verbatim multi-document prompt shows the answer-bearing document"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/02-qa_changing_position.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "verbatim prompt shows reordered documents rather than a mechanism diagram"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/03-qa_changing_length.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "verbatim prompt shows added distractor documents"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/04-qa.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "performance plot varies document position, count, or architecture"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/05-kv_retrieval_example.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "verbatim JSON key-value context is the task illustration"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/06-kv_records.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "performance plot varies document position, count, or architecture"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/07-qa_decoder_only_vs_encoder_decoder.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "performance plot varies document position, count, or architecture"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/08-20_total_documents_precondition_with_question.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "performance plot varies document position, count, or architecture"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/09-base_vs_instruction_tuned.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "performance plot varies document position, count, or architecture"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/10-odqa.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "performance plot varies document position, count, or architecture"
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/11-20_total_documents_nonambiguous.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "performance plot varies document position, count, or architecture"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/00-plot_uniform.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/01-plot_zeta.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "quantitative plot carries the result"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/02-Yi_SNIAH.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy plot sweeps sequence length and task condition"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/03-Yi_MKNIAH.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy plot sweeps sequence length and task condition"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/04-Yi_MVNIAH.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy plot sweeps sequence length and task condition"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/05-Yi_MQNIAH.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy plot sweeps sequence length and task condition"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/06-Yi_VT_1.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy plot sweeps sequence length and task condition"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/07-Yi_VT_2.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy plot sweeps sequence length and task condition"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/08-Yi_FWE.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy plot sweeps sequence length and task condition"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/09-Yi_QA.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy plot sweeps sequence length and task condition"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/10-corr_heatmap.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy plot sweeps sequence length and task condition"
+    },
+    {
+      "file": "2404.06654-ruler-what-s-the-real-context-size-of-your-l/11-LWM.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "accuracy plot sweeps sequence length and task condition"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/00-intro_figure_conv_only_v2.png",
+      "role": "conceptual",
+      "confidence": 0.96,
+      "note": "dialogue bubbles encode persona, elapsed time, and recalled events",
+      "devices": [
+        "turn_by_turn_dialogue",
+        "session_timeline",
+        "feedback_loop_arrow"
+      ],
+      "layout": "vertical two-speaker dialogue with linked branches",
+      "text_density": "medium"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/01-evaluation_framework.png",
+      "role": "hybrid",
+      "confidence": 0.96,
+      "note": "task cards combine example prompts with evaluation taxonomy",
+      "devices": [
+        "numbered_stage_banners",
+        "prompt_box_verbatim",
+        "session_timeline"
+      ],
+      "layout": "three task cards across a staged top row",
+      "text_density": "medium"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/02-main_v4.png",
+      "role": "hybrid",
+      "confidence": 0.96,
+      "note": "agent pipeline separates original session, memory modules, and human editing",
+      "devices": [
+        "memory_store_icon",
+        "index_retrieve_read_stages",
+        "session_timeline",
+        "icon_per_actor",
+        "feedback_loop_arrow"
+      ],
+      "layout": "two-lane agent architecture from source session to edited response",
+      "text_density": "medium"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/03-minigpt5_results.png",
+      "role": "hybrid",
+      "confidence": 0.96,
+      "note": "dialogue example and performance panels share one figure",
+      "devices": [
+        "turn_by_turn_dialogue",
+        "prompt_box_verbatim",
+        "context_window_bar"
+      ],
+      "layout": "example dialogue and augmentation at left, result plots at right",
+      "text_density": "medium"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/04-persona_appendix.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "persona-generation prompt and example personas dominate"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/05-event_prompts_appendix.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "event-graph prompt text dominates"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/06-events.png",
+      "role": "conceptual",
+      "confidence": 0.96,
+      "note": "event cards are arranged on a dated causal timeline",
+      "devices": [
+        "session_timeline",
+        "icon_per_actor",
+        "feedback_loop_arrow"
+      ],
+      "layout": "horizontal event timeline with causal links",
+      "text_density": "low"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/07-summary_prompt_arxiv.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "summary prompt pairs raw session turns with a prior summary"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/08-observation_prompt_arxiv.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "observation prompt pairs a conversation with extracted notes"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/09-image_prompts.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "image-behavior prompts are presented verbatim"
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/10-conv_edits.png",
+      "role": "qualitative",
+      "confidence": 0.96,
+      "note": "before-and-after chat edits are shown as qualitative cases"
+    },
+    {
+      "file": "2310.08560-memgpt-towards-llms-as-operating-systems/00-memgpt_diagrams_wide_memory_creation.png",
+      "role": "conceptual",
+      "confidence": 0.96,
+      "note": "chat bubbles and a system alert show persistent-memory write",
+      "devices": [
+        "turn_by_turn_dialogue",
+        "memory_store_icon",
+        "context_window_bar",
+        "feedback_loop_arrow"
+      ],
+      "layout": "single vertical chat with context-pressure intervention",
+      "text_density": "low"
+    },
+    {
+      "file": "2310.08560-memgpt-towards-llms-as-operating-systems/01-memgpt_diagrams_wide_memory_search.png",
+      "role": "conceptual",
+      "confidence": 0.96,
+      "note": "chat bubbles overlay a recall-store search result",
+      "devices": [
+        "turn_by_turn_dialogue",
+        "memory_store_icon",
+        "index_retrieve_read_stages"
+      ],
+      "layout": "vertical chat and retrieval-result overlay",
+      "text_density": "low"
+    },
+    {
+      "file": "2310.08560-memgpt-towards-llms-as-operating-systems/02-memgpt_diagrams_wide_memory_correction.png",
+      "role": "conceptual",
+      "confidence": 0.96,
+      "note": "chat bubbles show working-context replacement",
+      "devices": [
+        "turn_by_turn_dialogue",
+        "memory_store_icon",
+        "before_after_lanes"
+      ],
+      "layout": "before/after conversational lanes",
+      "text_density": "low"
+    },
+    {
+      "file": "2402.14848-same-task-more-tokens-the-impact-of-input-le/00-full_results_Ruletaker.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "small-multiple accuracy curves sweep input length"
+    },
+    {
+      "file": "2402.14848-same-task-more-tokens-the-impact-of-input-le/01-full_results_MonoRel.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "small-multiple accuracy curves sweep input length"
+    },
+    {
+      "file": "2402.14848-same-task-more-tokens-the-impact-of-input-le/02-full_results_PIR.png",
+      "role": "data_plot",
+      "confidence": 0.99,
+      "note": "small-multiple accuracy curves sweep input length"
+    }
+  ],
+  "leads_with": {
+    "conceptual": [
+      "Evaluating Very Long-Term Conversational Memory of LLM Agents",
+      "MemGPT: Towards LLMs as Operating Systems"
+    ],
+    "data_plot": [
+      "NoLiMa: Long-Context Evaluation Beyond Literal Matching",
+      "HELMET: How to Evaluate Long-Context Language Models Effectively and Thoroughly",
+      "Are Emergent Abilities of Large Language Models a Mirage?",
+      "Lost in the Middle: How Language Models Use Long Contexts",
+      "RULER: What's the Real Context Size of Your Long-Context Language Models",
+      "Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models"
+    ],
+    "qualitative": [
+      "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory"
+    ],
+    "hybrid": [
+      "LLMs Get Lost In Multi-Turn Conversation"
+    ]
+  },
+  "direction_signature": {
+    "conclusion": "There is a real but narrow signature: these figures make the input/history itself a manipulable, ordered object—then visualize controlled disclosure, placement, or external memory around it. Generic ML mechanism figures can use boxes and arrows too; they usually do not make a text history's order, length, and recoverability the visual object of study.",
+    "claims": [
+      {
+        "claim": "Ordered conversation is rendered as turn-indexed speech or message units, usually with time or session structure, in 10 figures: 2505.06120-llms-get-lost-in-multi-turn-conversation/00-LIC_Teaser.png, 2505.06120-llms-get-lost-in-multi-turn-conversation/02-LIC_Conv_Types_v3.png, 2410.10813-longmemeval-benchmarking-chat-assistants-on/00-main_examples.png, 2402.17753-evaluating-very-long-term-conversational-mem/00-intro_figure_conv_only_v2.png, 2402.17753-evaluating-very-long-term-conversational-mem/02-main_v4.png, 2402.17753-evaluating-very-long-term-conversational-mem/07-summary_prompt_arxiv.png, 2402.17753-evaluating-very-long-term-conversational-mem/08-observation_prompt_arxiv.png, 2402.17753-evaluating-very-long-term-conversational-mem/10-conv_edits.png, 2310.08560-memgpt-towards-llms-as-operating-systems/00-memgpt_diagrams_wide_memory_creation.png, and 2310.08560-memgpt-towards-llms-as-operating-systems/01-memgpt_diagrams_wide_memory_search.png. This is distinctive because chronological language interaction is the mechanism, not just an input example."
+      },
+      {
+        "claim": "Controlled disclosure or position within a long text is made visible as colored shards, document order, or a marked context strip in 8 figures: 2505.06120-llms-get-lost-in-multi-turn-conversation/01-LIC_simulator_flat_v3.png, 2505.06120-llms-get-lost-in-multi-turn-conversation/02-LIC_Conv_Types_v3.png, 2505.06120-llms-get-lost-in-multi-turn-conversation/03-LIC_Tasks_v2.png, 2502.05167-nolima-long-context-evaluation-beyond-litera/09-full_vs_last2K_demonstration.png, 2502.05167-nolima-long-context-evaluation-beyond-litera/10-HaystackPipeline.png, 2307.03172-lost-in-the-middle-how-language-models-use-l/01-qa_example.png, 2307.03172-lost-in-the-middle-how-language-models-use-l/02-qa_changing_position.png, and 2307.03172-lost-in-the-middle-how-language-models-use-l/03-qa_changing_length.png. This is the clearest visual signature of evaluation work that treats ordering and length as causal interventions."
+      },
+      {
+        "claim": "Externalized memory is shown as an operational state boundary—write, search, then overwrite/reconcile—in 4 figures: 2402.17753-evaluating-very-long-term-conversational-mem/02-main_v4.png, 2310.08560-memgpt-towards-llms-as-operating-systems/00-memgpt_diagrams_wide_memory_creation.png, 2310.08560-memgpt-towards-llms-as-operating-systems/01-memgpt_diagrams_wide_memory_search.png, and 2310.08560-memgpt-towards-llms-as-operating-systems/02-memgpt_diagrams_wide_memory_correction.png. It is a convention in this packet, but not a majority pattern."
+      },
+      {
+        "claim": "Verbatim prompts and source text are retained as evidence rather than abstracted away in 9 figures: 2505.06120-llms-get-lost-in-multi-turn-conversation/03-LIC_Tasks_v2.png, 2307.03172-lost-in-the-middle-how-language-models-use-l/01-qa_example.png, 2307.03172-lost-in-the-middle-how-language-models-use-l/02-qa_changing_position.png, 2307.03172-lost-in-the-middle-how-language-models-use-l/03-qa_changing_length.png, 2307.03172-lost-in-the-middle-how-language-models-use-l/05-kv_retrieval_example.png, 2402.17753-evaluating-very-long-term-conversational-mem/04-persona_appendix.png, 2402.17753-evaluating-very-long-term-conversational-mem/05-event_prompts_appendix.png, 2402.17753-evaluating-very-long-term-conversational-mem/07-summary_prompt_arxiv.png, and 2402.17753-evaluating-very-long-term-conversational-mem/08-observation_prompt_arxiv.png. The mechanism must stay auditably linguistic."
+      },
+      {
+        "claim": "A single explicit long-context bar with needle ticks is anecdotal (2 figures): 2502.05167-nolima-long-context-evaluation-beyond-litera/09-full_vs_last2K_demonstration.png and 2502.05167-nolima-long-context-evaluation-beyond-litera/10-HaystackPipeline.png; it is not a packet-wide convention."
+      }
+    ]
+  },
+  "how_the_haystack_is_drawn": [
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/01-LIC_simulator_flat_v3.png",
+      "drawing": "A horizontal stream of colored shard cards is revealed one shard at a time through the simulator stages."
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/02-LIC_Conv_Types_v3.png",
+      "drawing": "A blue full-instruction bar becomes small yellow blocks; rows indexed by turn place those blocks at different disclosure times."
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/03-LIC_Tasks_v2.png",
+      "drawing": "Each task shows a blue/grey full instruction above a row of short yellow sharded-instruction boxes."
+    },
+    {
+      "file": "2410.10813-longmemeval-benchmarking-chat-assistants-on/00-main_examples.png",
+      "drawing": "History is a vertical stack of colored chat bubbles grouped into single-session and cross-session examples."
+    },
+    {
+      "file": "2410.10813-longmemeval-benchmarking-chat-assistants-on/01-main_annotation_pipeline.png",
+      "drawing": "Evidence sessions are mini chat transcripts; their history construction is shown as several boxed sessions converging into a released chat history."
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/09-full_vs_last2K_demonstration.png",
+      "drawing": "Long context is a long grey-and-blue horizontal bar, with thin red vertical needle markers; full and last-2K policies are separate stacked lanes."
+    },
+    {
+      "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/10-HaystackPipeline.png",
+      "drawing": "The haystack is a tall scrolling document/page glyph with many grey text lines; retained or inserted evidence is highlighted in orange."
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/01-qa_example.png",
+      "drawing": "The context is a verbatim prompt box containing numbered documents; the answer-bearing document is bolded."
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/02-qa_changing_position.png",
+      "drawing": "The context is a verbatim numbered-document prompt whose answer document is moved to a different ordinal position."
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/03-qa_changing_length.png",
+      "drawing": "The context is a verbatim numbered-document prompt with extra irrelevant documents inserted around the bold answer document."
+    },
+    {
+      "file": "2307.03172-lost-in-the-middle-how-language-models-use-l/05-kv_retrieval_example.png",
+      "drawing": "The context is a dense verbatim JSON-like key-value list inside a prompt box, with the relevant record emphasized."
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/00-intro_figure_conv_only_v2.png",
+      "drawing": "Conversation history is a vertical chain of alternating blue and grey speech bubbles; side labels and curved arrows point to earlier persona and event facts."
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/02-main_v4.png",
+      "drawing": "An original session is a stack of small document/chat blocks feeding an agent; separate long-term-memory, observation, and reflection boxes represent compressed or retrieved history."
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/03-minigpt5_results.png",
+      "drawing": "The history is shown as an input-conversation column of chat bubbles next to a generated response; the rest of the figure plots history-length effects."
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/06-events.png",
+      "drawing": "History is abstracted into a horizontal dated timeline of event cards with causal connectors, rather than shown as raw dialogue."
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/07-summary_prompt_arxiv.png",
+      "drawing": "A verbatim session log is stacked as alternating chat bubbles beside a dense generated summary; the preceding summary is shown as a separate prompt field."
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/08-observation_prompt_arxiv.png",
+      "drawing": "A verbatim conversation is a stacked dialogue panel, paired with a right-side observations list extracted from it."
+    },
+    {
+      "file": "2402.17753-evaluating-very-long-term-conversational-mem/10-conv_edits.png",
+      "drawing": "The history is a short chat thread in before/after editorial lanes, with removed and revised turns marked by red/green symbols."
+    },
+    {
+      "file": "2310.08560-memgpt-towards-llms-as-operating-systems/00-memgpt_diagrams_wide_memory_creation.png",
+      "drawing": "The active context is alternating chat bubbles; black code-like memory-write boxes visibly append durable facts after a context-pressure alert."
+    },
+    {
+      "file": "2310.08560-memgpt-towards-llms-as-operating-systems/01-memgpt_diagrams_wide_memory_search.png",
+      "drawing": "The live chat is overlaid by a dark recall-store search panel listing dated past snippets, then resumes with the retrieved fact."
+    },
+    {
+      "file": "2310.08560-memgpt-towards-llms-as-operating-systems/02-memgpt_diagrams_wide_memory_correction.png",
+      "drawing": "A short chat is paired with a dark working-context replacement command, making a memory edit visible as a before/after state change."
+    }
+  ]
+}

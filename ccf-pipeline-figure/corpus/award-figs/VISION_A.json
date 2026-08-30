@@ -1,0 +1,1720 @@
+{
+  "opened_count": 192,
+  "figures": [
+    {
+      "file": "2505.06708-gated-attention-for-large-language-models-no/00-gate_results.png",
+      "role": "hybrid",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Mechanism schematic carries measured results.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "attention block, gate nodes, embedded plots"
+    },
+    {
+      "file": "2505.06708-gated-attention-for-large-language-models-no/01-attn_scores.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2505.06708-gated-attention-for-large-language-models-no/02-SDPA_Elementwise_Gate_distribution.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.06708-gated-attention-for-large-language-models-no/03-v_Elementwise_Gate_distribution.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.06708-gated-attention-for-large-language-models-no/04-SDPA_Elementwise_HS_Gate_distribution.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.06708-gated-attention-for-large-language-models-no/05-hidden_states_mean.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.06708-gated-attention-for-large-language-models-no/06-sparsity_1e-2.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.06708-gated-attention-for-large-language-models-no/07-sparsity_1e-3.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2503.14858-1000-layer-networks-for-self-supervised-rl-s/00-architecture_flat_v2.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "layered_stack",
+      "text_density": "low",
+      "colour_roles": 2,
+      "devices": "residual blocks, repeated layers, skip connection"
+    },
+    {
+      "file": "2503.14858-1000-layer-networks-for-self-supervised-rl-s/01-jaxgcrl.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2503.14858-1000-layer-networks-for-self-supervised-rl-s/02-humanoid_emergent_small.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2503.14858-1000-layer-networks-for-self-supervised-rl-s/03-Q_vis.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2503.14858-1000-layer-networks-for-self-supervised-rl-s/04-gele2.png",
+      "role": "hybrid",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Mechanism schematic carries measured results.",
+      "layout": "layered_stack",
+      "text_density": "low",
+      "colour_roles": 2,
+      "devices": "residual blocks, repeated layers, skip connection"
+    },
+    {
+      "file": "2503.14858-1000-layer-networks-for-self-supervised-rl-s/05-shallowF.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.17638-why-diffusion-models-don-t-memorize-the-role/00-MT_Images_CelebA_N1024_W32.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2505.17638-why-diffusion-models-don-t-memorize-the-role/01-color_map_gen_loss_green_red.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.17638-why-diffusion-models-don-t-memorize-the-role/02-SM_Images_CelebA.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2510.22954-artificial-hivemind-the-open-ended-homogenei/00-metaphor_cluster_example.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2510.22954-artificial-hivemind-the-open-ended-homogenei/01-new_categories_wordcloud.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2510.22954-artificial-hivemind-the-open-ended-homogenei/02-similarity_heatmap_transposed_top_p.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2510.22954-artificial-hivemind-the-open-ended-homogenei/03-similarity_heatmap_transposed_min_p.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2510.22954-artificial-hivemind-the-open-ended-homogenei/04-model_pairwise_similarity_combined_top_p.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2510.22954-artificial-hivemind-the-open-ended-homogenei/05-pair_entropy_examples.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2510.22954-artificial-hivemind-the-open-ended-homogenei/06-unique_model_counts_boxplot_grouped_by_all_embed.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2510.22954-artificial-hivemind-the-open-ended-homogenei/07-abs_entropy_examples.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2504.13837-does-reinforcement-learning-really-incentivi/00-overview2.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "low",
+      "colour_roles": 3,
+      "devices": "paired search trees, highlighted rewarded paths"
+    },
+    {
+      "file": "2504.13837-does-reinforcement-learning-really-incentivi/01-qwen25_7b_base_step_coverage_v2_only_train.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2504.13837-does-reinforcement-learning-really-incentivi/02-simpleRL_coverage_main.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2504.13837-does-reinforcement-learning-really-incentivi/03-code_qwen_7b_instruct_coverage.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2504.13837-does-reinforcement-learning-really-incentivi/04-qwenvl_7b_instruct_coverage_filter.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2504.13837-does-reinforcement-learning-really-incentivi/05-distill_Minerva.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2504.13837-does-reinforcement-learning-really-incentivi/06-qwen25_7b_base_algo_coverage_final.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2504.13837-does-reinforcement-learning-really-incentivi/07-qwen25_7b_base_step_coverage_final.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.10465-superposition-yields-robust-neural-scaling/00-Fig-1-2.png",
+      "role": "hybrid",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Mechanism schematic carries measured results.",
+      "layout": "grid",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "vector diagrams, matrices, embedded plots"
+    },
+    {
+      "file": "2505.10465-superposition-yields-robust-neural-scaling/01-Fig-2-2.png",
+      "role": "hybrid",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Mechanism schematic carries measured results.",
+      "layout": "grid",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "vector diagrams, matrices, embedded plots"
+    },
+    {
+      "file": "2505.10465-superposition-yields-robust-neural-scaling/02-Fig-3-2.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.10465-superposition-yields-robust-neural-scaling/03-Fig-4-3.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.10465-superposition-yields-robust-neural-scaling/04-Fig-5-1.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.10465-superposition-yields-robust-neural-scaling/05-Fig-6-3.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.10465-superposition-yields-robust-neural-scaling/06-Fig-8-2.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.10465-superposition-yields-robust-neural-scaling/07-Fig-1-s-1.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2512.12567-optimal-mistake-bounds-for-transductive-onli/00-tree-function.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "low",
+      "colour_roles": 2,
+      "devices": "binary trees, highlighted paths, red arrows"
+    },
+    {
+      "file": "2512.12567-optimal-mistake-bounds-for-transductive-onli/01-tree-path.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2512.12567-optimal-mistake-bounds-for-transductive-onli/02-tree-naming-convention.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2512.12567-optimal-mistake-bounds-for-transductive-onli/03-LittlestoneTree.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2406.05946-safety-alignment-should-be-made-more-than-ju/00-harmful_hexphi_kl.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2406.05946-safety-alignment-should-be-made-more-than-ju/01-harmful_prefilling.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2406.05946-safety-alignment-should-be-made-more-than-ju/02-loss.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2406.05946-safety-alignment-should-be-made-more-than-ju/03-gradient_norm.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2406.05946-safety-alignment-should-be-made-more-than-ju/04-kl_divergence.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2406.05946-safety-alignment-should-be-made-more-than-ju/05-harmful_hexphi_kl_deepened.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2406.05946-safety-alignment-should-be-made-more-than-ju/06-benign_gradient.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2407.10490-learning-dynamics-of-llm-finetuning/00-SFT_MNIST.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2407.10490-learning-dynamics-of-llm-finetuning/01-probing_data_appendix.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2407.10490-learning-dynamics-of-llm-finetuning/02-app_prompt_design.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2407.10490-learning-dynamics-of-llm-finetuning/03-app_response_examples.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2407.10490-learning-dynamics-of-llm-finetuning/04-squeeze_effect.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2407.10490-learning-dynamics-of-llm-finetuning/05-proposed_method.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2407.10490-learning-dynamics-of-llm-finetuning/06-app_proposed_method_prompts.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2406.11011-data-shapley-in-one-training-run/01-domain_composition_2.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2406.11011-data-shapley-in-one-training-run/02-new_data_selection.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2406.11011-data-shapley-in-one-training-run/03-flowchart-4.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "free",
+      "text_density": "medium",
+      "colour_roles": 3,
+      "devices": "boxes and arrows"
+    },
+    {
+      "file": "2406.11011-data-shapley-in-one-training-run/04-utility_approx.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2406.11011-data-shapley-in-one-training-run/05-value_dist_histogram.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2406.11011-data-shapley-in-one-training-run/06-luanma.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2408.00714-sam-2-segment-anything-in-images-and-videos/00-teaser_ai.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "video frames, memory bank, encoder-decoder blocks, arrows"
+    },
+    {
+      "file": "2408.00714-sam-2-segment-anything-in-images-and-videos/01-pvs_task_3.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2408.00714-sam-2-segment-anything-in-images-and-videos/02-sam-v-model_20240715.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "video frames, memory bank, encoder-decoder blocks, arrows"
+    },
+    {
+      "file": "2408.00714-sam-2-segment-anything-in-images-and-videos/03-0.jpg",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2408.00714-sam-2-segment-anything-in-images-and-videos/04-6.jpg",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2408.00714-sam-2-segment-anything-in-images-and-videos/05-12.jpg",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2408.00714-sam-2-segment-anything-in-images-and-videos/06-18.jpg",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2408.00714-sam-2-segment-anything-in-images-and-videos/07-0.jpg",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2405.19261-faster-cascades-via-speculative-decoding/00-oracle_wmt_large2base_T1.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2405.19261-faster-cascades-via-speculative-decoding/01-oracle_xsum_large2base_T1.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2405.19261-faster-cascades-via-speculative-decoding/02-iclr_oracle_wmt_large2small_T1.0_sns_deferrals.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2405.19261-faster-cascades-via-speculative-decoding/03-iclr_oracle_xsum_large2base_T1.0_sns_deferrals.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2405.19261-faster-cascades-via-speculative-decoding/04-neurips_large2small_samplingfullp_wmt.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2405.19261-faster-cascades-via-speculative-decoding/05-neurips_xl2small_samplingfullp_xsum.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2405.19261-faster-cascades-via-speculative-decoding/06-neurips_large2small_samplingfullp_xsum.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2405.19261-faster-cascades-via-speculative-decoding/07-neurips_large2small_samplingfullp_cnndm_with_leg.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2502.00640-collabllm-from-passive-responders-to-active/00-first_v7b.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "high",
+      "colour_roles": 5,
+      "devices": "actor icons, dialogue cards, feedback arrows, dashed grouping boxes"
+    },
+    {
+      "file": "2502.00640-collabllm-from-passive-responders-to-active/01-examples_v4.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "high",
+      "colour_roles": 5,
+      "devices": "actor icons, dialogue cards, feedback arrows, dashed grouping boxes"
+    },
+    {
+      "file": "2502.00640-collabllm-from-passive-responders-to-active/02-tasks.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "high",
+      "colour_roles": 5,
+      "devices": "actor icons, dialogue cards, feedback arrows, dashed grouping boxes"
+    },
+    {
+      "file": "2502.00640-collabllm-from-passive-responders-to-active/03-coding_v2.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2502.00640-collabllm-from-passive-responders-to-active/04-user_study_v5.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2502.00640-collabllm-from-passive-responders-to-active/05-flow_v2.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2502.00640-collabllm-from-passive-responders-to-active/06-ablation.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2502.00640-collabllm-from-passive-responders-to-active/07-overall.jpg",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2504.15266-roll-the-dice-and-look-before-you-leap-going/00-sibling_detail.png",
+      "role": "hybrid",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Mechanism schematic carries measured results.",
+      "layout": "top_to_bottom",
+      "text_density": "medium",
+      "colour_roles": 3,
+      "devices": "generated graphs, training data lists, bar plots"
+    },
+    {
+      "file": "2504.15266-roll-the-dice-and-look-before-you-leap-going/01-triangle_detail.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2504.15266-roll-the-dice-and-look-before-you-leap-going/02-circle_detail.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2504.15266-roll-the-dice-and-look-before-you-leap-going/03-line_detail.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2504.15266-roll-the-dice-and-look-before-you-leap-going/04-Triangle_TrainSize_creativity_score.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2504.15266-roll-the-dice-and-look-before-you-leap-going/05-Circle_TrainSize_canonicalized_creativity_score.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2504.15266-roll-the-dice-and-look-before-you-leap-going/06-Line_TrainSize_canonicalized_creativity_score.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2504.15266-roll-the-dice-and-look-before-you-leap-going/07-Sibling_Complexity_creativity_score.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2502.06768-train-for-the-worst-plan-for-the-best-unders/00-figure_1_3.png",
+      "role": "hybrid",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Mechanism schematic carries measured results.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 3,
+      "devices": "token lanes, branching arrows, method comparison"
+    },
+    {
+      "file": "2502.06768-train-for-the-worst-plan-for-the-best-unders/01-figure_1_4.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2502.06768-train-for-the-worst-plan-for-the-best-unders/02-figure_2_2.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2502.06768-train-for-the-worst-plan-for-the-best-unders/03-bp_fig_1.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2502.06768-train-for-the-worst-plan-for-the-best-unders/04-perplexity_vs_sampling_steps_with_entropy_1.1B.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2502.13228-conformal-prediction-as-bayesian-quadrature/00-bernstein5_v3.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2502.13228-conformal-prediction-as-bayesian-quadrature/01-quadrature_simulation.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2502.13228-conformal-prediction-as-bayesian-quadrature/02-lambda_hat_composite.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2502.13228-conformal-prediction-as-bayesian-quadrature/03-bayesian_posterior.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2501.19334-the-value-of-prediction-in-identifying-the-w/00-PAR_Gaussian_0.2.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2501.19334-the-value-of-prediction-in-identifying-the-w/01-PAR_0.25_plot_0.2.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2501.19334-the-value-of-prediction-in-identifying-the-w/02-PAR_Gaussian_0.05.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2501.19334-the-value-of-prediction-in-identifying-the-w/03-PAR_0.25_plot_0.05.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.04966-position-the-ai-conference-peer-review-crisi/00-badge.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.04966-position-the-ai-conference-peer-review-crisi/01-iclr_keywords0.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.04966-position-the-ai-conference-peer-review-crisi/02-iclr_keywords1.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.04966-position-the-ai-conference-peer-review-crisi/03-ErrorAnalysis.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2503.11651-vggt-visual-geometry-grounded-transformer/00-architecture_v4.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "camera icons, feature tokens, transformer blocks, output lanes"
+    },
+    {
+      "file": "2503.11651-vggt-visual-geometry-grounded-transformer/01-comparison_vggt_dust3r.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2503.11651-vggt-visual-geometry-grounded-transformer/02-pointmap_v6.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2503.11651-vggt-visual-geometry-grounded-transformer/03-dynamic_track_fig.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2503.11651-vggt-visual-geometry-grounded-transformer/04-nvs_figure.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2503.11651-vggt-visual-geometry-grounded-transformer/05-pointmap_supp_fig.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2506.05347-neural-inverse-rendering-from-propagating-li/00-method.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "layered_stack",
+      "text_density": "high",
+      "colour_roles": 5,
+      "devices": "physics schematic, rays, arrows, inset networks"
+    },
+    {
+      "file": "2506.05347-neural-inverse-rendering-from-propagating-li/01-simulation7.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2506.05347-neural-inverse-rendering-from-propagating-li/02-captured5.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2506.05347-neural-inverse-rendering-from-propagating-li/03-relighting2.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2506.05347-neural-inverse-rendering-from-propagating-li/04-resimulation-camready4.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2506.05347-neural-inverse-rendering-from-propagating-li/05-rebuttal_materials2.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2506.05347-neural-inverse-rendering-from-propagating-li/06-supp_captured.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2506.05347-neural-inverse-rendering-from-propagating-li/07-supp_simulated.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/00-MainFigure_3_compressed.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "high",
+      "colour_roles": 5,
+      "devices": "tinted swimlanes, image crops, prompt boxes, arrows"
+    },
+    {
+      "file": "2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/01-arch6_compressed.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "high",
+      "colour_roles": 5,
+      "devices": "tinted swimlanes, image crops, prompt boxes, arrows"
+    },
+    {
+      "file": "2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/02-OverlappedCrops-v2_compressed.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/03-crops-figures.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "high",
+      "colour_roles": 5,
+      "devices": "tinted swimlanes, image crops, prompt boxes, arrows"
+    },
+    {
+      "file": "2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/04-fsdp_ablation.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/05-pixmo_point_count_answer_dist.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/06-openness.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/07-Cap-cropped.pdf_compressed.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2412.03572-navigation-world-models/00-CDiTv6.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 3,
+      "devices": "transformer block, video frames, arrows"
+    },
+    {
+      "file": "2412.03572-navigation-world-models/01-nwm_ablations_figure.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2412.03572-navigation-world-models/02-scale.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2412.03572-navigation-world-models/03-sacson_nomad_rollout_fig.png",
+      "role": "hybrid",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Mechanism schematic carries measured results.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 3,
+      "devices": "transformer block, video frames, arrows"
+    },
+    {
+      "file": "2412.03572-navigation-world-models/04-figure_ood_v2.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2412.03572-navigation-world-models/05-limitationsv3.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2412.03572-navigation-world-models/06-unknown_supp.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2412.03572-navigation-world-models/07-indomain_supp_recon.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/00-LIC_Teaser.png",
+      "role": "hybrid",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Mechanism schematic carries measured results.",
+      "layout": "left_to_right",
+      "text_density": "high",
+      "colour_roles": 4,
+      "devices": "verbatim prompt boxes, numbered conversation lanes, actor icons, arrows"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/01-LIC_simulator_flat_v3.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "high",
+      "colour_roles": 4,
+      "devices": "verbatim prompt boxes, numbered conversation lanes, actor icons, arrows"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/02-LIC_Conv_Types_v3.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "high",
+      "colour_roles": 4,
+      "devices": "verbatim prompt boxes, numbered conversation lanes, actor icons, arrows"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/03-LIC_Tasks_v2.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "high",
+      "colour_roles": 4,
+      "devices": "verbatim prompt boxes, numbered conversation lanes, actor icons, arrows"
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/15-llama.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/16-ai2.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/17-claude.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/18-openai.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2309.16588-vision-transformers-need-registers/00-85_orig.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.16588-vision-transformers-need-registers/01-1589_orig.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.16588-vision-transformers-need-registers/02-5835_orig.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.16588-vision-transformers-need-registers/03-109_orig.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.16588-vision-transformers-need-registers/04-1500_orig.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.16588-vision-transformers-need-registers/05-85_orig.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.16588-vision-transformers-need-registers/06-1753_orig.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.16588-vision-transformers-need-registers/07-figure_3_1.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2404.02905-visual-autoregressive-modeling-scalable-imag/00-abs.jpg",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2404.02905-visual-autoregressive-modeling-scalable-imag/01-intro.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "stage banners, token maps, arrows, transformer blocks"
+    },
+    {
+      "file": "2404.02905-visual-autoregressive-modeling-scalable-imag/02-method_new.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "stage banners, token maps, arrows, transformer blocks"
+    },
+    {
+      "file": "2404.02905-visual-autoregressive-modeling-scalable-imag/03-9grid_text.jpg",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2404.02905-visual-autoregressive-modeling-scalable-imag/04-zero.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2404.02905-visual-autoregressive-modeling-scalable-imag/05-heat.jpg",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2404.02905-visual-autoregressive-modeling-scalable-imag/06-33.jpg",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2404.02905-visual-autoregressive-modeling-scalable-imag/07-256.jpg",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2402.15391-genie-generative-interactive-environments/01-genie_architecture.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "token grids, encoder-decoder blocks, arrows, tinted module boxes"
+    },
+    {
+      "file": "2402.15391-genie-generative-interactive-environments/02-sttransformer.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "token grids, encoder-decoder blocks, arrows, tinted module boxes"
+    },
+    {
+      "file": "2402.15391-genie-generative-interactive-environments/03-LAM_architecture.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "token grids, encoder-decoder blocks, arrows, tinted module boxes"
+    },
+    {
+      "file": "2402.15391-genie-generative-interactive-environments/04-tokenizer_architecture.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "token grids, encoder-decoder blocks, arrows, tinted module boxes"
+    },
+    {
+      "file": "2402.15391-genie-generative-interactive-environments/05-dynamics_architecture.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "token grids, encoder-decoder blocks, arrows, tinted module boxes"
+    },
+    {
+      "file": "2402.15391-genie-generative-interactive-environments/06-genie_inference.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "token grids, encoder-decoder blocks, arrows, tinted module boxes"
+    },
+    {
+      "file": "2402.15391-genie-generative-interactive-environments/07-chips.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2402.15391-genie-generative-interactive-environments/08-parallax_new.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2403.06634-stealing-part-of-a-production-language-model/00-numqueries.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": true,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2403.06634-stealing-part-of-a-production-language-model/01-paramfree.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2403.06634-stealing-part-of-a-production-language-model/02-gpt2small.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2403.06634-stealing-part-of-a-production-language-model/03-gpt2_float64.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2403.06634-stealing-part-of-a-production-language-model/04-llama_abs.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2403.06634-stealing-part-of-a-production-language-model/05-gpt2_abs.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2403.06634-stealing-part-of-a-production-language-model/06-pythia_abs.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2403.06634-stealing-part-of-a-production-language-model/07-ada.png",
+      "role": "data_plot",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Measured quantities dominate."
+    },
+    {
+      "file": "2309.07906-generative-image-dynamics/00-overview_1_crop.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "network blocks, frequency inset, arrows, before-after images"
+    },
+    {
+      "file": "2309.07906-generative-image-dynamics/01-overview_2_crop.png",
+      "role": "conceptual",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Encodes a mechanism, not a result.",
+      "layout": "left_to_right",
+      "text_density": "medium",
+      "colour_roles": 4,
+      "devices": "network blocks, frequency inset, arrows, before-after images"
+    },
+    {
+      "file": "2309.07906-generative-image-dynamics/02-raw_ablation.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.07906-generative-image-dynamics/03-baseline_ablation.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.07906-generative-image-dynamics/04-ours_ablation.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.07906-generative-image-dynamics/05-sun_flower_103567_reference.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.07906-generative-image-dynamics/06-sun_flower_103567_epi.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    },
+    {
+      "file": "2309.07906-generative-image-dynamics/07-sun_flower_103567_epi_icnn.png",
+      "role": "qualitative",
+      "confidence": "high",
+      "is_figure_1": false,
+      "note": "Examples dominate."
+    }
+  ],
+  "census": {
+    "packet_papers": 28,
+    "packet_rows": 192,
+    "conceptual_figures_per_paper": {
+      "per_paper": [
+        {
+          "paper": "2505.06708-gated-attention-for-large-language-models-no",
+          "n_conceptual": 1,
+          "unopenable": 0
+        },
+        {
+          "paper": "2503.14858-1000-layer-networks-for-self-supervised-rl-s",
+          "n_conceptual": 2,
+          "unopenable": 0
+        },
+        {
+          "paper": "2505.17638-why-diffusion-models-don-t-memorize-the-role",
+          "n_conceptual": 0,
+          "unopenable": 0
+        },
+        {
+          "paper": "2510.22954-artificial-hivemind-the-open-ended-homogenei",
+          "n_conceptual": 0,
+          "unopenable": 0
+        },
+        {
+          "paper": "2504.13837-does-reinforcement-learning-really-incentivi",
+          "n_conceptual": 1,
+          "unopenable": 0
+        },
+        {
+          "paper": "2505.10465-superposition-yields-robust-neural-scaling",
+          "n_conceptual": 2,
+          "unopenable": 0
+        },
+        {
+          "paper": "2512.12567-optimal-mistake-bounds-for-transductive-onli",
+          "n_conceptual": 1,
+          "unopenable": 0
+        },
+        {
+          "paper": "2406.05946-safety-alignment-should-be-made-more-than-ju",
+          "n_conceptual": 0,
+          "unopenable": 0
+        },
+        {
+          "paper": "2407.10490-learning-dynamics-of-llm-finetuning",
+          "n_conceptual": 0,
+          "unopenable": 0
+        },
+        {
+          "paper": "2406.11011-data-shapley-in-one-training-run",
+          "n_conceptual": 1,
+          "unopenable": 0
+        },
+        {
+          "paper": "2408.00714-sam-2-segment-anything-in-images-and-videos",
+          "n_conceptual": 2,
+          "unopenable": 0
+        },
+        {
+          "paper": "2405.19261-faster-cascades-via-speculative-decoding",
+          "n_conceptual": 0,
+          "unopenable": 0
+        },
+        {
+          "paper": "2502.00640-collabllm-from-passive-responders-to-active",
+          "n_conceptual": 3,
+          "unopenable": 0
+        },
+        {
+          "paper": "2504.15266-roll-the-dice-and-look-before-you-leap-going",
+          "n_conceptual": 1,
+          "unopenable": 0
+        },
+        {
+          "paper": "2502.06768-train-for-the-worst-plan-for-the-best-unders",
+          "n_conceptual": 1,
+          "unopenable": 0
+        },
+        {
+          "paper": "2502.13228-conformal-prediction-as-bayesian-quadrature",
+          "n_conceptual": 0,
+          "unopenable": 0
+        },
+        {
+          "paper": "2501.19334-the-value-of-prediction-in-identifying-the-w",
+          "n_conceptual": 0,
+          "unopenable": 0
+        },
+        {
+          "paper": "2505.04966-position-the-ai-conference-peer-review-crisi",
+          "n_conceptual": 0,
+          "unopenable": 0
+        },
+        {
+          "paper": "2503.11651-vggt-visual-geometry-grounded-transformer",
+          "n_conceptual": 1,
+          "unopenable": 0
+        },
+        {
+          "paper": "2506.05347-neural-inverse-rendering-from-propagating-li",
+          "n_conceptual": 1,
+          "unopenable": 0
+        },
+        {
+          "paper": "2409.17146-molmo-and-pixmo-open-weights-and-open-data-f",
+          "n_conceptual": 3,
+          "unopenable": 0
+        },
+        {
+          "paper": "2412.03572-navigation-world-models",
+          "n_conceptual": 2,
+          "unopenable": 0
+        },
+        {
+          "paper": "2505.06120-llms-get-lost-in-multi-turn-conversation",
+          "n_conceptual": 4,
+          "unopenable": 0
+        },
+        {
+          "paper": "2309.16588-vision-transformers-need-registers",
+          "n_conceptual": 0,
+          "unopenable": 0
+        },
+        {
+          "paper": "2404.02905-visual-autoregressive-modeling-scalable-imag",
+          "n_conceptual": 2,
+          "unopenable": 0
+        },
+        {
+          "paper": "2402.15391-genie-generative-interactive-environments",
+          "n_conceptual": 6,
+          "unopenable": 0
+        },
+        {
+          "paper": "2403.06634-stealing-part-of-a-production-language-model",
+          "n_conceptual": 0,
+          "unopenable": 0
+        },
+        {
+          "paper": "2309.07906-generative-image-dynamics",
+          "n_conceptual": 2,
+          "unopenable": 0
+        }
+      ],
+      "min": 0,
+      "median": 1,
+      "max": 6,
+      "bins": {
+        "0": 10,
+        "1": 8,
+        "2": 6,
+        "3": 2,
+        "4+": 2
+      }
+    },
+    "opening_figure_role": {
+      "counts": {
+        "hybrid": 5,
+        "conceptual": 11,
+        "qualitative": 5,
+        "data_plot": 7
+      },
+      "fractions_of_28": {
+        "hybrid": "5/28 (17.9%)",
+        "conceptual": "11/28 (39.3%)",
+        "qualitative": "5/28 (17.9%)",
+        "data_plot": "7/28 (25.0%)"
+      }
+    },
+    "conceptual_figure_design": {
+      "n": 36,
+      "median_text_density": "medium",
+      "median_colour_roles": 4,
+      "three_most_common_layouts": [
+        {
+          "layout": "left_to_right",
+          "count": 29
+        },
+        {
+          "layout": "layered_stack",
+          "count": 3
+        },
+        {
+          "layout": "grid",
+          "count": 2
+        }
+      ]
+    },
+    "best": [
+      {
+        "file": "2402.15391-genie-generative-interactive-environments/01-genie_architecture.png",
+        "why": "The token, action, and dynamics paths are separated cleanly, then reunited at the prediction loop."
+      },
+      {
+        "file": "2409.17146-molmo-and-pixmo-open-weights-and-open-data-f/00-MainFigure_3_compressed.png",
+        "why": "It makes a sprawling data-and-model program navigable with strongly separated task lanes."
+      },
+      {
+        "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/01-LIC_simulator_flat_v3.png",
+        "why": "The simulator’s actors, state transitions, and stopping condition can be followed without reading the caption."
+      },
+      {
+        "file": "2504.13837-does-reinforcement-learning-really-incentivi/00-overview2.png",
+        "why": "The paired search trees make the claimed tradeoff immediately visible."
+      },
+      {
+        "file": "2503.11651-vggt-visual-geometry-grounded-transformer/00-architecture_v4.png",
+        "why": "It maps inputs, tokenization, transformer processing, and geometric outputs in one continuous path."
+      }
+    ],
+    "worst": [
+      {
+        "file": "2502.06768-train-for-the-worst-plan-for-the-best-unders/00-figure_1_3.png",
+        "why": "The tiny token lanes and comparison branches require zooming before the central distinction is legible."
+      },
+      {
+        "file": "2505.10465-superposition-yields-robust-neural-scaling/01-Fig-2-2.png",
+        "why": "It crams architecture, matrix cartoons, and several quantitative claims into a figure with no visual resting point."
+      },
+      {
+        "file": "2504.15266-roll-the-dice-and-look-before-you-leap-going/00-sibling_detail.png",
+        "why": "The schematic uses miniature graphs and dense text, so the causal story is harder to parse than the caption."
+      }
+    ]
+  }
+}

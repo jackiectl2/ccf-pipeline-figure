@@ -1,0 +1,2807 @@
+{
+ "schema": "figure-census/1",
+ "group": "B-amnesia-adjacent",
+ "main_cut_rule": "the first 8 figures in document order are treated as main body. arXiv HTML carries no page number, so this cut is a stated convention, not a measurement. Full totals are reported beside it so the cut can be second-guessed.",
+ "caption_prior_is_not_a_verdict": "caption_prior is a regex hint shown to the vision classifier. `role` is the verdict and is null until a model has actually looked at the pixels. They are kept in separate fields so agreement between them can be measured.",
+ "papers": [
+  {
+   "title": "LLMs Get Lost In Multi-Turn Conversation",
+   "arxiv": "2505.06120",
+   "venue": "ICLR 2026 (Best Paper)",
+   "year": null,
+   "award": null,
+   "why": "Degradation across conversational turns, measured by converting single-turn benchmarks. The closest published relative of this study's question, and an award winner.",
+   "verified_via": "iclr2026",
+   "route": "html",
+   "resolution": null,
+   "n_figures_total": 82,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 82,
+   "n_figures_main_cut": 8,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/00-LIC_Teaser.png",
+     "label": "Figure 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 179,
+     "in_main_cut": true,
+     "caption": "Figure 1: In this work, we simulate single- and multi-turn conversations for six generation tasks. The 15 LLMs we test perform much worse in multi-turn settings (-35%) explained by some loss in aptitude, and large losses in reliability. Aptitude is defined as performance in best-case conversation simulation, and unreliability as the gap between best- and worst-case performance. In short, we find that LLMs get lost in multi-turn, underspecified conversation.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/01-LIC_simulator_flat_v3.png",
+     "label": "Figure 3",
+     "px": [
+      1320,
+      360
+     ],
+     "aspect": 3.667,
+     "is_icon_asset": false,
+     "kb": 64,
+     "in_main_cut": true,
+     "caption": "Figure 3: Sharded Conversation Simulation Diagram. The subject for the simulation is highlighted in red.",
+     "caption_prior": "conceptual",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 2,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/02-LIC_Conv_Types_v3.png",
+     "label": "Figure 4",
+     "px": [
+      1080,
+      540
+     ],
+     "aspect": 2.0,
+     "is_icon_asset": false,
+     "kb": 47,
+     "in_main_cut": true,
+     "caption": "Figure 4: Conversation simulation types based on sharded instructions. Once an original fully-specified instruction (blue block) is sharded (set of yellow blocks), the “shards” can be used to simulate single-turn ( Full , Concat ) or multi-turn ( Sharded , Recap , Snowball ) conversations, affecting the pace of information disclosure.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 3,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/03-LIC_Tasks_v2.png",
+     "label": "Figure 5",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 352,
+     "in_main_cut": true,
+     "caption": "Figure 5: Six sharded tasks included in our experiments. We purposefully include tasks that involve generating programming and natural language. For each task, an illustrative fully-specified instruction and its sharded counterpart. We sharded 90-120 instructions based on high-quality datasets (Instruction Origin), re-purposing existing evaluation.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 4,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/04-full.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": true,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 5,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/05-concat.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": true,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 6,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/06-database.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": true,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 7,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/07-apis.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 19,
+     "in_main_cut": true,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 8,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/08-database.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 9,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/09-apis.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 19,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 10,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/10-database.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 11,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/11-apis.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 19,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 12,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/12-concat.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 13,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/13-full.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 14,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/14-full.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 15,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/15-llama.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 49,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 16,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/16-ai2.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 215,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 17,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/17-claude.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 23,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 18,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/18-openai.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 19,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/19-llama.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 49,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 20,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/20-llama.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 49,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 21,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/21-openai.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 22,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/22-claude.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 23,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 23,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/23-deepseek.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 52,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 24,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/24-openai.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 25,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/25-gemini.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 21,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 26,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/26-openai.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 27,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/27-gemini.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 21,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 28,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/28-database.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 29,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/29-apis.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 19,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 30,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/30-full.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 31,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/31-concat.png",
+     "label": "Table 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 1: Averaged Performance ( P ¯ \\overline{P} ) of LLMs on six tasks ( Code, Database, Actions, Data-to-text, Math, and Summary). For each task, conversations are simulated in three settings: Full , Concat , and Sharded . Models are sorted in ascending order of average Full scores across tasks . Background color indicates the level of degradation from the Full setting. The last two columns average the performance drops from the Concat and Sharded compared to the Full in percentages across the six tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 32,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/32-full.png",
+     "label": "Table 2",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": false,
+     "caption": "Table 2: Experimental Results with additional simulation types: Recap and Snowball. Both strategies involve repeating user-turn information to mitigate models getting lost in conversations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 33,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/33-concat.png",
+     "label": "Table 2",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 2: Experimental Results with additional simulation types: Recap and Snowball. Both strategies involve repeating user-turn information to mitigate models getting lost in conversations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 34,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/34-snowball.png",
+     "label": "Table 2",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 26,
+     "in_main_cut": false,
+     "caption": "Table 2: Experimental Results with additional simulation types: Recap and Snowball. Both strategies involve repeating user-turn information to mitigate models getting lost in conversations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 35,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/35-openai.png",
+     "label": "Table 2",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 2: Experimental Results with additional simulation types: Recap and Snowball. Both strategies involve repeating user-turn information to mitigate models getting lost in conversations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 36,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/36-openai.png",
+     "label": "Table 2",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 2: Experimental Results with additional simulation types: Recap and Snowball. Both strategies involve repeating user-turn information to mitigate models getting lost in conversations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 37,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/37-snowball.png",
+     "label": "Table 2",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 26,
+     "in_main_cut": false,
+     "caption": "Table 2: Experimental Results with additional simulation types: Recap and Snowball. Both strategies involve repeating user-turn information to mitigate models getting lost in conversations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 38,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/38-openai.png",
+     "label": "Table 3",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 3: Unreliability of models when changing assistant temperature (AT) and user temperature (UT) in Full , Concat and Sharded settings. The lower the number the more reliable the assistant is.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 39,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/39-openai.png",
+     "label": "Table 3",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 3: Unreliability of models when changing assistant temperature (AT) and user temperature (UT) in Full , Concat and Sharded settings. The lower the number the more reliable the assistant is.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 40,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/40-full.png",
+     "label": "Table 3",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": false,
+     "caption": "Table 3: Unreliability of models when changing assistant temperature (AT) and user temperature (UT) in Full , Concat and Sharded settings. The lower the number the more reliable the assistant is.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 41,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/41-concat.png",
+     "label": "Table 3",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 3: Unreliability of models when changing assistant temperature (AT) and user temperature (UT) in Full , Concat and Sharded settings. The lower the number the more reliable the assistant is.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 42,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/42-full.png",
+     "label": "Table 3",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": false,
+     "caption": "Table 3: Unreliability of models when changing assistant temperature (AT) and user temperature (UT) in Full , Concat and Sharded settings. The lower the number the more reliable the assistant is.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 43,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/43-concat.png",
+     "label": "Table 3",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 3: Unreliability of models when changing assistant temperature (AT) and user temperature (UT) in Full , Concat and Sharded settings. The lower the number the more reliable the assistant is.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 44,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/44-translation.png",
+     "label": "Table 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": false,
+     "caption": "Table 4: Performance on the translation task for Full , Concat , and Sharded simulations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 45,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/45-full.png",
+     "label": "Table 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": false,
+     "caption": "Table 4: Performance on the translation task for Full , Concat , and Sharded simulations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 46,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/46-concat.png",
+     "label": "Table 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 4: Performance on the translation task for Full , Concat , and Sharded simulations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 47,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/47-openai.png",
+     "label": "Table 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 4: Performance on the translation task for Full , Concat , and Sharded simulations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 48,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/48-openai.png",
+     "label": "Table 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 4: Performance on the translation task for Full , Concat , and Sharded simulations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 49,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/49-translation.png",
+     "label": "Table 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": false,
+     "caption": "Table 4: Performance on the translation task for Full , Concat , and Sharded simulations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 50,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/50-full.png",
+     "label": "Table 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": false,
+     "caption": "Table 4: Performance on the translation task for Full , Concat , and Sharded simulations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 51,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/51-concat.png",
+     "label": "Table 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 4: Performance on the translation task for Full , Concat , and Sharded simulations.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 52,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/52-LIC_Sharding_Process_v2.png",
+     "label": "Figure 7",
+     "px": [
+      1440,
+      480
+     ],
+     "aspect": 3.0,
+     "is_icon_asset": false,
+     "kb": 124,
+     "in_main_cut": false,
+     "caption": "Figure 7: Process diagram of the four-step semi-automatic process to transform fully-specified instructions into a sharded instruction. The first three steps (segmentation, rephrasing, verification) are automated, while the fourth (inspect and edit) was manually completed by the authors of the work. The last row represents the rejection criteria for a sample.",
+     "caption_prior": "conceptual",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 53,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/53-apis.png",
+     "label": "Table 5",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 19,
+     "in_main_cut": false,
+     "caption": "Table 5: Results of the inspection of 100 simulated sharded conversations across four tasks: Actions, Code, Math, and Database. The first column aggregates annotation results on the four tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 54,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/54-database.png",
+     "label": "Table 5",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 18,
+     "in_main_cut": false,
+     "caption": "Table 5: Results of the inspection of 100 simulated sharded conversations across four tasks: Actions, Code, Math, and Database. The first column aggregates annotation results on the four tasks.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 55,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/55-llama.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 49,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 56,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/56-ai2.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 215,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 57,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/57-claude.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 23,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 58,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/58-openai.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 59,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/59-llama.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 49,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 60,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/60-llama.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 49,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 61,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/61-openai.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 62,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/62-claude.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 23,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 63,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/63-deepseek.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 52,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 64,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/64-openai.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 65,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/65-gemini.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 21,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 66,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/66-openai.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 67,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/67-gemini.png",
+     "label": "Table 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 21,
+     "in_main_cut": false,
+     "caption": "Table 6: Averaged performance ( P ¯ \\overline{P} ) breakdown, based on how early in the conversation the LLM makes its first answer attempt. Analysis conducted on simulations of two tasks: Code and Math.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 68,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/68-summary_citation_analysis_v2.png",
+     "label": "Figure 10",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 43,
+     "in_main_cut": false,
+     "caption": "Figure 10: Analysis of citation patterns in summaries generated by LLMs with the Sharded simulation. At each turn, the LLM generates an updated summary (y-axis), which includes citations from the documents that have been revealed up to this turn. Percentages in a row do not add up to 100% due to citation hallucinations that occur for some models.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 69,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/69-openai.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 70,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/70-openai.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 71,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/71-openai.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 72,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/72-openai.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 29,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 73,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/73-claude.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 23,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 74,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/74-claude.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 23,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 75,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/75-gemini.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 21,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 76,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/76-gemini.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 21,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 77,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/77-llama.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 49,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 78,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/78-llama.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 49,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 79,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/79-llama.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 49,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 80,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/80-deepseek.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 52,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 81,
+     "file": "2505.06120-llms-get-lost-in-multi-turn-conversation/81-ai2.png",
+     "label": "Table 9",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 215,
+     "in_main_cut": false,
+     "caption": "Table 9: Specific model versions used as part of our experiments. For each model, we define the exact Version of the model accessed (for models that have versioning) and the Access Provider to facilitate result reproducibility.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "NoLiMa: Long-Context Evaluation Beyond Literal Matching",
+   "arxiv": "2502.05167",
+   "venue": "ICML 2025",
+   "year": null,
+   "award": null,
+   "why": "Argues the standard needle-in-haystack score is inflated by literal overlap — an instrument-artefact paper, the same genre as ours.",
+   "verified_via": "openreview 0OshX1hiSa",
+   "route": "tarball",
+   "resolution": null,
+   "n_figures_total": 12,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 12,
+   "n_figures_main_cut": 8,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/00-One-hop-depth.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 25,
+     "in_main_cut": true,
+     "caption": "The full sweep plots (a \\& b) illustrate performance across the entire context window, where 0\\% corresponds to the beginning of the haystack and 100\\% to the end. The plots for the last 2K tokens (c \\& d) depict performance when needle placements are aligned within that range for various context lengths; 0 marks the end of the context, and larger values indicate positions farther from the end (up to 2K tokens inward). The color shading of each plot line represents the tested context length. To minimize noise and highlight trends more clearly, we increased the number of placements from 26 to 51 and applied a moving average with a window size of 12.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/01-Two-hop-depth.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 25,
+     "in_main_cut": true,
+     "caption": "The full sweep plots (a \\& b) illustrate performance across the entire context window, where 0\\% corresponds to the beginning of the haystack and 100\\% to the end. The plots for the last 2K tokens (c \\& d) depict performance when needle placements are aligned within that range for various context lengths; 0 marks the end of the context, and larger values indicate positions farther from the end (up to 2K tokens inward). The color shading of each plot line represents the tested context length. To minimize noise and highlight trends more clearly, we increased the number of placements from 26 to 51 and applied a moving average with a window size of 12.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 2,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/02-One-hop-last2K.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 22,
+     "in_main_cut": true,
+     "caption": "The full sweep plots (a \\& b) illustrate performance across the entire context window, where 0\\% corresponds to the beginning of the haystack and 100\\% to the end. The plots for the last 2K tokens (c \\& d) depict performance when needle placements are aligned within that range for various context lengths; 0 marks the end of the context, and larger values indicate positions farther from the end (up to 2K tokens inward). The color shading of each plot line represents the tested context length. To minimize noise and highlight trends more clearly, we increased the number of placements from 26 to 51 and applied a moving average with a window size of 12.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 3,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/03-Two-hop-last2K.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 23,
+     "in_main_cut": true,
+     "caption": "The full sweep plots (a \\& b) illustrate performance across the entire context window, where 0\\% corresponds to the beginning of the haystack and 100\\% to the end. The plots for the last 2K tokens (c \\& d) depict performance when needle placements are aligned within that range for various context lengths; 0 marks the end of the context, and larger values indicate positions farther from the end (up to 2K tokens inward). The color shading of each plot line represents the tested context length. To minimize noise and highlight trends more clearly, we increased the number of placements from 26 to 51 and applied a moving average with a window size of 12.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 4,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/04-One-hop-depth_raw.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 44,
+     "in_main_cut": true,
+     "caption": "Unsmoothed needle placement depth plots corresponding to the smoothed results in Figure fig:depth_plots. These plots reflect raw performance values prior to applying the moving average.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 5,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/05-Two-hop-depth_raw.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 48,
+     "in_main_cut": true,
+     "caption": "Unsmoothed needle placement depth plots corresponding to the smoothed results in Figure fig:depth_plots. These plots reflect raw performance values prior to applying the moving average.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 6,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/06-One-hop-last2K_raw.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 42,
+     "in_main_cut": true,
+     "caption": "Unsmoothed needle placement depth plots corresponding to the smoothed results in Figure fig:depth_plots. These plots reflect raw performance values prior to applying the moving average.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 7,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/07-Two-hop-last2K_raw.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 45,
+     "in_main_cut": true,
+     "caption": "Unsmoothed needle placement depth plots corresponding to the smoothed results in Figure fig:depth_plots. These plots reflect raw performance values prior to applying the moving average.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 8,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/08-distractor_effect.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 30,
+     "in_main_cut": false,
+     "caption": "Normalized performance comparison across GPT-4o and Llama 3.3 70B models, with and without distractors. The red dotted line marks the 0.85 effective threshold.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 9,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/09-full_vs_last2K_demonstration.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 33,
+     "in_main_cut": false,
+     "caption": "Needle placements in full sweep (top) vs. last 2K tokens sweep (bottom): In the last 2K setup, placement positions are aligned in different context lengths, unlike the proportion-based positioning in full sweep.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 10,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/10-HaystackPipeline.png",
+     "label": "",
+     "px": [
+      1500,
+      844
+     ],
+     "aspect": 1.777,
+     "is_icon_asset": false,
+     "kb": 114,
+     "in_main_cut": false,
+     "caption": "Haystack filtering pipeline for undesired or misleading content",
+     "caption_prior": "conceptual",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 11,
+     "file": "2502.05167-nolima-long-context-evaluation-beyond-litera/11-onehop_vs_twohop.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 27,
+     "in_main_cut": false,
+     "caption": "Impact of (a) number of hops and (b) inversion of order (``[CHAR] $W_n$'' vs.\\ ``$W_n$ CHAR'') on normalized performance across GPT-4o and Llama 3.3 70B models. The red dotted line indicates the 0.85 effective threshold.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+   "arxiv": "2410.10813",
+   "venue": "ICLR 2025",
+   "year": null,
+   "award": null,
+   "why": "THE benchmark this study measures on. Its figures define the conventions a reviewer of our paper already carries.",
+   "verified_via": "iclr.cc/virtual/2025/poster/28290",
+   "route": "html",
+   "resolution": null,
+   "n_figures_total": 2,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 2,
+   "n_figures_main_cut": 2,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2410.10813-longmemeval-benchmarking-chat-assistants-on/00-main_examples.png",
+     "label": "Figure 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 533,
+     "in_main_cut": true,
+     "caption": "Figure 1: Examples of the seven question types in LongMemEval . For each example, we show the associated evidence statements on the left and the question with the answer on the right.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2410.10813-longmemeval-benchmarking-chat-assistants-on/01-main_annotation_pipeline.png",
+     "label": "Figure 2",
+     "px": [
+      2036,
+      1020
+     ],
+     "aspect": 1.996,
+     "is_icon_asset": false,
+     "kb": 313,
+     "in_main_cut": true,
+     "caption": "Figure 2: Data creation pipeline of LongMemEval . (a) Human experts construct all the questions and evidence statements. (b) Then, the evidence sessions are LLM-simulated and human-edited. (c) The full user-AI chat history is constructed at test time, whose length is freely configurable.",
+     "caption_prior": "conceptual",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "HELMET: How to Evaluate Long-Context Language Models Effectively and Thoroughly",
+   "arxiv": "2410.02694",
+   "venue": "ICLR 2025",
+   "year": null,
+   "award": null,
+   "why": "Argues existing long-context benchmarks give noisy signals through unreliable metrics; directly about evaluation adequacy.",
+   "verified_via": "openreview 293V3bJbmE",
+   "route": "html",
+   "resolution": null,
+   "n_figures_total": 2,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 2,
+   "n_figures_main_cut": 2,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2410.02694-helmet-how-to-evaluate-long-context-language/00-teaser.png",
+     "label": "Figure 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 63,
+     "in_main_cut": true,
+     "caption": "Figure 1: Long-context benchmark results of frontier LCLMs (Llama-3.1 8B/70B, GPT-4o-mini, GPT-4o-08-06, and Gemini-1.5 Flash/Pro) at 128k input length. NIAH is saturated for almost all models; RULER ( Hsieh et al., 2024 ) and ∞ \\infty Bench ( Zhang et al., 2024 ) show unexpected trends for Llama-3.1 ( Dubey et al., 2024 ) . In contrast, HELMET demonstrates more consistent rankings of these frontier models.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2410.02694-helmet-how-to-evaluate-long-context-language/01-length_model_eval.png",
+     "label": "Figure 2",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 238,
+     "in_main_cut": true,
+     "caption": "Figure 2: Comparison between ROUGE-L F1 and our model-based evaluation metric on summarization tasks. Our metric shows more consistent trends: it reflects the performance gain on GPT-4o with increased input length, while ROUGE remains almost the same; our metric also clearly distinguishes models while ROUGE shows little difference.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions",
+   "arxiv": "2507.05257",
+   "venue": "ICLR 2026",
+   "year": null,
+   "award": null,
+   "why": "MemoryAgentBench — memory evaluated incrementally across turns rather than at a single endpoint, which is the same measurement move this study makes.",
+   "verified_via": "arxiv + github HUST-AI-HYZ/MemoryAgentBench",
+   "route": "tarball",
+   "resolution": null,
+   "n_figures_total": 4,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 4,
+   "n_figures_main_cut": 4,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2507.05257-evaluating-memory-in-llm-agents-via-incremen/00-intro2.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 3297,
+     "in_main_cut": true,
+     "caption": "Four complementary competencies that memory agents should have.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2507.05257-evaluating-memory-in-llm-agents-via-incremen/01-ruler_chunk_size.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 45,
+     "in_main_cut": true,
+     "caption": "SH-Doc QA performance",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 2,
+     "file": "2507.05257-evaluating-memory-in-llm-agents-via-incremen/02-infty_sum_chunk_size.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 41,
+     "in_main_cut": true,
+     "caption": "SH-Doc QA performance",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 3,
+     "file": "2507.05257-evaluating-memory-in-llm-agents-via-incremen/03-retrieve_ablation.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 75,
+     "in_main_cut": true,
+     "caption": "The accuracies on different benchmarks when varying the retrieval top-k to be 2, 5 and 10.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs",
+   "arxiv": "2510.27246",
+   "venue": "ICLR 2026",
+   "year": null,
+   "award": null,
+   "why": "BEAM — conversations to 10M tokens with probing questions; the far end of the length axis this study varies.",
+   "verified_via": "github mohammadtavakoli78/BEAM",
+   "route": "html",
+   "resolution": {
+    "matched_title": "Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs",
+    "similarity": 1.0
+   },
+   "n_figures_total": 4,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 4,
+   "n_figures_main_cut": 4,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2510.27246-beyond-a-million-tokens-benchmarking-and-enh/00-method.png",
+     "label": "Figure 2",
+     "px": [
+      1823,
+      1000
+     ],
+     "aspect": 1.823,
+     "is_icon_asset": false,
+     "kb": 128,
+     "in_main_cut": true,
+     "caption": "Figure 2: Overview of the LIGHT framework. The system combines (i) episodic retrieval , (ii) a scratchpad and (iii) a working memory buffer . At inference, relevant items from the index and scratchpad, together with the full working memory, are integrated to generate the final response.",
+     "caption_prior": "conceptual",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2510.27246-beyond-a-million-tokens-benchmarking-and-enh/01-ablation_components.png",
+     "label": "Figure 3",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 47,
+     "in_main_cut": true,
+     "caption": "Figure 3: Ablation study illustrating the contribution of each component in LIGHT (retrieval, scratchpad, working memory, and noise filtering) across different conversation lengths.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 2,
+     "file": "2510.27246-beyond-a-million-tokens-benchmarking-and-enh/02-effect_of_number_of_retrieval.png",
+     "label": "Figure 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 52,
+     "in_main_cut": true,
+     "caption": "Figure 4: Effect of varying retrieval budget ( K K ) on performance. The plot shows how the number of retrieved documents shapes the balance between recall and noise, highlighting different behaviors at short and long conversation lengths.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 3,
+     "file": "2510.27246-beyond-a-million-tokens-benchmarking-and-enh/03-retriever_effect.png",
+     "label": "Figure 5",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 31,
+     "in_main_cut": true,
+     "caption": "Figure 5: Performance comparison between dense retrieval and sparse retrieval (SPLADE) in LIGHT.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "MemTrace: Probing What Final Accuracy Misses in Long-Term Memory",
+   "arxiv": "2606.17328",
+   "venue": "preprint",
+   "year": null,
+   "award": null,
+   "why": "⭐ Almost this study's thesis in another setting: the endpoint score omits something the trace shows. Read as the nearest independent statement of the claim.",
+   "verified_via": "arxiv",
+   "route": "html",
+   "resolution": null,
+   "n_figures_total": 5,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 5,
+   "n_figures_main_cut": 5,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2606.17328-memtrace-probing-what-final-accuracy-misses/00-teaser_knowledge_point_probe.png",
+     "label": "Figure 1",
+     "px": [
+      1300,
+      900
+     ],
+     "aspect": 1.444,
+     "is_icon_asset": false,
+     "kb": 168,
+     "in_main_cut": true,
+     "caption": "Figure 1: A pooled QA view can mark one final answer as correct while hiding failures on the same knowledge point. In this example, a system answers the current role correctly but fails when the same role fact is probed as aged historical and trajectory questions.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2606.17328-memtrace-probing-what-final-accuracy-misses/01-benchmark_protocol_schematic.png",
+     "label": "Figure 2",
+     "px": [
+      1600,
+      900
+     ],
+     "aspect": 1.778,
+     "is_icon_asset": false,
+     "kb": 318,
+     "in_main_cut": true,
+     "caption": "Figure 2: Construction and evaluation schematic for MemTrace. (A) Source sessions are converted into typed knowledge points with session anchors and quality checks. (B) Probe construction pairs each knowledge point with a memory window and evidence condition, then expands the base probe by question type into question rows. (C) Memory-system responses are scored and summarized into diagnostic views of memory maintenance, evidence-condition behavior, and failure attribution.",
+     "caption_prior": "conceptual",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 2,
+     "file": "2606.17328-memtrace-probing-what-final-accuracy-misses/02-fig17_replacement_fresh_sat_dumbbell_by_qtype.png",
+     "label": "Figure 6",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 144,
+     "in_main_cut": true,
+     "caption": "Figure 6: Per-system Fresh-to-Saturated endpoints by question type for the main MemTrace adapter configurations. Filled markers denote Fresh W1–W2 and hollow markers denote Saturated W7–W8. This is the endpoint-level companion to the main memory-age trace in Figure 3 .",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 3,
+     "file": "2606.17328-memtrace-probing-what-final-accuracy-misses/03-fig_appendix_age_conflict.png",
+     "label": "Figure 7",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 103,
+     "in_main_cut": true,
+     "caption": "Figure 7: Additional memory-window diagnostics. Top: main-adapter per-system hallucination rate across W1–W8. Bottom: main-adapter Conflict Gist accuracy by system and memory window, expanding the conflict/boundary profile and its confidence-interval companion table.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 4,
+     "file": "2606.17328-memtrace-probing-what-final-accuracy-misses/04-prompt_confound_horizon_shape.png",
+     "label": "Figure 8",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 175,
+     "in_main_cut": true,
+     "caption": "Figure 8: Prompt-control ablation by horizon and question type. This sensitivity check asks whether horizon and question-form changes alone explain the retention patterns; it does not replace the main adapter Fresh-to-Saturated trace.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "MemFail: Stress-Testing Failure Modes of LLM Memory Systems",
+   "arxiv": "2605.26667",
+   "venue": "preprint",
+   "year": null,
+   "award": null,
+   "why": "Failure-mode taxonomy for memory systems; the diagram genre for enumerating how an instrument breaks.",
+   "verified_via": "arxiv",
+   "route": "tarball",
+   "resolution": null,
+   "n_figures_total": 15,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 15,
+   "n_figures_main_cut": 8,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/00-gpt-4.1-mini.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 166,
+     "in_main_cut": true,
+     "caption": "Performance of memory systems using GPT-4.1-mini internally. All confidence intervals use 95\\% Wilson score binomial intervals.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/01-simplemem.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 158,
+     "in_main_cut": true,
+     "caption": "Performance of StructMem and SimpleMem as a function of their internal model. Mem0 and A-MEM follow the same trend, as shown in Appendix~ app:detailed-results, but we exclude them here for conciseness. Equipping the system with a stronger internal model does not lead to performance gains.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 2,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/02-structmem.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 160,
+     "in_main_cut": true,
+     "caption": "Performance of StructMem and SimpleMem as a function of their internal model. Mem0 and A-MEM follow the same trend, as shown in Appendix~ app:detailed-results, but we exclude them here for conciseness. Equipping the system with a stronger internal model does not lead to performance gains.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 3,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/03-k5.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 94,
+     "in_main_cut": true,
+     "caption": "Per-model performance on MemFail relative to the average number of tokens per memory.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 4,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/04-gpt-5.4-mini.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 170,
+     "in_main_cut": true,
+     "caption": "Success rates for all datasets, models, and systems.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 5,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/05-haiku-4.5.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 171,
+     "in_main_cut": true,
+     "caption": "Success rates for all datasets, models, and systems.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 6,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/06-gemini-3.1.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 171,
+     "in_main_cut": true,
+     "caption": "Success rates for all datasets, models, and systems.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 7,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/07-mem0.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 162,
+     "in_main_cut": true,
+     "caption": "Success rates on each dataset for every model.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 8,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/08-amem.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 174,
+     "in_main_cut": false,
+     "caption": "Success rates on each dataset for every model.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 9,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/09-coexisting.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 77,
+     "in_main_cut": false,
+     "caption": "All error classifications for all datasets and systems, using Gemini-3.1, including reasoning errors.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 10,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/10-conditional.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 64,
+     "in_main_cut": false,
+     "caption": "All error classifications for all datasets and systems, using Gemini-3.1, including reasoning errors.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 11,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/11-conditional_hard.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 82,
+     "in_main_cut": false,
+     "caption": "All error classifications for all datasets and systems, using Gemini-3.1, including reasoning errors.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 12,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/12-persona_retrieval_misleading.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 55,
+     "in_main_cut": false,
+     "caption": "All error classifications for all datasets and systems, using Gemini-3.1, including reasoning errors.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 13,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/13-persona_retrieval_nonmisleading.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 73,
+     "in_main_cut": false,
+     "caption": "All error classifications for all datasets and systems, using Gemini-3.1, including reasoning errors.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 14,
+     "file": "2605.26667-memfail-stress-testing-failure-modes-of-llm/14-long_hop.png",
+     "label": "",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 75,
+     "in_main_cut": false,
+     "caption": "All error classifications for all datasets and systems, using Gemini-3.1, including reasoning errors.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "Classifier Context Rot: Monitor Performance Degrades with Context Length",
+   "arxiv": "2605.12366",
+   "venue": "preprint",
+   "year": null,
+   "award": null,
+   "why": "Degradation with context length beyond what needle-in-haystack captures — the length axis as a causal intervention.",
+   "verified_via": "arxiv",
+   "route": "html",
+   "resolution": null,
+   "n_figures_total": 3,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 3,
+   "n_figures_main_cut": 3,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2605.12366-classifier-context-rot-monitor-performance-d/00-fig1.png",
+     "label": "Figure 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 377,
+     "in_main_cut": true,
+     "caption": "Figure 1: We study two failure modes of some language model monitors. (Opus 4.6 with thinking shown) Top: Subtly dangerous actions that are caught in short transcripts are sometimes missed when preceded by a large amount of benign context. Bottom: Obvious dangerous actions that are caught in short transcripts are sometimes missed when buried in the middle of a long transcript.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2605.12366-classifier-context-rot-monitor-performance-d/01-lost_in_the_middle_v2.png",
+     "label": "Figure 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 46,
+     "in_main_cut": true,
+     "caption": "Figure 4: (a) MonitorBench detection rate as a function of prefix and suffix padding length. Non-thinking detection degrades sharply with padding, while thinking remains robust. A full heatmap is shown in Figure 8 . (b) Needle detection rate as a function of injection position in an ∼ \\sim 800K transcript. Detection is worst in the middle, particularly without thinking. Shaded regions show 95% Wilson confidence intervals.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 2,
+     "file": "2605.12366-classifier-context-rot-monitor-performance-d/02-heatmap.png",
+     "label": "Figure 8",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 248,
+     "in_main_cut": true,
+     "caption": "Figure 8: Full heatmap of MonitorBench detection rate as a function of prefix and suffix padding length across models and thinking modes. This extends Figure 4 (a) to show all combinations.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "EMemBench: Interactive Benchmarking of Episodic Memory for VLM Agents",
+   "arxiv": "2601.16690",
+   "venue": "preprint",
+   "year": null,
+   "award": null,
+   "why": "Episodic memory benchmarked interactively; session-timeline figure conventions.",
+   "verified_via": "arxiv",
+   "route": "html",
+   "resolution": null,
+   "n_figures_total": 7,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 7,
+   "n_figures_main_cut": 7,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2601.16690-emembench-interactive-benchmarking-of-episod/00-intro_fig.png",
+     "label": "Figure 1",
+     "px": [
+      1199,
+      820
+     ],
+     "aspect": 1.462,
+     "is_icon_asset": false,
+     "kb": 241,
+     "in_main_cut": true,
+     "caption": "Figure 1: EMemBench overview. An agent interacts with game environment to produce an episode trajectory. We log agent-observable signals and all underlying game signals. A carefully designed algorithm converts each episode into a QA set with calculated ground truths, and the same agent then answers these questions using only agent-observable context plus its own memory.",
+     "caption_prior": "conceptual",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2601.16690-emembench-interactive-benchmarking-of-episod/01-perf_vs_rounds_kink.png",
+     "label": "Figure 3",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 194,
+     "in_main_cut": true,
+     "caption": "Figure 3: Performance vs. rounds of play. Each dot is one run, and each color is one method.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 2,
+     "file": "2601.16690-emembench-interactive-benchmarking-of-episod/02-human_eval_ui.png",
+     "label": "Figure 5",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 511,
+     "in_main_cut": true,
+     "caption": "Figure 5: UI interface of the application for human evaluation question answering.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 3,
+     "file": "2601.16690-emembench-interactive-benchmarking-of-episod/03-wood_collect_context.png",
+     "label": "Figure 7",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 15,
+     "in_main_cut": true,
+     "caption": "Figure 7: Steps that agent successfully collected wood.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 4,
+     "file": "2601.16690-emembench-interactive-benchmarking-of-episod/04-global_map.png",
+     "label": "Figure 8",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 224,
+     "in_main_cut": true,
+     "caption": "Figure 8: Part of the global map in backend data, full map is 64x64. Each number represents a type of tile.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 5,
+     "file": "2601.16690-emembench-interactive-benchmarking-of-episod/05-crafter_icons.png",
+     "label": "Figure 10",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 233,
+     "in_main_cut": true,
+     "caption": "Figure 10: Crafter icon legend used by our visual agents. We attach this legend to each step to disambiguate terrain, resources, stations, and creatures from map.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 6,
+     "file": "2601.16690-emembench-interactive-benchmarking-of-episod/06-crafter_play.png",
+     "label": "Figure 11",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 395,
+     "in_main_cut": true,
+     "caption": "Figure 11: Example Crafter observation (agent input). The agent receives a 64 × 64 64\\times 64 RGB image containing a local top-down crop around the player (top) and an inventory/status HUD (bottom).",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "SubtleMemory: A Benchmark for Fine-Grained Relational Memory Discrimination in Long-Horizon AI Agents",
+   "arxiv": "2606.05761",
+   "venue": "preprint",
+   "year": null,
+   "award": null,
+   "why": "Fine-grained memory discrimination over long horizons; how a benchmark draws what it is discriminating.",
+   "verified_via": "arxiv",
+   "route": "html",
+   "resolution": null,
+   "n_figures_total": 3,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 3,
+   "n_figures_main_cut": 3,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2606.05761-subtlememory-a-benchmark-for-fine-grained-re/00-intro.png",
+     "label": "Figure 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 491,
+     "in_main_cut": true,
+     "caption": "Figure 1: As personal memories accumulate, correct assistance depends on using relations among related memories rather than recalling isolated facts.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2606.05761-subtlememory-a-benchmark-for-fine-grained-re/01-data_construction.png",
+     "label": "Figure 2",
+     "px": [
+      2028,
+      1218
+     ],
+     "aspect": 1.665,
+     "is_icon_asset": false,
+     "kb": 598,
+     "in_main_cut": true,
+     "caption": "Figure 2: SubtleMemory builds each split through a five-stage pipeline that turns semantic seeds into relation-preserving variants, task-oriented sessions, evaluation instances, and time-ordered histories with judging metadata.",
+     "caption_prior": "conceptual",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 2,
+     "file": "2606.05761-subtlememory-a-benchmark-for-fine-grained-re/02-conditional_storage_retrieval_diagnostics.png",
+     "label": "Figure 3",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 133,
+     "in_main_cut": true,
+     "caption": "Figure 3: Diagnostic waterfall analysis of memory system performance. Overall performance is decomposed into stage-wise memory preservation success rate P preserve P_{\\text{preserve}} and retrieval success rate conditioned on successful preservation P retrieve P_{\\text{retrieve}} . Rows correspond to the evaluated systems using GPT-5.4 as the answer generation model, sorted by overall accuracy.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  },
+  {
+   "title": "Diagnosing and Mitigating Context Rot in Long-horizon Search",
+   "arxiv": "2606.29718",
+   "venue": "preprint",
+   "year": null,
+   "award": null,
+   "why": "Context rot in multi-turn multi-source search; diagnosis-then-mitigation figure structure.",
+   "verified_via": "alphaxiv",
+   "route": "html",
+   "resolution": null,
+   "n_figures_total": 5,
+   "n_icon_assets_excluded": 0,
+   "n_extracted_raw": 5,
+   "n_figures_main_cut": 5,
+   "figures": [
+    {
+     "ordinal": 0,
+     "file": "2606.29718-diagnosing-and-mitigating-context-rot-in-lon/00-figure-1.png",
+     "label": "Figure 1",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 250,
+     "in_main_cut": true,
+     "caption": "Figure 1: Overview of the premature termination phenomenon. The context window is 256K.",
+     "caption_prior": "conceptual",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 1,
+     "file": "2606.29718-diagnosing-and-mitigating-context-rot-in-lon/01-length_label_subplot.png",
+     "label": "Figure 2",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 1320,
+     "in_main_cut": true,
+     "caption": "Figure 2: Distributions of terminal states as a function of trajectory length across models and benchmarks.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 2,
+     "file": "2606.29718-diagnosing-and-mitigating-context-rot-in-lon/02-struggle_behavior_subplots.png",
+     "label": "Figure 3",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 410,
+     "in_main_cut": true,
+     "caption": "Figure 3: Distributions of terminal states as a function of trajectory struggle score on BrowseComp.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 3,
+     "file": "2606.29718-diagnosing-and-mitigating-context-rot-in-lon/03-three_datasets_length_vs_uncertain_giveup_ratio.png",
+     "label": "Figure 4",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 510,
+     "in_main_cut": true,
+     "caption": "Figure 4: Premature termination rate as a function of trajectory length under controlled query difficulty.",
+     "caption_prior": "mixed_or_unclear",
+     "role": null,
+     "elements": null,
+     "notes": null
+    },
+    {
+     "ordinal": 4,
+     "file": "2606.29718-diagnosing-and-mitigating-context-rot-in-lon/04-tool_call_acc_scaling_subplots.png",
+     "label": "Figure 5",
+     "px": [
+      null,
+      null
+     ],
+     "aspect": null,
+     "is_icon_asset": false,
+     "kb": 874,
+     "in_main_cut": true,
+     "caption": "Figure 5: Integration of parallel sampling with the ReAct agent and context management methods. We set the maximum sampling number to 4 for the context management methods and 8 for the ReAct agent. We plot the performance curve by incrementally increasing the sampling number from 1 to the maximum. For a fair cost comparison, the x-axis represents the number of tool calls.",
+     "caption_prior": "data_plot",
+     "role": null,
+     "elements": null,
+     "notes": null
+    }
+   ]
+  }
+ ]
+}
