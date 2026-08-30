@@ -116,8 +116,16 @@ def check_ink_inside(path: Path, margin_px: int = 2) -> str:
     im = Image.open(path).convert("RGB")
     w, h = im.size
     px = im.load()
-    def col(x): return any(px[x, y] != (255, 255, 255) for y in range(0, h, 3))
-    def row(y): return any(px[x, y] != (255, 255, 255) for x in range(0, w, 3))
+    # ⚠ NOT `!= (255,255,255)`. That was the first version, and it failed a correct figure:
+    # draw.io antialiases the ground rectangle's own boundary to (254,254,254), one value off
+    # white and invisible, on the outermost column of every figure this generator makes. A
+    # check that fires on every correct input is worse than no check. INK_MAX is set well
+    # below any real content and well above antialiasing; the crop this gate exists to catch
+    # had black text and coloured fills sitting on the frame.
+    INK_MAX = 240
+    def dark(x, y): return min(px[x, y]) < INK_MAX
+    def col(x): return any(dark(x, y) for y in range(0, h, 3))
+    def row(y): return any(dark(x, y) for x in range(0, w, 3))
     touching = []
     for x in range(margin_px):
         if col(x) or col(w - 1 - x):

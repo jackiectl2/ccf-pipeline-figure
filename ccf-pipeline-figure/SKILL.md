@@ -251,6 +251,14 @@ genuinely has three separable structures, which is what the 14 % have.
 
 ## 2 · The house style, in full
 
+⭐ **Handing this style to an IMAGE model instead?** Use
+`assets/STYLE-FOR-IMAGE-MODELS.md` — the same rules with the evidence stripped and the mood
+changed to imperative, plus a paste-ready prompt block. It carries **no statistics on
+purpose**: two documents holding the same number drift apart unnoticed, two documents holding
+the same instruction cannot. Counts stay here; instructions live there.
+⛔ It is only for figures carrying no measured quantity — an image model bakes numbers into
+pixels, where nothing can check them.
+
 Everything in this section is what the 17 starred figures share. Where a device appears in
 the starred set far more than in the dropped set, the lift is given.
 
