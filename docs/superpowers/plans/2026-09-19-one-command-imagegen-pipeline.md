@@ -61,4 +61,4 @@
 - [x] **Step 1:** Run the official skill quick validator.
 - [x] **Step 2:** Run targeted text checks for the built-in-only boundary, immutable versioning, and finite iteration cap.
 - [x] **Step 3:** Create the user-scope skill symlink without touching the official system `$imagegen` skill.
-- [ ] **Step 4:** Review the diff, commit on `feature/one-command-imagegen-pipeline`, and push that branch once a GitHub remote is available.
+- [x] **Step 4:** Review the diff, commit on `feature/one-command-imagegen-pipeline`, and push that branch once a GitHub remote is available.
