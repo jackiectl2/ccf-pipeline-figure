@@ -164,7 +164,11 @@ output/imagegen/<project-name>/<figure-name>/
 - major regions have distinct color identities and the canvas is not dominated by white;
 - every major noun or operation has a recognizable glyph, with varied silhouettes rather
   than repeated document/folder icons;
-- a decorative title and short method-only explanatory lines are allowed;
+- no standalone overall title banner, landscape, road, tree, or exterior signboard appears;
+  the composition starts directly with Region 1 and is cropped tightly around the numbered
+  method regions;
+- decorative accents stay inside region boundaries and do not consume a separate row or
+  margin; short method-only explanatory lines remain allowed;
 - labels remain readable at the intended paper width; and
 - decoration supports hierarchy without obscuring the scientific graph.
 
@@ -411,9 +415,9 @@ genuinely has three separable structures, which is what the 14 % have.
 ⭐ **Handing this genre to an IMAGE model?** Use
 `assets/STYLE-FOR-IMAGE-MODELS.md` — an operational editorial-comic profile tuned for raster
 generation. It preserves the structural evidence in this section but intentionally uses a
-more vivid palette, richer icon vocabulary, decorative title, and shallow comic depth than
-the restrained measured default below. It carries **no statistics on purpose**: counts stay
-here; image-model instructions live there.
+more vivid palette, richer icon vocabulary, region-bounded decoration, and shallow comic depth
+than the restrained measured default below. It carries **no statistics on purpose**: counts
+stay here; image-model instructions live there.
 ⛔ It is only for figures carrying no measured quantity — an image model bakes numbers into
 pixels, where nothing can check them.
 

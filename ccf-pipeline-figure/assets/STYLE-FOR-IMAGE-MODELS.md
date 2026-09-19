@@ -27,7 +27,10 @@ not mean minimalist, monochrome, or low saturation.
   boundaries. Never serialize mutually exclusive or parallel operations just to simplify the
   layout.
 - Non-uniform panels are encouraged. Give the scientifically important branch more room.
-- A decorative overall title is allowed and encouraged. It must not claim a result.
+- Do not add a standalone overall title banner. Start directly with Region 1; the paper
+  caption supplies the figure title.
+- No landscapes, roads, trees, or exterior signboards.
+- Crop tightly around the numbered method regions.
 - Decorative elements must stay outside arrow corridors and must not resemble nodes, ports,
   evidence tokens, outcomes, or data-flow arrows.
 
@@ -82,7 +85,7 @@ not mean minimalist, monochrome, or low saturation.
 
 ## 5 · Text
 
-- Region banners are the largest text after the decorative title.
+- Region banners are the largest text in the figure.
 - Block labels are short noun phrases, normally one to four words.
 - One short **method-only explanatory line** per region is allowed. It may explain what the
   stage does, but it must not report an outcome, advantage, score, rate, or empirical finding.
@@ -94,8 +97,9 @@ not mean minimalist, monochrome, or low saturation.
 
 ## 6 · Controlled decoration
 
-- Allowed: decorative title plaque, corner stickers, small stars or spark marks, motion ticks,
+- Allowed inside region boundaries: corner stickers, small stars or spark marks, motion ticks,
   tape tabs, scalloped banners, tiny non-semantic doodles, and colored edge accents.
+- Decorative accents must not consume a separate row or margin.
 - Decoration should make the page feel authored and energetic at first glance.
 - Decoration may not cross scientific arrows, conceal arrowheads, split a label, or introduce
   a shape that looks like an unlabelled computation or output.
@@ -141,8 +145,11 @@ instructions:
 > Give every major noun and operation a distinct, easy-to-name cartoon icon from one coherent
 > family. Use varied silhouettes rather than repeating document and folder icons. Use colored
 > icon fills, thick outlines, sticker capsules, banners, badges, tags, small motion ticks, and
-> restrained corner doodles. A decorative title and one short method-only explanatory line
-> per region are allowed.
+> restrained corner doodles. One short method-only explanatory line per region is allowed.
+> Do not add a standalone overall title banner. Start directly with Region 1; the paper caption
+> supplies the figure title. No landscapes, roads, trees, or exterior signboards. Crop tightly
+> around the numbered method regions. Decorative accents are allowed only inside region
+> boundaries and must not consume a separate row or margin.
 >
 > Subtle panel gradients, light cel shading, small highlights, and shallow offset shadows are
 > allowed. Do not use photorealism, glossy 3-D rendering, glassmorphism, metallic materials,
