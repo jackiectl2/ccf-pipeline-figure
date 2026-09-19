@@ -135,9 +135,9 @@ output/imagegen/<project-name>/<figure-name>/
 
 #### 5. Iterate, but stop
 
-- Default budget: **at most four fresh candidates total per invocation**, including the first.
-- The user may request a smaller or larger finite budget from **one to six**. Never exceed six
-  candidates in one invocation.
+- Default budget and hard ceiling: **at most ten fresh candidates total per invocation**,
+  including the first. The user may request a smaller finite budget from **one to ten**.
+- Never exceed ten candidates in one invocation.
 - Stop early as soon as one candidate passes all hard scientific checks and the visual checks.
 - If a candidate fails, write a targeted correction into the next text prompt, then generate
   again from the brief and style file alone. Do not supply the failed bitmap as a reference.
@@ -716,8 +716,8 @@ document.querySelectorAll('svg text, svg rect').forEach(e => {
 
 The first version that renders is rarely the one to ship. In the built-in-imagegen fast path,
 review it against the saved brief and stop early when it passes; otherwise continue only while
-the declared candidate budget remains. The default is four and the per-invocation ceiling is
-six. Independent review is optional when the user has authorized delegation; it is not a
+the declared candidate budget remains. The default and per-invocation ceiling are both ten.
+Independent review is optional when the user has authorized delegation; it is not a
 precondition for completing an ordinary figure request. The legacy vector route follows
 figuresmith SKILL.md rule 5.
 

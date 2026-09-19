@@ -15,7 +15,7 @@
 - Update the existing `ccf-pipeline-figure` skill; do not create another skill.
 - Use Codex's subscription-backed built-in image generation only; do not use image-generation MCP, browser automation, CLI, API, or `OPENAI_API_KEY`.
 - Preserve every generated image, exact prompt, and review; never overwrite or delete an earlier candidate.
-- Generate at most four fresh candidates per invocation unless the user explicitly requests a different finite cap.
+- Generate at most ten fresh candidates per invocation; the user may request a smaller finite cap from one to ten.
 - Generate every candidate from text only; do not pass earlier images as references or edit targets.
 - Keep scientific topology and method/result separation authoritative over decoration.
 - Work on a new Git branch so `main` retains the old skill.
@@ -32,7 +32,7 @@
 - Consumes: `$ccf-pipeline-figure <project-folder> [short preferences]`.
 - Produces: project brief, versioned image/prompt/review triples, and a selected-candidate record.
 
-- [x] **Step 1:** Update the skill description and add the authoritative fast path, tool boundary, versioning scheme, review rubric, and four-candidate default cap.
+- [x] **Step 1:** Update the skill description and add the authoritative fast path, tool boundary, versioning scheme, review rubric, and ten-candidate default cap.
 - [x] **Step 2:** Add UI metadata with a one-sentence `$ccf-pipeline-figure` default prompt and keep implicit invocation enabled.
 - [x] **Step 3:** Check the workflow for contradictions with later draw.io/vector guidance and mark the mode boundary explicitly.
 
