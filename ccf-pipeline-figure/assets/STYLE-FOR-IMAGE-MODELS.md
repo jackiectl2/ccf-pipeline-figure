@@ -84,9 +84,12 @@ without relying on candy-bright colors or large dark background fills.
 - Keep avatar heads, cartoon people, and other icons modest in size within their nodes. If a
   person or user is part of the method, a small flat avatar may identify that role; do not add
   large mascot-like characters just to fill space.
-- Prefer precise node-level detail from the scientific brief over an oversized simple glyph.
-  Arrange the icon, label, and any permitted example or operation detail in a deliberate
-  hierarchy that remains legible at the intended paper width. Do not invent detail.
+- Prefer a refined arrangement of small, meaningful elements over an oversized simple glyph.
+  Build visual hierarchy through scale, alignment, grouping, and carefully drawn small details.
+  Where it clarifies a real object or operation, two or more small icons may lightly overlap
+  as one composite illustration. This is optional, not a pattern every node must repeat.
+  Keep labels readable, arrows clear, and composite icons from implying extra method stages.
+  Do not invent scientific detail to make a node look fuller.
 - Useful vocabulary includes document stacks, file-type cards, mapping tags, parser funnels,
   checklists, shields or fingerprints, chain links, paired strips, sliders, targets, boundary
   brackets, token chips, balances, magnifiers, matrices, clipboards, forks, satchels, laptops,
@@ -161,8 +164,10 @@ instructions:
 > icon fills, thick outlines, sticker capsules, banners, badges, tags, small motion ticks, and
 > restrained corner doodles. One short method-only explanatory line per region is allowed.
 > Keep avatar heads, cartoon people, and other icons modest in size within their nodes; never
-> let a large simple character or glyph occupy most of a node. Prefer precise, brief-backed
-> detail and readable organization inside each node over oversized decoration.
+> let a large simple character or glyph occupy most of a node. Prefer purposeful visual
+> detail and readable organization inside each node over oversized decoration. When
+> useful, lightly overlap multiple small icons into one composite illustration within a node;
+> this is optional and must not imply extra method stages or obscure labels and arrows.
 > Do not add a standalone overall title banner. Start directly with Region 1; the paper caption
 > supplies the figure title. No landscapes, roads, trees, or exterior signboards. Crop tightly
 > around the numbered method regions. Decorative accents are allowed only inside region
