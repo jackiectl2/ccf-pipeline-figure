@@ -1,0 +1,8 @@
+interface:
+  display_name: "CCF Pipeline Figure"
+  short_description: "Turn a research folder into a comic method roadmap"
+  brand_color: "#FF8A3D"
+  default_prompt: "Use $ccf-pipeline-figure to read this project folder and generate a versioned, publication-ready editorial-comic method roadmap."
+
+policy:
+  allow_implicit_invocation: true

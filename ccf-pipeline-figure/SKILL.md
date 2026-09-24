@@ -1,16 +1,15 @@
 ---
 name: ccf-pipeline-figure
 description: >-
-  Draw the CONCEPTUAL figures of a paper: pipeline, framework, architecture, mechanism,
-  data-flow, system diagrams — the ones in the Intro and Method, not the Results.
-  Use for 论文流程图 / 框架图 / 机制图 / 架构图 / pipeline 图 / Figure 1, and whenever a
-  figure encodes STRUCTURE rather than measured numbers.
-  ⭐ TAKES PRECEDENCE over general figure skills (including ccf-figuresmith-skills) for this
-  one genre: its rules are distilled from 82 real published conceptual figures the user
-  personally graded, and that corpus is what decides composition, colour, icons and text
-  density here. For DATA figures — anything where a position, length, angle or colour
-  encodes a measured quantity — this skill does not apply at all; hand those to the data-figure
-  skill and do not draw them here.
+  Read a research-project folder and produce a publication-ready CONCEPTUAL figure from one
+  short request: pipeline, framework, architecture, mechanism, data-flow, system diagram, or
+  Figure 1 for the Intro/Method rather than Results. Use for 论文流程图 / 框架图 / 机制图 /
+  架构图 / pipeline 图 when Codex should derive the technical brief, call its subscription-
+  backed built-in image generator, preserve every candidate, explore at most seven fresh
+  candidates, then locally refine the best candidate at most three times when needed. Do not use
+  for data figures where position, length, angle, or colour encodes a measured quantity.
+metadata:
+  short-description: One-line project-to-pipeline figure workflow
 ---
 
 # ccf-pipeline-figure
@@ -25,11 +24,203 @@ A hand-placed bar is a number nobody can reproduce. Never draw data in a diagram
 
 ---
 
+## Fast path · one short request is enough
+
+This is the default Codex workflow when the user supplies a project folder and asks for a
+paper pipeline figure. It is authoritative over later legacy draw.io production notes wherever
+the two routes differ. The corpus evidence, scientific rules, composition rules, and honesty
+rules later in this file still apply where they do not conflict with this fast path.
+
+Native explicit invocation is:
+
+```text
+$ccf-pipeline-figure /path/to/project
+$ccf-pipeline-figure /path/to/project — portrait, single-column, emphasize the two evidence lanes
+```
+
+In Codex, `/skills` opens the skill picker and `$ccf-pipeline-figure` mentions this skill.
+Do not require the user to paste a brief, the image-model style file, or a long generation
+prompt. If the path is omitted, use the current working directory. Treat any text after the
+path as an aesthetic or emphasis override, not as a requirement to restate the method.
+
+### Tool boundary: built-in image generation only
+
+1. Load and follow the installed system skill named `$imagegen`.
+2. Use its subscription-backed **built-in image generation tool**. Do not use an image MCP,
+   browser automation, a model website, the CLI/API fallback, a custom SDK runner, or
+   `OPENAI_API_KEY`.
+3. During the fresh-candidate phase, use new-image generation only. Do not pass
+   `referenced_image_paths` or include a prior generated figure as conversation image context.
+4. If all seven fresh candidates fail, switch to built-in edit mode for the bounded refinement
+   phase defined below. Use the selected best candidate as the sole edit target and preserve every
+   already-correct region aggressively.
+5. The built-in tool may not expose a model selector. If it explicitly exposes GPT Image 2.5,
+   prefer **GPT Image 2.5 Sunburst** for final-quality scientific figures. If it exposes no
+   selector, use the built-in host-managed backend and report that fact; never claim a model
+   version the tool did not confirm, and never switch to API/CLI merely to force a model ID.
+
+### End-to-end workflow
+
+#### 1. Resolve and inspect the project
+
+- Resolve the project folder first. Read every applicable `AGENTS.md`, `CLAUDE.md`, project
+  policy, or equivalent instruction file before other project content.
+- Never open a file that project rules prohibit. Never open secrets, credentials, private
+  keys, environment files, or unrelated personal data.
+- Inventory with `rg --files` before reading. Cover the paper, README files, method/design
+  documentation, configuration, experiment and analysis code, tests, examples, and the
+  structure of key outputs. Binary artefacts need only structural inspection unless their
+  content is necessary and permitted.
+- Identify what is knowable before experiments. Results may be inspected only when permitted
+  and only to prevent them leaking into the method figure; never turn a posterior observation
+  into a method stage or callout.
+
+#### 2. Derive the technical brief automatically
+
+Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
+
+- figure purpose and inputs;
+- three to six named regions/stages;
+- every object, operation, arrow, branch, shared path, and reconvergence;
+- exact short labels and documentation-safe real example strings;
+- scientific invariants whose topology or meaning cannot change;
+- explicit exclusions separating method from results; and
+- a source-of-truth table citing the project files behind each part.
+
+The brief is the scientific authority. Do not draw until every arrow can be justified from
+code, configuration, tests, or project documentation. Do not ask the user to write this brief
+when the project contains enough evidence to derive it.
+
+#### 3. Build the actual generation prompt
+
+After the brief exists, read `assets/STYLE-FOR-IMAGE-MODELS.md` completely. Construct a
+self-contained prompt in this order:
+
+1. primary request and pre-experiment purpose;
+2. soft-colored editorial-comic visual target near the top;
+3. canvas and global reading order;
+4. region-by-region scientific topology and exact arrows;
+5. branches, shared kernels, typed boundaries, and joins;
+6. exact labels and permitted example strings;
+7. scientific invariants and method/result exclusions;
+8. readability and output intent.
+
+The brief wins on science. The style file wins on palette, icon vocabulary, decoration,
+typography, and comic energy. A user-supplied visual preference wins over the style defaults
+but never over scientific topology or result exclusions.
+
+#### 4. Save before and after every generation
+
+Use this immutable layout inside the target project:
+
+```text
+output/imagegen/<project-name>/<figure-name>/
+  v01.prompt.md
+  v01.png
+  v01.review.md
+  v02.prompt.md
+  v02.png
+  v02.review.md
+  ...
+  SELECTED.md
+```
+
+- Scan existing versions and continue at the next unused number. Never restart at `v01` when
+  earlier files exist.
+- Save the exact prompt as `vNN.prompt.md` before or immediately after its generation, without
+  rewriting it to describe the output retrospectively.
+- Copy the generated bitmap from the built-in tool's managed output location to `vNN.png`.
+- Inspect it and save the disposition and concrete defects in `vNN.review.md`.
+- Record `phase: fresh_candidate` or `phase: local_refinement` in every prompt and review. A
+  refinement record also names its exact parent version and the defects it is allowed to change.
+- Never overwrite, delete, rename, or silently discard an earlier image, prompt, or review,
+  including rejected candidates.
+- `SELECTED.md` names the best passing version and explains the choice. It is an index, not a
+  replacement for the versioned files.
+
+#### 5. Iterate in two bounded phases, then stop
+
+**Phase A — fresh exploration**
+
+- Generate **at most seven fresh candidates total per invocation**, including the first. Seven is
+  a hard exploration ceiling, not a target: stop early as soon as one candidate passes all hard
+  scientific and visual checks. The user may explicitly lower this ceiling but may not raise it.
+- Every failed fresh candidate receives a concrete review. Feed only the review's targeted
+  correction into the next text prompt, then generate again from the brief and style file alone.
+  Do not supply any earlier bitmap as a reference during this phase.
+
+**Phase B — local refinement of the best candidate**
+
+- Enter this phase automatically only when the fresh-candidate ceiling is exhausted and none
+  passes. Do not ask the user to authorize the transition.
+- Rank the fresh candidates using scientific correctness first, then the number and severity of
+  remaining visual defects. Select one best base and record the choice in its review and
+  `SELECTED.md` as provisional.
+- Consolidate the relevant defects from all fresh-candidate reviews into a short refinement
+  checklist. Each refinement prompt must name only the local changes for the current round and
+  explicitly preserve the base candidate's correct topology, composition, labels, palette,
+  typography, icons, and unaffected regions.
+- Use built-in image edit mode with the current best bitmap as the sole edit target. Save the edit
+  as the next immutable `vNN` version; never overwrite the parent. If an edit regresses a correct
+  area, keep the earlier best as the parent for the next round rather than compounding the drift.
+- Perform **at most three local-refinement rounds**. Stop early when a refinement passes every hard
+  check. After the third refinement, stop even if defects remain; select the best version across
+  both phases and report every unresolved defect.
+
+The absolute per-invocation ceiling is therefore seven fresh candidates plus three local
+refinements. Never restart exploration, open another hidden batch, or continue into an open-ended
+loop inside the same invocation.
+
+#### 6. Review each candidate at two levels
+
+**Scientific hard checks** — any failure rejects the candidate:
+
+- arrow direction, branches, shared paths, reconvergences, optional paths, and evidence-type
+  boundaries match the brief;
+- the global figure is not flattened into a misleading single chain;
+- exact labels are present and correctly spelled;
+- no experiment result, score, rate, proportion, dataset/sample size, comparison, ablation,
+  error analysis, success/failure total, or posterior conclusion appears; and
+- decorative marks cannot be mistaken for nodes, ports, arrows, outcomes, or measured data.
+
+**Visual hard checks** — any failure triggers another candidate while budget remains:
+
+- the thumbnail reads as a softly colored editorial-comic infographic, not a grid of black
+  text boxes or a restrained corporate flowchart;
+- light tints vary across the figure without requiring a unique color for every region; the
+  whole background is not one uniform color, and large dark fills are absent;
+- every major noun or operation has a recognizable glyph, with varied silhouettes rather
+  than repeated document/folder icons;
+- arrow-linked nodes have considered internal visual hierarchy and refined small details;
+  avatars and other icons stay modest in size rather than filling a node with one oversized
+  simple graphic; optional overlapping icons read as one object, not extra method stages;
+- no standalone overall title banner, landscape, road, tree, or exterior signboard appears;
+  the composition starts directly with Region 1 and is cropped tightly around the numbered
+  method regions;
+- decorative accents stay inside region boundaries and do not consume a separate row or
+  margin; short method-only explanatory lines remain allowed;
+- labels remain readable at the intended paper width; and
+- decoration supports hierarchy without obscuring the scientific graph.
+
+#### 7. Finish with an auditable handoff
+
+Report the project brief path, every image/prompt/review path created in this invocation, the
+fresh-candidate and refinement counts, the selected version and its parent chain, the stopping
+reason, and whether the backend model was explicit or host-managed. Do not insert the figure into
+a paper, edit LaTeX, create PPTX/SVG/draw.io, commit the project, or push anything unless the user
+separately asks for those actions.
+
+---
+
 ## 0 · Two things to settle before any rule
 
-### 0.1 This skill is one half of a pair — `ccf-figuresmith-skills` owns the other half
+### 0.1 Legacy vector route — `ccf-figuresmith-skills` owns its production half
 
-⭐ **Genre and taste → here. Production and gating → `ccf-figuresmith-skills`.** Both skills
+The fast path above is self-contained and does not require `ccf-figuresmith-skills`. Use this
+legacy route only when the user explicitly asks for editable/vector output, deterministic
+code-native generation, draw.io, or PDF rather than a built-in-imagegen raster.
+
+⭐ **Vector genre and taste → here. Vector production and gating → `ccf-figuresmith-skills`.** Both skills
 state the split, in those words. This file deliberately does **not** restate what figuresmith
 already covers: two copies of a rule drift apart, and nobody notices until a figure ships
 wrong. Where the rule is figuresmith's, you get **one line of invariant plus a pointer** —
@@ -41,11 +232,11 @@ Paths are relative to the `ccf-figuresmith-skills` skill directory.
 | what | the invariant, in one line | read |
 |---|---|---|
 | **True printed size** | Draw at the width it will print; `\includegraphics` scaling shrinks every font silently. | SKILL.md rule 2; `references/diagrams.md` §3 |
-| **Tool and format** | A script emits `.drawio`; a hand edit forks to `*.manual.drawio` and *that* one ships. | `references/diagrams.md` §1, §2, §2.1 |
+| **Tool and format** | In the legacy vector route, a script emits `.drawio`; a hand edit forks to `*.manual.drawio` and *that* one ships. | `references/diagrams.md` §1, §2, §2.1 |
 | **Icon mechanics** | Recolour the single `fill="currentColor"`; inject a second `fill` and draw.io renders **nothing at all**, silently. | `references/diagrams.md` §5; `assets/icons/` |
 | **The text-fit gate** | The generator refuses to emit a label that overflows its box. A gate with known failures stops being read. | `references/diagrams.md` §7; `assets/build_drawio_skeleton.py` |
 | **Export flags** | `-x` is required or it hangs forever; never `-e` on a PNG; never `--disable-gpu`; `width_px = frac × text_width_in × dpi`. | `references/diagrams.md` §4 |
-| **Iterating** | The first render is never the one to ship. "Perfect" means frozen; "okay" means keep going. | SKILL.md rule 5 |
+| **Iterating** | Review every render and stop at the declared finite cap; never turn refinement into an open-ended generation loop. | SKILL.md rule 5 |
 | **Verify on the compiled page** | Find the page from the `.aux`, rasterise it, look at it. Floats move. | SKILL.md rule 6 |
 | **Caption discipline** | One line. Everything substantive goes in the body text. | SKILL.md "Caption discipline" |
 | **Honesty rules** | Regenerable from committed code plus committed data, in one command. | SKILL.md "Honesty rules" |
@@ -93,10 +284,11 @@ missing about a sixth of its width, **while the SVG it came from was measurably 
 draw.io exports a vector PDF whose MediaBox equals the canvas, in about four seconds, and
 that PDF is what LaTeX wants anyway.
 
-⇒ **Generate `.drawio`; ship the PDF.** The evidence is in `figures/diagrams/out/COMPARISON.md`,
+⇒ **For the legacy vector route, generate `.drawio`; ship the PDF.** The evidence is in `figures/diagrams/out/COMPARISON.md`,
 and the project's own survey (`FIGURE-WORKFLOW.md` §6) had independently reached the same
 route for the hero conceptual figure. Where a project has a different exporter, re-measure
-rather than inheriting this conclusion.
+rather than inheriting this conclusion. This does not override the built-in-imagegen fast
+path, whose auditable sources are the brief, exact prompt, immutable candidate, and review.
 
 **If `ccf-figuresmith-skills` is not installed** in the project you are working in, every
 pointer above dangles. The one-line invariants are then all you have, and they are enough to
@@ -251,11 +443,13 @@ genuinely has three separable structures, which is what the 14 % have.
 
 ## 2 · The house style, in full
 
-⭐ **Handing this style to an IMAGE model instead?** Use
-`assets/STYLE-FOR-IMAGE-MODELS.md` — the same rules with the evidence stripped and the mood
-changed to imperative, plus a paste-ready prompt block. It carries **no statistics on
-purpose**: two documents holding the same number drift apart unnoticed, two documents holding
-the same instruction cannot. Counts stay here; instructions live there.
+⭐ **Handing this genre to an IMAGE model?** Use
+`assets/STYLE-FOR-IMAGE-MODELS.md` — an operational editorial-comic profile tuned for raster
+generation. It preserves the structural evidence in this section but uses soft color, a richer
+icon vocabulary, region-bounded decoration, and shallow comic depth. Its palette and region
+color rules govern the raster route instead of the measured vector defaults below. It carries
+**no statistics on purpose**: counts
+stay here; image-model instructions live there.
 ⛔ It is only for figures carrying no measured quantity — an image model bakes numbers into
 pixels, where nothing can check them.
 
@@ -474,11 +668,17 @@ Name the regions. Write them as a list before opening any editor:
 If your list is a single chain, **go back**. A chain is almost always a
 misrepresentation — the branches, the grouping and the loop are the content.
 
-### Step 2 — Generate, never hand-place → figuresmith
+### Step 2 — Choose the production mode, then generate
 
-The figure must be regenerable from committed code plus committed data with one command, and
-must stay hand-fixable without rerunning anything. Tool choice, the `.manual` fork, the
-`FROZEN` marker and dated backups: `references/diagrams.md` §1, §2, §2.1.
+**Built-in-imagegen fast path:** follow the authoritative workflow at the top of this file.
+The brief, exact prompt, immutable candidate and review are the reproducibility record. During
+fresh exploration, never hand-place corrections or use an earlier bitmap as a reference. After
+the seven-candidate ceiling is exhausted, the bounded refinement phase may edit only the selected
+best bitmap and must preserve every unaffected region.
+
+**Legacy vector route:** the figure must be regenerable from committed code plus committed
+data with one command, and must stay hand-fixable without rerunning anything. Tool choice, the
+`.manual` fork, the `FROZEN` marker and dated backups: `references/diagrams.md` §1, §2, §2.1.
 
 ⭐ **`assets/house_style.py` is the §2 devices as code**, layered on figuresmith's skeleton
 rather than copying it: tinted numbered regions with banner titles, the single-accent
@@ -552,13 +752,23 @@ document.querySelectorAll('svg text, svg rect').forEach(e => {
 
 ### Step 4 — Iterate → figuresmith, plus one rule this genre adds
 
-The first version that renders is rarely the one to ship; "perfect" means frozen, "okay"
-means keep going, and a fresh sub-agent does the scoring because a worker grades its own
-output generously. → figuresmith SKILL.md rule 5.
+The first version that renders is rarely the one to ship. In the built-in-imagegen fast path,
+review it against the saved brief and stop early when it passes. Otherwise explore up to seven
+fresh text-only candidates. If all seven fail, select the strongest candidate and run at most
+three local edit refinements against the consolidated review defects. The absolute ceiling remains
+ten image outputs per invocation, partitioned as seven fresh candidates plus three refinements.
+Independent review is optional when the user has authorized delegation; it is not a
+precondition for completing an ordinary figure request. The legacy vector route follows
+figuresmith SKILL.md rule 5.
 
 ⭐ **Change only what is wrong. Say so explicitly, every round.**
 
-> *"Please change [the wrong part] to [the right description], **keep the rest unchanged**."*
+> *"Change [the wrong part] to [the right description], and keep every other brief and style
+> requirement unchanged."*
+
+During fresh exploration, put that instruction in the next text-only prompt without an image
+reference. During bounded refinement, put it in an edit prompt whose sole target is the current
+best candidate and list the unaffected regions as invariants.
 
 **[MEASURED]** This is the single most-endorsed correction rule in the sixteen workflows
 surveyed in §9 — the 3839♥ note gives it verbatim as *"最好的纠错方式"*, and the 5959♥ note
@@ -723,13 +933,16 @@ Three smaller gaps, each [MEASURED] as present in the collection and absent here
 - **Divide and conquer when generation degrades** (W10, 3363♥): whole-figure vector generation
   fails where per-module generation succeeds, with a practical batch limit of about three.
 
-### 9.3 What does not apply here, and why
+### 9.3 What does not apply to the legacy vector route, and why
 
-⛔ These are not weaker workflows. They are ruled out by rules this skill already has.
+These observations explain why the old deterministic route rejected generated rasters. The
+new fast path deliberately permits a raster only for a no-measurement conceptual figure and
+compensates with an exact text brief, saved prompt, immutable versions, explicit review, and a
+finite retry budget. The other exclusions below still apply to the legacy vector route.
 
 | ruled out | which rule rules it out |
 |---|---|
-| **Every route ending in a model-generated raster** (W06, W24, and the raster half of W01/W03) | §6 — every number in a conceptual figure is read from a committed artefact at draw time, and the figure must be regenerable from committed code plus committed data in one command. **A raster cannot be regenerated from a data file, and a number inside one cannot be traced.** ⚠ Note the collection agrees on its own terms: no author claims a generated raster is what they submitted. |
+| **A model-generated raster containing measured quantities** (W06, W24, and the raster half of W01/W03) | §6 — every measured number must be read from a committed artefact at draw time. A generated raster cannot provide that guarantee. The built-in-imagegen fast path therefore forbids measured quantities rather than pretending to trace them. |
 | **Hand-assembly in PowerPoint or Illustrator** (W03, and W01's step 4) | Same rule. The moment a human nudges an anchor point, one command no longer reproduces the figure. figuresmith's `.manual` fork exists for exactly this and requires the hand-edited file to be marked and frozen. |
 | **Using a published figure as a layout template** (W13) | ⚠ [INFERRED] Not covered by an existing rule, and it should be: it inherits another paper's composition wholesale. Fine as scaffolding, a provenance question if shipped. |
 | **The Visio routes** (W08, W15) | Windows, licensed Visio, PowerShell; W15 also needs Inkscape. None is available here. ⭐ **Take W08's structural check, not its stack.** |
