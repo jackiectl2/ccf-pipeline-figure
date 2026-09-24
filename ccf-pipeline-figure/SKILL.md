@@ -191,6 +191,8 @@ loop inside the same invocation.
   whole background is not one uniform color, and large dark fills are absent;
 - every major noun or operation has a recognizable glyph, with varied silhouettes rather
   than repeated document/folder icons;
+- arrow-linked nodes have clear internal hierarchy and brief-backed detail; avatars and other
+  icons stay modest in size rather than filling a node with one oversized simple graphic;
 - no standalone overall title banner, landscape, road, tree, or exterior signboard appears;
   the composition starts directly with Region 1 and is cropped tightly around the numbered
   method regions;

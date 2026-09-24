@@ -23,6 +23,10 @@ without relying on candy-bright colors or large dark background fills.
   lightly tinted background field, numbered badge, bold banner, and a short local micro-flow.
 - The global layout is a grid, stack, or asymmetric editorial composition. Inside one region,
   a short left-to-right or top-to-bottom flow is fine.
+- Distinguish named regions from the smaller nodes joined by arrows: in `A → B`, A and B are
+  two nodes, whether they sit in the same region or different ones. Give each node a clear
+  internal hierarchy and enough room for its actual label, icon, and method detail; do not
+  let one large icon occupy most of the node.
 - Show real branches, parallel operations, joins, feedback loops, optional paths, and typed
   boundaries. Never serialize mutually exclusive or parallel operations just to simplify the
   layout.
@@ -77,6 +81,12 @@ without relying on candy-bright colors or large dark background fills.
   and export should look different from one another.
 - Keep one coherent illustration family: expressive flat icons with thick outlines, simple
   interior color blocks, and optional light cel shading.
+- Keep avatar heads, cartoon people, and other icons modest in size within their nodes. If a
+  person or user is part of the method, a small flat avatar may identify that role; do not add
+  large mascot-like characters just to fill space.
+- Prefer precise node-level detail from the scientific brief over an oversized simple glyph.
+  Arrange the icon, label, and any permitted example or operation detail in a deliberate
+  hierarchy that remains legible at the intended paper width. Do not invent detail.
 - Useful vocabulary includes document stacks, file-type cards, mapping tags, parser funnels,
   checklists, shields or fingerprints, chain links, paired strips, sliders, targets, boundary
   brackets, token chips, balances, magnifiers, matrices, clipboards, forks, satchels, laptops,
@@ -136,6 +146,9 @@ instructions:
 > shaped boundary, contrasting numbered badge, bold banner, and short internal micro-flow. Draw every real
 > branch, parallel path, shared kernel, loop, optional path, and reconvergence. Do not flatten
 > the whole method into a single chain.
+> Treat each arrow-linked item as a separate smaller node, whether two nodes sit in the same
+> named region or different ones. Give each node a clear hierarchy of icon, label, and
+> permitted method detail.
 >
 > Use a small coordinated set of soft, lightly saturated colors, such as pale coral, peach,
 > butter yellow, sage, powder blue, or lavender. Regions may reuse colors; vary light tints
@@ -147,6 +160,9 @@ instructions:
 > family. Use varied silhouettes rather than repeating document and folder icons. Use colored
 > icon fills, thick outlines, sticker capsules, banners, badges, tags, small motion ticks, and
 > restrained corner doodles. One short method-only explanatory line per region is allowed.
+> Keep avatar heads, cartoon people, and other icons modest in size within their nodes; never
+> let a large simple character or glyph occupy most of a node. Prefer precise, brief-backed
+> detail and readable organization inside each node over oversized decoration.
 > Do not add a standalone overall title banner. Start directly with Region 1; the paper caption
 > supplies the figure title. No landscapes, roads, trees, or exterior signboards. Crop tightly
 > around the numbered method regions. Decorative accents are allowed only inside region
