@@ -97,7 +97,7 @@ After the brief exists, read `assets/STYLE-FOR-IMAGE-MODELS.md` completely. Cons
 self-contained prompt in this order:
 
 1. primary request and pre-experiment purpose;
-2. vivid editorial-comic visual target near the top;
+2. soft-colored editorial-comic visual target near the top;
 3. canvas and global reading order;
 4. region-by-region scientific topology and exact arrows;
 5. branches, shared kernels, typed boundaries, and joins;
@@ -185,9 +185,10 @@ loop inside the same invocation.
 
 **Visual hard checks** — any failure triggers another candidate while budget remains:
 
-- the thumbnail reads as a colorful editorial-comic infographic, not a white-background grid
-  of black text boxes or a restrained corporate flowchart;
-- major regions have distinct color identities and the canvas is not dominated by white;
+- the thumbnail reads as a softly colored editorial-comic infographic, not a grid of black
+  text boxes or a restrained corporate flowchart;
+- light tints vary across the figure without requiring a unique color for every region; the
+  whole background is not one uniform color, and large dark fills are absent;
 - every major noun or operation has a recognizable glyph, with varied silhouettes rather
   than repeated document/folder icons;
 - no standalone overall title banner, landscape, road, tree, or exterior signboard appears;
@@ -441,9 +442,10 @@ genuinely has three separable structures, which is what the 14 % have.
 
 ⭐ **Handing this genre to an IMAGE model?** Use
 `assets/STYLE-FOR-IMAGE-MODELS.md` — an operational editorial-comic profile tuned for raster
-generation. It preserves the structural evidence in this section but intentionally uses a
-more vivid palette, richer icon vocabulary, region-bounded decoration, and shallow comic depth
-than the restrained measured default below. It carries **no statistics on purpose**: counts
+generation. It preserves the structural evidence in this section but uses soft color, a richer
+icon vocabulary, region-bounded decoration, and shallow comic depth. Its palette and region
+color rules govern the raster route instead of the measured vector defaults below. It carries
+**no statistics on purpose**: counts
 stay here; image-model instructions live there.
 ⛔ It is only for figures carrying no measured quantity — an image model bakes numbers into
 pixels, where nothing can check them.

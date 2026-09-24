@@ -9,18 +9,18 @@ The project's `TECHNICAL_FIGURE_BRIEF.md` is authoritative for scientific meanin
 labels, examples, and result exclusions. This file is authoritative for visual treatment.
 An explicit user aesthetic preference may override this style, but never the scientific brief.
 
-The target is a **bold, colorful editorial-comic scientific infographic**. It must feel like
-a polished illustrated magazine roadmap or a high-quality educational comic, not a restrained
-corporate flowchart and not a mostly white page of black text boxes. Publication-ready does
-not mean minimalist, monochrome, or low saturation.
+The target is a **playful editorial-comic scientific infographic with soft color**. It must
+feel like a polished illustrated magazine roadmap or a high-quality educational comic, not a
+restrained corporate flowchart or a page of black text boxes. Keep the composition lively
+without relying on candy-bright colors or large dark background fills.
 
 ---
 
 ## 1 · Composition
 
 - Build the figure as **three to six named regions**, not as one long row of boxes.
-- Give each region a strong visual identity: rounded or irregular comic-panel boundary,
-  colored background field, numbered badge, bold banner, and a short local micro-flow.
+- Give each region a clear visual identity: rounded or irregular comic-panel boundary,
+  lightly tinted background field, numbered badge, bold banner, and a short local micro-flow.
 - The global layout is a grid, stack, or asymmetric editorial composition. Inside one region,
   a short left-to-right or top-to-bottom flow is fine.
 - Show real branches, parallel operations, joins, feedback loops, optional paths, and typed
@@ -34,21 +34,22 @@ not mean minimalist, monochrome, or low saturation.
 - Decorative elements must stay outside arrow corridors and must not resemble nodes, ports,
   evidence tokens, outcomes, or data-flow arrows.
 
-## 2 · Color: vivid, coordinated, and role-aware
+## 2 · Color: soft, coordinated, and role-aware
 
-- Use a coordinated **five-to-seven-hue candy/editorial palette**. Good families include coral,
-  hot pink, amber, butter yellow, mint, turquoise, sky blue, and violet.
-- Major regions should have visibly different color identities. Do not reduce them to nearly
-  white tints that disappear at thumbnail size.
-- White is permitted inside text cards for legibility, but it must not dominate the canvas.
-- Use near-black or deep navy outlines for strong contrast. Outlines may be thicker and more
-  expressive than ordinary academic line art.
+- Use a small coordinated set of **soft, lightly saturated colors**. Pale coral, peach,
+  butter yellow, sage or mint, powder blue, and lavender are possible choices, not a quota.
+- Regions may reuse a color when they serve related roles. The figure background as a whole
+  should not be one uniform color; vary light tints across panels, cards, or accents.
+- White may be used for the page or text cards. Keep the panels distinguishable and readable
+  at thumbnail size without making their fills dark or saturated.
+- Use near-black or deep navy for text and outlines where needed for contrast, not for large
+  background fields. Outlines may be more expressive than ordinary academic line art.
 - Reserve stable semantic roles where the science needs them: for example, one color for lane
-  A, another for lane B, and amber/orange for the principal flow. Keep those mappings
+  A, another for lane B, and muted amber for the principal flow. Keep those mappings
   consistent from input to output.
-- Extra decorative colors are allowed for region identity, banners, stickers, and icons, but
-  they must not imply nonexistent experimental categories or measured differences.
-- Color the icons themselves. Do not leave a page of black outline glyphs on white cards.
+- Soft decorative colors are allowed for banners, stickers, and icons, but they must not imply
+  nonexistent experimental categories or measured differences.
+- Color the icons themselves while preserving contrast with their backgrounds.
 
 ## 3 · Comic depth and shape grammar
 
@@ -125,22 +126,22 @@ not mean minimalist, monochrome, or low saturation.
 Append this after the scientific brief has been converted into exact region and arrow
 instructions:
 
-> Render this as a bold, exuberant editorial-comic scientific infographic. It should feel
-> like a polished illustrated magazine roadmap: colorful, playful, icon-rich, and immediately
-> engaging, while preserving every scientific arrow and boundary exactly. Do not make it a
-> minimalist corporate flowchart or a mostly white page of black text boxes.
+> Render this as a playful editorial-comic scientific infographic. It should feel like a
+> polished illustrated magazine roadmap: softly colored, icon-rich, and engaging, while
+> preserving every scientific arrow and boundary exactly. Avoid candy-bright colors and large
+> dark background fills, and do not make it a page of black text boxes.
 >
 > Compose the method as three to six named comic regions in a grid, stack, or asymmetric
-> editorial layout. Give every region a colored background field, rounded or playfully shaped
-> boundary, dark numbered badge, bold banner, and short internal micro-flow. Draw every real
+> editorial layout. Give every region a lightly tinted background field, rounded or playfully
+> shaped boundary, contrasting numbered badge, bold banner, and short internal micro-flow. Draw every real
 > branch, parallel path, shared kernel, loop, optional path, and reconvergence. Do not flatten
 > the whole method into a single chain.
 >
-> Use a coordinated five-to-seven-hue candy palette: coral, pink, amber, butter yellow, mint,
-> turquoise, sky blue, and violet as appropriate. Use deep navy or near-black expressive
-> outlines. White may appear inside text cards but must not dominate the canvas. Keep any
-> science-bearing lane colors consistent; decorative region colors must not imply measured
-> categories.
+> Use a small coordinated set of soft, lightly saturated colors, such as pale coral, peach,
+> butter yellow, sage, powder blue, or lavender. Regions may reuse colors; vary light tints
+> across panels, cards, or accents so the whole background is not one uniform color. Use deep
+> navy or near-black for readable text and outlines, not large background fields. Keep any
+> science-bearing lane colors consistent; decorative colors must not imply measured categories.
 >
 > Give every major noun and operation a distinct, easy-to-name cartoon icon from one coherent
 > family. Use varied silhouettes rather than repeating document and folder icons. Use colored
