@@ -6,7 +6,7 @@ description: >-
   Figure 1 for the Intro/Method rather than Results. Use for 论文流程图 / 框架图 / 机制图 /
   架构图 / pipeline 图 when Codex should derive the technical brief, call its subscription-
   backed built-in image generator, preserve every candidate, ask the user to set the number of
-  fresh candidates and the refinement cap (default: four and three), then locally refine the best
+  fresh candidates and the refinement cap (default: seven and three), then locally refine the best
   candidate when needed. Do not use
   for data figures where position, length, angle, or colour encodes a measured quantity.
 metadata:
@@ -66,8 +66,8 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
 
 - At the start of every invocation, ask the user to select the generation budget before doing any
   project work: the number of fresh candidates and the maximum local-refinement rounds. Offer
-  **Default: 4 fresh candidates; up to 3 refinements**. The user may choose 1–7 fresh candidates
-  and 0–3 refinements instead. Wait for this choice; an answer of “default” selects 4 and 3.
+  **Default: 7 fresh candidates; up to 3 refinements**. The user may choose 1–7 fresh candidates
+  and 0–3 refinements instead. Wait for this choice; an answer of “default” selects 7 and 3.
 - Record the selected limits in `TECHNICAL_FIGURE_BRIEF.md` and every generation/review record.
 
 - Resolve the project folder first. Read every applicable `AGENTS.md`, `CLAUDE.md`, project
@@ -137,7 +137,9 @@ output/imagegen/<project-name>/<figure-name>/
 - Save the exact prompt as `vNN.prompt.md` before or immediately after its generation, without
   rewriting it to describe the output retrospectively.
 - Copy the generated bitmap from the built-in tool's managed output location to `vNN.png`.
-- Inspect it and save the disposition and concrete defects in `vNN.review.md`.
+- Inspect it and save the disposition and concrete defects in `vNN.review.md`. Write the review
+  primarily in Chinese: headings, verdict, strengths, defects, and next-step rationale must be
+  Chinese. Keep file names, exact labels, phase values, and necessary technical terms in English.
 - Record `phase: fresh_candidate` or `phase: local_refinement` in every prompt and review. A
   refinement record also names its exact parent version and the defects it is allowed to change.
 - Never overwrite, delete, rename, or silently discard an earlier image, prompt, or review,
@@ -150,7 +152,7 @@ output/imagegen/<project-name>/<figure-name>/
 **Phase A — fresh exploration**
 
 - Generate the complete user-selected number of fresh candidates, including the first. The
-  default is four; seven is the maximum selectable count. Review every candidate before choosing
+  default is seven; seven is the maximum selectable count. Review every candidate before choosing
   whether the best one is sufficient or should enter refinement.
 - Every failed fresh candidate receives a concrete review. Feed only the review's targeted
   correction into the next text prompt, then generate again from the brief and style file alone.
@@ -175,7 +177,7 @@ output/imagegen/<project-name>/<figure-name>/
   defects remain; select the best version across both phases and report every unresolved defect.
 
 The absolute per-invocation ceiling is the selected fresh-candidate count plus the selected
-refinement count (default: seven image outputs total). Never restart exploration, open another
+refinement count (default: ten image outputs total). Never restart exploration, open another
 hidden batch, or continue into an open-ended loop inside the same invocation.
 
 #### 6. Review each candidate at two levels
@@ -760,11 +762,10 @@ document.querySelectorAll('svg text, svg rect').forEach(e => {
 ### Step 4 — Iterate → figuresmith, plus one rule this genre adds
 
 The first version that renders is rarely the one to ship. In the built-in-imagegen fast path,
-review it against the saved brief and stop early when it passes. Otherwise generate the
-user-selected number of fresh text-only candidates (default: four). If none pass, select the
-strongest candidate and run up to the user-selected number of local edit refinements (default:
-three) against the consolidated review defects. The selected limits are the absolute ceiling for
-that invocation.
+generate and review the complete user-selected number of fresh text-only candidates (default:
+seven), then choose the strongest one. If none pass, run up to the user-selected number of local
+edit refinements (default: three) against the consolidated review defects. The selected limits are
+the absolute ceiling for that invocation.
 Independent review is optional when the user has authorized delegation; it is not a
 precondition for completing an ordinary figure request. The legacy vector route follows
 figuresmith SKILL.md rule 5.
