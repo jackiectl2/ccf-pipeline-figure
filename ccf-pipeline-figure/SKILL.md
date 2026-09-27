@@ -5,8 +5,9 @@ description: >-
   short request: pipeline, framework, architecture, mechanism, data-flow, system diagram, or
   Figure 1 for the Intro/Method rather than Results. Use for 论文流程图 / 框架图 / 机制图 /
   架构图 / pipeline 图 when Codex should derive the technical brief, call its subscription-
-  backed built-in image generator, preserve every candidate, explore at most seven fresh
-  candidates, then locally refine the best candidate at most three times when needed. Do not use
+  backed built-in image generator, preserve every candidate, ask the user to set the number of
+  fresh candidates and the refinement cap (default: four and three), then locally refine the best
+  candidate when needed. Do not use
   for data figures where position, length, angle, or colour encodes a measured quantity.
 metadata:
   short-description: One-line project-to-pipeline figure workflow
@@ -51,9 +52,9 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
    `OPENAI_API_KEY`.
 3. During the fresh-candidate phase, use new-image generation only. Do not pass
    `referenced_image_paths` or include a prior generated figure as conversation image context.
-4. If all seven fresh candidates fail, switch to built-in edit mode for the bounded refinement
-   phase defined below. Use the selected best candidate as the sole edit target and preserve every
-   already-correct region aggressively.
+4. If no fresh candidate passes within the user-selected candidate count, switch to built-in edit
+   mode for the user-selected bounded refinement phase defined below. Use the selected best
+   candidate as the sole edit target and preserve every already-correct region aggressively.
 5. The built-in tool may not expose a model selector. If it explicitly exposes GPT Image 2.5,
    prefer **GPT Image 2.5 Sunburst** for final-quality scientific figures. If it exposes no
    selector, use the built-in host-managed backend and report that fact; never claim a model
@@ -62,6 +63,12 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
 ### End-to-end workflow
 
 #### 1. Resolve and inspect the project
+
+- At the start of every invocation, ask the user to select the generation budget before doing any
+  project work: the number of fresh candidates and the maximum local-refinement rounds. Offer
+  **Default: 4 fresh candidates; up to 3 refinements**. The user may choose 1–7 fresh candidates
+  and 0–3 refinements instead. Wait for this choice; an answer of “default” selects 4 and 3.
+- Record the selected limits in `TECHNICAL_FIGURE_BRIEF.md` and every generation/review record.
 
 - Resolve the project folder first. Read every applicable `AGENTS.md`, `CLAUDE.md`, project
   policy, or equivalent instruction file before other project content.
@@ -142,17 +149,17 @@ output/imagegen/<project-name>/<figure-name>/
 
 **Phase A — fresh exploration**
 
-- Generate **at most seven fresh candidates total per invocation**, including the first. Seven is
-  a hard exploration ceiling, not a target: stop early as soon as one candidate passes all hard
-  scientific and visual checks. The user may explicitly lower this ceiling but may not raise it.
+- Generate the complete user-selected number of fresh candidates, including the first. The
+  default is four; seven is the maximum selectable count. Review every candidate before choosing
+  whether the best one is sufficient or should enter refinement.
 - Every failed fresh candidate receives a concrete review. Feed only the review's targeted
   correction into the next text prompt, then generate again from the brief and style file alone.
   Do not supply any earlier bitmap as a reference during this phase.
 
 **Phase B — local refinement of the best candidate**
 
-- Enter this phase automatically only when the fresh-candidate ceiling is exhausted and none
-  passes. Do not ask the user to authorize the transition.
+- Enter this phase automatically only when the selected fresh-candidate count is exhausted and
+  none passes. Do not ask the user to authorize the transition.
 - Rank the fresh candidates using scientific correctness first, then the number and severity of
   remaining visual defects. Select one best base and record the choice in its review and
   `SELECTED.md` as provisional.
@@ -163,13 +170,13 @@ output/imagegen/<project-name>/<figure-name>/
 - Use built-in image edit mode with the current best bitmap as the sole edit target. Save the edit
   as the next immutable `vNN` version; never overwrite the parent. If an edit regresses a correct
   area, keep the earlier best as the parent for the next round rather than compounding the drift.
-- Perform **at most three local-refinement rounds**. Stop early when a refinement passes every hard
-  check. After the third refinement, stop even if defects remain; select the best version across
-  both phases and report every unresolved defect.
+- Perform at most the user-selected number of local-refinement rounds (default: three). Stop early
+  when a refinement passes every hard check. After the selected final refinement, stop even if
+  defects remain; select the best version across both phases and report every unresolved defect.
 
-The absolute per-invocation ceiling is therefore seven fresh candidates plus three local
-refinements. Never restart exploration, open another hidden batch, or continue into an open-ended
-loop inside the same invocation.
+The absolute per-invocation ceiling is the selected fresh-candidate count plus the selected
+refinement count (default: seven image outputs total). Never restart exploration, open another
+hidden batch, or continue into an open-ended loop inside the same invocation.
 
 #### 6. Review each candidate at two levels
 
@@ -205,7 +212,7 @@ loop inside the same invocation.
 #### 7. Finish with an auditable handoff
 
 Report the project brief path, every image/prompt/review path created in this invocation, the
-fresh-candidate and refinement counts, the selected version and its parent chain, the stopping
+selected fresh-candidate and refinement limits and counts, the selected version and its parent chain, the stopping
 reason, and whether the backend model was explicit or host-managed. Do not insert the figure into
 a paper, edit LaTeX, create PPTX/SVG/draw.io, commit the project, or push anything unless the user
 separately asks for those actions.
@@ -673,8 +680,8 @@ misrepresentation — the branches, the grouping and the loop are the content.
 **Built-in-imagegen fast path:** follow the authoritative workflow at the top of this file.
 The brief, exact prompt, immutable candidate and review are the reproducibility record. During
 fresh exploration, never hand-place corrections or use an earlier bitmap as a reference. After
-the seven-candidate ceiling is exhausted, the bounded refinement phase may edit only the selected
-best bitmap and must preserve every unaffected region.
+the selected fresh-candidate count is exhausted, the bounded refinement phase may edit only the
+selected best bitmap and must preserve every unaffected region.
 
 **Legacy vector route:** the figure must be regenerable from committed code plus committed
 data with one command, and must stay hand-fixable without rerunning anything. Tool choice, the
@@ -753,10 +760,11 @@ document.querySelectorAll('svg text, svg rect').forEach(e => {
 ### Step 4 — Iterate → figuresmith, plus one rule this genre adds
 
 The first version that renders is rarely the one to ship. In the built-in-imagegen fast path,
-review it against the saved brief and stop early when it passes. Otherwise explore up to seven
-fresh text-only candidates. If all seven fail, select the strongest candidate and run at most
-three local edit refinements against the consolidated review defects. The absolute ceiling remains
-ten image outputs per invocation, partitioned as seven fresh candidates plus three refinements.
+review it against the saved brief and stop early when it passes. Otherwise generate the
+user-selected number of fresh text-only candidates (default: four). If none pass, select the
+strongest candidate and run up to the user-selected number of local edit refinements (default:
+three) against the consolidated review defects. The selected limits are the absolute ceiling for
+that invocation.
 Independent review is optional when the user has authorized delegation; it is not a
 precondition for completing an ordinary figure request. The legacy vector route follows
 figuresmith SKILL.md rule 5.
