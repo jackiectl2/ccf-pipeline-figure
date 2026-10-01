@@ -78,6 +78,27 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
   documentation, configuration, experiment and analysis code, tests, examples, and the
   structure of key outputs. Binary artefacts need only structural inspection unless their
   content is necessary and permitted.
+- **Audit the current manuscript before planning a figure.** Locate the active paper source
+  (for example its root `.tex` file and included files) and the newest corresponding local PDF
+  or rendered pages when available. Enumerate figures from the source and captions; inspect the
+  actual image or rendered page for every existing conceptual figure that could overlap this
+  request. Include pipeline, framework, architecture, system-overview, mechanism, and technical
+  route figures. A filename, caption, or `Figure 1` alone is not enough to classify it. If the
+  project contains multiple plausible manuscript versions and the active one cannot be determined
+  from its source tree, Git state, or project documentation, record that ambiguity and ask the
+  user; do not silently choose an older draft.
+- For each overlapping figure, record its file path, figure label, caption or surrounding paper
+  section, scientific purpose, and whether it is a data figure or conceptual figure. Then decide
+  **replace**, **add distinct**, or **no current counterpart**. A same-purpose existing pipeline
+  or framework figure is a replacement target by default: preserve its intended paper location,
+  label, citation relationship, and scientific scope while redesigning its visual expression.
+  Do not make a second figure that tells the same story merely because the current one looks weak.
+- The default plan is **one** conceptual figure covering the technical route and overall framework
+  pipeline. Plan a second conceptual figure only when it answers a demonstrably different
+  scientific question that cannot remain legible as a region, branch, inset, or focused panel of
+  the first figure; typical examples are a full-system overview plus a genuinely independent core
+  mechanism. State why one figure cannot carry both jobs. Existing data figures neither satisfy
+  nor block this conceptual-figure decision.
 - Identify what is knowable before experiments. Results may be inspected only when permitted
   and only to prevent them leaking into the method figure; never turn a posterior observation
   into a method stage or callout.
@@ -87,6 +108,14 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
 Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
 
 - figure purpose and inputs;
+- a **manuscript figure audit**: active manuscript source and local render examined (or why one
+  was unavailable), every potentially overlapping conceptual figure, and for each its path,
+  label, caption/section, purpose, and classification;
+- a **figure plan** that states the total conceptual figures proposed for this request, their
+  distinct purposes, and the decision for each: `replace <existing figure>` / `add distinct` /
+  `no current counterpart`. A replacement records the existing figure's intended paper position
+  and reference relationship; an added second figure records why it cannot be combined legibly
+  with the overall pipeline figure;
 - three to six named regions/stages;
 - every object, operation, arrow, branch, shared path, and reconvergence;
 - exact short labels and documentation-safe real example strings;
@@ -94,9 +123,10 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
 - explicit exclusions separating method from results; and
 - a source-of-truth table citing the project files behind each part.
 
-The brief is the scientific authority. Do not draw until every arrow can be justified from
-code, configuration, tests, or project documentation. Do not ask the user to write this brief
-when the project contains enough evidence to derive it.
+The brief is the scientific authority. Do not draw until the manuscript figure audit has a
+replacement/addition decision and every arrow can be justified from code, configuration, tests,
+or project documentation. Do not ask the user to write this brief when the project contains
+enough evidence to derive it.
 
 #### 3. Build the actual generation prompt
 
