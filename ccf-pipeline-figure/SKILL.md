@@ -146,6 +146,26 @@ The brief wins on science. The style file wins on palette, icon vocabulary, deco
 typography, and comic energy. A user-supplied visual preference wins over the style defaults
 but never over scientific topology or result exclusions.
 
+### Default conceptual-figure label sizing
+
+Set text size against the **final printed figure width in the paper**, after LaTeX or other
+layout scaling. Source-canvas point sizes and a full-screen image preview do not count. Unless
+the target venue specifies an absolute figure-font requirement, use these defaults relative to
+the paper body text:
+
+- **Primary labels** — module titles, key operations, central arrow labels, and essential
+  callouts: **90–100%** of body size.
+- **Secondary explanatory text** — short supporting labels and noncentral annotations:
+  **80–90%** of body size.
+- **Tertiary text below 80%** — allowed only for nonessential auxiliary information. It cannot
+  carry a necessary method distinction and must remain readable in the final single- or
+  double-column PDF.
+
+For common body sizes, this means 9-pt paper body → 8–9-pt primary labels; 10-pt body →
+9–10-pt primary labels and about 8–9-pt secondary text; 11-pt body → 9–10-pt primary labels.
+Figure captions follow the venue's caption rule rather than this figure-label rule. A venue's
+explicit absolute requirement always overrides these defaults.
+
 #### 4. Save before and after every generation
 
 Use this immutable layout inside the target project:
@@ -239,6 +259,8 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 - decorative accents stay inside region boundaries and do not consume a separate row or
   margin; short method-only explanatory lines remain allowed;
 - labels remain readable at the intended paper width; and
+- primary labels are 90–100% of body size and secondary text 80–90% after final layout scaling;
+  sub-80% text is nonessential and remains readable in the compiled paper; and
 - decoration supports hierarchy without obscuring the scientific graph.
 
 #### 7. Finish with an auditable handoff
