@@ -104,7 +104,10 @@ without relying on candy-bright colors or large dark background fills.
 
 ## 5 · Text
 
-- Region banners are the largest text in the figure.
+- Keep each numbered badge and its English region title compact. Their text may be only
+  slightly larger than primary node labels (at most about 110%); let weight, tint, and
+  placement distinguish the heading. Do not enlarge the numeral or make a tall banner that
+  takes space needed by node labels, details, icons, or arrows.
 - Block labels are short noun phrases, normally one to four words.
 - One short **method-only explanatory line** per region is allowed. It may explain what the
   stage does, but it must not report an outcome, advantage, score, rate, or empirical finding.
@@ -154,6 +157,9 @@ instructions:
 > shaped boundary, contrasting numbered badge, bold banner, and short internal micro-flow. Draw every real
 > branch, parallel path, shared kernel, loop, optional path, and reconvergence. Do not flatten
 > the whole method into a single chain.
+> Keep each region number and English title only slightly larger than primary node labels
+> (at most about 110%). Use bold weight and placement for hierarchy, with compact badges and
+> heading bands that preserve space for the method content.
 > Keep the connector count as low as the scientific topology permits. Omit redundant arrows,
 > group related nodes, and use clear shared trunks when appropriate. Place nodes and route
 > arrows to avoid crossings where possible; when a crossing cannot be avoided, make both

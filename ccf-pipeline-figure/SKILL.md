@@ -172,6 +172,9 @@ the paper body text:
 
 - **Primary labels** — module titles, key operations, central arrow labels, and essential
   callouts: **90–100%** of body size.
+- **Numbered region headings** — keep the numeral and its English region title compact, at
+  most about **110% of primary node labels**. Use weight and placement for hierarchy; do not
+  let a large badge or tall title banner crowd out node labels, method details, or arrows.
 - **Secondary explanatory text** — short supporting labels and noncentral annotations:
   **80–90%** of body size.
 - **Tertiary text below 80%** — allowed only for nonessential auxiliary information. It cannot
@@ -271,6 +274,8 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 - arrow-linked nodes have considered internal visual hierarchy and refined small details;
   avatars and other icons stay modest in size rather than filling a node with one oversized
   simple graphic; optional overlapping icons read as one object, not extra method stages;
+- region numbers and English titles are only slightly larger than primary node labels;
+  badges and heading bands leave enough room for the method content;
 - no standalone overall title banner, landscape, road, tree, or exterior signboard appears;
   the composition starts directly with Region 1 and is cropped tightly around the numbered
   method regions;
@@ -573,6 +578,9 @@ Every starred figure is **3 to 6 named REGIONS**, each holding a short micro-flo
 4. **A single vertical dashed divider** splitting the whole figure into two named halves —
    `Offline ╎ Online`, `Training ╎ Inference`, `Before ╎ After`.
 
+For new figures, keep the region number and title at most about 110% of primary node-label
+size, as specified in the fast path above; the banner should not displace method content.
+
 ⭐ **Regions are what let these figures be far denser than a Western arXiv figure without
 becoming unreadable.** The reader parses 4 regions, then reads inside one. Density is
 managed by grouping, never by deleting content.
@@ -641,7 +649,8 @@ violation makes draw.io draw an empty box with no error: `references/diagrams.md
 
 ### 2.4 Text: few words, but real ones — [MEASURED, median text density "medium"]
 
-- **Region banners**: bold, largest text in the figure.
+- **Region banners**: bold and the largest text in the historical examples. For new figures,
+  keep them compact and at most about 110% of primary node-label size.
 - **Block labels**: 1–3 words, noun phrases. `Question conversion`, `Index`, `Operators`.
 - ⭐ **Verbatim example content — 9 of the direction's figures do this** **[MEASURED]**. The
   starred figures show a *real* question, a *real* model output, a *real* retrieved
