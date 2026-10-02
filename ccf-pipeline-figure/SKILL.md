@@ -87,6 +87,15 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
   project contains multiple plausible manuscript versions and the active one cannot be determined
   from its source tree, Git state, or project documentation, record that ambiguity and ask the
   user; do not silently choose an older draft.
+- **Set the final paper slot and orientation before drawing.** Inspect the active paper's document
+  class, venue template, page geometry, existing `figure`/`figure*` use, and the replacement
+  figure's inclusion width when one exists. Decide and record: **single-column or double-column**
+  placement; **horizontal (landscape) or vertical (portrait)** orientation; final printed width;
+  and the evidence and scientific rationale. Let the paper's actual slot and the graph's reading
+  topology decide: a left-to-right chain commonly needs a horizontal slot, while a top-to-bottom
+  hierarchy or narrow process may need a vertical one. Do not select an orientation solely because
+  the image canvas is convenient. If the manuscript/template gives no reliable slot or both
+  placements remain equally defensible, ask the user before generating; do not silently assume.
 - For each overlapping figure, record its file path, figure label, caption or surrounding paper
   section, scientific purpose, and whether it is a data figure or conceptual figure. Then decide
   **replace**, **add distinct**, or **no current counterpart**. A same-purpose existing pipeline
@@ -116,6 +125,9 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
   `no current counterpart`. A replacement records the existing figure's intended paper position
   and reference relationship; an added second figure records why it cannot be combined legibly
   with the overall pipeline figure;
+- a **final-layout decision** for every planned figure: `single-column` or `double-column`,
+  `horizontal` or `vertical`, final printed width, source evidence (template/source/placement),
+  and a short rationale tied to the graph's reading order and regions;
 - three to six named regions/stages;
 - every object, operation, arrow, branch, shared path, and reconvergence;
 - exact short labels and documentation-safe real example strings;
@@ -135,7 +147,8 @@ self-contained prompt in this order:
 
 1. primary request and pre-experiment purpose;
 2. soft-colored editorial-comic visual target near the top;
-3. canvas and global reading order;
+3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
+   reading order;
 4. region-by-region scientific topology and exact arrows;
 5. branches, shared kernels, typed boundaries, and joins;
 6. exact labels and permitted example strings;
@@ -258,6 +271,8 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   method regions;
 - decorative accents stay inside region boundaries and do not consume a separate row or
   margin; short method-only explanatory lines remain allowed;
+- the rendered aspect ratio, reading direction, and region arrangement match the brief's explicit
+  horizontal/vertical decision and fit its explicit single-column/double-column paper slot;
 - labels remain readable at the intended paper width; and
 - primary labels are 90–100% of body size and secondary text 80–90% after final layout scaling;
   sub-80% text is nonessential and remains readable in the compiled paper; and
