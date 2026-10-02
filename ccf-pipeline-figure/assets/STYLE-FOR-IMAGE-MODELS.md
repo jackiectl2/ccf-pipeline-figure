@@ -30,6 +30,11 @@ without relying on candy-bright colors or large dark background fills.
 - Show real branches, parallel operations, joins, feedback loops, optional paths, and typed
   boundaries. Never serialize mutually exclusive or parallel operations just to simplify the
   layout.
+- Keep every necessary logical relationship legible while using as few arrow lines as the
+  topology permits. Remove duplicate or decorative connectors; group related nodes or use
+  clearly shared trunks where they reduce clutter without changing meaning. Arrange nodes
+  and route arrows to avoid crossings where possible. If a crossing is unavoidable, separate
+  the paths visually so each source, destination, and direction remains clear.
 - Non-uniform panels are encouraged. Give the scientifically important branch more room.
 - Do not add a standalone overall title banner. Start directly with Region 1; the paper
   caption supplies the figure title.
@@ -141,7 +146,7 @@ instructions:
 
 > Render this as a playful editorial-comic scientific infographic. It should feel like a
 > polished illustrated magazine roadmap: softly colored, icon-rich, and engaging, while
-> preserving every scientific arrow and boundary exactly. Avoid candy-bright colors and large
+> preserving every necessary scientific relationship and boundary. Avoid candy-bright colors and large
 > dark background fills, and do not make it a page of black text boxes.
 >
 > Compose the method as three to six named comic regions in a grid, stack, or asymmetric
@@ -149,6 +154,10 @@ instructions:
 > shaped boundary, contrasting numbered badge, bold banner, and short internal micro-flow. Draw every real
 > branch, parallel path, shared kernel, loop, optional path, and reconvergence. Do not flatten
 > the whole method into a single chain.
+> Keep the connector count as low as the scientific topology permits. Omit redundant arrows,
+> group related nodes, and use clear shared trunks when appropriate. Place nodes and route
+> arrows to avoid crossings where possible; when a crossing cannot be avoided, make both
+> paths and directions easy to follow. Never erase a necessary relationship to simplify the page.
 > Treat each arrow-linked item as a separate smaller node, whether two nodes sit in the same
 > named region or different ones. Give each node a clear hierarchy of icon, label, and
 > permitted method detail.

@@ -130,6 +130,9 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
   and a short rationale tied to the graph's reading order and regions;
 - three to six named regions/stages;
 - every object, operation, arrow, branch, shared path, and reconvergence;
+- a connector plan that distinguishes essential scientific relationships from redundant
+  drawn arrows, groups or shares paths where unambiguous, and arranges nodes to avoid
+  crossings where possible; any unavoidable crossing must remain easy to trace;
 - exact short labels and documentation-safe real example strings;
 - scientific invariants whose topology or meaning cannot change;
 - explicit exclusions separating method from results; and
@@ -149,7 +152,8 @@ self-contained prompt in this order:
 2. soft-colored editorial-comic visual target near the top;
 3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
    reading order;
-4. region-by-region scientific topology and exact arrows;
+4. region-by-region scientific topology and a concise connector plan that preserves every
+   necessary relationship while avoiding redundant arrows and crossings where possible;
 5. branches, shared kernels, typed boundaries, and joins;
 6. exact labels and permitted example strings;
 7. scientific invariants and method/result exclusions;
@@ -249,6 +253,7 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 
 - arrow direction, branches, shared paths, reconvergences, optional paths, and evidence-type
   boundaries match the brief;
+- every necessary relationship remains unambiguous after connector simplification;
 - the global figure is not flattened into a misleading single chain;
 - exact labels are present and correctly spelled;
 - no experiment result, score, rate, proportion, dataset/sample size, comparison, ablation,
@@ -273,6 +278,8 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   margin; short method-only explanatory lines remain allowed;
 - the rendered aspect ratio, reading direction, and region arrangement match the brief's explicit
   horizontal/vertical decision and fit its explicit single-column/double-column paper slot;
+- arrows do not duplicate relationships unnecessarily; node placement, grouping, and shared
+  paths avoid crossings where possible, and unavoidable crossings remain easy to trace;
 - labels remain readable at the intended paper width; and
 - primary labels are 90–100% of body size and secondary text 80–90% after final layout scaling;
   sub-80% text is nonessential and remains readable in the compiled paper; and
