@@ -33,8 +33,9 @@ without relying on candy-bright colors or large dark background fills.
 - Keep every necessary logical relationship legible while using as few arrow lines as the
   topology permits. Remove duplicate or decorative connectors; group related nodes or use
   clearly shared trunks where they reduce clutter without changing meaning. Arrange nodes
-  and route arrows to avoid crossings where possible. If a crossing is unavoidable, separate
-  the paths visually so each source, destination, and direction remains clear.
+  and route arrows so no arrow paths cross. An intentional, clearly connected branch/join
+  or shared-trunk junction is allowed; a path passing across another is not. If the first
+  arrangement forces a crossing, change the arrangement instead of accepting the crossing.
 - Non-uniform panels are encouraged. Give the scientifically important branch more room.
 - Do not add a standalone overall title banner. Start directly with Region 1; the paper
   caption supplies the figure title.
@@ -71,8 +72,9 @@ without relying on candy-bright colors or large dark background fills.
   heavy 3-D extrusion.
 - Dashed boundaries mean a set, phase, or region; solid boundaries mean a single object.
 - Scientific arrows use one unmistakable visual grammar: solid path, clear triangular head,
-  high contrast, and consistent direction. Comic motion ticks may decorate an arrow but may
-  never create a second ambiguous arrow.
+  high contrast, and consistent direction. Make arrow strokes slightly thinner than panel
+  and icon outlines, while keeping them visible at final paper width. Comic motion ticks may
+  decorate an arrow but may never create a second ambiguous arrow.
 - Use playful asymmetry without sacrificing alignment of the scientific graph.
 
 ## 4 · Icons: varied nouns, one family
@@ -162,8 +164,10 @@ instructions:
 > heading bands that preserve space for the method content.
 > Keep the connector count as low as the scientific topology permits. Omit redundant arrows,
 > group related nodes, and use clear shared trunks when appropriate. Place nodes and route
-> arrows to avoid crossings where possible; when a crossing cannot be avoided, make both
-> paths and directions easy to follow. Never erase a necessary relationship to simplify the page.
+> arrows so no two arrow paths cross. Intentional branch/join or shared-trunk junctions are
+> allowed, but crossing paths are not. Rearrange the layout if needed; never erase a necessary
+> relationship to simplify the page. Keep arrow strokes slightly thinner than panel/icon
+> outlines while clearly visible at final paper width.
 > Treat each arrow-linked item as a separate smaller node, whether two nodes sit in the same
 > named region or different ones. Give each node a clear hierarchy of icon, label, and
 > permitted method detail.
