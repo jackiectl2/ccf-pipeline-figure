@@ -131,8 +131,9 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
 - three to six named regions/stages;
 - every object, operation, arrow, branch, shared path, and reconvergence;
 - a connector plan that distinguishes essential scientific relationships from redundant
-  drawn arrows, groups or shares paths where unambiguous, and arranges nodes to avoid
-  crossings where possible; any unavoidable crossing must remain easy to trace;
+  drawn arrows, uses the fewest arrows that still make every relationship unambiguous,
+  and routes them without crossings; an intentional branch/join or shared-trunk junction
+  is not a crossing;
 - exact short labels and documentation-safe real example strings;
 - scientific invariants whose topology or meaning cannot change;
 - explicit exclusions separating method from results; and
@@ -153,7 +154,8 @@ self-contained prompt in this order:
 3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
    reading order;
 4. region-by-region scientific topology and a concise connector plan that preserves every
-   necessary relationship while avoiding redundant arrows and crossings where possible;
+   necessary relationship with as few arrows as possible, slightly thinner readable arrow
+   strokes, and no crossing arrow paths;
 5. branches, shared kernels, typed boundaries, and joins;
 6. exact labels and permitted example strings;
 7. scientific invariants and method/result exclusions;
@@ -214,8 +216,9 @@ output/imagegen/<project-name>/<figure-name>/
   refinement record also names its exact parent version and the defects it is allowed to change.
 - Never overwrite, delete, rename, or silently discard an earlier image, prompt, or review,
   including rejected candidates.
-- `SELECTED.md` names the best passing version and explains the choice. It is an index, not a
-  replacement for the versioned files.
+- `SELECTED.md` names the best version, its `final` or `provisional` status, and the reason.
+  It may say `final` only after every hard check passes, including zero arrow crossings.
+  It is an index, not a replacement for the versioned files.
 
 #### 5. Iterate in two bounded phases, then stop
 
@@ -241,10 +244,13 @@ output/imagegen/<project-name>/<figure-name>/
   typography, icons, and unaffected regions.
 - Use built-in image edit mode with the current best bitmap as the sole edit target. Save the edit
   as the next immutable `vNN` version; never overwrite the parent. If an edit regresses a correct
-  area, keep the earlier best as the parent for the next round rather than compounding the drift.
+  area or introduces an arrow crossing, keep the earlier best as the parent for the next round
+  rather than compounding the drift.
 - Perform at most the user-selected number of local-refinement rounds (default: three). Stop early
   when a refinement passes every hard check. After the selected final refinement, stop even if
-  defects remain; select the best version across both phases and report every unresolved defect.
+  defects remain. Select a final version only if it passes every hard check; otherwise identify
+  the best version as provisional and report the unresolved defects without presenting it as a
+  compliant final figure.
 
 The absolute per-invocation ceiling is the selected fresh-candidate count plus the selected
 refinement count (default: ten image outputs total). Never restart exploration, open another
@@ -257,6 +263,8 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 - arrow direction, branches, shared paths, reconvergences, optional paths, and evidence-type
   boundaries match the brief;
 - every necessary relationship remains unambiguous after connector simplification;
+- no two arrow paths cross, except an intentional, clearly connected branch/join or shared-trunk
+  junction; reroute, rearrange, or regroup nodes rather than accepting a crossing;
 - the global figure is not flattened into a misleading single chain;
 - exact labels are present and correctly spelled;
 - no experiment result, score, rate, proportion, dataset/sample size, comparison, ablation,
@@ -283,8 +291,9 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   margin; short method-only explanatory lines remain allowed;
 - the rendered aspect ratio, reading direction, and region arrangement match the brief's explicit
   horizontal/vertical decision and fit its explicit single-column/double-column paper slot;
-- arrows do not duplicate relationships unnecessarily; node placement, grouping, and shared
-  paths avoid crossings where possible, and unavoidable crossings remain easy to trace;
+- arrows are as few as the scientific topology permits, with no redundant decorative lines;
+  their strokes are slightly thinner than panel/icon outlines but remain visible at final
+  print size;
 - labels remain readable at the intended paper width; and
 - primary labels are 90–100% of body size and secondary text 80–90% after final layout scaling;
   sub-80% text is nonessential and remains readable in the compiled paper; and
@@ -293,8 +302,9 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 #### 7. Finish with an auditable handoff
 
 Report the project brief path, every image/prompt/review path created in this invocation, the
-selected fresh-candidate and refinement limits and counts, the selected version and its parent chain, the stopping
-reason, and whether the backend model was explicit or host-managed. Do not insert the figure into
+selected fresh-candidate and refinement limits and counts, the best version and its `final` or
+`provisional` status and parent chain, the stopping reason, and whether the backend model was
+explicit or host-managed. Do not insert the figure into
 a paper, edit LaTeX, create PPTX/SVG/draw.io, commit the project, or push anything unless the user
 separately asks for those actions.
 
