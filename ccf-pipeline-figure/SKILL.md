@@ -170,8 +170,8 @@ self-contained prompt in this order:
 3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
    reading order;
 4. region-by-region scientific topology and a concise connector plan that preserves every
-   necessary relationship with as few arrows as possible, slightly thinner readable arrow
-   strokes, and no crossing arrow paths;
+   necessary relationship with as few arrows as possible, medium-weight high-contrast
+   arrow strokes, and no crossing arrow paths;
 5. branches, shared kernels, typed boundaries, and joins;
 6. only essential short labels and indispensable permitted example strings; put the fuller
    explanation in the paired description file, not in the image;
@@ -337,8 +337,9 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 - the rendered aspect ratio, reading direction, and region arrangement match the brief's explicit
   horizontal/vertical decision and fit its explicit single-column/double-column paper slot;
 - arrows are as few as the scientific topology permits, with no redundant decorative lines;
-  their strokes are slightly thinner than panel/icon outlines but remain visible at final
-  print size;
+  their strokes have balanced medium weight at final print size, neither heavy bars nor
+  hairlines, and a dark enough color (normally deep charcoal or navy) to remain obvious
+  against both neutral-gray and later soft-colored region fills;
 - labels remain readable at the intended paper width; and
 - primary labels are 90–100% of body size and secondary text 80–90% after final layout scaling;
   sub-80% text is nonessential and remains readable in the compiled paper; and
