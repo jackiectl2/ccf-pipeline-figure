@@ -9,10 +9,11 @@ The project's `TECHNICAL_FIGURE_BRIEF.md` is authoritative for scientific meanin
 labels, examples, and result exclusions. This file is authoritative for visual treatment.
 An explicit user aesthetic preference may override this style, but never the scientific brief.
 
-The target is a **playful editorial-comic scientific infographic with soft color**. It must
-feel like a polished illustrated magazine roadmap or a high-quality educational comic, not a
-restrained corporate flowchart or a page of black text boxes. Keep the composition lively
-without relying on candy-bright colors or large dark background fills.
+The target is a **playful editorial-comic scientific infographic**. The initial structure
+pass uses near-white neutral-gray region fills; soft color may remain in icons and small
+accents. Add soft region background colors only in a later explicit color-edit invocation.
+The figure should feel like a polished illustrated magazine roadmap or a high-quality
+educational comic, without candy-bright colors or large dark background fills.
 
 ---
 
@@ -20,7 +21,8 @@ without relying on candy-bright colors or large dark background fills.
 
 - Build the figure as **three to six named regions**, not as one long row of boxes.
 - Give each region a clear visual identity: rounded or irregular comic-panel boundary,
-  lightly tinted background field, numbered badge, bold banner, and a short local micro-flow.
+  near-white neutral-gray background field, numbered badge, bold banner, and a short local
+  micro-flow. Keep the panel fill achromatic during the initial structure pass.
 - The global layout is a grid, stack, or asymmetric editorial composition. Inside one region,
   a short left-to-right or top-to-bottom flow is fine.
 - Distinguish named regions from the smaller nodes joined by arrows: in `A → B`, A and B are
@@ -44,19 +46,25 @@ without relying on candy-bright colors or large dark background fills.
 - Decorative elements must stay outside arrow corridors and must not resemble nodes, ports,
   evidence tokens, outcomes, or data-flow arrows.
 
-## 2 · Color: soft, coordinated, and role-aware
+## 2 · Color: neutral panels first, soft color later
 
-- Use a small coordinated set of **soft, lightly saturated colors**. Pale coral, peach,
-  butter yellow, sage or mint, powder blue, and lavender are possible choices, not a quota.
-- Regions may reuse a color when they serve related roles. The figure background as a whole
-  should not be one uniform color; vary light tints across panels, cards, or accents.
+- **Initial invocation:** use the same pure, achromatic near-white gray for region background
+  fills (for example `#F7F7F7`), without hue, colored gradients, or pastel tint. Keep the page
+  white or near white and distinguish regions with boundaries, badges, and layout. This is the
+  selected structural base to inspect before choosing panel colors.
+- **Later explicit “add background colors” invocation:** edit only those region fills. Use a
+  small coordinated set of **soft, lightly saturated colors**. Pale coral, peach, butter
+  yellow, sage or mint, powder blue, and lavender are possible choices, not a quota. Related
+  regions may reuse a color; they need not all differ. Give the colored figure enough light
+  variation that its background is not one uniform color.
 - White may be used for the page or text cards. Keep the panels distinguishable and readable
   at thumbnail size without making their fills dark or saturated.
 - Use near-black or deep navy for text and outlines where needed for contrast, not for large
   background fields. Outlines may be more expressive than ordinary academic line art.
 - Reserve stable semantic roles where the science needs them: for example, one color for lane
   A, another for lane B, and muted amber for the principal flow. Keep those mappings
-  consistent from input to output.
+  consistent from input to output. Do not alter those existing science-bearing colors in
+  the later panel-fill edit.
 - Soft decorative colors are allowed for banners, stickers, and icons, but they must not imply
   nonexistent experimental categories or measured differences.
 - Color the icons themselves while preserving contrast with their backgrounds.
@@ -65,8 +73,8 @@ without relying on candy-bright colors or large dark background fills.
 
 - Use rounded sticker capsules, playful banners, chunky tabs, speech bubbles, file cards,
   ribbons, tags, badges, and varied silhouettes.
-- A subtle panel gradient, gentle cel shading, small highlight, or shallow offset shadow is
-  allowed when it improves energy and separation.
+- Keep region background fills flat in the initial neutral stage. Gentle cel shading, small
+  highlights, or shallow offset shadows may add depth to icons and other non-panel elements.
 - Keep the rendering illustrative and flat enough for a paper figure. Avoid photorealism,
   glossy product-render surfaces, glassmorphism, metallic materials, deep perspective, and
   heavy 3-D extrusion.
@@ -146,16 +154,17 @@ without relying on candy-bright colors or large dark background fills.
 
 ## 8 · Paste-ready prompt block
 
-Append this after the scientific brief has been converted into exact region and arrow
-instructions:
+For the initial neutral-structure invocation, append this after the scientific brief has
+been converted into exact region and arrow instructions:
 
 > Render this as a playful editorial-comic scientific infographic. It should feel like a
-> polished illustrated magazine roadmap: softly colored, icon-rich, and engaging, while
+> polished illustrated magazine roadmap: icon-rich and engaging, while
 > preserving every necessary scientific relationship and boundary. Avoid candy-bright colors and large
 > dark background fills, and do not make it a page of black text boxes.
 >
 > Compose the method as three to six named comic regions in a grid, stack, or asymmetric
-> editorial layout. Give every region a lightly tinted background field, rounded or playfully
+> editorial layout. Give every region the same achromatic near-white gray background fill
+> (for example `#F7F7F7`), with no pastel tint or colored gradient. Add a rounded or playfully
 > shaped boundary, contrasting numbered badge, bold banner, and short internal micro-flow. Draw every real
 > branch, parallel path, shared kernel, loop, optional path, and reconvergence. Do not flatten
 > the whole method into a single chain.
@@ -172,11 +181,11 @@ instructions:
 > named region or different ones. Give each node a clear hierarchy of icon, label, and
 > permitted method detail.
 >
-> Use a small coordinated set of soft, lightly saturated colors, such as pale coral, peach,
-> butter yellow, sage, powder blue, or lavender. Regions may reuse colors; vary light tints
-> across panels, cards, or accents so the whole background is not one uniform color. Use deep
-> navy or near-black for readable text and outlines, not large background fields. Keep any
-> science-bearing lane colors consistent; decorative colors must not imply measured categories.
+> Keep the page white or near white. Region backgrounds stay neutral gray in this invocation;
+> do not add region background colors yet. Soft color may appear in icons, banners, or small
+> accents. Use deep navy or near-black for readable text and outlines, not large background
+> fields. Keep any science-bearing lane colors consistent; decorative colors must not imply
+> measured categories.
 >
 > Give every major noun and operation a distinct, easy-to-name cartoon icon from one coherent
 > family. Use varied silhouettes rather than repeating document and folder icons. Use colored
@@ -192,8 +201,9 @@ instructions:
 > around the numbered method regions. Decorative accents are allowed only inside region
 > boundaries and must not consume a separate row or margin.
 >
-> Subtle panel gradients, light cel shading, small highlights, and shallow offset shadows are
-> allowed. Do not use photorealism, glossy 3-D rendering, glassmorphism, metallic materials,
+> Keep the near-white gray region fills flat, without gradients. Light cel shading, small
+> highlights, and shallow offset shadows may decorate non-panel elements. Do not use
+> photorealism, glossy 3-D rendering, glassmorphism, metallic materials,
 > heavy shadows, strong glow, or cinematic scenery. Decorative marks must never resemble
 > scientific nodes or arrows.
 >
@@ -201,3 +211,10 @@ instructions:
 > result, metric value, percentage, count, dataset size, empirical comparison, ablation,
 > error-analysis finding, or conclusion. The figure must remain readable at its intended paper
 > width and scientifically exact under close inspection.
+
+For the later explicit panel-color invocation, use built-in image editing on the selected
+neutral figure, not this new-image prompt. Tell the editor to change **only** the region
+background fills to a small coordinated set of soft, light colors. Related regions may reuse
+a tint. Keep the page white or near white. Preserve all text, icons, arrows, boundaries,
+positions, dimensions, and existing science-bearing colors. Reject any edit that changes
+content or introduces an arrow crossing.

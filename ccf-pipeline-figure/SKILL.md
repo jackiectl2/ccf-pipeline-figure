@@ -7,7 +7,8 @@ description: >-
   架构图 / pipeline 图 when Codex should derive the technical brief, call its subscription-
   backed built-in image generator, preserve every candidate, ask the user to set the number of
   fresh candidates and the refinement cap (default: seven and three), then locally refine the best
-  candidate when needed. Do not use
+  candidate when needed. Default to near-white neutral-gray region fills; add soft region colors
+  only on a later explicit recolor invocation. Do not use
   for data figures where position, length, angle, or colour encodes a measured quantity.
 metadata:
   short-description: One-line project-to-pipeline figure workflow
@@ -37,6 +38,7 @@ Native explicit invocation is:
 ```text
 $ccf-pipeline-figure /path/to/project
 $ccf-pipeline-figure /path/to/project — portrait, single-column, emphasize the two evidence lanes
+$ccf-pipeline-figure /path/to/project — 给选中的图的各区域加底色
 ```
 
 In Codex, `/skills` opens the skill picker and `$ccf-pipeline-figure` mentions this skill.
@@ -55,6 +57,8 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
 4. If no fresh candidate passes within the user-selected candidate count, switch to built-in edit
    mode for the user-selected bounded refinement phase defined below. Use the selected best
    candidate as the sole edit target and preserve every already-correct region aggressively.
+   A later explicit panel-color invocation also uses edit mode, starting from the selected
+   neutral figure; it never restarts fresh generation.
 5. The built-in tool may not expose a model selector. If it explicitly exposes GPT Image 2.5,
    prefer **GPT Image 2.5 Sunburst** for final-quality scientific figures. If it exposes no
    selector, use the built-in host-managed backend and report that fact; never claim a model
@@ -64,14 +68,20 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
 
 #### 1. Resolve and inspect the project
 
-- At the start of every invocation, ask the user to select the generation budget before doing any
-  project work: the number of fresh candidates and the maximum local-refinement rounds. Offer
+- First determine whether the user requests a new conceptual figure or explicitly asks to add
+  region background colors to an existing selected neutral figure. For a new figure, ask for the
+  number of fresh candidates and the maximum local-refinement rounds before project work. Offer
   **Default: 7 fresh candidates; up to 3 refinements**. The user may choose 1–7 fresh candidates
-  and 0–3 refinements instead. Wait for this choice; an answer of “default” selects 7 and 3.
-- Record the selected limits in `TECHNICAL_FIGURE_BRIEF.md` and every generation/review record.
+  and 0–3 refinements; “default” selects 7 and 3. For a later panel-color invocation, ask only
+  for the maximum number of local color edits (**default: up to 3**, selectable 1–3). Wait for
+  the applicable choice. Then use the corresponding route below.
+- Record each invocation's selected limits and color stage in `TECHNICAL_FIGURE_BRIEF.md` and
+  every generation/review record; preserve the earlier neutral-stage budget when adding color.
 
 - Resolve the project folder first. Read every applicable `AGENTS.md`, `CLAUDE.md`, project
   policy, or equivalent instruction file before other project content.
+- On a later color-only invocation, continue with §8 after reading those rules; reuse the
+  existing brief and selected image rather than restarting the manuscript-to-figure workflow.
 - Never open a file that project rules prohibit. Never open secrets, credentials, private
   keys, environment files, or unrelated personal data.
 - Inventory with `rg --files` before reading. Cover the paper, README files, method/design
@@ -139,6 +149,10 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
 - explicit exclusions separating method from results; and
 - a source-of-truth table citing the project files behind each part.
 
+Record the color stage as `neutral_structure` for the initial figure. Its region background
+fills are achromatic near-white gray. Do not plan colored region fills until the user invokes
+the skill again and explicitly asks to add them.
+
 The brief is the scientific authority. Do not draw until the manuscript figure audit has a
 replacement/addition decision and every arrow can be justified from code, configuration, tests,
 or project documentation. Do not ask the user to write this brief when the project contains
@@ -150,7 +164,7 @@ After the brief exists, read `assets/STYLE-FOR-IMAGE-MODELS.md` completely. Cons
 self-contained prompt in this order:
 
 1. primary request and pre-experiment purpose;
-2. soft-colored editorial-comic visual target near the top;
+2. editorial-comic visual target with achromatic near-white region fills near the top;
 3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
    reading order;
 4. region-by-region scientific topology and a concise connector plan that preserves every
@@ -214,9 +228,12 @@ output/imagegen/<project-name>/<figure-name>/
   Chinese. Keep file names, exact labels, phase values, and necessary technical terms in English.
 - Record `phase: fresh_candidate` or `phase: local_refinement` in every prompt and review. A
   refinement record also names its exact parent version and the defects it is allowed to change.
+  For the later color call, use `phase: panel_recolor` and record its exact neutral parent.
 - Never overwrite, delete, rename, or silently discard an earlier image, prompt, or review,
   including rejected candidates.
-- `SELECTED.md` names the best version, its `final` or `provisional` status, and the reason.
+- `SELECTED.md` names the best version, its color stage (`neutral_structure` or
+  `colored_panels`), its `final` or `provisional` status, and the reason. Retain the selected
+  neutral-base version in this index after later coloring.
   It may say `final` only after every hard check passes, including zero arrow crossings.
   It is an index, not a replacement for the versioned files.
 
@@ -273,10 +290,14 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 
 **Visual hard checks** — any failure triggers another candidate while budget remains:
 
-- the thumbnail reads as a softly colored editorial-comic infographic, not a grid of black
-  text boxes or a restrained corporate flowchart;
-- light tints vary across the figure without requiring a unique color for every region; the
-  whole background is not one uniform color, and large dark fills are absent;
+- the thumbnail reads as an editorial-comic infographic, with soft color in icons or accents
+  while initial region fills stay neutral; it is not a grid of black text boxes or a
+  restrained corporate flowchart;
+- in the initial `neutral_structure` stage, every region has an achromatic near-white gray
+  background fill, distinct from the page background; no colored tint enters a region fill;
+  in the later `colored_panels` stage, use soft light tints that may repeat across related
+  regions, with enough variation that the whole background is not one uniform color;
+  large dark fills are absent in either stage;
 - every major noun or operation has a recognizable glyph, with varied silhouettes rather
   than repeated document/folder icons;
 - arrow-linked nodes have considered internal visual hierarchy and refined small details;
@@ -303,10 +324,33 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 
 Report the project brief path, every image/prompt/review path created in this invocation, the
 selected fresh-candidate and refinement limits and counts, the best version and its `final` or
-`provisional` status and parent chain, the stopping reason, and whether the backend model was
-explicit or host-managed. Do not insert the figure into
-a paper, edit LaTeX, create PPTX/SVG/draw.io, commit the project, or push anything unless the user
+`provisional` status, color stage, and parent chain, the stopping reason, and whether the
+backend model was explicit or host-managed. Do not insert the figure into a paper, edit
+LaTeX, create PPTX/SVG/draw.io, commit the project, or push anything unless the user
 separately asks for those actions.
+
+#### 8. Later invocation: add region background colors
+
+Only enter this route when the user invokes the skill again and asks to add region/background
+colors. Do not automatically color panels at the end of the initial invocation.
+
+- After reading project rules, reuse the current `TECHNICAL_FIGURE_BRIEF.md`, `SELECTED.md`,
+  exact neutral-base image, and its review. Confirm that the base is a `final`
+  `neutral_structure` figure and still matches the active manuscript. If it is provisional or
+  the paper changed materially, report the issue and leave coloring for after the structure
+  is corrected.
+- Choose a small set of soft, lightly saturated region fills from the style file. Related
+  regions may share a tint; they need not all differ. Keep the page background white or near
+  white. Apply color only to region background fills, preserving every label, icon, banner,
+  arrow, boundary, position, size, and scientific relationship exactly.
+- Use the built-in image edit tool with the neutral-base bitmap as the edit target. Save each
+  result as a new immutable `vNN` with prompt and Chinese review; use at most the selected
+  1–3 color edits, and never start a new-image batch. Inspect every edit against its neutral
+  parent at final paper width. Reject color bleed, lost contrast, changed content, arrow
+  crossings, or any other regression in the hard checks.
+- Mark a colored version `final` only if it passes all scientific and visual hard checks.
+  If the edit budget ends without one, keep the neutral-base selection as the last valid
+  figure, record the colored attempts as rejected/provisional, and report the defects.
 
 ---
 
@@ -545,9 +589,10 @@ genuinely has three separable structures, which is what the 14 % have.
 `assets/STYLE-FOR-IMAGE-MODELS.md` — an operational editorial-comic profile tuned for raster
 generation. It preserves the structural evidence in this section but uses soft color, a richer
 icon vocabulary, region-bounded decoration, and shallow comic depth. Its palette and region
-color rules govern the raster route instead of the measured vector defaults below. It carries
-**no statistics on purpose**: counts
-stay here; image-model instructions live there.
+color rules govern the raster route instead of the measured vector defaults below. In that
+raster route, initial region fills are near-white gray; colored fills are a separate later
+invocation. The pastel fills described below are historical examples, not the initial default.
+It carries **no statistics on purpose**: counts stay here; image-model instructions live there.
 ⛔ It is only for figures carrying no measured quantity — an image model bakes numbers into
 pixels, where nothing can check them.
 
