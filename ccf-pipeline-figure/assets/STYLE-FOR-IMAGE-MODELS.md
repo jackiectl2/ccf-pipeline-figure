@@ -81,9 +81,12 @@ educational comic, without candy-bright colors or large dark background fills.
   heavy 3-D extrusion.
 - Dashed boundaries mean a set, phase, or region; solid boundaries mean a single object.
 - Scientific arrows use one unmistakable visual grammar: solid path, clear triangular head,
-  high contrast, and consistent direction. Make arrow strokes slightly thinner than panel
-  and icon outlines, while keeping them visible at final paper width. Comic motion ticks may
-  decorate an arrow but may never create a second ambiguous arrow.
+  high contrast, and consistent direction. Use a balanced medium stroke at final paper
+  width: neither a heavy bar nor a faint hairline. Prefer deep charcoal or navy so a
+  moderately weighted arrow stays clear against neutral-gray and soft-colored panel fills.
+  If arrow color encodes a scientific lane or type, keep those colors consistent and dark
+  enough to read. Comic motion ticks may decorate an arrow but may never create a second
+  ambiguous arrow.
 - Use playful asymmetry without sacrificing alignment of the scientific graph.
 
 ## 4 · Icons: varied nouns, one family
@@ -181,8 +184,10 @@ been converted into exact region and arrow instructions:
 > group related nodes, and use clear shared trunks when appropriate. Place nodes and route
 > arrows so no two arrow paths cross. Intentional branch/join or shared-trunk junctions are
 > allowed, but crossing paths are not. Rearrange the layout if needed; never erase a necessary
-> relationship to simplify the page. Keep arrow strokes slightly thinner than panel/icon
-> outlines while clearly visible at final paper width.
+> relationship to simplify the page. Draw arrows at balanced medium weight, neither thick
+> bars nor thin hairlines, with clear triangular heads. Prefer deep charcoal or navy for
+> contrast against the light panels; preserve any necessary semantic arrow colors at a
+> similarly readable depth. Check their visibility at final paper width.
 > Treat each arrow-linked item as a separate smaller node, whether two nodes sit in the same
 > named region or different ones. Give each node a clear hierarchy of icon, label, and
 > permitted method detail.
