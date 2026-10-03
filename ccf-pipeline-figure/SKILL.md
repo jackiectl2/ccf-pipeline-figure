@@ -8,7 +8,8 @@ description: >-
   backed built-in image generator, preserve every candidate, ask the user to set the number of
   fresh candidates and the refinement cap (default: seven and three), then locally refine the best
   candidate when needed. Default to near-white neutral-gray region fills; add soft region colors
-  only on a later explicit recolor invocation. Do not use
+  only on a later explicit recolor invocation. Keep in-figure text sparse and save a paired
+  manuscript-description reference for each generated image. Do not use
   for data figures where position, length, angle, or colour encodes a measured quantity.
 metadata:
   short-description: One-line project-to-pipeline figure workflow
@@ -144,7 +145,8 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
   drawn arrows, uses the fewest arrows that still make every relationship unambiguous,
   and routes them without crossings; an intentional branch/join or shared-trunk junction
   is not a crossing;
-- exact short labels and documentation-safe real example strings;
+- exact short labels needed to read the graph, and only documentation-safe example strings
+  whose presence in the image is essential; move explanatory prose to the paired description;
 - scientific invariants whose topology or meaning cannot change;
 - explicit exclusions separating method from results; and
 - a source-of-truth table citing the project files behind each part.
@@ -171,13 +173,20 @@ self-contained prompt in this order:
    necessary relationship with as few arrows as possible, slightly thinner readable arrow
    strokes, and no crossing arrow paths;
 5. branches, shared kernels, typed boundaries, and joins;
-6. exact labels and permitted example strings;
+6. only essential short labels and indispensable permitted example strings; put the fuller
+   explanation in the paired description file, not in the image;
 7. scientific invariants and method/result exclusions;
 8. readability and output intent.
 
 The brief wins on science. The style file wins on palette, icon vocabulary, decoration,
 typography, and comic energy. A user-supplied visual preference wins over the style defaults
 but never over scientific topology or result exclusions.
+
+Treat the figure as a visual map for the paper, not a self-contained methods paragraph.
+Default to concise region names, short node labels, and arrow labels only where direction
+or type would otherwise be ambiguous. Omit explanatory sentences, repeated labels, and
+callouts whose content can live in the paper body. Preserve every distinction required to
+understand the scientific graph; do not make an unlabeled icon carry an ambiguous operation.
 
 ### Default conceptual-figure label sizing
 
@@ -211,9 +220,11 @@ output/imagegen/<project-name>/<figure-name>/
   v01.prompt.md
   v01.png
   v01.review.md
+  v01.description.md
   v02.prompt.md
   v02.png
   v02.review.md
+  v02.description.md
   ...
   SELECTED.md
 ```
@@ -226,14 +237,24 @@ output/imagegen/<project-name>/<figure-name>/
 - Inspect it and save the disposition and concrete defects in `vNN.review.md`. Write the review
   primarily in Chinese: headings, verdict, strengths, defects, and next-step rationale must be
   Chinese. Keep file names, exact labels, phase values, and necessary technical terms in English.
+- After inspecting **each** `vNN.png`, write its matching `vNN.description.md`. This is a
+  reference for a later paper-writing agent, not approved manuscript text. State the image
+  version and review verdict; describe what the rendered regions, branches, arrows, and
+  labels actually show. If the version passes every scientific hard check, add a concise English draft
+  paragraph for the paper body that explains the verified method details intentionally
+  omitted from the sparse figure. Cite the relevant project files from the brief. If the
+  image is wrong, mark the description `rejected` or `provisional`, name the visible
+  mismatch, and withhold publication-ready prose for that version. Do not invent results
+  or claim details unsupported by the project or visible image.
 - Record `phase: fresh_candidate` or `phase: local_refinement` in every prompt and review. A
   refinement record also names its exact parent version and the defects it is allowed to change.
   For the later color call, use `phase: panel_recolor` and record its exact neutral parent.
-- Never overwrite, delete, rename, or silently discard an earlier image, prompt, or review,
-  including rejected candidates.
+- Never overwrite, delete, rename, or silently discard an earlier image, prompt, review, or
+  description, including rejected candidates.
 - `SELECTED.md` names the best version, its color stage (`neutral_structure` or
   `colored_panels`), its `final` or `provisional` status, and the reason. Retain the selected
-  neutral-base version in this index after later coloring.
+  neutral-base version in this index after later coloring. Link the selected `vNN.png` and
+  its paired `vNN.description.md`.
   It may say `final` only after every hard check passes, including zero arrow crossings.
   It is an index, not a replacement for the versioned files.
 
@@ -305,11 +326,14 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   simple graphic; optional overlapping icons read as one object, not extra method stages;
 - region numbers and English titles are only slightly larger than primary node labels;
   badges and heading bands leave enough room for the method content;
+- in-figure text is limited to essential short labels and genuinely indispensable examples;
+  avoidable explanatory lines, repeated labels, and prose callouts are omitted;
 - no standalone overall title banner, landscape, road, tree, or exterior signboard appears;
   the composition starts directly with Region 1 and is cropped tightly around the numbered
   method regions;
 - decorative accents stay inside region boundaries and do not consume a separate row or
-  margin; short method-only explanatory lines remain allowed;
+  margin; a short method-only explanatory line is allowed only when needed to prevent an
+  ambiguous scientific reading;
 - the rendered aspect ratio, reading direction, and region arrangement match the brief's explicit
   horizontal/vertical decision and fit its explicit single-column/double-column paper slot;
 - arrows are as few as the scientific topology permits, with no redundant decorative lines;
@@ -322,7 +346,11 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 
 #### 7. Finish with an auditable handoff
 
-Report the project brief path, every image/prompt/review path created in this invocation, the
+At the end of every invocation that creates images, list **every generated image and its
+matching description file as absolute paths**, paired by version and grouped by conceptual
+figure. Include rejected and provisional versions with their status; clearly identify the
+selected version. At minimum, give the selected image path and its description path for
+each conceptual figure. Also report the project brief path, prompt/review paths, the
 selected fresh-candidate and refinement limits and counts, the best version and its `final` or
 `provisional` status, color stage, and parent chain, the stopping reason, and whether the
 backend model was explicit or host-managed. Do not insert the figure into a paper, edit
@@ -344,8 +372,8 @@ colors. Do not automatically color panels at the end of the initial invocation.
   white. Apply color only to region background fills, preserving every label, icon, banner,
   arrow, boundary, position, size, and scientific relationship exactly.
 - Use the built-in image edit tool with the neutral-base bitmap as the edit target. Save each
-  result as a new immutable `vNN` with prompt and Chinese review; use at most the selected
-  1–3 color edits, and never start a new-image batch. Inspect every edit against its neutral
+  result as a new immutable `vNN` with prompt, Chinese review, and paired description. Use at
+  most the selected 1–3 color edits, and never start a new-image batch. Inspect every edit against its neutral
   parent at final paper width. Reject color bleed, lost contrast, changed content, arrow
   crossings, or any other regression in the hard checks.
 - Mark a colored version `final` only if it passes all scientific and visual hard checks.
@@ -717,6 +745,10 @@ violation makes draw.io draw an empty box with no error: `references/diagrams.md
 - ⭐ **Not one of the seventeen starred figures has low text density** **[MEASURED, set P]** —
   0 of 17, against 12 of the 30 dropped. Sparseness is not what makes a figure good here;
   §2.1's regions are what make density survivable.
+
+Those are observations about the historical corpus. For new figures, follow the sparse-text
+fast path above: keep only necessary labels and rare indispensable examples in the image;
+place the fuller explanation in `vNN.description.md` for later manuscript writing.
 
 ### 2.5 Captions
 
