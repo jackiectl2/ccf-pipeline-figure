@@ -27,8 +27,9 @@ educational comic, without candy-bright colors or large dark background fills.
   a short left-to-right or top-to-bottom flow is fine.
 - Distinguish named regions from the smaller nodes joined by arrows: in `A → B`, A and B are
   two nodes, whether they sit in the same region or different ones. Give each node a clear
-  internal hierarchy and enough room for its actual label, icon, and method detail; do not
-  let one large icon occupy most of the node.
+  internal hierarchy and enough room for its short label and icon; keep fuller method detail
+  in the paired description file rather than adding prose inside the node. Do not let one
+  large icon occupy most of the node.
 - Show real branches, parallel operations, joins, feedback loops, optional paths, and typed
   boundaries. Never serialize mutually exclusive or parallel operations just to simplify the
   layout.
@@ -114,15 +115,20 @@ educational comic, without candy-bright colors or large dark background fills.
 
 ## 5 · Text
 
+- Make the diagram readable with as little text as the scientific topology permits. Keep
+  essential region and node names; label an arrow only when its direction or type is unclear.
+  Put full explanations in the paired paper-body description file for the writing agent.
 - Keep each numbered badge and its English region title compact. Their text may be only
   slightly larger than primary node labels (at most about 110%); let weight, tint, and
   placement distinguish the heading. Do not enlarge the numeral or make a tall banner that
   takes space needed by node labels, details, icons, or arrows.
 - Block labels are short noun phrases, normally one to four words.
-- One short **method-only explanatory line** per region is allowed. It may explain what the
-  stage does, but it must not report an outcome, advantage, score, rate, or empirical finding.
-- Put real documentation-safe example content in a bordered callout when the brief permits it.
-  Quote it exactly and distinguish it from a result.
+- Omit explanatory sentences and default to **no** explanatory line within a region. Add
+  at most one short method-only line only when labels, icons, and arrows cannot make a
+  necessary scientific distinction clear; it must not report a result.
+- Use a bordered callout with documentation-safe example content only when the actual
+  example is indispensable to understanding an operation. Quote it exactly and distinguish
+  it from a result. Otherwise describe the example in the paired file and paper body.
 - Use bold, friendly editorial typography with high contrast. Monospaced text is reserved for
   code identifiers and verbatim strings.
 - Spell every supplied label exactly. Do not invent extra claims, slogans, or technical terms.
@@ -190,7 +196,10 @@ been converted into exact region and arrow instructions:
 > Give every major noun and operation a distinct, easy-to-name cartoon icon from one coherent
 > family. Use varied silhouettes rather than repeating document and folder icons. Use colored
 > icon fills, thick outlines, sticker capsules, banners, badges, tags, small motion ticks, and
-> restrained corner doodles. One short method-only explanatory line per region is allowed.
+> restrained corner doodles. Keep in-figure text sparse: concise region and node names, and
+> arrow labels only when necessary. Do not add explanatory sentences or repeated labels.
+> Add one short method-only line to a region only if a necessary distinction otherwise becomes
+> ambiguous; leave the fuller explanation for the paper body and paired description file.
 > Keep avatar heads, cartoon people, and other icons modest in size within their nodes; never
 > let a large simple character or glyph occupy most of a node. Prefer purposeful visual
 > detail and readable organization inside each node over oversized decoration. When
@@ -207,7 +216,7 @@ been converted into exact region and arrow instructions:
 > heavy shadows, strong glow, or cinematic scenery. Decorative marks must never resemble
 > scientific nodes or arrows.
 >
-> Render all supplied text verbatim with large readable typography. Include no experimental
+> Render the essential supplied labels verbatim with readable typography. Include no experimental
 > result, metric value, percentage, count, dataset size, empirical comparison, ablation,
 > error-analysis finding, or conclusion. The figure must remain readable at its intended paper
 > width and scientifically exact under close inspection.
