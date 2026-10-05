@@ -176,7 +176,10 @@ self-contained prompt in this order:
 6. only essential short labels and indispensable permitted example strings; put the fuller
    explanation in the paired description file, not in the image;
 7. scientific invariants and method/result exclusions;
-8. readability and output intent.
+8. readability and output intent, including an explicit request for **4K-class raster
+   resolution** while preserving the selected paper-slot aspect ratio. For a 16:9 layout,
+   request UHD 4K (`3840×2160` landscape or `2160×3840` portrait); do not force 16:9 onto
+   a different planned layout. The built-in tool may ignore the size request.
 
 The brief wins on science. The style file wins on palette, icon vocabulary, decoration,
 typography, and comic energy. A user-supplied visual preference wins over the style defaults
@@ -234,6 +237,9 @@ output/imagegen/<project-name>/<figure-name>/
 - Save the exact prompt as `vNN.prompt.md` before or immediately after its generation, without
   rewriting it to describe the output retrospectively.
 - Copy the generated bitmap from the built-in tool's managed output location to `vNN.png`.
+- Read the saved PNG's actual pixel width and height and record them in `vNN.review.md`.
+  State whether the 4K-class request was met; never label a smaller output “4K” merely
+  because the prompt requested it. Resolution alone does not decide scientific acceptance.
 - Inspect it and save the disposition and concrete defects in `vNN.review.md`. Write the review
   primarily in Chinese: headings, verdict, strengths, defects, and next-step rationale must be
   Chinese. Keep file names, exact labels, phase values, and necessary technical terms in English.
@@ -354,8 +360,9 @@ selected version. At minimum, give the selected image path and its description p
 each conceptual figure. Also report the project brief path, prompt/review paths, the
 selected fresh-candidate and refinement limits and counts, the best version and its `final` or
 `provisional` status, color stage, and parent chain, the stopping reason, and whether the
-backend model was explicit or host-managed. Do not insert the figure into a paper, edit
-LaTeX, create PPTX/SVG/draw.io, commit the project, or push anything unless the user
+backend model was explicit or host-managed. Report the selected PNG's actual pixel dimensions.
+Do not insert the figure into a paper, edit LaTeX, create PPTX/SVG/draw.io, commit the
+project, or push anything unless the user
 separately asks for those actions.
 
 #### 8. Later invocation: add region background colors
@@ -374,9 +381,10 @@ colors. Do not automatically color panels at the end of the initial invocation.
   arrow, boundary, position, size, and scientific relationship exactly.
 - Use the built-in image edit tool with the neutral-base bitmap as the edit target. Save each
   result as a new immutable `vNN` with prompt, Chinese review, and paired description. Use at
-  most the selected 1–3 color edits, and never start a new-image batch. Inspect every edit against its neutral
-  parent at final paper width. Reject color bleed, lost contrast, changed content, arrow
-  crossings, or any other regression in the hard checks.
+  most the selected 1–3 color edits, and never start a new-image batch. Inspect every edit
+  against its neutral parent at final paper width; ask the editor to preserve the base image's
+  pixel dimensions and record the actual edited dimensions. Reject color bleed, lost contrast,
+  changed content, arrow crossings, or any other regression in the hard checks.
 - Mark a colored version `final` only if it passes all scientific and visual hard checks.
   If the edit budget ends without one, keep the neutral-base selection as the last valid
   figure, record the colored attempts as rejected/provisional, and report the defects.

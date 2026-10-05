@@ -224,11 +224,13 @@ been converted into exact region and arrow instructions:
 > Render the essential supplied labels verbatim with readable typography. Include no experimental
 > result, metric value, percentage, count, dataset size, empirical comparison, ablation,
 > error-analysis finding, or conclusion. The figure must remain readable at its intended paper
-> width and scientifically exact under close inspection.
+> width and scientifically exact under close inspection. Request 4K-class raster resolution
+> while preserving the paper-slot aspect ratio; for a 16:9 layout, target UHD 4K
+> (3840×2160 landscape or 2160×3840 portrait). Do not distort the layout to force 16:9.
 
 For the later explicit panel-color invocation, use built-in image editing on the selected
 neutral figure, not this new-image prompt. Tell the editor to change **only** the region
 background fills to a small coordinated set of soft, light colors. Related regions may reuse
 a tint. Keep the page white or near white. Preserve all text, icons, arrows, boundaries,
 positions, dimensions, and existing science-bearing colors. Reject any edit that changes
-content or introduces an arrow crossing.
+content or introduces an arrow crossing. Ask to preserve the base image's pixel dimensions.
