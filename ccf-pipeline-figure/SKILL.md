@@ -176,10 +176,10 @@ self-contained prompt in this order:
 6. only essential short labels and indispensable permitted example strings; put the fuller
    explanation in the paired description file, not in the image;
 7. scientific invariants and method/result exclusions;
-8. readability and output intent, including an explicit request for **4K-class raster
-   resolution** while preserving the selected paper-slot aspect ratio. For a 16:9 layout,
-   request UHD 4K (`3840×2160` landscape or `2160×3840` portrait); do not force 16:9 onto
-   a different planned layout. The built-in tool may ignore the size request.
+8. readability and output intent: request a **4K-class raster** when supported, otherwise
+   the highest available raster resolution, while preserving the selected paper-slot aspect
+   ratio. Treat 4K as a resolution target rather than an aspect-ratio rule: never force 16:9
+   or another standard canvas ratio. The built-in tool may ignore the size request.
 
 The brief wins on science. The style file wins on palette, icon vocabulary, decoration,
 typography, and comic energy. A user-supplied visual preference wins over the style defaults
