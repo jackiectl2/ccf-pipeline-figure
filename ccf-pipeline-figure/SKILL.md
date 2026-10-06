@@ -55,6 +55,9 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
    `OPENAI_API_KEY`.
 3. During the fresh-candidate phase, use new-image generation only. Do not pass
    `referenced_image_paths` or include a prior generated figure as conversation image context.
+   Do not pass an existing manuscript figure as a visual reference either. Inspect it only for
+   the manuscript audit; extract its scientifically useful content and defects into the brief,
+   then generate from the independently derived brief.
 4. If no fresh candidate passes within the user-selected candidate count, switch to built-in edit
    mode for the user-selected bounded refinement phase defined below. Use the selected best
    candidate as the sole edit target and preserve every already-correct region aggressively.
@@ -113,15 +116,22 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
   or framework figure is a replacement target by default: preserve its intended paper location,
   label, citation relationship, and scientific scope while redesigning its visual expression.
   Do not make a second figure that tells the same story merely because the current one looks weak.
+- A replacement target is an **audit input, not a design template**. Extract its scientifically
+  valid entities, relationships, placement constraints, and omissions, then derive the new
+  topology, hierarchy, region structure, and visual language from the entire active paper and
+  project evidence. Do not copy its layout, node order, region partition, connector routing,
+  visual hierarchy, or prompt wording merely because they appear in the old image. State the
+  concrete shortcomings the replacement must resolve and the material gains required in scientific
+  coverage, relationship clarity, hierarchy, or final-size readability.
 - The default plan is **one** conceptual figure covering the technical route and overall framework
   pipeline. Plan a second conceptual figure only when it answers a demonstrably different
   scientific question that cannot remain legible as a region, branch, inset, or focused panel of
   the first figure; typical examples are a full-system overview plus a genuinely independent core
   mechanism. State why one figure cannot carry both jobs. Existing data figures neither satisfy
   nor block this conceptual-figure decision.
-- Identify what is knowable before experiments. Results may be inspected only when permitted
-  and only to prevent them leaking into the method figure; never turn a posterior observation
-  into a method stage or callout.
+- Use permitted experiment, data-structure, and result-analysis evidence to understand the
+  project, verify the method's actual scope, and decide which mechanisms must be visually clear.
+  Never turn a posterior observation, metric, or conclusion into a method stage or callout.
 
 #### 2. Derive the technical brief automatically
 
@@ -130,12 +140,15 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
 - figure purpose and inputs;
 - a **manuscript figure audit**: active manuscript source and local render examined (or why one
   was unavailable), every potentially overlapping conceptual figure, and for each its path,
-  label, caption/section, purpose, and classification;
+  label, caption/section, purpose, classification, scientifically useful content, and concrete
+  deficiencies or omissions;
 - a **figure plan** that states the total conceptual figures proposed for this request, their
   distinct purposes, and the decision for each: `replace <existing figure>` / `add distinct` /
   `no current counterpart`. A replacement records the existing figure's intended paper position
-  and reference relationship; an added second figure records why it cannot be combined legibly
-  with the overall pipeline figure;
+  and reference relationship, the evidence sources used beyond that image, and the specific
+  redesign gains it must deliver. The old figure may supply scientific facts and paper-placement
+  context, never a layout or prompt template. An added second figure records why it cannot be
+  combined legibly with the overall pipeline figure;
 - a **final-layout decision** for every planned figure: `single-column` or `double-column`,
   `horizontal` or `vertical`, final printed width, source evidence (template/source/placement),
   and a short rationale tied to the graph's reading order and regions;
@@ -155,10 +168,11 @@ Record the color stage as `neutral_structure` for the initial figure. Its region
 fills are achromatic near-white gray. Do not plan colored region fills until the user invokes
 the skill again and explicitly asks to add them.
 
-The brief is the scientific authority. Do not draw until the manuscript figure audit has a
-replacement/addition decision and every arrow can be justified from code, configuration, tests,
-or project documentation. Do not ask the user to write this brief when the project contains
-enough evidence to derive it.
+The brief is the scientific authority. A replacement image is not. Do not draw until the
+manuscript figure audit has a replacement/addition decision, the planned redesign gains are
+concrete, and every arrow can be justified from code, configuration, tests, data structures,
+experiment analysis, or project documentation. Do not ask the user to write this brief when the
+project contains enough evidence to derive it.
 
 #### 3. Build the actual generation prompt
 
@@ -180,6 +194,10 @@ self-contained prompt in this order:
    the highest available raster resolution, while preserving the selected paper-slot aspect
    ratio. Treat 4K as a resolution target rather than an aspect-ratio rule: never force 16:9
    or another standard canvas ratio. The built-in tool may ignore the size request.
+
+For a replacement, derive the prompt from this brief and its full-project source-of-truth table,
+not by paraphrasing or imitating the old figure. The prompt must implement the planned redesign
+gains while preserving the old figure's valid scientific scope and paper placement.
 
 The brief wins on science. The style file wins on palette, icon vocabulary, decoration,
 typography, and comic energy. A user-supplied visual preference wins over the style defaults
@@ -243,6 +261,10 @@ output/imagegen/<project-name>/<figure-name>/
 - Inspect it and save the disposition and concrete defects in `vNN.review.md`. Write the review
   primarily in Chinese: headings, verdict, strengths, defects, and next-step rationale must be
   Chinese. Keep file names, exact labels, phase values, and necessary technical terms in English.
+- For a replacement, each review must also compare the candidate with its target old figure using
+  the brief's stated redesign gains: scientific coverage, relationship clarity, hierarchy,
+  connector legibility, and readability at final size as applicable. A candidate that merely
+  rephrases or cosmetically redraws the old layout cannot be selected as final.
 - After inspecting **each** `vNN.png`, write its matching `vNN.description.md`. This is a
   reference for a later paper-writing agent, not approved manuscript text. State the image
   version and review verdict; describe what the rendered regions, branches, arrows, and
@@ -350,6 +372,8 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 - primary labels are 90–100% of body size and secondary text 80–90% after final layout scaling;
   sub-80% text is nonessential and remains readable in the compiled paper; and
 - decoration supports hierarchy without obscuring the scientific graph.
+- for a replacement, the candidate achieves the brief's concrete redesign gains over the old
+  figure and does not merely reproduce its layout with restyled graphics.
 
 #### 7. Finish with an auditable handoff
 
@@ -844,6 +868,12 @@ exists:
 ⭐ **Then write one sentence: "this figure exists to make ___ visible."** If you cannot, the
 figure has no job and should not be drawn.
 
+When replacing an existing manuscript figure, audit it for valid scientific content and concrete
+defects, then write this sentence from the entire project evidence. The old image is not a
+composition, layout, or wording template. Results and outputs can determine what needs explaining
+and guard against unsupported implications; they cannot be rendered as a posterior claim in a
+method figure.
+
 ### Step 1 — Choose the structure before the tool
 
 Name the regions. Write them as a list before opening any editor:
@@ -1132,7 +1162,7 @@ finite retry budget. The other exclusions below still apply to the legacy vector
 |---|---|
 | **A model-generated raster containing measured quantities** (W06, W24, and the raster half of W01/W03) | §6 — every measured number must be read from a committed artefact at draw time. A generated raster cannot provide that guarantee. The built-in-imagegen fast path therefore forbids measured quantities rather than pretending to trace them. |
 | **Hand-assembly in PowerPoint or Illustrator** (W03, and W01's step 4) | Same rule. The moment a human nudges an anchor point, one command no longer reproduces the figure. figuresmith's `.manual` fork exists for exactly this and requires the hand-edited file to be marked and frozen. |
-| **Using a published figure as a layout template** (W13) | ⚠ [INFERRED] Not covered by an existing rule, and it should be: it inherits another paper's composition wholesale. Fine as scaffolding, a provenance question if shipped. |
+| **Using a published or existing manuscript figure as a layout template** (W13) | The replacement-audit rule in the fast path: extract scientific facts and placement constraints, then derive a new composition from the full project evidence. Do not inherit the source figure's layout wholesale. |
 | **The Visio routes** (W08, W15) | Windows, licensed Visio, PowerShell; W15 also needs Inkscape. None is available here. ⭐ **Take W08's structural check, not its stack.** |
 | **The PPTX routes** (W09, W10, W11) | Not ruled out on principle — see §9.4. |
 
