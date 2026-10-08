@@ -215,26 +215,30 @@ or type would otherwise be ambiguous. Omit explanatory sentences, repeated label
 callouts whose content can live in the paper body. Preserve every distinction required to
 understand the scientific graph; do not make an unlabeled icon carry an ambiguous operation.
 
-### Default conceptual-figure label sizing
+### Discrete conceptual-figure sizing system
 
-Set text size against the **final printed figure width in the paper**, after LaTeX or other
-layout scaling. Source-canvas point sizes and a full-screen image preview do not count. Unless
-the target venue specifies an absolute figure-font requirement, use these defaults relative to
-the paper body text:
+Set text and icon size against the **final printed figure width in the paper**, after LaTeX or
+other layout scaling. Source-canvas point sizes and a full-screen image preview do not count.
+For every figure, choose **exactly three or four named visual tiers** before generating and
+record their final text sizes and icon bounding-box sizes in the brief and prompt. Do not use
+ad-hoc intermediate scales to solve local spacing problems.
 
-- **Primary labels** — module titles, key operations, central arrow labels, and essential
-  callouts: **90–100%** of body size.
-- **Numbered region headings** — keep the numeral and its English region title compact, at
-  most about **110% of primary node labels**. Use weight and placement for hierarchy; do not
-  let a large badge or tall title banner crowd out node labels, method details, or arrows.
-- **Secondary explanatory text** — short supporting labels and noncentral annotations:
-  **80–90%** of body size.
-- **Tertiary text below 80%** — allowed only for nonessential auxiliary information. It cannot
-  carry a necessary method distinction and must remain readable in the final single- or
-  double-column PDF.
+- Every text item assigned to the same tier uses the **identical final printed font size**.
+  Every icon assigned to the same tier uses the **identical visual bounding-box size**. This
+  applies across regions as well as within one node; weight, color, placement, and shape may
+  create emphasis, but size may not drift inside a tier.
+- Text tiers and icon tiers are independently assigned: a primary label may accompany a
+  secondary-size icon, for example, but each still uses one of the figure's declared discrete
+  sizes. A composite icon counts as one icon for tiering and must fit its tier's bounding box.
+- Unless the target venue sets an absolute requirement, use these **four-tier defaults** relative
+  to paper body text: **Tier 1 / compact region headings: 110%**; **Tier 2 / primary labels:
+  100%**; **Tier 3 / secondary labels: 85%**; **Tier 4 / auxiliary text: 75%**. For a
+  three-tier figure, omit Tier 4 rather than inventing a fourth near-duplicate size.
+- Tier 4 may carry only nonessential auxiliary information; it cannot encode a necessary method
+  distinction and must remain readable in the final single- or double-column PDF. Keep region
+  headings compact: use weight and placement, not a larger badge or tall title banner, for
+  hierarchy.
 
-For common body sizes, this means 9-pt paper body → 8–9-pt primary labels; 10-pt body →
-9–10-pt primary labels and about 8–9-pt secondary text; 11-pt body → 9–10-pt primary labels.
 Figure captions follow the venue's caption rule rather than this figure-label rule. A venue's
 explicit absolute requirement always overrides these defaults.
 
@@ -380,8 +384,12 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   hairlines, and a dark enough color (normally deep charcoal or navy) to remain obvious
   against both neutral-gray and later soft-colored region fills;
 - labels remain readable at the intended paper width; and
-- primary labels are 90–100% of body size and secondary text 80–90% after final layout scaling;
-  sub-80% text is nonessential and remains readable in the compiled paper; and
+- the declared tiers meet the final-size defaults or venue rule: compact region headings are
+  110% of body text, primary labels 100%, secondary labels 85%, and any 75% auxiliary tier is
+  nonessential and readable in the compiled paper; and
+- the figure uses exactly three or four declared text tiers and icon-size tiers; all items within
+  any one text tier have identical final printed font size, all icons within any one icon tier
+  have identical bounding-box size, and no one-off local size has been introduced; and
 - decoration supports hierarchy without obscuring the scientific graph.
 - for a replacement, the candidate achieves the brief's concrete redesign gains over the old
   figure and does not merely reproduce its layout with restyled graphics.

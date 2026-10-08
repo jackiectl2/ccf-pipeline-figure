@@ -95,6 +95,11 @@ educational comic, without candy-bright colors or large dark background fills.
 
 ## 4 · Icons: varied nouns, one family
 
+- Before drawing, choose exactly three or four discrete icon-size tiers for the whole figure.
+  Every icon assigned to one tier uses the same visual bounding-box size, even across different
+  regions. Do not resize individual icons to fill spare space or make a local node feel more
+  important; use composition, color, outline, and placement instead. A composite icon counts as
+  one icon and must fit its assigned tier box.
 - Give every major noun and operation a recognizable glyph. A labeled rectangle without a
   visual metaphor should be the exception.
 - For a normal five-region figure, aim for **at least twelve visibly different icon
@@ -122,6 +127,13 @@ educational comic, without candy-bright colors or large dark background fills.
 
 ## 5 · Text
 
+- Before drawing, choose exactly three or four discrete text-size tiers for the whole figure.
+  Every text item assigned to one tier uses the same final printed size across all regions;
+  do not introduce a one-off font size to solve a local layout problem. Text tiers and icon
+  tiers are assigned independently, so a primary label need not have a primary-size icon.
+  As a default four-tier system relative to the paper body, use 110% for compact region
+  headings, 100% for primary labels, 85% for secondary labels, and 75% only for nonessential
+  auxiliary text. A three-tier figure omits the auxiliary tier.
 - Make the diagram readable with as little text as the scientific topology permits. Keep
   essential region and node names; label an arrow only when its direction or type is unclear.
   Put full explanations in the paired paper-body description file for the writing agent.
@@ -184,6 +196,11 @@ been converted into exact region and arrow instructions:
 > Keep each region number and English title only slightly larger than primary node labels
 > (at most about 110%). Use bold weight and placement for hierarchy, with compact badges and
 > heading bands that preserve space for the method content.
+> Establish exactly three or four discrete text-size tiers and exactly three or four discrete
+> icon-size tiers for this whole figure before drawing. Every text item in a tier must have the
+> same final printed size, and every icon in a tier must have the same visual bounding-box size,
+> across all regions. Do not create one-off local scales; use weight, color, placement, grouping,
+> and shape for emphasis instead. Text and icon tiers may be assigned independently.
 > Preserve every object and scientific relationship in the supplied topology. Reduce the
 > number of drawn arrow lines only by expressing a preserved relationship through clear
 > stage order, containment, aligned lanes, shared trunks, typed boundaries, or a short
