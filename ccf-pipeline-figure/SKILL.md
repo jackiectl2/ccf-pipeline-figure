@@ -154,10 +154,13 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
   and a short rationale tied to the graph's reading order and regions;
 - three to six named regions/stages;
 - every object, operation, arrow, branch, shared path, and reconvergence;
-- a connector plan that distinguishes essential scientific relationships from redundant
-  drawn arrows, uses the fewest arrows that still make every relationship unambiguous,
-  and routes them without crossings; an intentional branch/join or shared-trunk junction
-  is not a crossing;
+- a connector plan that inventories every essential scientific relationship before any
+  simplification and assigns each one either an explicit arrow or an equally unambiguous
+  visual encoding (stage order, containment, aligned lanes, a shared trunk, a typed boundary,
+  or a short interface label). Only then reduce redundant *drawn* arrows; never delete an
+  object, operation, branch, join, loop, or relationship merely to lower the connector count.
+  Route any remaining arrows without crossings; an intentional branch/join or shared-trunk
+  junction is not a crossing;
 - exact short labels needed to read the graph, and only documentation-safe example strings
   whose presence in the image is essential; move explanatory prose to the paired description;
 - scientific invariants whose topology or meaning cannot change;
@@ -183,9 +186,12 @@ self-contained prompt in this order:
 2. editorial-comic visual target with achromatic near-white region fills near the top;
 3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
    reading order;
-4. region-by-region scientific topology and a concise connector plan that preserves every
-   necessary relationship with as few arrows as possible, medium-weight high-contrast
-   arrow strokes, and no crossing arrow paths;
+4. region-by-region scientific topology and a concise connector plan that first preserves
+   every object and necessary relationship, then replaces redundant *drawn* arrows with
+   unambiguous layout, grouping, aligned lanes, shared trunks, typed boundaries, or short
+   interface labels where appropriate. Do not remove scientific content to reduce line count;
+   use medium-weight high-contrast arrows only for relationships that still require explicit
+   direction, and use no crossing arrow paths;
 5. branches, shared kernels, typed boundaries, and joins;
 6. only essential short labels and indispensable permitted example strings; put the fuller
    explanation in the paired description file, not in the image;
@@ -328,7 +334,9 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 
 - arrow direction, branches, shared paths, reconvergences, optional paths, and evidence-type
   boundaries match the brief;
-- every necessary relationship remains unambiguous after connector simplification;
+- every object, operation, branch, join, loop, and necessary relationship from the brief is
+  retained after connector simplification; for each relationship, either its arrow or its
+  recorded alternative visual encoding remains unambiguous;
 - no two arrow paths cross, except an intentional, clearly connected branch/join or shared-trunk
   junction; reroute, rearrange, or regroup nodes rather than accepting a crossing;
 - the global figure is not flattened into a misleading single chain;
@@ -364,7 +372,10 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   ambiguous scientific reading;
 - the rendered aspect ratio, reading direction, and region arrangement match the brief's explicit
   horizontal/vertical decision and fit its explicit single-column/double-column paper slot;
-- arrows are as few as the scientific topology permits, with no redundant decorative lines;
+- no scientific content has been removed to reduce line count. Arrows are as few as the
+  scientific topology permits only after redundant *drawn* arrows have been replaced by
+  unambiguous layout, grouping, aligned lanes, shared trunks, typed boundaries, or short
+  interface labels; no redundant decorative lines remain;
   their strokes have balanced medium weight at final print size, neither heavy bars nor
   hairlines, and a dark enough color (normally deep charcoal or navy) to remain obvious
   against both neutral-gray and later soft-colored region fills;

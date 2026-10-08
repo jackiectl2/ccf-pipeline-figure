@@ -33,12 +33,16 @@ educational comic, without candy-bright colors or large dark background fills.
 - Show real branches, parallel operations, joins, feedback loops, optional paths, and typed
   boundaries. Never serialize mutually exclusive or parallel operations just to simplify the
   layout.
-- Keep every necessary logical relationship legible while using as few arrow lines as the
-  topology permits. Remove duplicate or decorative connectors; group related nodes or use
-  clearly shared trunks where they reduce clutter without changing meaning. Arrange nodes
-  and route arrows so no arrow paths cross. An intentional, clearly connected branch/join
-  or shared-trunk junction is allowed; a path passing across another is not. If the first
-  arrangement forces a crossing, change the arrangement instead of accepting the crossing.
+- Preserve every object, operation, branch, join, loop, and logical relationship in the
+  supplied topology; lower arrow-line count only by changing how an already-preserved
+  relationship is expressed. Use spatial stage order, containment, aligned lanes, shared
+  trunks, typed boundaries, or a short interface label whenever one of these makes that
+  relationship equally unambiguous; use an explicit arrow when direction, transfer, causality,
+  a cross-stage effect, or feedback would otherwise be unclear. Remove only duplicate or
+  decorative connectors—never scientific content. Arrange nodes and route arrows so no arrow
+  paths cross. An intentional, clearly connected branch/join or shared-trunk junction is
+  allowed; a path passing across another is not. If the first arrangement forces a crossing,
+  change the arrangement instead of accepting the crossing.
 - Non-uniform panels are encouraged. Give the scientifically important branch more room.
 - Do not add a standalone overall title banner. Start directly with Region 1; the paper
   caption supplies the figure title.
@@ -180,14 +184,18 @@ been converted into exact region and arrow instructions:
 > Keep each region number and English title only slightly larger than primary node labels
 > (at most about 110%). Use bold weight and placement for hierarchy, with compact badges and
 > heading bands that preserve space for the method content.
-> Keep the connector count as low as the scientific topology permits. Omit redundant arrows,
-> group related nodes, and use clear shared trunks when appropriate. Place nodes and route
-> arrows so no two arrow paths cross. Intentional branch/join or shared-trunk junctions are
-> allowed, but crossing paths are not. Rearrange the layout if needed; never erase a necessary
-> relationship to simplify the page. Draw arrows at balanced medium weight, neither thick
-> bars nor thin hairlines, with clear triangular heads. Prefer deep charcoal or navy for
-> contrast against the light panels; preserve any necessary semantic arrow colors at a
-> similarly readable depth. Check their visibility at final paper width.
+> Preserve every object and scientific relationship in the supplied topology. Reduce the
+> number of drawn arrow lines only by expressing a preserved relationship through clear
+> stage order, containment, aligned lanes, shared trunks, typed boundaries, or a short
+> interface label; use an explicit arrow whenever direction, transfer, causality, a
+> cross-stage effect, or feedback would otherwise be unclear. Omit only duplicate or
+> decorative arrows—never scientific content. Place nodes and route remaining arrows so no
+> two arrow paths cross. Intentional branch/join or shared-trunk junctions are allowed, but
+> crossing paths are not. Rearrange the layout if needed; never erase a necessary relationship
+> to simplify the page. Draw arrows at balanced medium weight, neither thick bars nor thin
+> hairlines, with clear triangular heads. Prefer deep charcoal or navy for contrast against
+> the light panels; preserve any necessary semantic arrow colors at a similarly readable depth.
+> Check their visibility at final paper width.
 > Treat each arrow-linked item as a separate smaller node, whether two nodes sit in the same
 > named region or different ones. Give each node a clear hierarchy of icon, label, and
 > permitted method detail.
