@@ -25,8 +25,8 @@ educational comic, without candy-bright colors or large dark background fills.
   micro-flow. Keep the panel fill achromatic during the initial structure pass.
 - The global layout is a grid, stack, or asymmetric editorial composition. Inside one region,
   a short left-to-right or top-to-bottom flow is fine.
-- Treat the intended image as a deliberately filled rectangle, not a loose cluster placed on a
-  canvas. Arrange and size the regions so their combined visual envelope reaches a modest,
+- Treat the intended image as a deliberately filled rectangle (including a square canvas), not a
+  loose cluster placed on a canvas. Arrange and size the regions so their combined visual envelope reaches a modest,
   balanced outer margin on all sides. Small, consistent gutters between adjacent regions are
   desirable; a large isolated blank corner or edge void that looks like a missing panel is not.
   If topology forces unusual whitespace, make its purpose legible through the structure rather
@@ -199,10 +199,11 @@ been converted into exact region and arrow instructions:
 > shaped boundary, contrasting numbered badge, bold banner, and short internal micro-flow. Draw every real
 > branch, parallel path, shared kernel, loop, optional path, and reconvergence. Do not flatten
 > the whole method into a single chain.
-> Fill the intended rectangular canvas with a balanced region composition and modest, consistent
-> outer margins. Keep only narrow purposeful gutters between adjacent regions. Do not leave a
-> large isolated empty corner or edge void that looks like a missing panel or unfinished quadrant;
-> resize, reposition, or recompose regions instead while preserving the supplied topology.
+> Fill the intended rectangular canvas—square, landscape, or portrait—with a balanced region
+> composition and modest, consistent outer margins. Keep only narrow purposeful gutters between
+> adjacent regions. Do not leave a large isolated empty corner or edge void that looks like a
+> missing panel or unfinished quadrant; resize, reposition, or recompose regions instead while
+> preserving the supplied topology.
 > Keep each region number and English title only slightly larger than primary node labels
 > (at most about 110%). Use bold weight and placement for hierarchy, with compact badges and
 > heading bands that preserve space for the method content.

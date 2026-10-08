@@ -152,7 +152,8 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
 - a **final-layout decision** for every planned figure: `single-column` or `double-column`,
   `horizontal` or `vertical`, final printed width, source evidence (template/source/placement),
   a canvas-coverage plan, and a short rationale tied to the graph's reading order and regions.
-  Plan the regions to form a balanced, deliberately filled rectangular composition: small,
+  Plan the regions to form a balanced, deliberately filled rectangular composition (including a
+  square canvas): small,
   consistent gutters are allowed between adjacent regions, but no large orphaned corner or
   edge void may remain unless the brief identifies it as indispensable to the topology;
 - three to six named regions/stages;
@@ -189,7 +190,8 @@ self-contained prompt in this order:
 2. editorial-comic visual target with achromatic near-white region fills near the top;
 3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
    reading order;
-4. a balanced rectangular canvas coverage plan: use the full intended figure area with modest,
+4. a balanced rectangular canvas coverage plan (a square is included): use the full intended
+   figure area with modest,
    consistent outer margins and only purposeful inter-region gutters; do not leave a large
    isolated empty corner or edge area that reads as a missing panel;
 5. region-by-region scientific topology and a concise connector plan that first preserves
@@ -382,10 +384,10 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   ambiguous scientific reading;
 - the rendered aspect ratio, reading direction, and region arrangement match the brief's explicit
   horizontal/vertical decision and fit its explicit single-column/double-column paper slot;
-- the regions and their necessary connectors form a balanced, deliberately filled rectangle with
-  modest consistent outer margins. Inter-region whitespace is a narrow, purposeful gutter rather
-  than an isolated corner or edge void; no large blank area reads as a missing panel or an
-  unfinished quadrant;
+- the regions and their necessary connectors form a balanced, deliberately filled rectangle
+  (including a square canvas) with modest consistent outer margins. Inter-region whitespace is a
+  narrow, purposeful gutter rather than an isolated corner or edge void; no large blank area
+  reads as a missing panel or an unfinished quadrant;
 - no scientific content has been removed to reduce line count. Arrows are as few as the
   scientific topology permits only after redundant *drawn* arrows have been replaced by
   unambiguous layout, grouping, aligned lanes, shared trunks, typed boundaries, or short
