@@ -79,13 +79,25 @@ educational comic, without candy-bright colors or large dark background fills.
 - Soft decorative colors are allowed for banners, stickers, and icons, but they must not imply
   nonexistent experimental categories or measured differences.
 - Color the icons themselves while preserving contrast with their backgrounds.
+- **Flat-fill integrity / 色彩与填充一致性:** every enclosed text-bearing surface—including
+  regions, nodes, cards, pills, tags, labels, and callouts—uses one visually uniform,
+  continuous, fully opaque fill. Its hue, saturation, and brightness must remain stable from
+  edge to center, apart from outline antialiasing. Keep the fill strictly clipped inside the
+  outline; adjacent colors must not seep across it or create a halo. Repeated nodes of the same
+  semantic class use the same fill.
+- Do not treat a pale card as a translucent, illuminated, or painted object. On text-bearing
+  surfaces forbid unintended gradients, center white bloom or washout, bright/dark blotches,
+  watercolor or airbrush texture, mottling, vignette, reflection, glow, shadow tint,
+  translucency, and color bleeding. Soft color means low saturation, not uneven opacity.
 
 ## 3 · Comic depth and shape grammar
 
 - Use rounded sticker capsules, playful banners, chunky tabs, speech bubbles, file cards,
   ribbons, tags, badges, and varied silhouettes.
-- Keep region background fills flat in the initial neutral stage. Gentle cel shading, small
-  highlights, or shallow offset shadows may add depth to icons and other non-panel elements.
+- Keep region, node, card, pill, tag, label, and callout fills flat in every stage. Gentle cel
+  shading or small highlights may add depth **inside icon artwork only**; they may not spill
+  onto a text-bearing background or sit behind a label. A shallow offset shadow may separate
+  an entire closed object from the page only if the object's interior fill remains uniform.
 - Keep the rendering illustrative and flat enough for a paper figure. Avoid photorealism,
   glossy product-render surfaces, glassmorphism, metallic materials, deep perspective, and
   heavy 3-D extrusion.
@@ -179,6 +191,9 @@ educational comic, without candy-bright colors or large dark background fills.
 - No topology invented for visual convenience. No decorative connector may look causal.
 - No photograph, realistic person, cinematic scene, heavy 3-D, strong glow, deep drop shadow,
   glossy interface mockup, watermark, logo, citation, or decorative legend.
+- No non-uniform fill, white bloom, washout, unintended gradient, mottling, watercolor or
+  airbrush texture, translucency, halo, vignette, reflection, shadow tint, or color bleeding
+  inside or across any text-bearing enclosed surface.
 - No tiny text that becomes unreadable at the intended paper width.
 
 ---
@@ -234,6 +249,15 @@ been converted into exact region and arrow instructions:
 > fields. Keep any science-bearing lane colors consistent; decorative colors must not imply
 > measured categories.
 >
+> Apply strict flat-fill integrity to every enclosed text-bearing surface: every region, node,
+> card, pill, tag, label, and callout must contain one uniform, continuous, fully opaque color
+> from edge to center. Keep each color clipped inside its outline, with no seepage or halo, and
+> use exactly the same fill for repeated nodes of the same semantic class. Soft or pastel color
+> means low saturation, not transparency or illumination. Behind text, forbid all unintended
+> gradient, center white bloom, washout, bright or dark blotches, mottling, watercolor or
+> airbrush texture, glow, highlight, reflection, shadow tint, translucency, vignette, and color
+> bleeding. Confine cel shading and highlights to the interior artwork of icons only.
+>
 > Give every major noun and operation a distinct, easy-to-name cartoon icon from one coherent
 > family. Use varied silhouettes rather than repeating document and folder icons. Use colored
 > icon fills, thick outlines, sticker capsules, banners, badges, tags, small motion ticks, and
@@ -251,8 +275,9 @@ been converted into exact region and arrow instructions:
 > around the numbered method regions. Decorative accents are allowed only inside region
 > boundaries and must not consume a separate row or margin.
 >
-> Keep the near-white gray region fills flat, without gradients. Light cel shading, small
-> highlights, and shallow offset shadows may decorate non-panel elements. Do not use
+> Keep all region and text-card fills flat, without gradients or internal lighting. Light cel
+> shading and small highlights may decorate icon artwork only; a shallow offset shadow may sit
+> outside a closed object only when its interior fill stays uniform. Do not use
 > photorealism, glossy 3-D rendering, glassmorphism, metallic materials,
 > heavy shadows, strong glow, or cinematic scenery. Decorative marks must never resemble
 > scientific nodes or arrows.
@@ -267,7 +292,10 @@ been converted into exact region and arrow instructions:
 
 For the later explicit panel-color invocation, use built-in image editing on the selected
 neutral figure, not this new-image prompt. Tell the editor to change **only** the region
-background fills to a small coordinated set of soft, light colors. Related regions may reuse
-a tint. Keep the page white or near white. Preserve all text, icons, arrows, boundaries,
-positions, dimensions, and existing science-bearing colors. Reject any edit that changes
-content or introduces an arrow crossing. Ask to preserve the base image's pixel dimensions.
+background fills to a small coordinated set of soft, light colors. Each edited region must use
+one visually uniform, fully opaque color from edge to center, strictly clipped inside its
+boundary, with no gradient, white bloom, washout, mottling, texture, translucency, halo, or
+color bleeding. Related regions may reuse a tint. Keep the page white or near white. Preserve
+all text, icons, arrows, boundaries, positions, dimensions, existing science-bearing colors,
+and unaffected pixels. Reject any edit that changes content, rerenders a correct element, or
+introduces an arrow crossing. Ask to preserve the base image's pixel dimensions.

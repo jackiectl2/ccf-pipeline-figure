@@ -167,6 +167,11 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
   junction is not a crossing;
 - exact short labels needed to read the graph, and only documentation-safe example strings
   whose presence in the image is essential; move explanatory prose to the paired description;
+- a **flat-fill integrity plan** for every enclosed text-bearing surface: region, node, card,
+  pill, tag, label, and callout. Assign each semantic class one intended opaque fill and require
+  that fill to remain visually uniform from edge to center, strictly clipped inside its outline,
+  and identical across repeated instances of the same class. Reserve shading and highlights for
+  icon artwork only; never place them behind text;
 - scientific invariants whose topology or meaning cannot change;
 - explicit exclusions separating method from results; and
 - a source-of-truth table citing the project files behind each part.
@@ -187,7 +192,10 @@ After the brief exists, read `assets/STYLE-FOR-IMAGE-MODELS.md` completely. Cons
 self-contained prompt in this order:
 
 1. primary request and pre-experiment purpose;
-2. editorial-comic visual target with achromatic near-white region fills near the top;
+2. editorial-comic visual target with achromatic near-white region fills near the top, followed
+   immediately by the flat-fill integrity constraint for all regions and text-bearing cards:
+   one uniform opaque fill per enclosed surface; no unintended gradient, center washout, white
+   bloom, mottling, translucency, halo, texture, or color bleeding across outlines;
 3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
    reading order;
 4. a balanced rectangular canvas coverage plan (a square is included): use the full intended
@@ -326,6 +334,11 @@ output/imagegen/<project-name>/<figure-name>/
   checklist. Each refinement prompt must name only the local changes for the current round and
   explicitly preserve the base candidate's correct topology, composition, labels, palette,
   typography, icons, and unaffected regions.
+- When the defect is fill contamination, constrain the edit to the named enclosed surfaces:
+  flatten each existing fill to its intended uniform opaque color and remove only washout,
+  bloom, mottling, unintended gradients, halo, or bleed. Lock all text, icons, outlines, node
+  dimensions, positions, arrows, relationships, canvas size, and unaffected pixels against
+  redesign or rerendering. A cleanup that changes any of those is a regression, not a repair.
 - Use built-in image edit mode with the current best bitmap as the sole edit target. Save the edit
   as the next immutable `vNN` version; never overwrite the parent. If an edit regresses a correct
   area or introduces an arrow crossing, keep the earlier best as the parent for the next round
@@ -367,6 +380,14 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   in the later `colored_panels` stage, use soft light tints that may repeat across related
   regions, with enough variation that the whole background is not one uniform color;
   large dark fills are absent in either stage;
+- every enclosed text-bearing surface—region, node, card, pill, tag, label, and callout—has a
+  visually uniform, continuous, fully opaque flat fill from edge to center. It has no irregular
+  bright or dark patch, center white bloom or washout, unintended gradient, watercolor or
+  airbrush texture, translucency, vignette, mottling, halo, or color bleeding across its outline.
+  Repeated instances of the same semantic class use the same fill. Shading and highlights may
+  appear inside icon artwork only, never in the background behind text. Inspect this once at
+  native raster scale to catch localized contamination and again at final paper width to catch
+  visible haze or inconsistent semantic colors;
 - every major noun or operation has a recognizable glyph, with varied silhouettes rather
   than repeated document/folder icons;
 - arrow-linked nodes have considered internal visual hierarchy and refined small details;
@@ -432,8 +453,11 @@ colors. Do not automatically color panels at the end of the initial invocation.
   is corrected.
 - Choose a small set of soft, lightly saturated region fills from the style file. Related
   regions may share a tint; they need not all differ. Keep the page background white or near
-  white. Apply color only to region background fills, preserving every label, icon, banner,
-  arrow, boundary, position, size, and scientific relationship exactly.
+  white. Apply one uniform, continuous, fully opaque flat color to each region background,
+  clipped strictly inside its boundary. Do not introduce gradients, center washout, white bloom,
+  mottling, transparency, texture, halo, or color bleeding. Apply color only to region background
+  fills, preserving every label, icon, banner, arrow, boundary, position, size, and scientific
+  relationship exactly.
 - Use the built-in image edit tool with the neutral-base bitmap as the edit target. Save each
   result as a new immutable `vNN` with prompt, Chinese review, and paired description. Use at
   most the selected 1–3 color edits, and never start a new-image batch. Inspect every edit
@@ -1060,6 +1084,7 @@ paper's *widest*. Decide the width in Step 1, when you name the regions, not aft
 | ⛔ **Five boxes left to right** | it is what a first draft looks like | §2.1 — regions |
 | **Labelled rectangles, no icons** | icons feel like decoration | §2.3 — but read the caveat there; this is the file's weakest measurement |
 | **Rainbow with no meaning** | the palette had N colours | §2.2 — median 4, each meaning something |
+| **Pastel cards with a white fog or stained center** | the image model interprets soft/comic/pastel as glow, airbrush, translucency, or watercolor texture | require flat opaque fills on every text-bearing enclosed surface; reject white bloom, washout, mottling, unintended gradients, halos, and color bleeding; allow highlights only inside icons |
 | **Text where a caption belongs** | the figure is explaining itself | move it to the body |
 | **An icon that renders as an empty box** | a second `fill` was injected into the SVG | figuresmith `references/diagrams.md` §5 — nothing warns you |
 | **Fonts too small** | the figure was scaled on inclusion | Step 6 |
