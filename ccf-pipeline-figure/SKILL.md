@@ -227,10 +227,9 @@ understand the scientific graph; do not make an unlabeled icon carry an ambiguou
 
 Set text and icon size against the **final printed figure width in the paper**, after LaTeX or
 other layout scaling. Source-canvas point sizes and a full-screen image preview do not count.
-For every figure, choose only the named visual tiers it needs, with **no more than five** text
-tiers and **no more than five** icon-size tiers. Record their final text sizes and icon
-bounding-box sizes in the brief and prompt. Do not use ad-hoc intermediate scales to solve
-local spacing problems.
+For every figure, choose **exactly three or four named visual tiers** before generating and
+record their final text sizes and icon bounding-box sizes in the brief and prompt. Do not use
+ad-hoc intermediate scales to solve local spacing problems.
 
 - Every text item assigned to the same tier uses the **identical final printed font size**.
   Every icon assigned to the same tier uses the **identical visual bounding-box size**. This
@@ -242,12 +241,11 @@ local spacing problems.
 - Unless the target venue sets an absolute requirement, use these **four-tier defaults** relative
   to paper body text: **Tier 1 / compact region headings: 110%**; **Tier 2 / primary labels:
   100%**; **Tier 3 / secondary labels: 85%**; **Tier 4 / auxiliary text: 75%**. For a
-  simpler figure, omit unused tiers rather than inventing near-duplicate sizes. A fifth tier is
-  permitted only when its exact final size and role are recorded in the brief.
-- Tier 4 and any optional Tier 5 may carry only nonessential auxiliary information; neither can
-  encode a necessary method distinction and both must remain readable in the final single- or
-  double-column PDF. Keep region headings compact: use weight and placement, not a larger badge
-  or tall title banner, for hierarchy.
+  three-tier figure, omit Tier 4 rather than inventing a fourth near-duplicate size.
+- Tier 4 may carry only nonessential auxiliary information; it cannot encode a necessary method
+  distinction and must remain readable in the final single- or double-column PDF. Keep region
+  headings compact: use weight and placement, not a larger badge or tall title banner, for
+  hierarchy.
 
 Figure captions follow the venue's caption rule rather than this figure-label rule. A venue's
 explicit absolute requirement always overrides these defaults.
@@ -400,12 +398,10 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 - labels remain readable at the intended paper width; and
 - the declared tiers meet the final-size defaults or venue rule: compact region headings are
   110% of body text, primary labels 100%, secondary labels 85%, and any 75% auxiliary tier is
-  nonessential and readable in the compiled paper; any optional fifth tier has its exact final
-  size and nonessential role recorded and is readable in the compiled paper; and
-- the figure uses no more than five declared text tiers and no more than five declared icon-size
-  tiers; all items within any one text tier have identical final printed font size, all icons
-  within any one icon tier have identical bounding-box size, and no one-off local size has been
-  introduced; and
+  nonessential and readable in the compiled paper; and
+- the figure uses exactly three or four declared text tiers and icon-size tiers; all items within
+  any one text tier have identical final printed font size, all icons within any one icon tier
+  have identical bounding-box size, and no one-off local size has been introduced; and
 - decoration supports hierarchy without obscuring the scientific graph.
 - for a replacement, the candidate achieves the brief's concrete redesign gains over the old
   figure and does not merely reproduce its layout with restyled graphics.
