@@ -7,8 +7,9 @@ description: >-
   架构图 / pipeline 图 when Codex should derive the technical brief, call its subscription-
   backed built-in image generator, preserve every candidate, ask the user to set the number of
   fresh candidates and the refinement cap (default: seven and three), then locally refine the best
-  candidate when needed. Default to near-white neutral-gray region fills; add soft region colors
-  only on a later explicit recolor invocation. Keep in-figure text sparse and save a paired
+  candidate when needed. Default to near-white neutral-gray region fills; on a later explicit
+  recolor invocation, tint every major region background and optionally a small selection of
+  internal white/gray card surfaces. Keep in-figure text sparse and save a paired
   manuscript-description reference for each generated image. Do not use
   for data figures where position, length, angle, or colour encodes a measured quantity.
 metadata:
@@ -39,7 +40,7 @@ Native explicit invocation is:
 ```text
 $ccf-pipeline-figure /path/to/project
 $ccf-pipeline-figure /path/to/project — portrait, single-column, emphasize the two evidence lanes
-$ccf-pipeline-figure /path/to/project — 给选中的图的各区域加底色
+$ccf-pipeline-figure /path/to/project — 给选中的灰底图上色
 ```
 
 In Codex, `/skills` opens the skill picker and `$ccf-pipeline-figure` mentions this skill.
@@ -61,7 +62,7 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
 4. If no fresh candidate passes within the user-selected candidate count, switch to built-in edit
    mode for the user-selected bounded refinement phase defined below. Use the selected best
    candidate as the sole edit target and preserve every already-correct region aggressively.
-   A later explicit panel-color invocation also uses edit mode, starting from the selected
+   A later explicit background-color invocation also uses edit mode, starting from the selected
    neutral figure; it never restarts fresh generation.
 5. The built-in tool may not expose a model selector. If it explicitly exposes GPT Image 2.5,
    prefer **GPT Image 2.5 Sunburst** for final-quality scientific figures. If it exposes no
@@ -73,10 +74,10 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
 #### 1. Resolve and inspect the project
 
 - First determine whether the user requests a new conceptual figure or explicitly asks to add
-  region background colors to an existing selected neutral figure. For a new figure, ask for the
+  background colors to an existing selected neutral figure. For a new figure, ask for the
   number of fresh candidates and the maximum local-refinement rounds before project work. Offer
   **Default: 7 fresh candidates; up to 3 refinements**. The user may choose 1–7 fresh candidates
-  and 0–3 refinements; “default” selects 7 and 3. For a later panel-color invocation, ask only
+  and 0–3 refinements; “default” selects 7 and 3. For a later background-color invocation, ask only
   for the maximum number of local color edits (**default: up to 3**, selectable 1–3). Wait for
   the applicable choice. Then use the corresponding route below.
 - Record each invocation's selected limits and color stage in `TECHNICAL_FIGURE_BRIEF.md` and
@@ -311,7 +312,8 @@ output/imagegen/<project-name>/<figure-name>/
   or claim details unsupported by the project or visible image.
 - Record `phase: fresh_candidate` or `phase: local_refinement` in every prompt and review. A
   refinement record also names its exact parent version and the defects it is allowed to change.
-  For the later color call, use `phase: panel_recolor` and record its exact neutral parent.
+  For the later color call, use `phase: panel_recolor` and record its exact neutral parent and
+  the background surfaces selected for recoloring.
 - Never overwrite, delete, rename, or silently discard an earlier image, prompt, review, or
   description, including rejected candidates.
 - `SELECTED.md` names the best version, its color stage (`neutral_structure` or
@@ -386,9 +388,16 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   restrained corporate flowchart;
 - in the initial `neutral_structure` stage, every region has an achromatic near-white gray
   background fill, distinct from the page background; no colored tint enters a region fill;
-  in the later `colored_panels` stage, use soft light tints that may repeat across related
-  regions, with enough variation that the whole background is not one uniform color;
-  large dark fills are absent in either stage;
+  in the later `colored_panels` stage, every major named region background is softly tinted
+  (all four in a four-region figure), while only a small, purposeful subset of eligible internal
+  white/gray surfaces may also be tinted. Unselected internal surfaces remain unchanged; related
+  regions may repeat a tint, the composition does not become a rainbow or one uniform color,
+  and large dark fills are absent in either stage;
+- a `colored_panels` candidate matches its recorded two-level recolor plan exactly: every
+  mandatory major-region fill changed, only the listed optional internal fills changed, and all
+  text, arrows, arrowheads, icons, icon colors, outlines, banners, boundaries, positions,
+  dimensions, spacing, science-bearing colors, canvas size, and topology remain identical to
+  the neutral parent;
 - every enclosed text-bearing surface—region, node, card, pill, tag, label, and callout—has a
   visually uniform, continuous, fully opaque flat fill from edge to center. It has no irregular
   bright or dark patch, center white bloom or washout, unintended gradient, watercolor or
@@ -454,29 +463,43 @@ Do not insert the figure into a paper, edit LaTeX, create PPTX/SVG/draw.io, comm
 project, or push anything unless the user
 separately asks for those actions.
 
-#### 8. Later invocation: add region background colors
+#### 8. Later invocation: add background colors
 
-Only enter this route when the user invokes the skill again and asks to add region/background
-colors. Do not automatically color panels at the end of the initial invocation.
+Only enter this route when the user invokes the skill again and asks to add color or background
+color to the selected neutral figure. Do not automatically color it at the end of the initial
+invocation.
 
 - After reading project rules, reuse the current `TECHNICAL_FIGURE_BRIEF.md`, `SELECTED.md`,
   exact neutral-base image, and its review. Confirm that the base is a `final`
   `neutral_structure` figure and still matches the active manuscript. If it is provisional or
   the paper changed materially, report the issue and leave coloring for after the structure
   is corrected.
-- Choose a small set of soft, lightly saturated region fills from the style file. Related
-  regions may share a tint; they need not all differ. Keep the page background white or near
-  white. Apply one uniform, continuous, fully opaque flat color to each region background,
-  clipped strictly inside its boundary. Do not introduce gradients, center washout, white bloom,
-  mottling, transparency, texture, halo, or color bleeding. Apply color only to region background
-  fills, preserving every label, icon, banner, arrow, boundary, position, size, and scientific
-  relationship exactly.
+- Build a two-level recolor plan before editing. **Level 1 is mandatory:** tint the background
+  fill of every major named region—in a four-region figure, all four—with a coordinated set of
+  soft, lightly saturated colors. Related regions may share a tint; they need not all differ.
+  **Level 2 is optional and selective:** choose only a small subset of eligible internal surfaces
+  that are currently pure white or neutral gray, such as an ASK panel, command card, or compact
+  T/U/H subregion, when a soft tint materially improves grouping, hierarchy, or readability.
+  These examples describe the surface class, not labels that must exist. Do not color every
+  internal card, and leave unselected internal surfaces unchanged.
+- Keep the page background white or near white. Each selected surface receives one uniform,
+  continuous, fully opaque flat color, clipped strictly inside its own boundary. An internal
+  tint must remain distinguishable from its containing region without becoming saturated or
+  implying a new scientific category. Do not introduce gradients, center washout, white bloom,
+  mottling, transparency, texture, halo, or color bleeding between nested or adjacent surfaces.
+- Change **only** the fill pixels of the selected background surfaces. Lock all text, arrows,
+  arrowheads, icons and their existing colors, outlines, banners, boundaries, positions,
+  dimensions, spacing, canvas size, and scientific topology. Preserve all existing
+  science-bearing colors and all unselected white/gray surfaces exactly.
 - Use the built-in image edit tool with the neutral-base bitmap as the edit target. Save each
   result as a new immutable `vNN` with prompt, Chinese review, and paired description. Use at
   most the selected 1–3 color edits, and never start a new-image batch. Inspect every edit
-  against its neutral parent at final paper width; ask the editor to preserve the base image's
-  pixel dimensions and record the actual edited dimensions. Reject color bleed, lost contrast,
-  changed content, arrow crossings, or any other regression in the hard checks.
+  against its neutral parent at native raster scale and final paper width; ask the editor to
+  preserve the base image's pixel dimensions and record the actual edited dimensions. Reject an
+  edit if any major region remains neutral, optional coloring becomes indiscriminate, a selected
+  fill is non-uniform, any color bleeds across a boundary, or any locked or unselected element
+  changes. Also reject lost contrast, changed content, arrow crossings, or any other regression
+  in the hard checks.
 - Mark a colored version `final` only if it passes all scientific and visual hard checks.
   If the edit budget ends without one, keep the neutral-base selection as the last valid
   figure, record the colored attempts as rejected/provisional, and report the defects.

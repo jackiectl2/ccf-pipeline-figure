@@ -11,7 +11,8 @@ An explicit user aesthetic preference may override this style, but never the sci
 
 The target is a **playful editorial-comic scientific infographic**. The initial structure
 pass uses near-white neutral-gray region fills; soft color may remain in icons and small
-accents. Add soft region background colors only in a later explicit color-edit invocation.
+accents. On a later explicit color-edit invocation, tint every major region background and,
+optionally, a small selection of internal white/gray card surfaces.
 The figure should feel like a polished illustrated magazine roadmap or a high-quality
 educational comic, without candy-bright colors or large dark background fills.
 
@@ -63,11 +64,18 @@ educational comic, without candy-bright colors or large dark background fills.
   fills (for example `#F7F7F7`), without hue, colored gradients, or pastel tint. Keep the page
   white or near white and distinguish regions with boundaries, badges, and layout. This is the
   selected structural base to inspect before choosing panel colors.
-- **Later explicit “add background colors” invocation:** edit only those region fills. Use a
-  small coordinated set of **soft, lightly saturated colors**. Pale coral, peach, butter
+- **Later explicit “add background colors” invocation:** recolor backgrounds at two levels.
+  First, tint every major named region background; in a four-region figure, all four major
+  regions must receive color. Second, optionally tint only a small selection of internal pure
+  white or neutral-gray surfaces—such as an ASK panel, command card, or compact T/U/H
+  subregion—when doing so improves grouping, hierarchy, or readability. These are examples of
+  eligible surfaces, not required labels. Do not color every internal card; untouched white
+  space is part of the visual hierarchy.
+- Use a small coordinated set of **soft, lightly saturated colors**. Pale coral, peach, butter
   yellow, sage or mint, powder blue, and lavender are possible choices, not a quota. Related
-  regions may reuse a color; they need not all differ. Give the colored figure enough light
-  variation that its background is not one uniform color.
+  regions may reuse a color; they need not all differ. An optionally colored internal surface
+  may harmonize with its containing region while remaining visibly distinct. Do not let the
+  whole background become one uniform color or turn nested cards into a rainbow.
 - White may be used for the page or text cards. Keep the panels distinguishable and readable
   at thumbnail size without making their fills dark or saturated.
 - Use near-black or deep navy for text and outlines where needed for contrast, not for large
@@ -301,12 +309,19 @@ been converted into exact region and arrow instructions:
 > established by the brief. Treat 4K as a resolution target, not a fixed canvas ratio: do not
 > force 16:9 or another standard ratio.
 
-For the later explicit panel-color invocation, use built-in image editing on the selected
-neutral figure, not this new-image prompt. Tell the editor to change **only** the region
-background fills to a small coordinated set of soft, light colors. Each edited region must use
-one visually uniform, fully opaque color from edge to center, strictly clipped inside its
-boundary, with no gradient, white bloom, washout, mottling, texture, translucency, halo, or
-color bleeding. Related regions may reuse a tint. Keep the page white or near white. Preserve
-all text, icons, arrows, boundaries, positions, dimensions, existing science-bearing colors,
-and unaffected pixels. Reject any edit that changes content, rerenders a correct element, or
+For the later explicit background-color invocation, use built-in image editing on the selected
+neutral figure, not this new-image prompt. Tell the editor to recolor background fills in two
+levels. Level 1 is mandatory: tint every major named region background—in a four-region figure,
+all four. Level 2 is optional and selective: tint only a small subset of internal pure-white or
+neutral-gray surfaces, such as an ASK panel, command card, or compact T/U/H subregion, when the
+tint improves grouping, hierarchy, or readability. Do not color every internal card; preserve
+all unselected white/gray surfaces exactly. Use a small coordinated set of soft, light colors;
+related regions may reuse a tint, and an internal tint may harmonize with its containing region
+while remaining distinct. Each selected surface must use one visually uniform, fully opaque
+color from edge to center, strictly clipped inside its own boundary, with no gradient, white
+bloom, washout, mottling, texture, translucency, halo, or color bleeding between adjacent or
+nested surfaces. Change only the fill pixels of the selected backgrounds. Lock all text,
+arrows, arrowheads, icons and their existing colors, outlines, banners, boundaries, positions,
+dimensions, spacing, canvas size, scientific topology, and existing science-bearing colors.
+Reject any edit that changes or rerenders a locked or unselected element, loses contrast, or
 introduces an arrow crossing. Ask to preserve the base image's pixel dimensions.
