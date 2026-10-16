@@ -235,9 +235,13 @@ understand the scientific graph; do not make an unlabeled icon carry an ambiguou
 
 Set text and icon size against the **final printed figure width in the paper**, after LaTeX or
 other layout scaling. Source-canvas point sizes and a full-screen image preview do not count.
-For every figure, choose **exactly three or four named visual tiers** before generating and
-record their final text sizes and icon bounding-box sizes in the brief and prompt. Do not use
-ad-hoc intermediate scales to solve local spacing problems.
+For every figure, normally choose **exactly three or four named text tiers** and **exactly three
+or four named icon-size tiers** before generating. A fifth **text** tier is allowed only in the
+rare case where indispensable content cannot remain legible after improving the composition,
+spacing, and wording; icon-size tiers remain limited to three or four. Record all final text
+sizes and icon bounding-box sizes in the brief and prompt. If Tier 5 is used, also record why
+four text tiers were insufficient and which few items use it. Do not use ad-hoc intermediate
+scales to solve local spacing problems.
 
 - Every text item assigned to the same tier uses the **identical final printed font size**.
   Every icon assigned to the same tier uses the **identical visual bounding-box size**. This
@@ -254,6 +258,11 @@ ad-hoc intermediate scales to solve local spacing problems.
   distinction and must remain readable in the final single- or double-column PDF. Keep region
   headings compact: use weight and placement, not a larger badge or tall title banner, for
   hierarchy.
+- An exceptional Tier 5 is the figure's smallest text size. Use it only for a small minority of
+  isolated, nonessential micro-labels; never use it for region headings, node names, necessary
+  method distinctions, or recurring body text across regions. It must remain readable at final
+  paper width. If Tier 5 starts recurring, revise the layout or wording and promote those items
+  to Tier 4 instead of normalizing a fifth size throughout the figure.
 
 Figure captions follow the venue's caption rule rather than this figure-label rule. A venue's
 explicit absolute requirement always overrides these defaults.
@@ -419,10 +428,14 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 - labels remain readable at the intended paper width; and
 - the declared tiers meet the final-size defaults or venue rule: compact region headings are
   110% of body text, primary labels 100%, secondary labels 85%, and any 75% auxiliary tier is
-  nonessential and readable in the compiled paper; and
-- the figure uses exactly three or four declared text tiers and icon-size tiers; all items within
-  any one text tier have identical final printed font size, all icons within any one icon tier
-  have identical bounding-box size, and no one-off local size has been introduced; and
+  nonessential and readable in the compiled paper; any exceptional fifth text tier is the
+  smallest, is justified in the brief, remains readable, and is used only for a small minority
+  of isolated nonessential micro-labels; and
+- the figure normally uses exactly three or four declared text tiers and always uses exactly
+  three or four icon-size tiers. A fifth text tier appears only under the documented exception
+  above; all items within any one text tier have identical final printed font size, all icons
+  within any one icon tier have identical bounding-box size, and no one-off local size has been
+  introduced; and
 - decoration supports hierarchy without obscuring the scientific graph.
 - for a replacement, the candidate achieves the brief's concrete redesign gains over the old
   figure and does not merely reproduce its layout with restyled graphics.

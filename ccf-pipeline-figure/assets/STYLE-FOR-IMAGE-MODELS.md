@@ -145,13 +145,19 @@ educational comic, without candy-bright colors or large dark background fills.
 
 ## 5 · Text
 
-- Before drawing, choose exactly three or four discrete text-size tiers for the whole figure.
-  Every text item assigned to one tier uses the same final printed size across all regions;
-  do not introduce a one-off font size to solve a local layout problem. Text tiers and icon
-  tiers are assigned independently, so a primary label need not have a primary-size icon.
-  As a default four-tier system relative to the paper body, use 110% for compact region
-  headings, 100% for primary labels, 85% for secondary labels, and 75% only for nonessential
-  auxiliary text. A three-tier figure omits the auxiliary tier.
+- Before drawing, normally choose exactly three or four discrete text-size tiers for the whole
+  figure. Every text item assigned to one tier uses the same final printed size across all
+  regions; do not introduce a one-off font size to solve a local layout problem. Text tiers and
+  icon tiers are assigned independently, so a primary label need not have a primary-size icon.
+  As a default four-tier system relative to the paper body, use 110% for compact region headings,
+  100% for primary labels, 85% for secondary labels, and 75% only for nonessential auxiliary
+  text. A three-tier figure omits the auxiliary tier.
+- A fifth text tier is an exceptional escape hatch, not part of the default system. Use it only
+  when indispensable content still cannot fit legibly after improving composition, spacing, and
+  wording. It must be the smallest declared size, remain readable at final paper width, and
+  appear only on a small minority of isolated, nonessential micro-labels. Never use it for region
+  headings, node names, necessary method distinctions, or recurring body text across regions.
+  If it starts recurring, revise the layout or wording and promote those items to Tier 4.
 - Make the diagram readable with as little text as the scientific topology permits. Keep
   essential region and node names; label an arrow only when its direction or type is unclear.
   Put full explanations in the paired paper-body description file for the writing agent.
@@ -223,10 +229,15 @@ been converted into exact region and arrow instructions:
 > (at most about 110%). Use bold weight and placement for hierarchy, with compact badges and
 > heading bands that preserve space for the method content.
 > Establish exactly three or four discrete text-size tiers and exactly three or four discrete
-> icon-size tiers for this whole figure before drawing. Every text item in a tier must have the
-> same final printed size, and every icon in a tier must have the same visual bounding-box size,
-> across all regions. Do not create one-off local scales; use weight, color, placement, grouping,
-> and shape for emphasis instead. Text and icon tiers may be assigned independently.
+> icon-size tiers for this whole figure before drawing. Only in a rare content-dense case may
+> text use a fifth tier: first improve composition, spacing, and wording; then use Tier 5 only
+> as the smallest readable size for a small minority of isolated, nonessential micro-labels.
+> Never use Tier 5 for region headings, node names, necessary method distinctions, or recurring
+> body text. If it starts recurring, return those items to Tier 4 and revise the layout. Every
+> text item in a tier must have the same final printed size, and every icon in a tier must have
+> the same visual bounding-box size, across all regions. Do not create one-off local scales;
+> use weight, color, placement, grouping, and shape for emphasis instead. Text and icon tiers
+> may be assigned independently.
 > Preserve every object and scientific relationship in the supplied topology. Reduce the
 > number of drawn arrow lines only by expressing a preserved relationship through clear
 > stage order, containment, aligned lanes, shared trunks, typed boundaries, or a short
