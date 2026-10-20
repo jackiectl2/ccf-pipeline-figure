@@ -10,9 +10,11 @@ labels, examples, and result exclusions. This file is authoritative for visual t
 An explicit user aesthetic preference may override this style, but never the scientific brief.
 
 The target is a **playful editorial-comic scientific infographic**. The initial structure
-pass uses near-white neutral-gray region fills; soft color may remain in icons and small
-accents. On a later explicit color-edit invocation, tint every major region background and,
-optionally, a small selection of internal white/gray card surfaces.
+pass uses a three-layer color system: a white or near-white page, achromatic near-white-gray
+major-region fields, and lively but restrained soft color in semantic foreground objects.
+Neutral region fields do not require neutral foregrounds or a white/gray card around every
+icon-label group. On a later explicit color-edit invocation, tint every major region background
+and, optionally, a small selection of internal white/gray card surfaces.
 The figure should feel like a polished illustrated magazine roadmap or a high-quality
 educational comic, without candy-bright colors or large dark background fills.
 
@@ -33,10 +35,16 @@ educational comic, without candy-bright colors or large dark background fills.
   If topology forces unusual whitespace, make its purpose legible through the structure rather
   than leaving an accidental-looking empty quadrant.
 - Distinguish named regions from the smaller nodes joined by arrows: in `A → B`, A and B are
-  two nodes, whether they sit in the same region or different ones. Give each node a clear
-  internal hierarchy and enough room for its short label and icon; keep fuller method detail
-  in the paired description file rather than adding prose inside the node. Do not let one
-  large icon occupy most of the node.
+  two nodes, whether they sit in the same region or different ones. A node does not need a
+  rectangular enclosure: a free-standing semantic object plus a short adjacent label, clear
+  spacing, and unambiguous connector anchors remains a distinct node. Give each node a clear
+  visual hierarchy and enough room for its label and icon; keep fuller method detail in the
+  paired description file rather than adding prose inside the node. Do not let one large icon
+  occupy most of the node.
+- Use an enclosed card only when the boundary itself carries meaning—for example a record,
+  command, state, interface, input/output object, or explicit grouping. Do not draw a white or
+  gray rectangle merely to hold an icon and its label. Conventional cards should remain a
+  minority unless the scientific brief establishes a genuinely repeated card-like class.
 - Show real branches, parallel operations, joins, feedback loops, optional paths, and typed
   boundaries. Never serialize mutually exclusive or parallel operations just to simplify the
   layout.
@@ -58,7 +66,12 @@ educational comic, without candy-bright colors or large dark background fills.
 - Decorative elements must stay outside arrow corridors and must not resemble nodes, ports,
   evidence tokens, outcomes, or data-flow arrows.
 
-## 2 · Color: neutral panels first, soft color later
+## 2 · Color: neutral region fields, lively foregrounds, soft panels later
+
+- Keep the three layers distinct during the initial invocation: white or near-white page;
+  achromatic near-white-gray major-region fields; restrained soft color in icons, mechanism
+  objects, state markers, small accent plates, and other compact semantic foreground elements.
+  The neutral-field rule applies to the large named regions, not to every object inside them.
 
 - **Initial invocation:** use the same pure, achromatic near-white gray for region background
   fills (for example `#F7F7F7`), without hue, colored gradients, or pastel tint. Keep the page
@@ -76,8 +89,8 @@ educational comic, without candy-bright colors or large dark background fills.
   regions may reuse a color; they need not all differ. An optionally colored internal surface
   may harmonize with its containing region while remaining visibly distinct. Do not let the
   whole background become one uniform color or turn nested cards into a rainbow.
-- White may be used for the page or text cards. Keep the panels distinguishable and readable
-  at thumbnail size without making their fills dark or saturated.
+- White may be used for the page or semantically justified text cards. Keep the panels
+  distinguishable and readable at thumbnail size without making their fills dark or saturated.
 - Use near-black or deep navy for text and outlines where needed for contrast, not for large
   background fields. Outlines may be more expressive than ordinary academic line art.
 - Reserve stable semantic roles where the science needs them: for example, one color for lane
@@ -100,8 +113,22 @@ educational comic, without candy-bright colors or large dark background fills.
 
 ## 3 · Comic depth and shape grammar
 
+- Build visual rhythm from a varied semantic foreground grammar rather than a repeated card
+  template. Choose among these treatments according to what the node means:
+  - inputs and evidence as open mini-scenes, symbolic data strips, document stacks, token
+    streams, or other unboxed source objects that do not imply measured values;
+  - stateful mechanisms and major transformations as distinctive objects such as networks,
+    gears, instruments, shields, magnifiers, or gauges;
+  - mathematical or routing operations as compact circles, funnels, chips, gates, brackets,
+    or junction symbols;
+  - states and outcomes as capsules, badges, tags, meters, or warning shapes;
+  - a real ordered sequence as a continuous event belt, ribbon, or shared baseline whose
+    individual entities and transitions remain scientifically distinct; and
+  - records, commands, interfaces, and explicit groups as the limited cases that justify cards.
+- Labels may sit beside, below, or within the meaningful object when legibility permits; do not
+  repeat one dominant `centered icon above centered label inside a white rectangle` pattern.
 - Use rounded sticker capsules, playful banners, chunky tabs, speech bubbles, file cards,
-  ribbons, tags, badges, and varied silhouettes.
+  ribbons, tags, badges, and varied silhouettes selectively, according to their semantic role.
 - Keep region, node, card, pill, tag, label, and callout fills flat in every stage. Gentle cel
   shading or small highlights may add depth **inside icon artwork only**; they may not spill
   onto a text-bearing background or sit behind a label. A shallow offset shadow may separate
@@ -118,6 +145,9 @@ educational comic, without candy-bright colors or large dark background fills.
   enough to read. Comic motion ticks may decorate an arrow but may never create a second
   ambiguous arrow.
 - Use playful asymmetry without sacrificing alignment of the scientific graph.
+- Create liveliness through silhouette, foreground color, scale rhythm, grouping, layering, and
+  label placement. Do not obtain it by adding arrows, font tiers, decorative topology, saturated
+  major-region fills, or ornamental clutter.
 
 ## 4 · Icons: varied nouns, one family
 
@@ -128,6 +158,9 @@ educational comic, without candy-bright colors or large dark background fills.
   one icon and must fit its assigned tier box.
 - Give every major noun and operation a recognizable glyph. A labeled rectangle without a
   visual metaphor should be the exception.
+- Let recognizable icons stand directly on the region field when no boundary is needed. Pair
+  them with a short nearby label and clear connector anchors rather than automatically wrapping
+  them in a white card.
 - For a normal five-region figure, aim for **at least twelve visibly different icon
   silhouettes** when the method contains that many distinct concepts.
 - Do not reuse a document sheet or folder for unrelated concepts merely because it is easy.
@@ -208,6 +241,9 @@ educational comic, without candy-bright colors or large dark background fills.
 - No non-uniform fill, white bloom, washout, unintended gradient, mottling, watercolor or
   airbrush texture, translucency, halo, vignette, reflection, shadow tint, or color bleeding
   inside or across any text-bearing enclosed surface.
+- No UI-like wall in which most primary nodes repeat the same white/gray rectangle with a
+  centered icon above a centered label, unless the repeated card form itself encodes a genuine
+  repeated scientific class.
 - No tiny text that becomes unreadable at the intended paper width.
 
 ---
@@ -220,7 +256,8 @@ been converted into exact region and arrow instructions:
 > Render this as a playful editorial-comic scientific infographic. It should feel like a
 > polished illustrated magazine roadmap: icon-rich and engaging, while
 > preserving every necessary scientific relationship and boundary. Avoid candy-bright colors and large
-> dark background fills, and do not make it a page of black text boxes.
+> dark background fills. Do not make it a page of black text boxes or a wall of identical
+> white cards.
 >
 > Compose the method as three to six named comic regions in a grid, stack, or asymmetric
 > editorial layout. Give every region the same achromatic near-white gray background fill
@@ -259,14 +296,22 @@ been converted into exact region and arrow instructions:
 > the light panels; preserve any necessary semantic arrow colors at a similarly readable depth.
 > Check their visibility at final paper width.
 > Treat each arrow-linked item as a separate smaller node, whether two nodes sit in the same
-> named region or different ones. Give each node a clear hierarchy of icon, label, and
-> permitted method detail.
+> named region or different ones. A separate node does not require a rectangular enclosure:
+> an unboxed semantic object with a nearby short label, clear spacing, and unambiguous connector
+> anchors remains a distinct node. Give each node a clear hierarchy of icon, label, and permitted
+> method detail. Use an enclosed card only when its boundary itself means record, command,
+> state, interface, input/output object, or explicit grouping. Do not draw a white or gray
+> rectangle merely to hold an icon and label; conventional cards should remain a minority unless
+> the supplied science contains a genuinely repeated card-like class.
 >
-> Keep the page white or near white. Region backgrounds stay neutral gray in this invocation;
-> do not add region background colors yet. Soft color may appear in icons, banners, or small
-> accents. Use deep navy or near-black for readable text and outlines, not large background
-> fields. Keep any science-bearing lane colors consistent; decorative colors must not imply
-> measured categories.
+> Keep three color layers distinct. The page is white or near white. The large named-region
+> backgrounds stay achromatic near-white gray in this invocation; do not add region background
+> colors yet. The semantic foreground should still feel lively: use restrained soft color in
+> icons, distinctive mechanism objects, state markers, small accent plates, banners, and other
+> compact foreground elements. Neutral region fields do not require neutral foregrounds or
+> white/gray cards around icon-label groups. Use deep navy or near-black for readable text and
+> outlines, not large background fields. Keep any science-bearing lane colors consistent;
+> decorative colors must not imply measured categories.
 >
 > Apply strict flat-fill integrity to every enclosed text-bearing surface: every region, node,
 > card, pill, tag, label, and callout must contain one uniform, continuous, fully opaque color
@@ -278,10 +323,18 @@ been converted into exact region and arrow instructions:
 > bleeding. Confine cel shading and highlights to the interior artwork of icons only.
 >
 > Give every major noun and operation a distinct, easy-to-name cartoon icon from one coherent
-> family. Use varied silhouettes rather than repeating document and folder icons. Use colored
-> icon fills, thick outlines, sticker capsules, banners, badges, tags, small motion ticks, and
-> restrained corner doodles. Keep in-figure text sparse: concise region and node names, and
-> arrow labels only when necessary. Do not add explanatory sentences or repeated labels.
+> family. Use varied silhouettes rather than repeating document and folder icons. Build a varied
+> semantic foreground grammar: inputs may be open mini-scenes or source objects; stateful
+> mechanisms should be distinctive instruments, networks, gears, shields, magnifiers, or gauges;
+> mathematical and routing operations should be compact circles, funnels, chips, gates, brackets,
+> or junctions; states and outcomes may be capsules, badges, tags, meters, or warning shapes; and
+> a real ordered sequence may use a continuous event belt, ribbon, or shared baseline while
+> preserving every entity and transition. Reserve ordinary cards for the few nodes whose
+> boundaries carry scientific meaning. Do not repeat a dominant centered-icon-above-centered-label
+> white-card template. Labels may sit beside or below objects. Use colored icon fills, thick
+> outlines, sticker capsules, banners, badges, tags, small motion ticks, and restrained corner
+> doodles selectively. Keep in-figure text sparse: concise region and node names, and arrow labels
+> only when necessary. Do not add explanatory sentences or repeated labels.
 > Add one short method-only line to a region only if a necessary distinction otherwise becomes
 > ambiguous; leave the fuller explanation for the paper body and paired description file.
 > Keep avatar heads, cartoon people, and other icons modest in size within their nodes; never
@@ -289,6 +342,9 @@ been converted into exact region and arrow instructions:
 > detail and readable organization inside each node over oversized decoration. When
 > useful, lightly overlap multiple small icons into one composite illustration within a node;
 > this is optional and must not imply extra method stages or obscure labels and arrows.
+> Make the figure lively through semantic silhouettes, restrained foreground color, scale rhythm,
+> grouping, layering, and varied label placement—not by adding arrows, font tiers, decorative
+> topology, saturated major-region fills, or ornamental clutter.
 > Do not add a standalone overall title banner. Start directly with Region 1; the paper caption
 > supplies the figure title. No landscapes, roads, trees, or exterior signboards. Crop tightly
 > around the numbered method regions. Decorative accents are allowed only inside region

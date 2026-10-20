@@ -7,9 +7,10 @@ description: >-
   架构图 / pipeline 图 when Codex should derive the technical brief, call its subscription-
   backed built-in image generator, preserve every candidate, ask the user to set the number of
   fresh candidates and the refinement cap (default: seven and three), then locally refine the best
-  candidate when needed. Default to near-white neutral-gray region fills; on a later explicit
-  recolor invocation, tint every major region background and optionally a small selection of
-  internal white/gray card surfaces. Keep in-figure text sparse and save a paired
+  candidate when needed. Default to neutral-gray major-region fields with lively colored
+  semantic foregrounds rather than white-card walls; on a later
+  explicit recolor invocation, tint every major region background and optionally a small
+  selection of internal white/gray card surfaces. Keep in-figure text sparse and save a paired
   manuscript-description reference for each generated image. Do not use
   for data figures where position, length, angle, or colour encodes a measured quantity.
 metadata:
@@ -173,13 +174,25 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
   that fill to remain visually uniform from edge to center, strictly clipped inside its outline,
   and identical across repeated instances of the same class. Reserve shading and highlights for
   icon artwork only; never place them behind text;
+- a **foreground-representation plan** that keeps the three color layers distinct: white or
+  near-white page, achromatic near-white-gray major-region fields, and restrained soft color in
+  semantic foreground objects. For every major node, choose an appropriate treatment—open
+  mini-scene, free-standing icon-label group, distinctive mechanism object, compact operation
+  glyph, state capsule/gauge, continuous event sequence, or a true card/container. Record why
+  any ordinary rectangular card needs a boundary. A boundary is justified by scientific meaning
+  such as a record, command, state, interface, input/output object, or explicit grouping; it is
+  not the default wrapper for an icon and label. Preserve each unboxed node as a distinct
+  scientific entity through its icon, label, spacing, and connector anchors;
 - scientific invariants whose topology or meaning cannot change;
 - explicit exclusions separating method from results; and
 - a source-of-truth table citing the project files behind each part.
 
 Record the color stage as `neutral_structure` for the initial figure. Its region background
-fills are achromatic near-white gray. Do not plan colored region fills until the user invokes
-the skill again and explicitly asks to add them.
+fills are achromatic near-white gray. This restriction applies to the major-region background
+fields, not to all foreground objects: icons, semantic mechanism shapes, state markers, small
+accent plates, and other compact foreground elements may use restrained soft color from the
+first pass. Do not require every node to sit inside a white or gray card. Do not plan colored
+major-region fills until the user invokes the skill again and explicitly asks to add them.
 
 The brief is the scientific authority. A replacement image is not. Do not draw until the
 manuscript figure audit has a replacement/addition decision, the planned redesign gains are
@@ -193,9 +206,12 @@ After the brief exists, read `assets/STYLE-FOR-IMAGE-MODELS.md` completely. Cons
 self-contained prompt in this order:
 
 1. primary request and pre-experiment purpose;
-2. editorial-comic visual target with achromatic near-white region fills near the top, followed
-   immediately by the flat-fill integrity constraint for all regions and text-bearing cards:
-   one uniform opaque fill per enclosed surface; no unintended gradient, center washout, white
+2. editorial-comic visual target and the three-layer color relationship near the top: white or
+   near-white page, achromatic near-white-gray major-region fields, and lively but restrained
+   soft color in semantic foreground objects. State explicitly that neutral region fields do
+   not require neutral foregrounds or a white/gray card around every icon-label group. Follow
+   immediately with the flat-fill integrity constraint for all enclosed regions and text-bearing
+   surfaces: one uniform opaque fill per surface; no unintended gradient, center washout, white
    bloom, mottling, translucency, halo, texture, or color bleeding across outlines;
 3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
    reading order;
@@ -209,7 +225,12 @@ self-contained prompt in this order:
    interface labels where appropriate. Do not remove scientific content to reduce line count;
    use medium-weight high-contrast arrows only for relationships that still require explicit
    direction, and use no crossing arrow paths;
-6. branches, shared kernels, typed boundaries, and joins;
+6. branches, shared kernels, typed boundaries, and joins, plus a foreground-representation plan
+   that uses varied semantic treatments instead of a repeated card template. Prefer open
+   mini-scenes for inputs, distinctive objects for mechanisms, compact circles/funnels/chips for
+   mathematical operations, capsules/gauges for states, event belts or ribbons for real
+   continuous sequences, and cards only when the boundary itself has scientific meaning. Keep
+   every entity and connector unambiguous even when its node is unboxed;
 7. only essential short labels and indispensable permitted example strings; put the fuller
    explanation in the paired description file, not in the image;
 8. scientific invariants and method/result exclusions;
@@ -387,7 +408,10 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   while initial region fills stay neutral; it is not a grid of black text boxes or a
   restrained corporate flowchart;
 - in the initial `neutral_structure` stage, every region has an achromatic near-white gray
-  background fill, distinct from the page background; no colored tint enters a region fill;
+  background fill, distinct from the page background; no colored tint enters a major-region
+  fill. The foreground is not forced into the same gray/white treatment: semantic icons,
+  mechanism objects, state markers, and compact accents use restrained soft color, and the
+  figure does not become visually achromatic merely because its region fields are neutral;
   in the later `colored_panels` stage, every major named region background is softly tinted
   (all four in a four-region figure), while only a small, purposeful subset of eligible internal
   white/gray surfaces may also be tinted. Unselected internal surfaces remain unchanged; related
@@ -408,6 +432,18 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   visible haze or inconsistent semantic colors;
 - every major noun or operation has a recognizable glyph, with varied silhouettes rather
   than repeated document/folder icons;
+- ordinary white or gray rectangles are not the default wrapper for icon-label groups. Each
+  visible card boundary has a semantic reason—such as a record, command, state, interface,
+  input/output object, or explicit grouping—and conventional cards remain a minority unless
+  the brief establishes a genuinely repeated card-like scientific class;
+- the primary nodes do not repeat one dominant `centered icon above centered label inside a
+  white rectangle` template. Where the topology permits, the figure mixes open mini-scenes,
+  free-standing icon-label groups, distinctive mechanism objects, compact operation glyphs,
+  state capsules or gauges, continuous event sequences, and the few semantically justified
+  containers. Labels may sit beside or below objects while each node remains unambiguous;
+- liveliness comes from semantic silhouettes, restrained foreground color, scale rhythm,
+  grouping, and label placement—not from extra arrows, extra font tiers, decorative topology,
+  saturated major-region fills, or ornamental clutter;
 - arrow-linked nodes have considered internal visual hierarchy and refined small details;
   avatars and other icons stay modest in size rather than filling a node with one oversized
   simple graphic; optional overlapping icons read as one object, not extra method stages;
@@ -1119,6 +1155,7 @@ paper's *widest*. Decide the width in Step 1, when you name the regions, not aft
 | ⛔ **Mutually exclusive outcomes drawn as a chain** | the generator lays nodes out in the order they were declared | branch them; a chain claims a sequence that does not exist |
 | ⛔ **Five boxes left to right** | it is what a first draft looks like | §2.1 — regions |
 | **Labelled rectangles, no icons** | icons feel like decoration | §2.3 — but read the caveat there; this is the file's weakest measurement |
+| **White-card UI wall** | every icon-label pair is wrapped in the same safe rectangle, so neutral region fields are misread as a neutral foreground mandate | keep major-region fields gray but vary the semantic foreground grammar; leave nodes unboxed by default and use a card only when its boundary means something |
 | **Rainbow with no meaning** | the palette had N colours | §2.2 — median 4, each meaning something |
 | **Pastel cards with a white fog or stained center** | the image model interprets soft/comic/pastel as glow, airbrush, translucency, or watercolor texture | require flat opaque fills on every text-bearing enclosed surface; reject white bloom, washout, mottling, unintended gradients, halos, and color bleeding; allow highlights only inside icons |
 | **Text where a caption belongs** | the figure is explaining itself | move it to the body |
