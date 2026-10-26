@@ -22,6 +22,41 @@ font substitution, hand-drawn contours and icon shading may differ. Document tho
 and visually judge whether identity, topology and readability survive. If faithful vectorization
 is impractical, report that limitation rather than delivering a raster wrapper.
 
+## Stage-specific fill cleanup
+
+Keep the existing flat-fill prevention prompt. The exception below changes review/repair
+priority, not the requested aesthetic or scientific standard. It applies only when SVG
+reconstruction is actually being completed, not to PNG-only delivery or a failed vector stage.
+
+- **PNG triage:** small white speckles, mild internal washout or incidental fill variation may
+  be marked `deferred_fill_cleanup` if the intended uniform color and object boundary are
+  unambiguous, labels/arrows remain legible, and no semantic color distinction is affected.
+  Record each affected surface, intended color (from the palette/brief or clear clean regions),
+  and the planned cleanup. Do not reject an otherwise acceptable source or spend ImageGen
+  refinement rounds solely on these cosmetic defects. Keep the agreed fresh-candidate budget.
+- **Not deferrable:** contamination that obscures text, arrowheads or outlines, crosses object
+  boundaries, changes scientific color coding, or makes the intended shape/color uncertain.
+  Resolve such defects under the existing bounded repair policy; if unresolved, keep the
+  candidate provisional/rejected. Do not guess missing content or claim SVG will recover it.
+- **SVG reconstruction:** deliberately rebuild each affected background as its intended single,
+  opaque, uniform fill. Preserve the semantic palette and containment; do not sample a polluted
+  spot as the target color or trace white speckles into extra shapes. Removing recorded
+  incidental fill artifacts is allowed appearance cleanup, not a license to redesign nodes,
+  change topology, tint neutral major panels, or recolor unrequested surfaces. Preserve deliberate
+  icon highlights/cel shading when appropriate; do not flatten all icon artwork or remove
+  meaningful white marks. Ask when a mark's meaning cannot be resolved from the brief/reference.
+- **Final SVG/PDF:** inspect the actual renders for uniform text-bearing surfaces, stray light
+  or dark patches, accidental overlays, gaps and boundary bleed, at native scale and paper width.
+  Vector format and exporter success alone cannot establish this: a white shape over a blue
+  fill is still possible. Record each deferred item's cleanup result and visible deviations.
+  No unresolved deferred item may pass final vector acceptance; inspect ordinary antialiasing
+  at edges separately from genuine interior spots.
+- **Disposition:** retain the original PNG unchanged and label its remaining defects. The cleaned
+  SVG/PDF pair may be `final` only after all scientific, visual and export checks pass; never
+  present that verdict as proof that the source PNG was cleaned. If the user needs a clean
+  raster, a verified SVG/PDF rasterization can be a separately named derivative, not a silent
+  replacement of `vNN.png`. If vector cleanup fails, report it rather than granting a waiver.
+
 ## Author and export
 
 - Save `vNN.svg` beside immutable `vNN.png`; use a fixed `viewBox` matching the PNG canvas.

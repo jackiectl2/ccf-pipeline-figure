@@ -9,6 +9,12 @@ The project's `TECHNICAL_FIGURE_BRIEF.md` is authoritative for scientific meanin
 labels, examples, and result exclusions. This file is authoritative for visual treatment.
 An explicit user aesthetic preference may override this style, but never the scientific brief.
 
+The flat-fill constraints here remain the generation target. For intermediate PNG review in
+the PNG→SVG→PDF workflow, follow `references/png-svg-pdf.md` (relative to the skill root):
+minor unambiguous fill artifacts may be deferred to deliberate SVG cleanup, not used alone
+to trigger more ImageGen edits. This does not relax final vector fill quality or permit
+pollution that obscures content, crosses boundaries, or changes semantic colors.
+
 The target is a **playful editorial-comic scientific infographic**. The initial structure
 pass uses a three-layer color system: a white or near-white page, achromatic near-white-gray
 major-region fields, and lively but restrained soft color in semantic foreground objects.

@@ -82,6 +82,14 @@ reconstruction review and validation evidence. This is an agent-authored vector 
 not a lossless format conversion. Never wrap the PNG in SVG, trace letters into paths, or add
 an invisible OCR layer and call that a reconstructed figure.
 
+Keep anti-contamination constraints in the ImageGen prompt, but apply the stage-specific
+fill policy in `references/png-svg-pdf.md`: minor, unambiguous PNG fill speckles/washout may
+be recorded as `deferred_fill_cleanup` and cleaned during SVG reconstruction instead of
+spending ImageGen refinements on them alone. This narrow exception overrides the raster
+fill-rejection rules below, including recolor review; it does not waive scientific checks,
+legibility, boundary integrity, or final SVG/PDF fill checks. SVG does not clean colors
+automatically, and a deferred PNG is not a clean final raster deliverable.
+
 This self-contained extension takes precedence over the legacy vector route below; it does
 not use or enable Figure Smith. A successful export does not make a scientifically incorrect
 candidate publication-ready. If reconstruction/export cannot pass, keep the source and report
@@ -362,6 +370,8 @@ output/imagegen/<project-name>/<figure-name>/
   neutral-base version in this index after later coloring. Link the selected `vNN.png` and
   its paired `vNN.description.md`.
   It may say `final` only after every hard check passes, including zero arrow crossings.
+  If PNG fill cleanup was deferred, report separate PNG and SVG/PDF dispositions: the
+  original PNG retains its documented defect even when the cleaned vector pair passes.
   It is an index, not a replacement for the versioned files.
 
 #### 5. Iterate in two bounded phases, then stop
@@ -378,7 +388,9 @@ output/imagegen/<project-name>/<figure-name>/
 **Phase B — local refinement of the best candidate**
 
 - Enter this phase automatically only when the selected fresh-candidate count is exhausted and
-  none passes. Do not ask the user to authorize the transition.
+  no candidate passes after eligible `deferred_fill_cleanup` items are set aside. If the best
+  candidate's only remaining defects are those items, proceed to SVG reconstruction without
+  a raster-only cleanup round. Do not ask the user to authorize the transition.
 - Rank the fresh candidates using scientific correctness first, then the number and severity of
   remaining visual defects. Select one best base and record the choice in its review and
   `SELECTED.md` as provisional.
@@ -386,7 +398,8 @@ output/imagegen/<project-name>/<figure-name>/
   checklist. Each refinement prompt must name only the local changes for the current round and
   explicitly preserve the base candidate's correct topology, composition, labels, palette,
   typography, icons, and unaffected regions.
-- When the defect is fill contamination, constrain the edit to the named enclosed surfaces:
+- When fill contamination is not eligible for SVG deferral, or the user explicitly requests
+  a clean PNG, constrain any authorized raster cleanup to the named enclosed surfaces:
   flatten each existing fill to its intended uniform opaque color and remove only washout,
   bloom, mottling, unintended gradients, halo, or bleed. Lock all text, icons, outlines, node
   dimensions, positions, arrows, relationships, canvas size, and unaffected pixels against
@@ -422,7 +435,8 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   error analysis, success/failure total, or posterior conclusion appears; and
 - decorative marks cannot be mistaken for nodes, ports, arrows, outcomes, or measured data.
 
-**Visual hard checks** — any failure triggers another candidate while budget remains:
+**Visual hard checks** — apply the narrow `deferred_fill_cleanup` exception above to
+intermediate PNGs only; other failures trigger another candidate while budget remains:
 
 - the thumbnail reads as an editorial-comic infographic, with soft color in icons or accents
   while initial region fills stay neutral; it is not a grid of black text boxes or a
@@ -449,7 +463,8 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   Repeated instances of the same semantic class use the same fill. Shading and highlights may
   appear inside icon artwork only, never in the background behind text. Inspect this once at
   native raster scale to catch localized contamination and again at final paper width to catch
-  visible haze or inconsistent semantic colors;
+  visible haze or inconsistent semantic colors. Eligible minor PNG defects may be deferred,
+  but the reconstructed SVG and exported PDF must pass this check before final acceptance;
 - every major noun or operation has a recognizable glyph, with varied silhouettes rather
   than repeated document/folder icons;
 - ordinary white or gray rectangles are not the default wrapper for icon-label groups. Each
@@ -530,9 +545,10 @@ invocation.
 
 - After reading project rules, reuse the current `TECHNICAL_FIGURE_BRIEF.md`, `SELECTED.md`,
   exact neutral-base image, and its review. Confirm that the base is a `final`
-  `neutral_structure` figure and still matches the active manuscript. If it is provisional or
-  the paper changed materially, report the issue and leave coloring for after the structure
-  is corrected.
+  `neutral_structure` figure and still matches the active manuscript. A PNG whose only
+  outstanding issues are recorded deferred fills is eligible if its corresponding cleaned
+  SVG/PDF pair has passed final review; carry those defects forward explicitly. For other
+  provisional bases or material paper changes, leave coloring for after structure correction.
 - Build a two-level recolor plan before editing. **Level 1 is mandatory:** tint the background
   fill of every major named region—in a four-region figure, all four—with a coordinated set of
   soft, lightly saturated colors. Related regions may share a tint; they need not all differ.
@@ -556,8 +572,8 @@ invocation.
   against its neutral parent at native raster scale and final paper width; ask the editor to
   preserve the base image's pixel dimensions and record the actual edited dimensions. Reject an
   edit if any major region remains neutral, optional coloring becomes indiscriminate, a selected
-  fill is non-uniform, any color bleeds across a boundary, or any locked or unselected element
-  changes. Also reject lost contrast, changed content, arrow crossings, or any other regression
+  fill has non-deferrable non-uniformity, any color bleeds across a boundary, or any locked
+  or unselected element changes. Also reject lost contrast, changed content, arrow crossings, or any other regression
   in the hard checks.
 - Mark a colored version `final` only if it passes all scientific and visual hard checks.
   If the edit budget ends without one, keep the neutral-base selection as the last valid
