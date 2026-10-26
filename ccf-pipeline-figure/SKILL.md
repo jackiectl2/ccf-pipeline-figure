@@ -72,6 +72,22 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
 
 ### End-to-end workflow
 
+### Experimental branch: PNG + real-text SVG + PDF
+
+This branch retains the built-in ImageGen first pass and its existing style unchanged, then
+adds a reconstruction/export stage for **every** generated version, including provisional or
+rejected candidates. Read [references/png-svg-pdf.md](references/png-svg-pdf.md) before this
+stage. Preserve the original PNG and deliver a same-stem SVG and text-preserving PDF, with a
+reconstruction review and validation evidence. This is an agent-authored vector reconstruction,
+not a lossless format conversion. Never wrap the PNG in SVG, trace letters into paths, or add
+an invisible OCR layer and call that a reconstructed figure.
+
+This self-contained extension takes precedence over the legacy vector route below; it does
+not use or enable Figure Smith. A successful export does not make a scientifically incorrect
+candidate publication-ready. If reconstruction/export cannot pass, keep the source and report
+the missing or failed artifact rather than fabricating success. Do not merge this experimental
+branch, switch the installed skill, or modify a manuscript without a separate request.
+
 #### 1. Resolve and inspect the project
 
 - First determine whether the user requests a new conceptual figure or explicitly asks to add
@@ -297,6 +313,10 @@ Use this immutable layout inside the target project:
 output/imagegen/<project-name>/<figure-name>/
   v01.prompt.md
   v01.png
+  v01.svg
+  v01.pdf
+  v01.vector-review.md
+  v01.export.json
   v01.review.md
   v01.description.md
   v02.prompt.md
@@ -495,7 +515,10 @@ each conceptual figure. Also report the project brief path, prompt/review paths,
 selected fresh-candidate and refinement limits and counts, the best version and its `final` or
 `provisional` status, color stage, and parent chain, the stopping reason, and whether the
 backend model was explicit or host-managed. Report the selected PNG's actual pixel dimensions.
-Do not insert the figure into a paper, edit LaTeX, create PPTX/SVG/draw.io, commit the
+In this experimental branch also link every version's SVG, PDF and vector review; distinguish
+scientific acceptance, reconstruction fidelity, and text/export checks. The PNG remains the
+generator's original output, not a rasterization of the reconstructed SVG.
+Do not insert the figure into a paper, edit its LaTeX, create PPTX/draw.io, commit the
 project, or push anything unless the user
 separately asks for those actions.
 
