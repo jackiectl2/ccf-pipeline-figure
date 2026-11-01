@@ -1,18 +1,16 @@
 ---
 name: ccf-pipeline-figure
 description: >-
-  Read a research-project folder and produce a publication-ready CONCEPTUAL figure from one
-  short request: pipeline, framework, architecture, mechanism, data-flow, system diagram, or
-  Figure 1 for the Intro/Method rather than Results. Use for 论文流程图 / 框架图 / 机制图 /
-  架构图 / pipeline 图 when Codex should derive the technical brief, call its subscription-
-  backed built-in image generator, preserve every candidate, ask the user to set the number of
-  fresh candidates and the refinement cap (default: seven and three), then locally refine the best
-  candidate when needed. Default to neutral-gray major-region fields with lively colored
-  semantic foregrounds rather than white-card walls; on a later
-  explicit recolor invocation, tint every major region background and optionally a small
-  selection of internal white/gray card surfaces. Keep in-figure text sparse and save a paired
-  manuscript-description reference for each generated image. Do not use
-  for data figures where position, length, angle, or colour encodes a measured quantity.
+  Read a research-project folder and produce a conceptual pipeline, framework, architecture,
+  mechanism, data-flow, or system figure for a paper's Intro/Method. Use for 论文流程图 /
+  框架图 / 机制图 / 架构图 / pipeline 图. Derive the technical brief, use built-in ImageGen,
+  preserve every candidate, and ask for fresh-candidate/refinement limits (default: 7/3).
+  Choose composition from scientific topology, without fixed region counts or mandatory
+  numbering. Use neutral-gray fields for optional major groups and lively restrained
+  foreground color; recolor existing backgrounds only on a later explicit request.
+  Keep labels sparse and readable, preserve all scientific relationships, and save each
+  version's PNG, real-text SVG/PDF, review, and paired manuscript-description reference.
+  Not for data figures where position, length, angle, or color encodes a measured quantity.
 metadata:
   short-description: One-line project-to-pipeline figure workflow
 ---
@@ -35,6 +33,15 @@ This is the default Codex workflow when the user supplies a project folder and a
 paper pipeline figure. It is authoritative over later legacy draw.io production notes wherever
 the two routes differ. The corpus evidence, scientific rules, composition rules, and honesty
 rules later in this file still apply where they do not conflict with this fast path.
+
+**Topology before panels.** Derive the graph and reading order first, then choose its visual
+composition. There is no required number of regions, stages, panels, or badges; an open diagram
+with no enclosing major panels is valid. Semantic grouping, visible outlines, background fields,
+and numbering are separate decisions, not a mandatory bundle. Use a boundary only when it
+clarifies a real grouping, interface, phase, or system limit. Use sequence numbers only for a
+real ordered procedure that benefits from them; parallel modules and feedback loops must not
+acquire a false order. A genuine linear process is valid; flattening a non-linear graph is not.
+This rule overrides historical panel preferences and anti-chain wording in reference material.
 
 Native explicit invocation is:
 
@@ -177,12 +184,17 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
   combined legibly with the overall pipeline figure;
 - a **final-layout decision** for every planned figure: `single-column` or `double-column`,
   `horizontal` or `vertical`, final printed width, source evidence (template/source/placement),
-  a canvas-coverage plan, and a short rationale tied to the graph's reading order and regions.
-  Plan the regions to form a balanced, deliberately filled rectangular composition (including a
-  square canvas): small,
-  consistent gutters are allowed between adjacent regions, but no large orphaned corner or
-  edge void may remain unless the brief identifies it as indispensable to the topology;
-- three to six named regions/stages;
+  a canvas-coverage plan, and a short rationale tied to the graph's reading order and grouping.
+  Arrange the scientific objects, optional groups, and connectors into a balanced rectangular
+  composition (including a square canvas). Keep modest margins and purposeful spacing; no large
+  orphaned corner or edge void may remain unless indispensable to the topology. Do not create
+  panel tiles, enlarge icons at the expense of labels, or delete content merely to fill space;
+- a **topology-first composition plan**: identify the actual sequence, parallel lanes,
+  branch/rejoin, feedback, hierarchy, or overview/detail relationships, then select a layout
+  that expresses them. These are options, not a required mixture. Record any useful semantic
+  groups without a count quota; for each visible boundary, background field, or sequence number,
+  give its separate purpose. Prefer alignment, proximity, shared baselines, or compact headings
+  when sufficient; open layouts and groups without borders, fills, or numbers are valid;
 - every object, operation, arrow, branch, shared path, and reconvergence;
 - a connector plan that inventories every essential scientific relationship before any
   simplification and assigns each one either an explicit arrow or an equally unambiguous
@@ -199,8 +211,8 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
   and identical across repeated instances of the same class. Reserve shading and highlights for
   icon artwork only; never place them behind text;
 - a **foreground-representation plan** that keeps the three color layers distinct: white or
-  near-white page, achromatic near-white-gray major-region fields, and restrained soft color in
-  semantic foreground objects. For every major node, choose an appropriate treatment—open
+  near-white page, achromatic near-white-gray fields where major groups need backgrounds, and
+  restrained soft color in semantic foreground objects. For every major node, choose an appropriate treatment—open
   mini-scene, free-standing icon-label group, distinctive mechanism object, compact operation
   glyph, state capsule/gauge, continuous event sequence, or a true card/container. Record why
   any ordinary rectangular card needs a boundary. A boundary is justified by scientific meaning
@@ -211,9 +223,10 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
 - explicit exclusions separating method from results; and
 - a source-of-truth table citing the project files behind each part.
 
-Record the color stage as `neutral_structure` for the initial figure. Its region background
-fills are achromatic near-white gray. This restriction applies to the major-region background
-fields, not to all foreground objects: icons, semantic mechanism shapes, state markers, small
+Record the color stage as `neutral_structure` for the initial figure. Any major-group background
+fills are achromatic near-white gray; a panel-free composition needs no such fills. This
+restriction applies to the major-region background fields, not to all foreground objects:
+icons, semantic mechanism shapes, state markers, small
 accent plates, and other compact foreground elements may use restrained soft color from the
 first pass. Do not require every node to sit inside a white or gray card. Do not plan colored
 major-region fills until the user invokes the skill again and explicitly asks to add them.
@@ -231,7 +244,7 @@ self-contained prompt in this order:
 
 1. primary request and pre-experiment purpose;
 2. editorial-comic visual target and the three-layer color relationship near the top: white or
-   near-white page, achromatic near-white-gray major-region fields, and lively but restrained
+   near-white page, optional achromatic near-white-gray major-group fields, and lively but restrained
    soft color in semantic foreground objects. State explicitly that neutral region fields do
    not require neutral foregrounds or a white/gray card around every icon-label group. Follow
    immediately with the flat-fill integrity constraint for all enclosed regions and text-bearing
@@ -241,9 +254,10 @@ self-contained prompt in this order:
    reading order;
 4. a balanced rectangular canvas coverage plan (a square is included): use the full intended
    figure area with modest,
-   consistent outer margins and only purposeful inter-region gutters; do not leave a large
-   isolated empty corner or edge area that reads as a missing panel;
-5. region-by-region scientific topology and a concise connector plan that first preserves
+   consistent outer margins and purposeful spacing between objects or groups; do not leave a large
+   isolated empty corner or edge area. Canvas balance does not require a mosaic of panels;
+5. scientific topology in its actual reading order, the chosen composition and optional
+   grouping treatments, and a concise connector plan that first preserves
    every object and necessary relationship, then replaces redundant *drawn* arrows with
    unambiguous layout, grouping, aligned lanes, shared trunks, typed boundaries, or short
    interface labels where appropriate. Do not remove scientific content to reduce line count;
@@ -429,7 +443,8 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   recorded alternative visual encoding remains unambiguous;
 - no two arrow paths cross, except an intentional, clearly connected branch/join or shared-trunk
   junction; reroute, rearrange, or regroup nodes rather than accepting a crossing;
-- the global figure is not flattened into a misleading single chain;
+- the global figure is not flattened into a misleading single chain; a genuinely sequential
+  method may use a linear layout. Grouping and numbering imply no unsupported order or boundary;
 - exact labels are present and correctly spelled;
 - no experiment result, score, rate, proportion, dataset/sample size, comparison, ablation,
   error analysis, success/failure total, or posterior conclusion appears; and
@@ -441,13 +456,18 @@ intermediate PNGs only; other failures trigger another candidate while budget re
 - the thumbnail reads as an editorial-comic infographic, with soft color in icons or accents
   while initial region fills stay neutral; it is not a grid of black text boxes or a
   restrained corporate flowchart;
-- in the initial `neutral_structure` stage, every region has an achromatic near-white gray
-  background fill, distinct from the page background; no colored tint enters a major-region
-  fill. The foreground is not forced into the same gray/white treatment: semantic icons,
+- the composition follows the scientific graph, not a fixed region count or numbered-panel
+  template. Every drawn major boundary, background field, and sequence number has its own
+  justification in the brief; semantic grouping alone does not require all three. Open
+  compositions, unnumbered groups, true chains, parallel lanes, and feedback layouts are valid;
+- in the initial `neutral_structure` stage, any major-group background field uses achromatic
+  near-white gray, distinct from the page background; no colored tint enters such a field.
+  Absent fields are not a defect and must not be invented to satisfy this color check.
+  The foreground is not forced into the same gray/white treatment: semantic icons,
   mechanism objects, state markers, and compact accents use restrained soft color, and the
   figure does not become visually achromatic merely because its region fields are neutral;
-  in the later `colored_panels` stage, every major named region background is softly tinted
-  (all four in a four-region figure), while only a small, purposeful subset of eligible internal
+  in the later `colored_panels` stage, every existing major-group background is softly tinted,
+  while only a small, purposeful subset of eligible internal
   white/gray surfaces may also be tinted. Unselected internal surfaces remain unchanged; related
   regions may repeat a tint, the composition does not become a rainbow or one uniform color,
   and large dark fills are absent in either stage;
@@ -482,22 +502,24 @@ intermediate PNGs only; other failures trigger another candidate while budget re
 - arrow-linked nodes have considered internal visual hierarchy and refined small details;
   avatars and other icons stay modest in size rather than filling a node with one oversized
   simple graphic; optional overlapping icons read as one object, not extra method stages;
-- region numbers and English titles are only slightly larger than primary node labels;
-  badges and heading bands leave enough room for the method content;
+- where headings or sequence numbers are useful, they are only slightly larger than primary
+  node labels; optional badges and heading bands leave enough room for the method content;
 - in-figure text is limited to essential short labels and genuinely indispensable examples;
   avoidable explanatory lines, repeated labels, and prose callouts are omitted;
 - no standalone overall title banner, landscape, road, tree, or exterior signboard appears;
-  the composition starts directly with Region 1 and is cropped tightly around the numbered
-  method regions;
-- decorative accents stay inside region boundaries and do not consume a separate row or
-  margin; a short method-only explanatory line is allowed only when needed to prevent an
+  the composition starts directly with scientific content and is cropped around its full
+  visual extent, including necessary connectors; no Region 1 or numbered regions are required;
+- decorative accents stay local to the relevant scientific objects or optional groups and
+  do not consume a separate row or margin; a short method-only explanatory line is allowed only when needed to prevent an
   ambiguous scientific reading;
-- the rendered aspect ratio, reading direction, and region arrangement match the brief's explicit
+- the rendered aspect ratio, reading direction, and object/group arrangement match the brief's explicit
   horizontal/vertical decision and fit its explicit single-column/double-column paper slot;
-- the regions and their necessary connectors form a balanced, deliberately filled rectangle
-  (including a square canvas) with modest consistent outer margins. Inter-region whitespace is a
-  narrow, purposeful gutter rather than an isolated corner or edge void; no large blank area
-  reads as a missing panel or an unfinished quadrant;
+- the scientific objects, optional groups, and necessary connectors form a balanced,
+  deliberately filled rectangle (including a square canvas) with modest consistent outer margins.
+  Whitespace between objects or groups is a
+  purposeful separation rather than an isolated corner or edge void; no large accidental blank
+  area reads as an unfinished quadrant. Open layouts still pass this check when balanced;
+  do not add panels, scientific content, or oversized icons merely to occupy empty space;
 - no scientific content has been removed to reduce line count. Arrows are as few as the
   scientific topology permits only after redundant *drawn* arrows have been replaced by
   unambiguous layout, grouping, aligned lanes, shared trunks, typed boundaries, or short
@@ -549,14 +571,17 @@ invocation.
   outstanding issues are recorded deferred fills is eligible if its corresponding cleaned
   SVG/PDF pair has passed final review; carry those defects forward explicitly. For other
   provisional bases or material paper changes, leave coloring for after structure correction.
-- Build a two-level recolor plan before editing. **Level 1 is mandatory:** tint the background
-  fill of every major named region—in a four-region figure, all four—with a coordinated set of
+- Build a two-level recolor plan before editing. **Level 1 is mandatory for existing fields:**
+  tint the background fill of every existing major-group field with a coordinated set of
   soft, lightly saturated colors. Related regions may share a tint; they need not all differ.
   **Level 2 is optional and selective:** choose only a small subset of eligible internal surfaces
   that are currently pure white or neutral gray, such as an ASK panel, command card, or compact
   T/U/H subregion, when a soft tint materially improves grouping, hierarchy, or readability.
   These examples describe the surface class, not labels that must exist. Do not color every
-  internal card, and leave unselected internal surfaces unchanged.
+  internal card, and leave unselected internal surfaces unchanged. For a panel-free figure,
+  Level 1 has no targets: do not invent backgrounds, borders, groups, or numbers. Apply only
+  useful eligible Level 2 fills; if none exist, explain that there is no eligible background
+  surface and ask before expanding the request to foreground recoloring or structural edits.
 - Keep the page background white or near white. Each selected surface receives one uniform,
   continuous, fully opaque flat color, clipped strictly inside its own boundary. An internal
   tint must remain distinguishable from its containing region without becoming saturated or
@@ -571,8 +596,8 @@ invocation.
   most the selected 1–3 color edits, and never start a new-image batch. Inspect every edit
   against its neutral parent at native raster scale and final paper width; ask the editor to
   preserve the base image's pixel dimensions and record the actual edited dimensions. Reject an
-  edit if any major region remains neutral, optional coloring becomes indiscriminate, a selected
-  fill has non-deferrable non-uniformity, any color bleeds across a boundary, or any locked
+  edit if any existing major-group field remains neutral, optional coloring becomes indiscriminate,
+  a selected fill has non-deferrable non-uniformity, any color bleeds across a boundary, or any locked
   or unselected element changes. Also reject lost contrast, changed content, arrow crossings, or any other regression
   in the hard checks.
 - Mark a colored version `final` only if it passes all scientific and visual hard checks.
@@ -622,8 +647,8 @@ Paths are relative to the `ccf-figuresmith-skills` skill directory.
   look with the answer.
 - **§1, how many conceptual figures a paper should have** — measured, and it contradicts the
   usual advice.
-- **§2.1, regions rather than a chain.** figuresmith says a straight chain is usually wrong;
-  §2.1 says what the starred figures draw *instead*, and the four ways they mark it.
+- **§2.1, topology-first composition.** Historical region treatments are optional devices,
+  not a panel-count requirement or a ban on genuine sequential processes.
 - **§2.2, one accent colour that means something**, and the median-4 rule.
 - **§2.3, the icon *vocabulary*** — which glyph stands for which noun. figuresmith owns how
   to *render* an icon; it does not say which one to pick.
@@ -631,7 +656,7 @@ Paths are relative to the `ccf-figuresmith-skills` skill directory.
 - **§3, the devices specific to long-context / memory / evaluation papers.**
 - **Step 0, read the working folder first** — including the list of claims the paper may not
   make. A figure that implies a forbidden claim is worse than no figure.
-- **Step 1, name the regions before opening any tool.**
+- **Step 1, identify the scientific graph and optional groups before opening any tool.**
 - **The geometry half of Step 3.** figuresmith mandates looking at the render; it does not
   warn that the eye is *unreliable about geometry* on a rescaled render. That half cost this
   project twenty minutes twice. It is the one rule here that contradicts nothing and is
@@ -823,22 +848,39 @@ It carries **no statistics on purpose**: counts stay here; image-model instructi
 ⛔ It is only for figures carrying no measured quantity — an image model bakes numbers into
 pixels, where nothing can check them.
 
-Everything in this section is what the 17 starred figures share. Where a device appears in
-the starred set far more than in the dropped set, the lift is given.
+This section records devices and preferences from the starred figures, not properties shared
+by every example or universal requirements for papers. Where a device appears more often in
+the starred set than in the dropped set, the recorded lift is given.
 
-### 2.1 Composition: regions, not a chain — [MEASURED, 67 % of drops → 6 % of stars]
+### 2.1 Composition: scientific topology first; grouping is optional
 
-⛔ **The single most common failure is five rectangles left to right.** Two thirds of the
-dropped figures are a plain axis — 20 of 30 are recorded as `left_to_right` or
-`top_to_bottom` — against **one of the seventeen starred**.
+**Historical labels [MEASURED, 67 % of drops → 6 % of stars].** Two thirds of the
+dropped figures have a plain-axis layout label — 20 of 30 are recorded as `left_to_right` or
+`top_to_bottom` — against **one of the seventeen starred**. These categorical labels do not
+establish whether a diagram is a true chain, whether its topology is correct, or how many
+panels it needs. Richer free-text labels in the same records also describe left-to-right
+flows. Do not turn this preference sample into a ban on linear layouts.
 
 ⚠ **That one exception is worth naming rather than rounding away**: `01-LIC_simulator_flat_v3.png`
 is a starred figure whose layout field is plain `left_to_right`. An earlier version of this
 file said *not one* starred figure is a chain, and printed the lift as 29 % → 0 %; neither
-number is re-derivable from the corpus. **The effect is real and larger than was claimed —
-and it was still stated wrongly.** Run `assets/audit_corpus.py`.
+number is re-derivable from the corpus. Run `assets/audit_corpus.py` for the recorded counts,
+not for proof that one composition is universally better.
 
-Every starred figure is **3 to 6 named REGIONS**, each holding a short micro-flow:
+The reference records include parallel pipelines, paired comparisons, a central service,
+architecture plus interaction traces, and linear flow followed by cyclic refinement.
+**There is no required count of regions or mandatory numbering.** First identify what the
+reader must follow: sequence, branching, parallelism, feedback, hierarchy, or a focused detail
+within an overview. A true sequence may be linear; a branch or loop must remain visible.
+
+Semantic grouping, boundaries, background fills, and sequence numbers are independent choices.
+Use proximity, alignment, shared baselines, or headings when they suffice. Enclose a group only
+when its boundary clarifies a real phase, shared component, interface, or system limit. Add
+sequence numbers only when they help explain an actual ordered procedure, not to force an
+order onto parallel or interacting components. Open layouts and unnumbered groups are valid.
+
+For a method that genuinely separates offline preparation from online use, a grouped
+composition is one option, not a template every figure must reproduce:
 
 ```
 ┌─ ❶ Graph building ─────────┐  ╎  ┌─ ❹ Retrieval & generation ──────┐
@@ -850,7 +892,7 @@ Every starred figure is **3 to 6 named REGIONS**, each holding a short micro-flo
      Offline                    ╎        Online
 ```
 
-**How the regions are marked**, all four seen in the starred set:
+**Optional grouping devices from the historical examples** (choose separately, not as a bundle):
 
 1. **A dashed boundary** around the region, with a small **numbered circular badge** (❶ ❷ ❸)
    and a short grey label sitting at the region's bottom-right corner.
@@ -860,17 +902,18 @@ Every starred figure is **3 to 6 named REGIONS**, each holding a short micro-flo
 4. **A single vertical dashed divider** splitting the whole figure into two named halves —
    `Offline ╎ Online`, `Training ╎ Inference`, `Before ╎ After`.
 
-For new figures, keep the region number and title at most about 110% of primary node-label
-size, as specified in the fast path above; the banner should not displace method content.
+For new figures that need headings or sequence numbers, keep them at most about 110% of
+primary node-label size, as specified in the fast path above; a banner should not displace method content.
 
-⭐ **Regions are what let these figures be far denser than a Western arXiv figure without
-becoming unreadable.** The reader parses 4 regions, then reads inside one. Density is
-managed by grouping, never by deleting content.
+Grouping can help readers navigate dense content, but grouping need not be an enclosing
+rectangle. Preserve scientific content, readable labels, and all necessary relationships
+regardless of the layout. Balanced canvas coverage does not require a panel mosaic.
 
-**Inside a region**, the flow is short and almost always left-to-right — **29 of the 36
+**Left-to-right is a recorded dominant axis** — **29 of the 36
 conceptual figures found in the 28 award papers** use `left_to_right` as the dominant axis
 **[MEASURED, set A]**. ⚠ That 36 is a different set from the 82 graded figures; see §0.3.
-The global composition is a grid of regions; the local composition is a line.
+That axis annotation establishes neither a global grid nor a local chain. Choose both the
+global arrangement and local flow from the scientific graph and final paper slot.
 
 ### 2.2 Colour: one accent that means something — [MEASURED, median 4 meaning-carrying colours]
 
@@ -943,7 +986,7 @@ violation makes draw.io draw an empty box with no error: `references/diagrams.md
 - **Nothing that belongs in the caption.** No sentences.
 - ⭐ **Not one of the seventeen starred figures has low text density** **[MEASURED, set P]** —
   0 of 17, against 12 of the 30 dropped. Sparseness is not what makes a figure good here;
-  §2.1's regions are what make density survivable.
+  grouping can aid navigation, but this observation does not require visible panels.
 
 Those are observations about the historical corpus. For new figures, follow the sparse-text
 fast path above: keep only necessary labels and rare indispensable examples in the image;
@@ -1042,15 +1085,18 @@ method figure.
 
 ### Step 1 — Choose the structure before the tool
 
-Name the regions. Write them as a list before opening any editor:
+Inventory the entities and relationships before opening any editor. Choose the composition
+from that graph, not from a fixed list of stages. Record reading order and any optional groups:
 
 ```
-❶ what goes in        ❷ what happens to it       ❸ what comes out
-❹ how it is scored    ╎ split: before / after
+inputs → actual operations → outputs
+parallel inputs → shared operation; state → update → feedback
+optional semantic split: training / inference
 ```
 
-If your list is a single chain, **go back**. A chain is almost always a
-misrepresentation — the branches, the grouping and the loop are the content.
+Use a chain if the method is genuinely sequential. Otherwise preserve every branch,
+parallel lane, shared component, and feedback loop. Do not manufacture stages, panels,
+numbers, or relationships to satisfy a visual template.
 
 ### Step 2 — Choose the production mode, then generate
 
@@ -1065,12 +1111,12 @@ data with one command, and must stay hand-fixable without rerunning anything. To
 `.manual` fork, the `FROZEN` marker and dated backups: `references/diagrams.md` §1, §2, §2.1.
 
 ⭐ **`assets/house_style.py` is the §2 devices as code**, layered on figuresmith's skeleton
-rather than copying it: tinted numbered regions with banner titles, the single-accent
+rather than copying it: optional tinted regions with optional badges, the single-accent
 palette, an actor (icon and label emitted as one unit), a verbatim content box, and a
-geometry gate. Import it and the composition rules are enforced instead of remembered — it
-refuses to write a figure with fewer than three regions, because a two-region figure is
-almost always the chain §2.1 rules out. `figures/diagrams/make_instrument_drawio.py` is the
-worked example.
+geometry gate. It enforces geometry, not a region count; `region(..., badge=None, ...)`
+omits numbering when a container is useful without an ordered stage. This is a retained
+legacy helper, not permission to enable a disabled backend.
+`figures/diagrams/make_instrument_drawio.py` is the worked example.
 
 Two things that belong to this genre rather than to figuresmith:
 
@@ -1183,7 +1229,7 @@ this rule needs and the bug that shipped without it.
 
 ⚠ **The genre-specific corollary**: **text and size are proportional.** §2 asks for a dense
 figure — regions, icons, verbatim example content — so this genre's figures are usually the
-paper's *widest*. Decide the width in Step 1, when you name the regions, not after drawing.
+paper's *widest*. Decide the width in Step 1, when you choose the composition, not after drawing.
 
 ---
 
@@ -1192,7 +1238,7 @@ paper's *widest*. Decide the width in Step 1, when you name the regions, not aft
 | failure | why it happens | the fix |
 |---|---|---|
 | ⛔ **Mutually exclusive outcomes drawn as a chain** | the generator lays nodes out in the order they were declared | branch them; a chain claims a sequence that does not exist |
-| ⛔ **Five boxes left to right** | it is what a first draft looks like | §2.1 — regions |
+| **A panel grid or single chain imposed on every method** | a layout preference was treated as a scientific requirement | §2.1 — choose composition from the actual graph; both open chains and grouped diagrams are valid when faithful |
 | **Labelled rectangles, no icons** | icons feel like decoration | §2.3 — but read the caveat there; this is the file's weakest measurement |
 | **White-card UI wall** | every icon-label pair is wrapped in the same safe rectangle, so neutral region fields are misread as a neutral foreground mandate | keep major-region fields gray but vary the semantic foreground grammar; leave nodes unboxed by default and use a card only when its boundary means something |
 | **Rainbow with no meaning** | the palette had N colours | §2.2 — median 4, each meaning something |

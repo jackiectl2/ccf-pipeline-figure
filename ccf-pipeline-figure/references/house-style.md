@@ -1,5 +1,13 @@
 # The starred set, dissected
 
+**Historical preference evidence, not a layout template.** The current topology-first rule
+in `SKILL.md` takes precedence: no fixed region count, compulsory enclosing panels, or
+mandatory numbering. The records below include parallel lanes, paired comparisons, central
+services, architecture with interaction traces, and linear-to-cyclic flows. Choose a
+composition from the scientific graph; do not collapse these different devices into one grid.
+The old device-lift table is a historical free-text tally, not a requirement or evidence that
+any one device is universal; use `assets/audit_corpus.py` before quoting current counts.
+
 ⭐ These are the **17 figures the user personally marked “draw mine like this.”** They are weighted above everything else in this skill. The 34 `keep` figures contribute device counts only; the 30 `drop` figures are the contrast that makes a lift meaningful.
 
 ⚠ **16 of the 17 come from one visual tradition** (figures circulating on Chinese social media) and only 1 from the arXiv award-paper set, while **26 of the 30 drops are arXiv award-paper figures**. Winning a best-paper award does not make a figure worth imitating. The confound is stated in SKILL.md §0 and is real: the social-media images were screenshotted *because* they were striking, the arXiv ones are every figure in each paper.

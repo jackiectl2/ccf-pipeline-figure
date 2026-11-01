@@ -16,11 +16,12 @@ to trigger more ImageGen edits. This does not relax final vector fill quality or
 pollution that obscures content, crosses boundaries, or changes semantic colors.
 
 The target is a **playful editorial-comic scientific infographic**. The initial structure
-pass uses a three-layer color system: a white or near-white page, achromatic near-white-gray
-major-region fields, and lively but restrained soft color in semantic foreground objects.
+pass uses a three-layer color system: a white or near-white page, optional achromatic near-white-gray
+major-group fields, and lively but restrained soft color in semantic foreground objects.
 Neutral region fields do not require neutral foregrounds or a white/gray card around every
-icon-label group. On a later explicit color-edit invocation, tint every major region background
-and, optionally, a small selection of internal white/gray card surfaces.
+icon-label group. Open compositions need no enclosing fields. On a later explicit color-edit
+invocation, tint every existing major-group background and, optionally, a small selection of
+internal white/gray card surfaces.
 The figure should feel like a polished illustrated magazine roadmap or a high-quality
 educational comic, without candy-bright colors or large dark background fills.
 
@@ -28,16 +29,29 @@ educational comic, without candy-bright colors or large dark background fills.
 
 ## 1 · Composition
 
-- Build the figure as **three to six named regions**, not as one long row of boxes.
-- Give each region a clear visual identity: rounded or irregular comic-panel boundary,
-  near-white neutral-gray background field, numbered badge, bold banner, and a short local
-  micro-flow. Keep the panel fill achromatic during the initial structure pass.
-- The global layout is a grid, stack, or asymmetric editorial composition. Inside one region,
-  a short left-to-right or top-to-bottom flow is fine.
+- Choose composition from the **scientific graph**, not a fixed region count or panel template.
+  A true sequence may use an open linear flow; parallel inputs may use aligned lanes and a
+  shared merge; stateful mechanisms may use a main path with feedback; hierarchies may use
+  nesting or layers; an overview may include a focused detail. Use only the relationships
+  present in the brief, not a mandatory mixture of these options.
+- **No fixed number of regions, stages, panels, or badges.** An open composition with no
+  enclosing major panels is valid. Semantic grouping, visible outlines, background fields,
+  and numbering are separate decisions. Use proximity, alignment, shared baselines, or compact
+  headings when sufficient. A boundary needs a real grouping, phase, interface, or system-limit
+  purpose; do not enclose every group merely to make a panel mosaic.
+- Use sequence numbers only when an actual ordered procedure benefits from them. Do not
+  number parallel modules or a feedback architecture as if they were successive stages.
+  Optional panel letters may identify separate views without implying process order. Omit
+  badges and banners unless useful; any chosen major-group background stays neutral gray in
+  the initial structure pass.
+- The global layout may be open, layered, cyclic, branched, grouped, or asymmetric as the
+  graph requires. A grid is an option, not the default structure imposed on every method.
 - Treat the intended image as a deliberately filled rectangle (including a square canvas), not a
-  loose cluster placed on a canvas. Arrange and size the regions so their combined visual envelope reaches a modest,
-  balanced outer margin on all sides. Small, consistent gutters between adjacent regions are
-  desirable; a large isolated blank corner or edge void that looks like a missing panel is not.
+  loose cluster placed on a canvas. Arrange the objects, optional groups, and connectors so
+  their combined visual envelope reaches a modest, balanced outer margin on all sides.
+  Keep purposeful spacing between objects or groups; a large isolated blank corner or edge
+  void is not acceptable. Do not add panels, enlarge icons at the expense of labels, or
+  delete scientific content merely to fill the rectangle.
   If topology forces unusual whitespace, make its purpose legible through the structure rather
   than leaving an accidental-looking empty quadrant.
 - Distinguish named regions from the smaller nodes joined by arrows: in `A → B`, A and B are
@@ -64,38 +78,42 @@ educational comic, without candy-bright colors or large dark background fills.
   paths cross. An intentional, clearly connected branch/join or shared-trunk junction is
   allowed; a path passing across another is not. If the first arrangement forces a crossing,
   change the arrangement instead of accepting the crossing.
-- Non-uniform panels are encouraged. Give the scientifically important branch more room.
-- Do not add a standalone overall title banner. Start directly with Region 1; the paper
+- When panels help, their sizes need not match. Give the scientifically important branch more room.
+- Do not add a standalone overall title banner. Start directly with scientific content; the paper
   caption supplies the figure title.
 - No landscapes, roads, trees, or exterior signboards.
-- Crop tightly around the numbered method regions.
+- Crop around the scientific content and necessary connectors, without requiring numbered regions.
 - Decorative elements must stay outside arrow corridors and must not resemble nodes, ports,
   evidence tokens, outcomes, or data-flow arrows.
 
 ## 2 · Color: neutral region fields, lively foregrounds, soft panels later
 
 - Keep the three layers distinct during the initial invocation: white or near-white page;
-  achromatic near-white-gray major-region fields; restrained soft color in icons, mechanism
+  optional achromatic near-white-gray major-group fields; restrained soft color in icons, mechanism
   objects, state markers, small accent plates, and other compact semantic foreground elements.
-  The neutral-field rule applies to the large named regions, not to every object inside them.
+  The neutral-field rule applies only to existing major-group fields, not to every object
+  or semantic group. Do not introduce fields to satisfy a palette rule.
 
-- **Initial invocation:** use the same pure, achromatic near-white gray for region background
+- **Initial invocation:** use the same pure, achromatic near-white gray for any major-group background
   fills (for example `#F7F7F7`), without hue, colored gradients, or pastel tint. Keep the page
-  white or near white and distinguish regions with boundaries, badges, and layout. This is the
+  white or near white and distinguish groups through layout, headings, or justified boundaries.
+  Badges are optional; an open layout need not have background fields. This is the
   selected structural base to inspect before choosing panel colors.
 - **Later explicit “add background colors” invocation:** recolor backgrounds at two levels.
-  First, tint every major named region background; in a four-region figure, all four major
-  regions must receive color. Second, optionally tint only a small selection of internal pure
-  white or neutral-gray surfaces—such as an ASK panel, command card, or compact T/U/H
+  First, tint every existing major-group background field. Do not create fields, outlines,
+  numbers, or new groups if the base is open. Second, optionally tint only a small selection of
+  internal pure white or neutral-gray surfaces—such as an ASK panel, command card, or compact T/U/H
   subregion—when doing so improves grouping, hierarchy, or readability. These are examples of
   eligible surfaces, not required labels. Do not color every internal card; untouched white
-  space is part of the visual hierarchy.
+  space is part of the visual hierarchy. If no major fields exist, only the optional second
+  level applies. If neither level has useful eligible surfaces, ask before expanding the edit
+  to foreground colors or structure rather than silently inventing a background.
 - Use a small coordinated set of **soft, lightly saturated colors**. Pale coral, peach, butter
   yellow, sage or mint, powder blue, and lavender are possible choices, not a quota. Related
   regions may reuse a color; they need not all differ. An optionally colored internal surface
   may harmonize with its containing region while remaining visibly distinct. Do not let the
   whole background become one uniform color or turn nested cards into a rainbow.
-- White may be used for the page or semantically justified text cards. Keep the panels
+- White may be used for the page or semantically justified text cards. Keep any panels
   distinguishable and readable at thumbnail size without making their fills dark or saturated.
 - Use near-black or deep navy for text and outlines where needed for contrast, not for large
   background fields. Outlines may be more expressive than ordinary academic line art.
@@ -164,11 +182,10 @@ educational comic, without candy-bright colors or large dark background fills.
   one icon and must fit its assigned tier box.
 - Give every major noun and operation a recognizable glyph. A labeled rectangle without a
   visual metaphor should be the exception.
-- Let recognizable icons stand directly on the region field when no boundary is needed. Pair
+- Let recognizable icons stand directly on the page or an optional group field when no boundary is needed. Pair
   them with a short nearby label and clear connector anchors rather than automatically wrapping
   them in a white card.
-- For a normal five-region figure, aim for **at least twelve visibly different icon
-  silhouettes** when the method contains that many distinct concepts.
+- Match icon variety to the method's distinct concepts; there is no panel-derived icon quota.
 - Do not reuse a document sheet or folder for unrelated concepts merely because it is easy.
   Validation, provenance, pairing, normalization, scoring, diagnosis, branching, packaging,
   and export should look different from one another.
@@ -208,7 +225,7 @@ educational comic, without candy-bright colors or large dark background fills.
 - Make the diagram readable with as little text as the scientific topology permits. Keep
   essential region and node names; label an arrow only when its direction or type is unclear.
   Put full explanations in the paired paper-body description file for the writing agent.
-- Keep each numbered badge and its English region title compact. Their text may be only
+- If the composition needs a badge or group heading, keep it compact. Its text may be only
   slightly larger than primary node labels (at most about 110%); let weight, tint, and
   placement distinguish the heading. Do not enlarge the numeral or make a tall banner that
   takes space needed by node labels, details, icons, or arrows.
@@ -225,7 +242,7 @@ educational comic, without candy-bright colors or large dark background fills.
 
 ## 6 · Controlled decoration
 
-- Allowed inside region boundaries: corner stickers, small stars or spark marks, motion ticks,
+- Allowed locally beside scientific objects or inside optional groups: small stars or spark marks, motion ticks,
   tape tabs, scalloped banners, tiny non-semantic doodles, and colored edge accents.
 - Decorative accents must not consume a separate row or margin.
 - Decoration should make the page feel authored and energetic at first glance.
@@ -257,7 +274,7 @@ educational comic, without candy-bright colors or large dark background fills.
 ## 8 · Paste-ready prompt block
 
 For the initial neutral-structure invocation, append this after the scientific brief has
-been converted into exact region and arrow instructions:
+been converted into exact topology, composition, optional grouping, and connector instructions:
 
 > Render this as a playful editorial-comic scientific infographic. It should feel like a
 > polished illustrated magazine roadmap: icon-rich and engaging, while
@@ -265,18 +282,27 @@ been converted into exact region and arrow instructions:
 > dark background fills. Do not make it a page of black text boxes or a wall of identical
 > white cards.
 >
-> Compose the method as three to six named comic regions in a grid, stack, or asymmetric
-> editorial layout. Give every region the same achromatic near-white gray background fill
-> (for example `#F7F7F7`), with no pastel tint or colored gradient. Add a rounded or playfully
-> shaped boundary, contrasting numbered badge, bold banner, and short internal micro-flow. Draw every real
-> branch, parallel path, shared kernel, loop, optional path, and reconvergence. Do not flatten
-> the whole method into a single chain.
-> Fill the intended rectangular canvas—square, landscape, or portrait—with a balanced region
-> composition and modest, consistent outer margins. Keep only narrow purposeful gutters between
-> adjacent regions. Do not leave a large isolated empty corner or edge void that looks like a
-> missing panel or unfinished quadrant; resize, reposition, or recompose regions instead while
-> preserving the supplied topology.
-> Keep each region number and English title only slightly larger than primary node labels
+> Derive the composition from the supplied scientific graph and reading order. There is no
+> fixed number of regions, stages, panels, or badges, and no requirement to use enclosing panels
+> or numbering. A true sequence may be a linear open flow; parallel inputs may occupy aligned
+> lanes; feedback may return to a shared mechanism; hierarchy or overview/detail may guide the
+> layout when present in the brief. These are choices, not a required mixture. Draw every real
+> branch, parallel path, shared kernel, loop, optional path, and reconvergence. Never flatten
+> a non-linear graph into a chain, and never invent complexity to avoid a genuine sequence.
+> Treat semantic groups, outlines, background fields, and numbering as independent choices.
+> Prefer proximity, alignment, shared baselines, or compact headings when sufficient. Use
+> a boundary only for a scientifically meaningful group, phase, interface, or system limit.
+> Use sequence numbers only for a real ordered procedure that benefits from them; do not imply
+> an order among parallel modules. Optional panel letters may label separate views. Any major
+> background fields that are actually needed use the same achromatic near-white gray (for
+> example `#F7F7F7`), without pastel tint or colored gradient. Do not add fields merely to apply
+> this color rule. Badges and banners are optional, not a mandatory bundle for every group.
+> Fill the intended rectangular canvas—square, landscape, or portrait—with a balanced
+> composition of scientific objects and necessary connectors and modest, consistent outer
+> margins. Keep purposeful spacing between objects or groups. Do not leave a large isolated
+> empty corner or edge void; reposition or recompose while preserving the supplied topology.
+> Do not invent panel tiles, enlarge icons at the expense of labels, or delete content to fill space.
+> Keep any useful group headings or sequence numbers only slightly larger than primary node labels
 > (at most about 110%). Use bold weight and placement for hierarchy, with compact badges and
 > heading bands that preserve space for the method content.
 > Establish exactly three or four discrete text-size tiers and exactly three or four discrete
@@ -311,8 +337,9 @@ been converted into exact region and arrow instructions:
 > the supplied science contains a genuinely repeated card-like class.
 >
 > Keep three color layers distinct. The page is white or near white. The large named-region
-> backgrounds stay achromatic near-white gray in this invocation; do not add region background
-> colors yet. The semantic foreground should still feel lively: use restrained soft color in
+> backgrounds, if present, stay achromatic near-white gray in this invocation; do not add region
+> background colors yet or invent backgrounds for an open layout. The semantic foreground should
+> still feel lively: use restrained soft color in
 > icons, distinctive mechanism objects, state markers, small accent plates, banners, and other
 > compact foreground elements. Neutral region fields do not require neutral foregrounds or
 > white/gray cards around icon-label groups. Use deep navy or near-black for readable text and
@@ -351,10 +378,11 @@ been converted into exact region and arrow instructions:
 > Make the figure lively through semantic silhouettes, restrained foreground color, scale rhythm,
 > grouping, layering, and varied label placement—not by adding arrows, font tiers, decorative
 > topology, saturated major-region fills, or ornamental clutter.
-> Do not add a standalone overall title banner. Start directly with Region 1; the paper caption
-> supplies the figure title. No landscapes, roads, trees, or exterior signboards. Crop tightly
-> around the numbered method regions. Decorative accents are allowed only inside region
-> boundaries and must not consume a separate row or margin.
+> Do not add a standalone overall title banner. Start directly with scientific content; the paper
+> caption supplies the figure title. No landscapes, roads, trees, or exterior signboards. Crop
+> around the content and its necessary connectors, not a mandatory set of numbered panels.
+> Decorative accents stay local to relevant objects or optional groups and must not consume
+> a separate row or margin.
 >
 > Keep all region and text-card fills flat, without gradients or internal lighting. Light cel
 > shading and small highlights may decorate icon artwork only; a shallow offset shadow may sit
@@ -373,11 +401,14 @@ been converted into exact region and arrow instructions:
 
 For the later explicit background-color invocation, use built-in image editing on the selected
 neutral figure, not this new-image prompt. Tell the editor to recolor background fills in two
-levels. Level 1 is mandatory: tint every major named region background—in a four-region figure,
-all four. Level 2 is optional and selective: tint only a small subset of internal pure-white or
+levels. Level 1 is mandatory for existing fields: tint every existing major-group background.
+Do not create fields, borders, groups, or numbers when recoloring an open composition.
+Level 2 is optional and selective: tint only a small subset of internal pure-white or
 neutral-gray surfaces, such as an ASK panel, command card, or compact T/U/H subregion, when the
 tint improves grouping, hierarchy, or readability. Do not color every internal card; preserve
-all unselected white/gray surfaces exactly. Use a small coordinated set of soft, light colors;
+all unselected white/gray surfaces exactly. If no major fields exist, Level 1 has no targets;
+use only useful eligible Level 2 surfaces. If neither level has targets, ask before expanding
+the scope to foreground colors or structural edits. Use a small coordinated set of soft, light colors;
 related regions may reuse a tint, and an internal tint may harmonize with its containing region
 while remaining distinct. Each selected surface must use one visually uniform, fully opaque
 color from edge to center, strictly clipped inside its own boundary, with no gradient, white

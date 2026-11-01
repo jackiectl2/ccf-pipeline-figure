@@ -6,7 +6,7 @@ icon inlining, edge styles and .drawio emission all come from that skill's
 only the devices §2 measured in the starred corpus and for which the skeleton has no
 primitive:
 
-  * REGIONS      tinted, numbered, banner-titled containers      (§2.1)
+  * REGIONS      optional tinted containers with optional badges (§2.1)
   * one ACCENT   a single saturated hue that marks the subject   (§2.2)
   * ACTORS       an icon and its label emitted as one unit       (§2.3)
   * VERBATIM     a box holding real quoted content, monospaced   (§2.4)
@@ -180,17 +180,23 @@ class Figure:
                          name=name or f"text:{value[:20]}")
 
     # -- §2.1 regions -------------------------------------------------------------
-    def region(self, x, y, w, h, badge: str, title: str, corner: str = "", tint: int = 0):
-        """A tinted, numbered, banner-titled container. §2.1: 3-6 of these, never a chain."""
+    def region(self, x, y, w, h, badge: str | None, title: str, corner: str = "", tint: int = 0):
+        """An optional semantic container; pass None or '' to omit its badge.
+
+        There is no region-count quota. Use open layouts or true sequential flows when
+        they fit the scientific graph; call this only when a visible grouping is useful.
+        """
         fill = TINTS[tint % len(TINTS)]
         self.node("", INK, x, y, w, h,
                   f"rounded=1;arcSize=6;fillColor={fill};strokeColor={RULE};strokeWidth=1.5;"
                   f"dashed=1;dashPattern=10 6;", container=True, name=f"region:{title[:18]}")
         d = round(self.f_label * 1.5)
-        self.node(badge, INK, x + d * 0.5, y + d * 0.4, d, d,
-                  f"ellipse;fillColor={INK};strokeColor=none;fontColor=#FFFFFF;fontStyle=1;"
-                  f"fontSize={self.f_small};", name=f"badge:{badge}")
-        self._text(title, x + d * 1.7, y + d * 0.4, w - d * 2.4, d, self.f_banner,
+        if badge:
+            self.node(badge, INK, x + d * 0.5, y + d * 0.4, d, d,
+                      f"ellipse;fillColor={INK};strokeColor=none;fontColor=#FFFFFF;fontStyle=1;"
+                      f"fontSize={self.f_small};", name=f"badge:{badge}")
+        title_offset = d * (1.7 if badge else 0.5)
+        self._text(title, x + title_offset, y + d * 0.4, w - title_offset - d * 0.7, d, self.f_banner,
                    INK, bold=True, align="left", name=f"banner:{title[:18]}")
         if corner:
             self._text(corner, x + w * 0.3, y + h - self.f_small * 2.2, w * 0.66 - 12,
@@ -278,11 +284,6 @@ class Figure:
 
     # -- emit ---------------------------------------------------------------------
     def write(self):
-        if not 3 <= len(self._regions) <= 6:
-            raise SystemExit(
-                f"[house-style] {self.name}: §2.1 wants 3-6 named regions, this has "
-                f"{len(self._regions)}. A figure with fewer is usually a chain, which is "
-                f"the one composition no starred figure in the corpus uses.")
         self.geo.check(self.name)
         self.dia.write()
         path = self.fs.OUT / f"{self.name}.drawio"
