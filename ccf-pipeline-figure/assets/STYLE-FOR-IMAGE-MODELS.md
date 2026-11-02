@@ -8,6 +8,10 @@ mechanism, or data-flow diagram in which no visual property encodes a measured q
 The project's `TECHNICAL_FIGURE_BRIEF.md` is authoritative for scientific meaning, topology,
 labels, examples, and result exclusions. This file is authoritative for visual treatment.
 An explicit user aesthetic preference may override this style, but never the scientific brief.
+Read `references/composition-profiles.md` from the skill root for the selected
+`composition_profile`. The open-layout directions in Sections 1 and 8 describe
+`topology_first`; for `numbered_regions`, use the selected profile's numbered-region
+composition rules and prompt block. All non-composition rules here apply to both profiles.
 
 The flat-fill constraints here remain the generation target. For intermediate PNG review in
 the PNG→SVG→PDF workflow, follow `references/png-svg-pdf.md` (relative to the skill root):
@@ -19,7 +23,7 @@ The target is a **playful editorial-comic scientific infographic**. The initial 
 pass uses a three-layer color system: a white or near-white page, optional achromatic near-white-gray
 major-group fields, and lively but restrained soft color in semantic foreground objects.
 Neutral region fields do not require neutral foregrounds or a white/gray card around every
-icon-label group. Open compositions need no enclosing fields. On a later explicit color-edit
+icon-label group. `topology_first` open compositions need no enclosing fields. On a later explicit color-edit
 invocation, tint every existing major-group background and, optionally, a small selection of
 internal white/gray card surfaces.
 The figure should feel like a polished illustrated magazine roadmap or a high-quality
@@ -27,24 +31,24 @@ educational comic, without candy-bright colors or large dark background fills.
 
 ---
 
-## 1 · Composition
+## 1 · Composition (`topology_first` directions plus shared safeguards)
 
-- Choose composition from the **scientific graph**, not a fixed region count or panel template.
+- In `topology_first`, choose composition from the **scientific graph**, without a fixed region count or panel template.
   A true sequence may use an open linear flow; parallel inputs may use aligned lanes and a
   shared merge; stateful mechanisms may use a main path with feedback; hierarchies may use
   nesting or layers; an overview may include a focused detail. Use only the relationships
   present in the brief, not a mandatory mixture of these options.
-- **No fixed number of regions, stages, panels, or badges.** An open composition with no
+- In `topology_first`, **there is no fixed number of regions, stages, panels, or badges.** An open composition with no
   enclosing major panels is valid. Semantic grouping, visible outlines, background fields,
   and numbering are separate decisions. Use proximity, alignment, shared baselines, or compact
   headings when sufficient. A boundary needs a real grouping, phase, interface, or system-limit
   purpose; do not enclose every group merely to make a panel mosaic.
-- Use sequence numbers only when an actual ordered procedure benefits from them. Do not
+- In `topology_first`, use sequence numbers only when an actual ordered procedure benefits from them. Do not
   number parallel modules or a feedback architecture as if they were successive stages.
   Optional panel letters may identify separate views without implying process order. Omit
   badges and banners unless useful; any chosen major-group background stays neutral gray in
   the initial structure pass.
-- The global layout may be open, layered, cyclic, branched, grouped, or asymmetric as the
+- In `topology_first`, the global layout may be open, layered, cyclic, branched, grouped, or asymmetric as the
   graph requires. A grid is an option, not the default structure imposed on every method.
 - Treat the intended image as a deliberately filled rectangle (including a square canvas), not a
   loose cluster placed on a canvas. Arrange the objects, optional groups, and connectors so
@@ -82,14 +86,15 @@ educational comic, without candy-bright colors or large dark background fills.
 - Do not add a standalone overall title banner. Start directly with scientific content; the paper
   caption supplies the figure title.
 - No landscapes, roads, trees, or exterior signboards.
-- Crop around the scientific content and necessary connectors, without requiring numbered regions.
+- Crop around the scientific content and necessary connectors. `topology_first` does not require numbered regions.
 - Decorative elements must stay outside arrow corridors and must not resemble nodes, ports,
   evidence tokens, outcomes, or data-flow arrows.
 
 ## 2 · Color: neutral region fields, lively foregrounds, soft panels later
 
 - Keep the three layers distinct during the initial invocation: white or near-white page;
-  optional achromatic near-white-gray major-group fields; restrained soft color in icons, mechanism
+  achromatic near-white-gray major-group fields (required for `numbered_regions`, optional
+  for `topology_first`); restrained soft color in icons, mechanism
   objects, state markers, small accent plates, and other compact semantic foreground elements.
   The neutral-field rule applies only to existing major-group fields, not to every object
   or semantic group. Do not introduce fields to satisfy a palette rule.
@@ -97,7 +102,7 @@ educational comic, without candy-bright colors or large dark background fills.
 - **Initial invocation:** use the same pure, achromatic near-white gray for any major-group background
   fills (for example `#F7F7F7`), without hue, colored gradients, or pastel tint. Keep the page
   white or near white and distinguish groups through layout, headings, or justified boundaries.
-  Badges are optional; an open layout need not have background fields. This is the
+  Badges are optional in `topology_first`; its open layouts need not have background fields. This is the
   selected structural base to inspect before choosing panel colors.
 - **Later explicit “add background colors” invocation:** recolor backgrounds at two levels.
   First, tint every existing major-group background field. Do not create fields, outlines,
@@ -274,7 +279,10 @@ educational comic, without candy-bright colors or large dark background fills.
 ## 8 · Paste-ready prompt block
 
 For the initial neutral-structure invocation, append this after the scientific brief has
-been converted into exact topology, composition, optional grouping, and connector instructions:
+been converted into exact topology, composition, optional grouping, and connector instructions.
+Insert **only** the selected composition profile's prompt block from
+`references/composition-profiles.md` immediately after the opening paragraph below and
+before the shared size/connector instructions. Never combine the two profile blocks.
 
 > Render this as a playful editorial-comic scientific infographic. It should feel like a
 > polished illustrated magazine roadmap: icon-rich and engaging, while
@@ -282,29 +290,6 @@ been converted into exact topology, composition, optional grouping, and connecto
 > dark background fills. Do not make it a page of black text boxes or a wall of identical
 > white cards.
 >
-> Derive the composition from the supplied scientific graph and reading order. There is no
-> fixed number of regions, stages, panels, or badges, and no requirement to use enclosing panels
-> or numbering. A true sequence may be a linear open flow; parallel inputs may occupy aligned
-> lanes; feedback may return to a shared mechanism; hierarchy or overview/detail may guide the
-> layout when present in the brief. These are choices, not a required mixture. Draw every real
-> branch, parallel path, shared kernel, loop, optional path, and reconvergence. Never flatten
-> a non-linear graph into a chain, and never invent complexity to avoid a genuine sequence.
-> Treat semantic groups, outlines, background fields, and numbering as independent choices.
-> Prefer proximity, alignment, shared baselines, or compact headings when sufficient. Use
-> a boundary only for a scientifically meaningful group, phase, interface, or system limit.
-> Use sequence numbers only for a real ordered procedure that benefits from them; do not imply
-> an order among parallel modules. Optional panel letters may label separate views. Any major
-> background fields that are actually needed use the same achromatic near-white gray (for
-> example `#F7F7F7`), without pastel tint or colored gradient. Do not add fields merely to apply
-> this color rule. Badges and banners are optional, not a mandatory bundle for every group.
-> Fill the intended rectangular canvas—square, landscape, or portrait—with a balanced
-> composition of scientific objects and necessary connectors and modest, consistent outer
-> margins. Keep purposeful spacing between objects or groups. Do not leave a large isolated
-> empty corner or edge void; reposition or recompose while preserving the supplied topology.
-> Do not invent panel tiles, enlarge icons at the expense of labels, or delete content to fill space.
-> Keep any useful group headings or sequence numbers only slightly larger than primary node labels
-> (at most about 110%). Use bold weight and placement for hierarchy, with compact badges and
-> heading bands that preserve space for the method content.
 > Establish exactly three or four discrete text-size tiers and exactly three or four discrete
 > icon-size tiers for this whole figure before drawing. Only in a rare content-dense case may
 > text use a fifth tier: first improve composition, spacing, and wording; then use Tier 5 only
@@ -336,9 +321,9 @@ been converted into exact topology, composition, optional grouping, and connecto
 > rectangle merely to hold an icon and label; conventional cards should remain a minority unless
 > the supplied science contains a genuinely repeated card-like class.
 >
-> Keep three color layers distinct. The page is white or near white. The large named-region
-> backgrounds, if present, stay achromatic near-white gray in this invocation; do not add region
-> background colors yet or invent backgrounds for an open layout. The semantic foreground should
+> Keep three color layers distinct. The page is white or near white. Major-region backgrounds
+> follow the selected composition profile and stay achromatic near-white gray in this
+> invocation; do not add colored region backgrounds yet. The semantic foreground should
 > still feel lively: use restrained soft color in
 > icons, distinctive mechanism objects, state markers, small accent plates, banners, and other
 > compact foreground elements. Neutral region fields do not require neutral foregrounds or
@@ -378,11 +363,10 @@ been converted into exact topology, composition, optional grouping, and connecto
 > Make the figure lively through semantic silhouettes, restrained foreground color, scale rhythm,
 > grouping, layering, and varied label placement—not by adding arrows, font tiers, decorative
 > topology, saturated major-region fills, or ornamental clutter.
-> Do not add a standalone overall title banner. Start directly with scientific content; the paper
-> caption supplies the figure title. No landscapes, roads, trees, or exterior signboards. Crop
-> around the content and its necessary connectors, not a mandatory set of numbered panels.
-> Decorative accents stay local to relevant objects or optional groups and must not consume
-> a separate row or margin.
+> Do not add a standalone overall title banner. The paper caption supplies the figure title.
+> No landscapes, roads, trees, or exterior signboards. Crop around the content and necessary
+> connectors. Decorative accents stay local to relevant objects or groups and must not
+> consume a separate row or margin.
 >
 > Keep all region and text-card fills flat, without gradients or internal lighting. Light cel
 > shading and small highlights may decorate icon artwork only; a shallow offset shadow may sit

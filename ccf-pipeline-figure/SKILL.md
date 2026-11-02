@@ -5,8 +5,8 @@ description: >-
   mechanism, data-flow, or system figure for a paper's Intro/Method. Use for 论文流程图 /
   框架图 / 机制图 / 架构图 / pipeline 图. Derive the technical brief, use built-in ImageGen,
   preserve every candidate, and ask for fresh-candidate/refinement limits (default: 7/3).
-  Choose composition from scientific topology, without fixed region counts or mandatory
-  numbering. Use neutral-gray fields for optional major groups and lively restrained
+  Ask the user to choose either 3–6 numbered regions or topology-first composition for
+  each new figure. Use neutral-gray fields for the chosen major groups and lively restrained
   foreground color; recolor existing backgrounds only on a later explicit request.
   Keep labels sparse and readable, preserve all scientific relationships, and save each
   version's PNG, real-text SVG/PDF, review, and paired manuscript-description reference.
@@ -34,14 +34,15 @@ paper pipeline figure. It is authoritative over later legacy draw.io production 
 the two routes differ. The corpus evidence, scientific rules, composition rules, and honesty
 rules later in this file still apply where they do not conflict with this fast path.
 
-**Topology before panels.** Derive the graph and reading order first, then choose its visual
-composition. There is no required number of regions, stages, panels, or badges; an open diagram
-with no enclosing major panels is valid. Semantic grouping, visible outlines, background fields,
-and numbering are separate decisions, not a mandatory bundle. Use a boundary only when it
-clarifies a real grouping, interface, phase, or system limit. Use sequence numbers only for a
-real ordered procedure that benefits from them; parallel modules and feedback loops must not
-acquire a false order. A genuine linear process is valid; flattening a non-linear graph is not.
-This rule overrides historical panel preferences and anti-chain wording in reference material.
+**Choose composition within this skill.** For each new figure, use one of the two profiles in
+[references/composition-profiles.md](references/composition-profiles.md):
+`numbered_regions` (3–6 命名区域, the snapshot at `90863f3`) or `topology_first`
+(按科学逻辑自由构图, the flexible treatment at `1ddcf57`). Read that reference before deriving
+the figure brief. A selected profile governs composition planning, the ImageGen prompt, and
+visual review; the scientific graph and shared quality requirements govern both. Later
+references describing the flexible treatment are conditional on `topology_first`; the
+numbered-region profile's specific requirements take precedence when selected. Do not
+switch Git branches to use either profile.
 
 Native explicit invocation is:
 
@@ -106,14 +107,21 @@ branch, switch the installed skill, or modify a manuscript without a separate re
 #### 1. Resolve and inspect the project
 
 - First determine whether the user requests a new conceptual figure or explicitly asks to add
-  background colors to an existing selected neutral figure. For a new figure, ask for the
-  number of fresh candidates and the maximum local-refinement rounds before project work. Offer
+  background colors to an existing selected neutral figure. For a new figure, ask in **one
+  bundled question** which composition profile the user wants (`numbered_regions`: 3–6
+  numbered major regions; `topology_first`: free composition from the scientific graph),
+  the number of fresh candidates, and the maximum local-refinement rounds before project
+  work. If the user has already chosen a profile in their request, use it without asking
+  again; ask only for missing candidate/refinement limits. Offer
   **Default: 7 fresh candidates; up to 3 refinements**. The user may choose 1–7 fresh candidates
   and 0–3 refinements; “default” selects 7 and 3. For a later background-color invocation, ask only
   for the maximum number of local color edits (**default: up to 3**, selectable 1–3). Wait for
-  the applicable choice. Then use the corresponding route below.
-- Record each invocation's selected limits and color stage in `TECHNICAL_FIGURE_BRIEF.md` and
-  every generation/review record; preserve the earlier neutral-stage budget when adding color.
+  the applicable choice. For a later color-only invocation, inherit the neutral base's
+  composition profile and do not ask the composition question again. Then use the
+  corresponding route below.
+- Record the selected composition profile, limits, and color stage in
+  `TECHNICAL_FIGURE_BRIEF.md` and every generation/review record; preserve the earlier
+  neutral-stage budget and composition profile when adding color.
 
 - Resolve the project folder first. Read every applicable `AGENTS.md`, `CLAUDE.md`, project
   policy, or equivalent instruction file before other project content.
@@ -189,12 +197,14 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
   composition (including a square canvas). Keep modest margins and purposeful spacing; no large
   orphaned corner or edge void may remain unless indispensable to the topology. Do not create
   panel tiles, enlarge icons at the expense of labels, or delete content merely to fill space;
-- a **topology-first composition plan**: identify the actual sequence, parallel lanes,
+- a **selected-profile composition plan**: identify the actual sequence, parallel lanes,
   branch/rejoin, feedback, hierarchy, or overview/detail relationships, then select a layout
-  that expresses them. These are options, not a required mixture. Record any useful semantic
+  that expresses them under the selected profile. These are options, not a required mixture. Record any useful semantic
   groups without a count quota; for each visible boundary, background field, or sequence number,
   give its separate purpose. Prefer alignment, proximity, shared baselines, or compact headings
-  when sufficient; open layouts and groups without borders, fills, or numbers are valid;
+  when sufficient in `topology_first`; open layouts and groups without borders, fills, or
+  numbers are valid in that profile. In `numbered_regions`, record the three to six meaningful
+  named regions and how their numbers, fields, and boundaries express the method;
 - every object, operation, arrow, branch, shared path, and reconvergence;
 - a connector plan that inventories every essential scientific relationship before any
   simplification and assigns each one either an explicit arrow or an equally unambiguous
@@ -223,8 +233,9 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
 - explicit exclusions separating method from results; and
 - a source-of-truth table citing the project files behind each part.
 
-Record the color stage as `neutral_structure` for the initial figure. Any major-group background
-fills are achromatic near-white gray; a panel-free composition needs no such fills. This
+Record the color stage as `neutral_structure` for the initial figure. Major-group background
+fills are achromatic near-white gray; `numbered_regions` requires them for every major region,
+while a panel-free `topology_first` composition needs none. This
 restriction applies to the major-region background fields, not to all foreground objects:
 icons, semantic mechanism shapes, state markers, small
 accent plates, and other compact foreground elements may use restrained soft color from the
@@ -239,12 +250,14 @@ project contains enough evidence to derive it.
 
 #### 3. Build the actual generation prompt
 
-After the brief exists, read `assets/STYLE-FOR-IMAGE-MODELS.md` completely. Construct a
+After the brief exists, read `assets/STYLE-FOR-IMAGE-MODELS.md` completely and use only the
+selected profile's composition block from `references/composition-profiles.md`. Construct a
 self-contained prompt in this order:
 
 1. primary request and pre-experiment purpose;
 2. editorial-comic visual target and the three-layer color relationship near the top: white or
-   near-white page, optional achromatic near-white-gray major-group fields, and lively but restrained
+   near-white page, achromatic near-white-gray major-group fields as required by the selected
+   profile, and lively but restrained
    soft color in semantic foreground objects. State explicitly that neutral region fields do
    not require neutral foregrounds or a white/gray card around every icon-label group. Follow
    immediately with the flat-fill integrity constraint for all enclosed regions and text-bearing
@@ -379,8 +392,9 @@ output/imagegen/<project-name>/<figure-name>/
   the background surfaces selected for recoloring.
 - Never overwrite, delete, rename, or silently discard an earlier image, prompt, review, or
   description, including rejected candidates.
-- `SELECTED.md` names the best version, its color stage (`neutral_structure` or
-  `colored_panels`), its `final` or `provisional` status, and the reason. Retain the selected
+- `SELECTED.md` names the best version, its `composition_profile`, color stage
+  (`neutral_structure` or `colored_panels`), its `final` or `provisional` status, and the reason.
+  Retain the selected
   neutral-base version in this index after later coloring. Link the selected `vNN.png` and
   its paired `vNN.description.md`.
   It may say `final` only after every hard check passes, including zero arrow crossings.
@@ -456,13 +470,16 @@ intermediate PNGs only; other failures trigger another candidate while budget re
 - the thumbnail reads as an editorial-comic infographic, with soft color in icons or accents
   while initial region fills stay neutral; it is not a grid of black text boxes or a
   restrained corporate flowchart;
-- the composition follows the scientific graph, not a fixed region count or numbered-panel
-  template. Every drawn major boundary, background field, and sequence number has its own
+- the composition follows the chosen profile and scientific graph. For `numbered_regions`,
+  require three to six meaningful named major regions, compact numbers and headings, and
+  visible neutral fields in the initial pass. For `topology_first`, every drawn major
+  boundary, background field, and sequence number has its own
   justification in the brief; semantic grouping alone does not require all three. Open
   compositions, unnumbered groups, true chains, parallel lanes, and feedback layouts are valid;
 - in the initial `neutral_structure` stage, any major-group background field uses achromatic
   near-white gray, distinct from the page background; no colored tint enters such a field.
-  Absent fields are not a defect and must not be invented to satisfy this color check.
+  Absent fields are valid only under `topology_first` and must not be invented to satisfy
+  this color check.
   The foreground is not forced into the same gray/white treatment: semantic icons,
   mechanism objects, state markers, and compact accents use restrained soft color, and the
   figure does not become visually achromatic merely because its region fields are neutral;
@@ -508,7 +525,8 @@ intermediate PNGs only; other failures trigger another candidate while budget re
   avoidable explanatory lines, repeated labels, and prose callouts are omitted;
 - no standalone overall title banner, landscape, road, tree, or exterior signboard appears;
   the composition starts directly with scientific content and is cropped around its full
-  visual extent, including necessary connectors; no Region 1 or numbered regions are required;
+  visual extent, including necessary connectors. `numbered_regions` starts with Region 1;
+  `topology_first` need not number its groups;
 - decorative accents stay local to the relevant scientific objects or optional groups and
   do not consume a separate row or margin; a short method-only explanatory line is allowed only when needed to prevent an
   ambiguous scientific reading;
@@ -562,7 +580,8 @@ separately asks for those actions.
 #### 8. Later invocation: add background colors
 
 Only enter this route when the user invokes the skill again and asks to add color or background
-color to the selected neutral figure. Do not automatically color it at the end of the initial
+color to the selected neutral figure. Inherit its `composition_profile` and do not change
+its region count, boundaries, numbers, or layout. Do not automatically color it at the end of the initial
 invocation.
 
 - After reading project rules, reuse the current `TECHNICAL_FIGURE_BRIEF.md`, `SELECTED.md`,
@@ -578,7 +597,8 @@ invocation.
   that are currently pure white or neutral gray, such as an ASK panel, command card, or compact
   T/U/H subregion, when a soft tint materially improves grouping, hierarchy, or readability.
   These examples describe the surface class, not labels that must exist. Do not color every
-  internal card, and leave unselected internal surfaces unchanged. For a panel-free figure,
+  internal card, and leave unselected internal surfaces unchanged. For a panel-free
+  `topology_first` figure,
   Level 1 has no targets: do not invent backgrounds, borders, groups, or numbers. Apply only
   useful eligible Level 2 fills; if none exist, explain that there is no eligible background
   surface and ask before expanding the request to foreground recoloring or structural edits.
@@ -647,8 +667,8 @@ Paths are relative to the `ccf-figuresmith-skills` skill directory.
   look with the answer.
 - **§1, how many conceptual figures a paper should have** — measured, and it contradicts the
   usual advice.
-- **§2.1, topology-first composition.** Historical region treatments are optional devices,
-  not a panel-count requirement or a ban on genuine sequential processes.
+- **§2.1, composition evidence.** Its open-layout interpretation applies to
+  `topology_first`; `numbered_regions` uses the three-to-six-region profile above.
 - **§2.2, one accent colour that means something**, and the median-4 rule.
 - **§2.3, the icon *vocabulary*** — which glyph stands for which noun. figuresmith owns how
   to *render* an icon; it does not say which one to pick.
@@ -852,7 +872,7 @@ This section records devices and preferences from the starred figures, not prope
 by every example or universal requirements for papers. Where a device appears more often in
 the starred set than in the dropped set, the recorded lift is given.
 
-### 2.1 Composition: scientific topology first; grouping is optional
+### 2.1 Composition evidence and the `topology_first` interpretation
 
 **Historical labels [MEASURED, 67 % of drops → 6 % of stars].** Two thirds of the
 dropped figures have a plain-axis layout label — 20 of 30 are recorded as `left_to_right` or
@@ -869,7 +889,7 @@ not for proof that one composition is universally better.
 
 The reference records include parallel pipelines, paired comparisons, a central service,
 architecture plus interaction traces, and linear flow followed by cyclic refinement.
-**There is no required count of regions or mandatory numbering.** First identify what the
+**Under `topology_first`, there is no required count of regions or mandatory numbering.** First identify what the
 reader must follow: sequence, branching, parallelism, feedback, hierarchy, or a focused detail
 within an overview. A true sequence may be linear; a branch or loop must remain visible.
 
