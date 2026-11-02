@@ -3,16 +3,13 @@ name: ccf-pipeline-figure
 description: >-
   Read a research-project folder and produce a conceptual pipeline, framework, architecture,
   mechanism, data-flow, or system figure for a paper's Intro/Method. Use for 论文流程图 /
-  框架图 / 机制图 / 架构图 / pipeline 图. Derive the technical brief, use built-in ImageGen,
-  preserve every candidate, and ask for fresh-candidate/refinement limits (default: 7/3).
-  For each new figure, accept short composition tokens 分区 (3–6 numbered regions) or
-  非分区 (topology-first, regions optional); ask only if the choice is missing. Use
-  neutral-gray fields for the chosen major groups and lively restrained
-  foreground color; recolor existing backgrounds only on a later explicit request.
-  Keep labels sparse and readable, preserve all scientific relationships, and save each
-  candidate's PNG, review, and paired manuscript-description reference. Only after the user
-  approves a chosen PNG in a later invocation, reconstruct its real-text SVG and export PDF.
-  Not for data figures where position, length, angle, or color encodes a measured quantity.
+  框架图 / 机制图 / 架构图 / pipeline 图. Use built-in ImageGen; accept 分区 (3–6 numbered
+  regions) or 非分区 (flexible topology) and N+R candidate/refinement limits. Keep every
+  fresh run in its own profile-specific folder, without using earlier Codex figure runs as
+  references. Save PNG candidates and reviews first; recolor and reconstruct a selected
+  real-text SVG/PDF only on later explicit requests. Preserve scientific relationships,
+  readable labels, restrained color, and every candidate. Not for data figures where
+  position, length, angle, or color encodes a measured quantity.
 metadata:
   short-description: One-line project-to-pipeline figure workflow
 ---
@@ -46,6 +43,13 @@ references describing the flexible treatment are conditional on `topology_first`
 numbered-region profile's specific requirements take precedence when selected. Do not
 switch Git branches to use either profile.
 
+**Isolate each drawing run.** Read
+[references/run-isolation.md](references/run-isolation.md) before any fresh figure request.
+Reserve a distinct output directory for `numbered_regions` (`-numbered`) or
+`topology_first` (`-flexible`); keep its brief, candidates, selection, and later edits inside
+that directory. A fresh run must not use earlier Codex figure sessions as visual or textual
+references. The reference defines duplicate detection, atomic reservation, and continuation.
+
 Native explicit invocation is:
 
 ```text
@@ -68,9 +72,10 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
    `OPENAI_API_KEY`.
 3. During the fresh-candidate phase, use new-image generation only. Do not pass
    `referenced_image_paths` or include a prior generated figure as conversation image context.
-   Do not pass an existing manuscript figure as a visual reference either. Inspect it only for
-   the manuscript audit; extract its scientifically useful content and defects into the brief,
-   then generate from the independently derived brief.
+   Do not pass an existing manuscript figure as a visual reference either. Inspect only a
+   verified pre-Codex manuscript original briefly for scientific scope and paper placement;
+   never inspect another Codex session's generated figure for a fresh run. Derive the new
+   brief independently from the current paper text and project evidence.
 4. If no fresh candidate passes within the user-selected candidate count, switch to built-in edit
    mode for the user-selected bounded refinement phase defined below. Use the selected best
    candidate as the sole edit target and preserve every already-correct region aggressively.
@@ -90,8 +95,9 @@ review **PNG versions only**. Do not reconstruct SVG or export PDF for every can
 including the internally selected best or the last version in the budget. Preserve all PNGs,
 prompts, reviews, descriptions, and the selection index. Wait until the user explicitly accepts
 a particular PNG and invokes this skill again to request SVG/PDF conversion. That request
-authorizes vectorization of the named version, or the selected PNG in `SELECTED.md` if the
-version is unambiguous; it does not start a new ImageGen batch or ask for candidate limits.
+authorizes vectorization of the named version, or the selected PNG in one named run's
+`SELECTED.md` if the version is unambiguous; it does not start a new ImageGen batch or ask
+for candidate limits.
 
 For that later vectorization invocation, read
 [references/png-svg-pdf.md](references/png-svg-pdf.md). Reconstruct **only the approved PNG**
@@ -141,28 +147,42 @@ skill or modify a manuscript without a separate request.
   the applicable choice. For a later color-only invocation, inherit the neutral base's
   composition profile and do not ask the composition question again. Then use the
   corresponding route below.
-- Record the selected composition profile, limits, and color stage in
+- Record the selected composition profile, limits, and color stage in the **run-local**
   `TECHNICAL_FIGURE_BRIEF.md` and every generation/review record; preserve the earlier
   neutral-stage budget and composition profile when adding color.
 
 - Resolve the project folder first. Read every applicable `AGENTS.md`, `CLAUDE.md`, project
   policy, or equivalent instruction file before other project content.
+- For each **fresh** figure request, follow `references/run-isolation.md` immediately after
+  project rules: identify the figure purpose and selected profile, inspect only prior run
+  metadata, handle same-profile repeats, and atomically reserve a new profile-specific run
+  directory before writing a brief or generating images. An opposite-profile run does not
+  block a new one. A new run starts at `v01`; never continue an earlier session's `vNN`
+  sequence. Store the run directory in every handoff and later-stage request.
 - On a later color-only invocation, continue with §8 after reading those rules; reuse the
-  existing brief and selected image rather than restarting the manuscript-to-figure workflow.
+  **named run's** brief and selected image rather than restarting the manuscript-to-figure workflow.
   On a vectorization-only invocation, inspect the exact approved PNG and its original brief,
-  review, and selection record before building any SVG.
+  review, and selection record **inside that run** before building any SVG. If multiple runs
+  could match an omitted path, ask which run to continue; do not select one by recency.
 - Never open a file that project rules prohibit. Never open secrets, credentials, private
   keys, environment files, or unrelated personal data.
 - Inventory with `rg --files` before reading. Cover the paper, README files, method/design
   documentation, configuration, experiment and analysis code, tests, examples, and the
-  structure of key outputs. Binary artefacts need only structural inspection unless their
-  content is necessary and permitted.
+  structure of key non-figure outputs. Prior Codex figure directories are limited to the
+  metadata-only preflight in `references/run-isolation.md`; do not inventory their prompts,
+  reviews, briefs, descriptions, or images for a fresh run. Other binary artefacts need only
+  structural inspection unless their content is necessary and permitted.
 - **Audit the current manuscript before planning a figure.** Locate the active paper source
   (for example its root `.tex` file and included files) and the newest corresponding local PDF
-  or rendered pages when available. Enumerate figures from the source and captions; inspect the
-  actual image or rendered page for every existing conceptual figure that could overlap this
-  request. Include pipeline, framework, architecture, system-overview, mechanism, and technical
-  route figures. A filename, caption, or `Figure 1` alone is not enough to classify it. If the
+  or rendered pages when available. Use source for placement if the PDF displays an earlier
+  Codex-generated figure; do not inspect that image area. Enumerate overlapping conceptual
+  figures from source and captions, including pipeline, framework, architecture,
+  system-overview, mechanism, and
+  technical-route figures. Inspect an existing figure's visual content only if it is verified
+  as an original that predates Codex figure sessions; glance at it solely for scientific scope
+  and paper placement. If the currently included figure is from an earlier Codex session,
+  use source/caption for its slot but do not inspect that figure or use its files. A filename,
+  caption, or `Figure 1` alone is not enough to establish provenance. If the
   project contains multiple plausible manuscript versions and the active one cannot be determined
   from its source tree, Git state, or project documentation, record that ambiguity and ask the
   user; do not silently choose an older draft.
@@ -176,15 +196,16 @@ skill or modify a manuscript without a separate request.
   the image canvas is convenient. If the manuscript/template gives no reliable slot or both
   placements remain equally defensible, ask the user before generating; do not silently assume.
 - For each overlapping figure, record its file path, figure label, caption or surrounding paper
-  section, scientific purpose, and whether it is a data figure or conceptual figure. Then decide
+  section, scientific purpose, provenance, and whether it is a data figure or conceptual figure.
+  Record visual deficiencies only for a verified pre-Codex original. Then decide
   **replace**, **add distinct**, or **no current counterpart**. A same-purpose existing pipeline
   or framework figure is a replacement target by default: preserve its intended paper location,
   label, citation relationship, and scientific scope while redesigning its visual expression.
   Do not make a second figure that tells the same story merely because the current one looks weak.
-- A replacement target is an **audit input, not a design template**. Extract its scientifically
-  valid entities, relationships, placement constraints, and omissions, then derive the new
-  topology, hierarchy, region structure, and visual language from the entire active paper and
-  project evidence. Do not copy its layout, node order, region partition, connector routing,
+- An eligible original replacement target is an **audit input, not a design template**.
+  Extract its scientifically valid entities, relationships, placement constraints, and omissions,
+  then derive the new topology, hierarchy, region structure, and visual language from the
+  active paper and project evidence. Do not copy its layout, node order, region partition, connector routing,
   visual hierarchy, or prompt wording merely because they appear in the old image. State the
   concrete shortcomings the replacement must resolve and the material gains required in scientific
   coverage, relationship clarity, hierarchy, or final-size readability.
@@ -200,20 +221,23 @@ skill or modify a manuscript without a separate request.
 
 #### 2. Derive the technical brief automatically
 
-Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
+Create `<run-dir>/TECHNICAL_FIGURE_BRIEF.md` for this fresh run. Never reuse or overwrite a
+project-root brief or another run's brief. It must contain:
 
 - figure purpose and inputs;
-- a **manuscript figure audit**: active manuscript source and local render examined (or why one
-  was unavailable), every potentially overlapping conceptual figure, and for each its path,
-  label, caption/section, purpose, classification, scientifically useful content, and concrete
-  deficiencies or omissions;
+- a **manuscript figure audit**: active manuscript source and eligible original render examined
+  (or why it was unavailable or excluded as earlier Codex output), every potentially overlapping
+  conceptual figure, and for each its path, label, caption/section, purpose, provenance,
+  classification, and paper slot. Record scientifically useful visual content and concrete
+  deficiencies only for a verified pre-Codex original; otherwise derive science from paper
+  text and project evidence;
 - a **figure plan** that states the total conceptual figures proposed for this request, their
   distinct purposes, and the decision for each: `replace <existing figure>` / `add distinct` /
   `no current counterpart`. A replacement records the existing figure's intended paper position
-  and reference relationship, the evidence sources used beyond that image, and the specific
-  redesign gains it must deliver. The old figure may supply scientific facts and paper-placement
-  context, never a layout or prompt template. An added second figure records why it cannot be
-  combined legibly with the overall pipeline figure;
+  and reference relationship, the evidence sources used beyond any eligible original image,
+  and the specific redesign gains it must deliver. A verified pre-Codex original may supply
+  scientific facts and paper-placement context, never a layout or prompt template. An added
+  second figure records why it cannot be combined legibly with the overall pipeline figure;
 - a **final-layout decision** for every planned figure: `single-column` or `double-column`,
   `horizontal` or `vertical`, final printed width, source evidence (template/source/placement),
   a canvas-coverage plan, and a short rationale tied to the graph's reading order and grouping.
@@ -255,7 +279,8 @@ Create or update `<project>/TECHNICAL_FIGURE_BRIEF.md`. It must contain:
   scientific entity through its icon, label, spacing, and connector anchors;
 - scientific invariants whose topology or meaning cannot change;
 - explicit exclusions separating method from results; and
-- a source-of-truth table citing the project files behind each part.
+- a source-of-truth table citing the current paper and project research files behind each
+  part, excluding earlier Codex figure runs and legacy figure briefs.
 
 Record the color stage as `neutral_structure` for the initial figure. Major-group background
 fills are achromatic near-white gray; `numbered_regions` requires them for every major region,
@@ -314,9 +339,10 @@ self-contained prompt in this order:
    ratio. Treat 4K as a resolution target rather than an aspect-ratio rule: never force 16:9
    or another standard canvas ratio. The built-in tool may ignore the size request.
 
-For a replacement, derive the prompt from this brief and its full-project source-of-truth table,
-not by paraphrasing or imitating the old figure. The prompt must implement the planned redesign
-gains while preserving the old figure's valid scientific scope and paper placement.
+For a replacement, derive the prompt from this run's brief and its project source-of-truth
+table. Do not paraphrase or imitate any prior Codex figure; a verified pre-Codex original
+may inform scientific scope and paper placement only. The prompt must implement the planned
+redesign gains while preserving the method's valid scientific scope and paper placement.
 
 The brief wins on science. The style file wins on palette, icon vocabulary, decoration,
 typography, and comic energy. A user-supplied visual preference wins over the style defaults
@@ -366,28 +392,43 @@ explicit absolute requirement always overrides these defaults.
 
 #### 4. Save before and after every generation
 
-Use this immutable layout inside the target project:
+Use this immutable layout inside the **atomically reserved run directory**. The profile
+suffix and optional repeat number are part of the directory name, not the individual
+`vNN` filenames:
 
 ```text
-output/imagegen/<project-name>/<figure-name>/
-  v01.prompt.md
-  v01.png
-  v01.review.md
-  v01.description.md
-  v02.prompt.md
-  v02.png
-  v02.review.md
-  v02.description.md
-  ...
-  SELECTED.md
+output/imagegen/<project-name>/<figure-slug>-numbered/    # numbered_regions
+output/imagegen/<project-name>/<figure-slug>-flexible/    # topology_first
 ```
+
+Each reserved run directory contains its own files:
+
+```text
+RUN.json
+TECHNICAL_FIGURE_BRIEF.md
+v01.prompt.md
+v01.png
+v01.review.md
+v01.description.md
+v02.prompt.md
+v02.png
+v02.review.md
+v02.description.md
+...
+SELECTED.md
+```
+
+A deliberate repeated run of the same profile uses `-numbered-02` or `-flexible-02`
+(then `-03`, etc.) and starts its own `v01`. These examples show separate directory paths,
+not two directories to create for every invocation.
 
 Only after a later explicit vectorization request, add `vNN.svg`, `vNN.pdf`,
 `vNN.vector-review.md`, `vNN.export.json`, and previews beside the **one approved**
 `vNN.png`. Do not create these for ordinary candidates or overwrite existing artifacts.
 
-- Scan existing versions and continue at the next unused number. Never restart at `v01` when
-  earlier files exist.
+- Within a **newly reserved** run, begin at `v01`; never scan another run to continue its
+  numbering. Within a later recolor or vector continuation of that **same named run**, scan
+  only that run's versions and use its next unused number where a new PNG version is needed.
 - Save the exact prompt as `vNN.prompt.md` before or immediately after its generation, without
   rewriting it to describe the output retrospectively.
 - Copy the generated bitmap from the built-in tool's managed output location to `vNN.png`.
@@ -397,10 +438,10 @@ Only after a later explicit vectorization request, add `vNN.svg`, `vNN.pdf`,
 - Inspect it and save the disposition and concrete defects in `vNN.review.md`. Write the review
   primarily in Chinese: headings, verdict, strengths, defects, and next-step rationale must be
   Chinese. Keep file names, exact labels, phase values, and necessary technical terms in English.
-- For a replacement, each review must also compare the candidate with its target old figure using
-  the brief's stated redesign gains: scientific coverage, relationship clarity, hierarchy,
-  connector legibility, and readability at final size as applicable. A candidate that merely
-  rephrases or cosmetically redraws the old layout cannot be selected as final.
+- For a replacement, each review must check the candidate against the run-local brief's
+  redesign gains: scientific coverage, relationship clarity, hierarchy, connector legibility,
+  and readability at final size. Compare visually with an old figure **only** when it is a
+  verified pre-Codex original. Never open another Codex run's figure for this comparison.
 - After inspecting **each** `vNN.png`, write its matching `vNN.description.md`. This is a
   reference for a later paper-writing agent, not approved manuscript text. State the image
   version and review verdict; describe what the rendered regions, branches, arrows, and
@@ -596,7 +637,8 @@ selected version. At minimum, give the selected image path and its description p
 each conceptual figure. Also report the project brief path, prompt/review paths, the
 selected fresh-candidate and refinement limits and counts, the best version and its `final` or
 `provisional` status, color stage, and parent chain, the stopping reason, and whether the
-backend model was explicit or host-managed. Report the selected PNG's actual pixel dimensions.
+backend model was explicit or host-managed. Report the selected PNG's actual pixel dimensions
+and the absolute run directory so later calls cannot enter the other profile's files.
 For a PNG-generation or recolor invocation, report `vector_status: not_requested` and do
 not imply that SVG/PDF already exist. For a later vectorization invocation, link only the
 approved version's SVG, PDF, and vector review; distinguish scientific acceptance,
@@ -613,7 +655,7 @@ color to the selected neutral figure. Inherit its `composition_profile` and do n
 its region count, boundaries, numbers, or layout. Do not automatically color it at the end of the initial
 invocation.
 
-- After reading project rules, reuse the current `TECHNICAL_FIGURE_BRIEF.md`, `SELECTED.md`,
+- After reading project rules, reuse the **named run's** `TECHNICAL_FIGURE_BRIEF.md`, `SELECTED.md`,
   exact neutral-base image, and its review. Confirm that the base is a `final`
   `neutral_structure` figure and still matches the active manuscript. A provisional PNG whose
   only outstanding issues are minor, unambiguous recorded deferred fills may also be eligible

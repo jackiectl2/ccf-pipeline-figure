@@ -14,7 +14,9 @@ six fresh candidates, and up to three refinements. Use a deliberate command toke
 incidental mention of a region in the method description.
 
 Record `composition_profile: numbered_regions` or `composition_profile: topology_first` in
-`TECHNICAL_FIGURE_BRIEF.md`, every new version's prompt/review/description, and `SELECTED.md`.
+the isolated run's `TECHNICAL_FIGURE_BRIEF.md`, every new version's
+prompt/review/description, and that run's `SELECTED.md`. Profile-specific paths and
+duplicate-run handling are in `references/run-isolation.md`.
 The chosen profile must govern the actual figure. The later background-color route inherits
 the neutral base's profile and may recolor existing surfaces, not change its composition.
 

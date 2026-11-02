@@ -5,8 +5,9 @@
 Use this file only for a conceptual research figure: pipeline, method overview, architecture,
 mechanism, or data-flow diagram in which no visual property encodes a measured quantity.
 
-The project's `TECHNICAL_FIGURE_BRIEF.md` is authoritative for scientific meaning, topology,
-labels, examples, and result exclusions. This file is authoritative for visual treatment.
+The current isolated run's `TECHNICAL_FIGURE_BRIEF.md` is authoritative for scientific
+meaning, topology, labels, examples, and result exclusions. Do not read an older run's or
+project-root figure brief for a fresh run. This file is authoritative for visual treatment.
 An explicit user aesthetic preference may override this style, but never the scientific brief.
 Read `references/composition-profiles.md` from the skill root for the selected
 `composition_profile`. The open-layout directions in Sections 1 and 8 describe

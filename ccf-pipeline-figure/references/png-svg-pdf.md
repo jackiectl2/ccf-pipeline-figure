@@ -6,8 +6,10 @@ Use the normal built-in ImageGen workflow for the initial and recolor invocation
 simplify its prompt, icons, or style to make subsequent tracing easier. Preserve every
 original PNG, even rejected versions. **Those invocations produce no SVG or PDF.** Enter
 this route only when the user later invokes the skill to convert an explicitly approved
-`vNN.png`, or the unambiguous selected PNG in `SELECTED.md`, to SVG and PDF. Reconstruct
-only that version; do not create vector files for all prior candidates or call ImageGen here.
+`vNN.png`, or the unambiguous selected PNG in one **named run directory's** `SELECTED.md`,
+to SVG and PDF. If multiple run directories could match, resolve the run before reading
+their images. Reconstruct only that version; do not create vector files for all prior
+candidates or call ImageGen here.
 Keep PNG generation budget separate from vector work. Allow targeted reconstruction passes
 until the fidelity gate below passes or a concrete limitation is identified. A pass limit,
 time pressure, or successful PDF export never licenses a visibly simplified final artifact.
