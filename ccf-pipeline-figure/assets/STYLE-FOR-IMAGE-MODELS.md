@@ -241,8 +241,10 @@ educational comic, without candy-bright colors or large dark background fills.
 - Use a bordered callout with documentation-safe example content only when the actual
   example is indispensable to understanding an operation. Quote it exactly and distinguish
   it from a result. Otherwise describe the example in the paired file and paper body.
-- Use bold, friendly editorial typography with high contrast. Monospaced text is reserved for
-  code identifiers and verbatim strings.
+- Use one consistent, readable comic-style font family for ordinary headings and labels,
+  with bold weight where hierarchy needs it and high contrast throughout. Monospaced text
+  is reserved for code identifiers and verbatim strings; scientific symbols may need a
+  compatible font when the comic family lacks a glyph. Keep the declared size tiers intact.
 - Spell every supplied label exactly. Do not invent extra claims, slogans, or technical terms.
 
 ## 6 · Controlled decoration
@@ -289,6 +291,8 @@ before the shared size/connector instructions. Never combine the two profile blo
 > preserving every necessary scientific relationship and boundary. Avoid candy-bright colors and large
 > dark background fills. Do not make it a page of black text boxes or a wall of identical
 > white cards.
+> Use one consistent, readable comic-style typeface for ordinary headings and labels, with
+> bold weight where needed; keep scientific symbols correct and all text legible at paper width.
 >
 > Establish exactly three or four discrete text-size tiers and exactly three or four discrete
 > icon-size tiers for this whole figure before drawing. Only in a rare content-dense case may

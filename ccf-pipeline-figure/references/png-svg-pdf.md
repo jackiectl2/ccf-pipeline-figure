@@ -85,7 +85,13 @@ reconstruction is actually being completed, not to PNG-only delivery or a failed
   symbols; a path-only equation is not selectable text. Keep superscripts/subscripts as text.
 - Choose installed embeddable fonts that cover every character. Register the same fonts in
   the renderer. Keep SVG text local and self-contained apart from ordinary font selection;
-  document font names/files so another machine can reproduce the export.
+  document font names/files so another machine can reproduce the export. By default, use one
+  consistent **comic-style font family** for ordinary visible labels throughout the SVG/PDF;
+  on this machine, `Comic Sans MS` regular and bold are available. Use a compatible fallback
+  only for glyphs the comic family lacks (for example some mathematical brackets or arrows),
+  and record each fallback. Keep mathematical notation, code identifiers, and required
+  scientific symbols correct and selectable. Do not shrink labels or change their hierarchy
+  merely to fit the comic face; verify placement, clarity, and visual fidelity at paper width.
 - Export SVG to PDF using an available text-preserving renderer. Prefer a working local
   Inkscape, or the provided `scripts/export_vector.py` with svglib + ReportLab. This helper
   exports an **already reconstructed SVG**; it does not vectorize PNG. Its intentionally small
