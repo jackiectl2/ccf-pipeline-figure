@@ -17,16 +17,17 @@ Record `composition_profile: numbered_regions` or `composition_profile: topology
 the isolated run's `TECHNICAL_FIGURE_BRIEF.md`, every new version's
 prompt/review/description, and that run's `SELECTED.md`. Profile-specific paths and
 duplicate-run handling are in `references/run-isolation.md`.
-The chosen profile must govern the actual figure. The later background-color route inherits
-the neutral base's profile and may recolor existing surfaces, not change its composition.
+The chosen profile must govern the actual figure. Both profiles begin on a pure white canvas
+without large region background fields. The later color route inherits the base's profile
+and may recolor eligible existing surfaces, not change its composition by default.
 
 ## `numbered_regions` — 3–6 命名区域
 
-This preserves the composition treatment present before commit `1ddcf57` (snapshot
-`90863f3`). Plan **three to six meaningful named major regions**. Give each a compact
-sequence number or badge, short heading, visible boundary, and achromatic near-white gray
-background in the initial structure pass. Arrange them as a balanced grid, stack, or
-asymmetric editorial composition with short local micro-flows. Start with Region 1; keep
+Plan **three to six meaningful named major regions**. Give each a compact
+sequence number or badge and a short heading. Separate regions through proximity,
+alignment, purposeful whitespace, and local flow; do not place large filled panels or
+rigid enclosing frames behind them in the initial structure pass. Arrange them as a balanced
+grid, stack, or asymmetric editorial composition with short local micro-flows. Start with Region 1; keep
 heading and badge compact so content and labels remain readable at final paper width.
 Use distinct region sizes where the scientific content warrants it. Preserve branches,
 parallel lanes, joins, loops, and cross-region relationships even when the global visual
@@ -38,9 +39,11 @@ before generating rather than fabricating stages.
 **Prompt composition block:**
 
 > Compose the supplied method as three to six named comic regions in a balanced grid,
-> stack, or asymmetric editorial layout. Give every region the same achromatic near-white
-> gray background field, a clear rounded or editorial boundary, compact numbered badge,
-> short heading, and its scientifically faithful local flow. Begin with Region 1 and crop
+> stack, or asymmetric editorial layout on a completely white canvas. Give every region
+> a compact numbered badge, short heading, and its scientifically faithful local flow.
+> Keep the large background behind every region pure white; do not draw a large colored or
+> gray panel field or a rigid enclosing region frame. Distinguish regions through headings,
+> alignment, spacing, and content. Begin with Region 1 and crop
 > around the full composition. Keep badges and headings only slightly larger than primary
 > node labels. Preserve every real branch, parallel path, shared component, feedback loop,
 > optional path, and reconvergence. Use only necessary directional arrows and avoid
@@ -48,17 +51,19 @@ before generating rather than fabricating stages.
 > without a large isolated corner void. Do not remove content or shrink essential labels
 > to make the regions fit.
 
-**Review:** Require 3–6 meaningful numbered major regions, neutral major fields in the
-initial pass, readable headings and labels, and all common scientific/visual checks.
+**Review:** Require 3–6 meaningful numbered major regions, a pure white canvas and
+region backdrop without large panel fields or rigid enclosing frames, readable headings
+and labels, and all common scientific/visual checks.
 
 ## `topology_first` — 按科学逻辑自由构图
 
 This is the flexible treatment of commit `1ddcf57`. Derive the graph and reading order,
 then choose an open chain, parallel lanes, branch/rejoin, feedback loop, hierarchy,
 overview/detail arrangement, or meaningful groups as appropriate. There is no required
-region or badge count. Grouping, boundaries, background fields, and numbering are separate
-choices; use each only when it clarifies the scientific relationship. Any major background
-field used in the initial pass stays achromatic near-white gray. A genuine linear process
+region or badge count. Grouping, local boundaries, and numbering are separate
+choices; use each only when it clarifies the scientific relationship. The canvas and any
+major group backdrop stay pure white in the initial pass, without a large panel field or
+rigid enclosing frame. A genuine linear process
 may remain linear; do not flatten a non-linear one.
 
 **Prompt composition block:**
@@ -66,11 +71,12 @@ may remain linear; do not flatten a non-linear one.
 > Derive the composition from the supplied scientific graph and reading order. There is
 > no fixed number of regions, panels, or badges, and an open layout is valid. Use a genuine
 > sequence, parallel lanes, branch/rejoin, feedback, hierarchy, or overview/detail layout
-> only when supported by the method. Treat semantic groups, outlines, background fields,
+> only when supported by the method. Treat semantic groups, local outlines,
 > and numbering as separate choices. Prefer proximity, alignment, shared baselines, or
 > compact headings when sufficient. Use a boundary only for a meaningful group, phase,
 > interface, or system limit; use sequence numbers only for a real ordered procedure.
-> Keep any actual major background field achromatic near-white gray in the first pass.
+> Keep the canvas and major group backdrops pure white in the first pass; do not draw
+> large background fields or rigid enclosing group frames.
 > Preserve every entity and necessary relationship, with explicit arrows where layout
 > alone would be ambiguous. Fill the rectangular canvas with modest margins, without a
 > large isolated corner void, invented panel tiles, oversized icons, or tiny labels.

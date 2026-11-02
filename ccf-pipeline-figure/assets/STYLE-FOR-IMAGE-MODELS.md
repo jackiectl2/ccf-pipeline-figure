@@ -20,13 +20,12 @@ skill root): minor unambiguous fill artifacts may be documented for deliberate l
 cleanup, not used alone to trigger more ImageGen edits. This does not relax vector fill
 quality or permit pollution that obscures content, crosses boundaries, or changes semantic colors.
 
-The target is a **playful editorial-comic scientific infographic**. The initial structure
-pass uses a three-layer color system: a white or near-white page, optional achromatic near-white-gray
-major-group fields, and lively but restrained soft color in semantic foreground objects.
-Neutral region fields do not require neutral foregrounds or a white/gray card around every
-icon-label group. `topology_first` open compositions need no enclosing fields. On a later explicit color-edit
-invocation, tint every existing major-group background and, optionally, a small selection of
-internal white/gray card surfaces.
+The target is a **playful editorial-comic scientific infographic**. From the first PNG,
+the canvas and all major-region backdrops are pure white (`#FFFFFF`), without gray or colored
+large panel fields or rigid enclosing region frames. Use lively but restrained soft color in
+semantic foreground objects. A white backdrop does not require white/gray cards around
+icon-label groups. On a later explicit color-edit invocation, tint eligible existing
+surfaces selectively; do not invent large panel fields merely to color them.
 The figure should feel like a polished illustrated magazine roadmap or a high-quality
 educational comic, without candy-bright colors or large dark background fills.
 
@@ -47,7 +46,7 @@ educational comic, without candy-bright colors or large dark background fills.
 - In `topology_first`, use sequence numbers only when an actual ordered procedure benefits from them. Do not
   number parallel modules or a feedback architecture as if they were successive stages.
   Optional panel letters may identify separate views without implying process order. Omit
-  badges and banners unless useful; any chosen major-group background stays neutral gray in
+  badges and banners unless useful; the major-group backdrop stays pure white in
   the initial structure pass.
 - In `topology_first`, the global layout may be open, layered, cyclic, branched, grouped, or asymmetric as the
   graph requires. A grid is an option, not the default structure imposed on every method.
@@ -91,22 +90,19 @@ educational comic, without candy-bright colors or large dark background fills.
 - Decorative elements must stay outside arrow corridors and must not resemble nodes, ports,
   evidence tokens, outcomes, or data-flow arrows.
 
-## 2 · Color: neutral region fields, lively foregrounds, soft panels later
+## 2 · Color: pure white background, lively foregrounds
 
-- Keep the three layers distinct during the initial invocation: white or near-white page;
-  achromatic near-white-gray major-group fields (required for `numbered_regions`, optional
-  for `topology_first`); restrained soft color in icons, mechanism
+- Keep the large background pure white in both profiles: the entire canvas and each
+  major-region backdrop use `#FFFFFF`, with no separate gray or colored region panel and no
+  rigid enclosing frame. Restrained soft color remains available for icons, mechanism
   objects, state markers, small accent plates, and other compact semantic foreground elements.
-  The neutral-field rule applies only to existing major-group fields, not to every object
-  or semantic group. Do not introduce fields to satisfy a palette rule.
+  This background rule does not make every object or semantic group white.
 
-- **Initial invocation:** use the same pure, achromatic near-white gray for any major-group background
-  fills (for example `#F7F7F7`), without hue, colored gradients, or pastel tint. Keep the page
-  white or near white and distinguish groups through layout, headings, or justified boundaries.
-  Badges are optional in `topology_first`; its open layouts need not have background fields. This is the
-  selected structural base to inspect before choosing panel colors.
+- **Initial invocation:** start with a pure white page and no large group fill. Distinguish
+  groups through layout, headings, numbering where selected, and purposeful whitespace.
+  Badges are optional in `topology_first`. Small semantic cards may still have flat color.
 - **Later explicit “add background colors” invocation:** recolor backgrounds at two levels.
-  First, tint every existing major-group background field. Do not create fields, outlines,
+  First, tint any existing explicitly selected major-group background field. Do not create fields, outlines,
   numbers, or new groups if the base is open. Second, optionally tint only a small selection of
   internal pure white or neutral-gray surfaces—such as an ASK panel, command card, or compact T/U/H
   subregion—when doing so improves grouping, hierarchy, or readability. These are examples of
@@ -119,7 +115,7 @@ educational comic, without candy-bright colors or large dark background fills.
   regions may reuse a color; they need not all differ. An optionally colored internal surface
   may harmonize with its containing region while remaining visibly distinct. Do not let the
   whole background become one uniform color or turn nested cards into a rainbow.
-- White may be used for the page or semantically justified text cards. Keep any panels
+- White is mandatory for the page in the initial stage and may be used for semantically justified text cards. Keep any panels
   distinguishable and readable at thumbnail size without making their fills dark or saturated.
 - Use near-black or deep navy for text and outlines where needed for contrast, not for large
   background fields. Outlines may be more expressive than ordinary academic line art.
@@ -170,7 +166,7 @@ educational comic, without candy-bright colors or large dark background fills.
 - Scientific arrows use one unmistakable visual grammar: solid path, clear triangular head,
   high contrast, and consistent direction. Use a balanced medium stroke at final paper
   width: neither a heavy bar nor a faint hairline. Prefer deep charcoal or navy so a
-  moderately weighted arrow stays clear against neutral-gray and soft-colored panel fills.
+  moderately weighted arrow stays clear against the pure white background and any compact colored objects.
   If arrow color encodes a scientific lane or type, keep those colors consistent and dark
   enough to read. Comic motion ticks may decorate an arrow but may never create a second
   ambiguous arrow.
@@ -315,7 +311,7 @@ before the shared size/connector instructions. Never combine the two profile blo
 > crossing paths are not. Rearrange the layout if needed; never erase a necessary relationship
 > to simplify the page. Draw arrows at balanced medium weight, neither thick bars nor thin
 > hairlines, with clear triangular heads. Prefer deep charcoal or navy for contrast against
-> the light panels; preserve any necessary semantic arrow colors at a similarly readable depth.
+> the pure white background; preserve any necessary semantic arrow colors at a similarly readable depth.
 > Check their visibility at final paper width.
 > Treat each arrow-linked item as a separate smaller node, whether two nodes sit in the same
 > named region or different ones. A separate node does not require a rectangular enclosure:
@@ -326,12 +322,11 @@ before the shared size/connector instructions. Never combine the two profile blo
 > rectangle merely to hold an icon and label; conventional cards should remain a minority unless
 > the supplied science contains a genuinely repeated card-like class.
 >
-> Keep three color layers distinct. The page is white or near white. Major-region backgrounds
-> follow the selected composition profile and stay achromatic near-white gray in this
-> invocation; do not add colored region backgrounds yet. The semantic foreground should
-> still feel lively: use restrained soft color in
+> Keep the entire canvas and every major-region backdrop pure white (`#FFFFFF`) from this
+> first PNG. Do not add a gray or colored large panel field or a rigid enclosing region
+> frame. The semantic foreground should still feel lively: use restrained soft color in
 > icons, distinctive mechanism objects, state markers, small accent plates, banners, and other
-> compact foreground elements. Neutral region fields do not require neutral foregrounds or
+> compact foreground elements. A white background does not require neutral foregrounds or
 > white/gray cards around icon-label groups. Use deep navy or near-black for readable text and
 > outlines, not large background fields. Keep any science-bearing lane colors consistent;
 > decorative colors must not imply measured categories.
@@ -389,8 +384,8 @@ before the shared size/connector instructions. Never combine the two profile blo
 > force 16:9 or another standard ratio.
 
 For the later explicit background-color invocation, use built-in image editing on the selected
-neutral figure, not this new-image prompt. Tell the editor to recolor background fills in two
-levels. Level 1 is mandatory for existing fields: tint every existing major-group background.
+neutral figure, not this new-image prompt. Tell the editor to recolor eligible fills in two
+levels. Level 1 applies only to existing fields explicitly selected for coloring.
 Do not create fields, borders, groups, or numbers when recoloring an open composition.
 Level 2 is optional and selective: tint only a small subset of internal pure-white or
 neutral-gray surfaces, such as an ASK panel, command card, or compact T/U/H subregion, when the

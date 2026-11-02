@@ -35,13 +35,22 @@ rules later in this file still apply where they do not conflict with this fast p
 
 **Choose composition within this skill.** For each new figure, use one of the two profiles in
 [references/composition-profiles.md](references/composition-profiles.md):
-`numbered_regions` (3–6 命名区域, the snapshot at `90863f3`) or `topology_first`
+`numbered_regions` (3–6 命名区域) or `topology_first`
 (按科学逻辑自由构图, the flexible treatment at `1ddcf57`). Read that reference before deriving
 the figure brief. A selected profile governs composition planning, the ImageGen prompt, and
 visual review; the scientific graph and shared quality requirements govern both. Later
 references describing the flexible treatment are conditional on `topology_first`; the
 numbered-region profile's specific requirements take precedence when selected. Do not
 switch Git branches to use either profile.
+
+**Default background on this branch:** From the very first PNG candidate, make the entire
+canvas pure white (`#FFFFFF`). The large backdrop behind every major region or group is
+also pure white: no gray or colored major-region fill and no rigid enclosing region frame.
+Express regions through their headings, numbers when selected, proximity, alignment, and
+purposeful spacing. This rule applies to both composition profiles and overrides historical
+gray-field examples later in this file. It does not restrict the color of icons, semantic
+nodes, compact cards, labels, or other foreground elements. A later explicit request may
+change the background treatment; do not infer such a request from a fresh drawing call.
 
 **Isolate each drawing run.** Read
 [references/run-isolation.md](references/run-isolation.md) before any fresh figure request.
@@ -55,7 +64,7 @@ Native explicit invocation is:
 ```text
 $ccf-pipeline-figure /path/to/project
 $ccf-pipeline-figure /path/to/project — portrait, single-column, emphasize the two evidence lanes
-$ccf-pipeline-figure /path/to/project — 给选中的灰底图上色
+$ccf-pipeline-figure /path/to/project — 给选中的白底图上色
 $ccf-pipeline-figure /path/to/project — 把我选中的 vNN.png 重建成 SVG，再导出 PDF
 ```
 
@@ -248,11 +257,11 @@ project-root brief or another run's brief. It must contain:
 - a **selected-profile composition plan**: identify the actual sequence, parallel lanes,
   branch/rejoin, feedback, hierarchy, or overview/detail relationships, then select a layout
   that expresses them under the selected profile. These are options, not a required mixture. Record any useful semantic
-  groups without a count quota; for each visible boundary, background field, or sequence number,
+  groups without a count quota; for each local boundary or sequence number,
   give its separate purpose. Prefer alignment, proximity, shared baselines, or compact headings
   when sufficient in `topology_first`; open layouts and groups without borders, fills, or
   numbers are valid in that profile. In `numbered_regions`, record the three to six meaningful
-  named regions and how their numbers, fields, and boundaries express the method;
+  named regions and how their numbers, headings, and spatial grouping express the method;
 - every object, operation, arrow, branch, shared path, and reconvergence;
 - a connector plan that inventories every essential scientific relationship before any
   simplification and assigns each one either an explicit arrow or an equally unambiguous
@@ -268,9 +277,8 @@ project-root brief or another run's brief. It must contain:
   that fill to remain visually uniform from edge to center, strictly clipped inside its outline,
   and identical across repeated instances of the same class. Reserve shading and highlights for
   icon artwork only; never place them behind text;
-- a **foreground-representation plan** that keeps the three color layers distinct: white or
-  near-white page, achromatic near-white-gray fields where major groups need backgrounds, and
-  restrained soft color in semantic foreground objects. For every major node, choose an appropriate treatment—open
+- a **foreground-representation plan** that keeps the pure white page and major-region
+  backdrops distinct from restrained soft color in semantic foreground objects. For every major node, choose an appropriate treatment—open
   mini-scene, free-standing icon-label group, distinctive mechanism object, compact operation
   glyph, state capsule/gauge, continuous event sequence, or a true card/container. Record why
   any ordinary rectangular card needs a boundary. A boundary is justified by scientific meaning
@@ -282,14 +290,13 @@ project-root brief or another run's brief. It must contain:
 - a source-of-truth table citing the current paper and project research files behind each
   part, excluding earlier Codex figure runs and legacy figure briefs.
 
-Record the color stage as `neutral_structure` for the initial figure. Major-group background
-fills are achromatic near-white gray; `numbered_regions` requires them for every major region,
-while a panel-free `topology_first` composition needs none. This
-restriction applies to the major-region background fields, not to all foreground objects:
-icons, semantic mechanism shapes, state markers, small
+Record the color stage as `neutral_structure` for the initial figure. The canvas and every
+major-region backdrop must be pure white, with no large panel fill or rigid enclosing region
+frame in either profile. This restriction applies to large backgrounds, not to foreground
+objects: icons, semantic mechanism shapes, state markers, small
 accent plates, and other compact foreground elements may use restrained soft color from the
 first pass. Do not require every node to sit inside a white or gray card. Do not plan colored
-major-region fills until the user invokes the skill again and explicitly asks to add them.
+major-region fills for the initial invocation.
 
 The brief is the scientific authority. A replacement image is not. Do not draw until the
 manuscript figure audit has a replacement/addition decision, the planned redesign gains are
@@ -304,12 +311,11 @@ selected profile's composition block from `references/composition-profiles.md`. 
 self-contained prompt in this order:
 
 1. primary request and pre-experiment purpose;
-2. editorial-comic visual target and the three-layer color relationship near the top: white or
-   near-white page, achromatic near-white-gray major-group fields as required by the selected
-   profile, and lively but restrained
-   soft color in semantic foreground objects. State explicitly that neutral region fields do
-   not require neutral foregrounds or a white/gray card around every icon-label group. Follow
-   immediately with the flat-fill integrity constraint for all enclosed regions and text-bearing
+2. editorial-comic visual target and the color relationship near the top: a pure white
+   canvas and major-region backdrop, with no large panel field or rigid enclosing frame,
+   plus lively but restrained soft color in semantic foreground objects. State explicitly
+   that a white background does not require neutral foregrounds or a white/gray card around
+   every icon-label group. Follow immediately with the flat-fill integrity constraint for all enclosed text-bearing
    surfaces: one uniform opaque fill per surface; no unintended gradient, center washout, white
    bloom, mottling, translucency, halo, texture, or color bleeding across outlines;
 3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
@@ -535,29 +541,27 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
 intermediate PNGs only; other failures trigger another candidate while budget remains:
 
 - the thumbnail reads as an editorial-comic infographic, with soft color in icons or accents
-  while initial region fills stay neutral; it is not a grid of black text boxes or a
+  on a pure white background; it is not a grid of black text boxes or a
   restrained corporate flowchart;
 - the composition follows the chosen profile and scientific graph. For `numbered_regions`,
-  require three to six meaningful named major regions, compact numbers and headings, and
-  visible neutral fields in the initial pass. For `topology_first`, every drawn major
-  boundary, background field, and sequence number has its own
-  justification in the brief; semantic grouping alone does not require all three. Open
+  require three to six meaningful named major regions, compact numbers and headings,
+  distinguished through content grouping, alignment, and purposeful spacing without
+  large panel fields or rigid enclosing frames. For `topology_first`, every local
+  boundary and sequence number has its own
+  justification in the brief; semantic grouping alone does not require either. Open
   compositions, unnumbered groups, true chains, parallel lanes, and feedback layouts are valid;
-- in the initial `neutral_structure` stage, any major-group background field uses achromatic
-  near-white gray, distinct from the page background; no colored tint enters such a field.
-  Absent fields are valid only under `topology_first` and must not be invented to satisfy
-  this color check.
+- in the initial `neutral_structure` stage, the entire canvas and all major-region
+  backdrops are pure white (`#FFFFFF`), with no gray or colored large panel field and no
+  rigid enclosing region frame. This applies to both profiles from v01 onward.
   The foreground is not forced into the same gray/white treatment: semantic icons,
   mechanism objects, state markers, and compact accents use restrained soft color, and the
-  figure does not become visually achromatic merely because its region fields are neutral;
-  in the later `colored_panels` stage, every existing major-group background is softly tinted,
-  while only a small, purposeful subset of eligible internal
-  white/gray surfaces may also be tinted. Unselected internal surfaces remain unchanged; related
+  figure does not become visually achromatic merely because its background is white;
+  in the later `colored_panels` stage, tint only the existing surfaces selected by the
+  explicit recolor plan. Unselected surfaces remain unchanged; related
   regions may repeat a tint, the composition does not become a rainbow or one uniform color,
   and large dark fills are absent in either stage;
-- a `colored_panels` candidate matches its recorded two-level recolor plan exactly: every
-  mandatory major-region fill changed, only the listed optional internal fills changed, and all
-  text, arrows, arrowheads, icons, icon colors, outlines, banners, boundaries, positions,
+- a `colored_panels` candidate matches its recorded recolor plan exactly: only the selected
+  eligible fills changed; all text, arrows, arrowheads, icons, icon colors, outlines, banners, boundaries, positions,
   dimensions, spacing, science-bearing colors, canvas size, and topology remain identical to
   the neutral parent;
 - every enclosed text-bearing surface—region, node, card, pill, tag, label, and callout—has a
@@ -612,7 +616,7 @@ intermediate PNGs only; other failures trigger another candidate while budget re
   interface labels; no redundant decorative lines remain;
   their strokes have balanced medium weight at final print size, neither heavy bars nor
   hairlines, and a dark enough color (normally deep charcoal or navy) to remain obvious
-  against both neutral-gray and later soft-colored region fills;
+  against the white canvas and any later explicitly colored surfaces;
 - labels remain readable at the intended paper width; and
 - the declared tiers meet the final-size defaults or venue rule: compact region headings are
   110% of body text, primary labels 100%, secondary labels 85%, and any 75% auxiliary tier is
@@ -670,11 +674,11 @@ invocation.
   T/U/H subregion, when a soft tint materially improves grouping, hierarchy, or readability.
   These examples describe the surface class, not labels that must exist. Do not color every
   internal card, and leave unselected internal surfaces unchanged. For a panel-free
-  `topology_first` figure,
+  figure in either profile,
   Level 1 has no targets: do not invent backgrounds, borders, groups, or numbers. Apply only
   useful eligible Level 2 fills; if none exist, explain that there is no eligible background
   surface and ask before expanding the request to foreground recoloring or structural edits.
-- Keep the page background white or near white. Each selected surface receives one uniform,
+- Keep the page background pure white. Each selected surface receives one uniform,
   continuous, fully opaque flat color, clipped strictly inside its own boundary. An internal
   tint must remain distinguishable from its containing region without becoming saturated or
   implying a new scientific category. Do not introduce gradients, center washout, white bloom,
@@ -688,7 +692,7 @@ invocation.
   most the selected 1–3 color edits, and never start a new-image batch. Inspect every edit
   against its neutral parent at native raster scale and final paper width; ask the editor to
   preserve the base image's pixel dimensions and record the actual edited dimensions. Reject an
-  edit if any existing major-group field remains neutral, optional coloring becomes indiscriminate,
+  edit if any selected major-group field remains neutral, optional coloring becomes indiscriminate,
   a selected fill has non-deferrable non-uniformity, any color bleeds across a boundary, or any locked
   or unselected element changes. Also reject lost contrast, changed content, arrow crossings, or any other regression
   in the hard checks.
@@ -930,7 +934,7 @@ genuinely has three separable structures, which is what the 14 % have.
 generation. It preserves the structural evidence in this section but uses soft color, a richer
 icon vocabulary, region-bounded decoration, and shallow comic depth. Its palette and region
 color rules govern the raster route instead of the measured vector defaults below. In that
-raster route, initial region fills are near-white gray; colored fills are a separate later
+raster route, initial large backgrounds are pure white; colored fills are a separate later
 invocation. The pastel fills described below are historical examples, not the initial default.
 It carries **no statistics on purpose**: counts stay here; image-model instructions live there.
 ⛔ It is only for figures carrying no measured quantity — an image model bakes numbers into
@@ -1328,7 +1332,7 @@ paper's *widest*. Decide the width in Step 1, when you choose the composition, n
 | ⛔ **Mutually exclusive outcomes drawn as a chain** | the generator lays nodes out in the order they were declared | branch them; a chain claims a sequence that does not exist |
 | **A panel grid or single chain imposed on every method** | a layout preference was treated as a scientific requirement | §2.1 — choose composition from the actual graph; both open chains and grouped diagrams are valid when faithful |
 | **Labelled rectangles, no icons** | icons feel like decoration | §2.3 — but read the caveat there; this is the file's weakest measurement |
-| **White-card UI wall** | every icon-label pair is wrapped in the same safe rectangle, so neutral region fields are misread as a neutral foreground mandate | keep major-region fields gray but vary the semantic foreground grammar; leave nodes unboxed by default and use a card only when its boundary means something |
+| **White-card UI wall** | every icon-label pair is wrapped in the same safe rectangle, so the white canvas is misread as a neutral foreground mandate | keep the canvas white but vary the semantic foreground grammar; leave nodes unboxed by default and use a card only when its boundary means something |
 | **Rainbow with no meaning** | the palette had N colours | §2.2 — median 4, each meaning something |
 | **Pastel cards with a white fog or stained center** | the image model interprets soft/comic/pastel as glow, airbrush, translucency, or watercolor texture | require flat opaque fills on every text-bearing enclosed surface; reject white bloom, washout, mottling, unintended gradients, halos, and color bleeding; allow highlights only inside icons |
 | **Text where a caption belongs** | the figure is explaining itself | move it to the body |
