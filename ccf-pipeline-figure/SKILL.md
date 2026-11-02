@@ -46,6 +46,8 @@ switch Git branches to use either profile.
 **Default background on this branch:** From the very first PNG candidate, make the entire
 canvas pure white (`#FFFFFF`). The large backdrop behind every major region or group is
 also pure white: no gray or colored major-region fill and no rigid enclosing region frame.
+Do not substitute an implicit pastel haze, vignette, soft shadow, or off-white patch for a
+region field. The white background must stay visually clean and uniform across open areas.
 Express regions through their headings, numbers when selected, proximity, alignment, and
 purposeful spacing. This rule applies to both composition profiles and overrides historical
 gray-field examples later in this file. It does not restrict the color of icons, semantic
@@ -118,14 +120,15 @@ silhouettes, internal details, geometry, labels, colors, and connectors at the i
 size; a structurally correct but visibly simplified redraw fails visual fidelity. Report an
 unmet gate rather than presenting such a derivative as the accepted figure.
 
-Keep anti-contamination constraints in the ImageGen prompt. Minor, unambiguous PNG fill
-speckles/washout may be recorded as `deferred_fill_cleanup` and left for the **later,
-explicitly requested** SVG reconstruction instead of spending ImageGen refinements on them
-alone. Such a PNG remains visibly imperfect and must be reported as provisional; this
-exception does not waive scientific checks, legibility, boundary integrity, or the final
-SVG/PDF fill checks. SVG does not clean colors automatically: the vector author must build
-the intended flat fill and verify it. If the user wants a clean PNG, repair that PNG under
-the bounded edit route rather than assuming a future SVG will fix it.
+Generate PNGs as clean source artwork that can later be reconstructed in SVG: uniform
+opaque fills, sharply separated icons and shapes, and legible, correctly formed text.
+Inspect at native PNG scale as well as final paper width. Visible interior speckles,
+washout, color bleeding, ambiguous edges, or damaged lettering fail PNG acceptance;
+repair them within the bounded PNG workflow or report the candidate as provisional.
+Do not select an imperfect PNG as `final` on the assumption that a later SVG will clean it.
+SVG does not clean colors automatically: the vector author must rebuild intended fills and
+verify them. Clean PNG generation remains the current default; it does not trigger SVG/PDF
+production until the user separately requests it.
 
 This self-contained staged route takes precedence over the legacy vector route below; it does
 not use or enable Figure Smith. A successful export does not make a scientifically incorrect
@@ -275,8 +278,10 @@ project-root brief or another run's brief. It must contain:
 - a **flat-fill integrity plan** for every enclosed text-bearing surface: region, node, card,
   pill, tag, label, and callout. Assign each semantic class one intended opaque fill and require
   that fill to remain visually uniform from edge to center, strictly clipped inside its outline,
-  and identical across repeated instances of the same class. Reserve shading and highlights for
-  icon artwork only; never place them behind text;
+  and identical across repeated instances of the same class. Use crisp, bounded flat fills
+  inside icons too; any deliberate icon highlight must be a clearly delimited shape, not
+  speckle, bloom, or a soft color cloud. Keep neighboring icon parts separable and the label
+  unobstructed;
 - a **foreground-representation plan** that keeps the pure white page and major-region
   backdrops distinct from restrained soft color in semantic foreground objects. For every major node, choose an appropriate treatment—open
   mini-scene, free-standing icon-label group, distinctive mechanism object, compact operation
@@ -317,7 +322,10 @@ self-contained prompt in this order:
    that a white background does not require neutral foregrounds or a white/gray card around
    every icon-label group. Follow immediately with the flat-fill integrity constraint for all enclosed text-bearing
    surfaces: one uniform opaque fill per surface; no unintended gradient, center washout, white
-   bloom, mottling, translucency, halo, texture, or color bleeding across outlines;
+   bloom, mottling, translucency, halo, texture, or color bleeding across outlines. Require
+   crisp, closed boundaries between adjacent icon parts and shapes, and clean, unwarped,
+   high-contrast glyphs at the final paper size. Explain that these requirements prepare the
+   PNG for possible later SVG reconstruction without generating SVG in this phase;
 3. final paper slot, final printed width, explicit horizontal/vertical orientation, and global
    reading order;
 4. a balanced rectangular canvas coverage plan (a square is included): use the full intended
@@ -470,8 +478,8 @@ Only after a later explicit vectorization request, add `vNN.svg`, `vNN.pdf`,
   its paired `vNN.description.md`.
   It may say `final` only after every PNG hard check passes, including zero arrow crossings.
   Record `vector_status: not_requested` until the user approves a PNG for conversion; after
-  vectorization, record the separate SVG/PDF disposition. If PNG fill cleanup was deferred,
-  the PNG remains `provisional` with that defect even if a later vector pair passes.
+  vectorization, record the separate SVG/PDF disposition. A PNG with visible fill, edge, or
+  lettering defects remains `provisional`; later vector cleanup does not retroactively pass it.
   It is an index, not a replacement for the versioned files.
 
 #### 5. Iterate in two bounded phases, then stop
@@ -488,9 +496,8 @@ Only after a later explicit vectorization request, add `vNN.svg`, `vNN.pdf`,
 **Phase B — local refinement of the best candidate**
 
 - Enter this phase automatically only when the selected fresh-candidate count is exhausted and
-  no candidate passes after eligible `deferred_fill_cleanup` items are set aside. If the best
-  candidate's only remaining defects are those items, stop PNG refinement and show that
-  provisional source to the user; do not start SVG reconstruction in this invocation. Do not
+  no candidate passes every PNG hard check. This includes visible fill speckles, fuzzy or
+  merged icon boundaries, and malformed or unreadable lettering. Do not
   ask the user to authorize the transition between the fresh-candidate and PNG-refinement phases.
 - Rank the fresh candidates using scientific correctness first, then the number and severity of
   remaining visual defects. Select one best base and record the choice in its review and
@@ -499,12 +506,12 @@ Only after a later explicit vectorization request, add `vNN.svg`, `vNN.pdf`,
   checklist. Each refinement prompt must name only the local changes for the current round and
   explicitly preserve the base candidate's correct topology, composition, labels, palette,
   typography, icons, and unaffected regions.
-- When fill contamination is not eligible for SVG deferral, or the user explicitly requests
-  a clean PNG, constrain any authorized raster cleanup to the named enclosed surfaces:
-  flatten each existing fill to its intended uniform opaque color and remove only washout,
-  bloom, mottling, unintended gradients, halo, or bleed. Lock all text, icons, outlines, node
-  dimensions, positions, arrows, relationships, canvas size, and unaffected pixels against
-  redesign or rerendering. A cleanup that changes any of those is a regression, not a repair.
+- For fill contamination, constrain raster cleanup to the named object interiors or open
+  white background areas. Flatten each affected fill to its intended uniform opaque color
+  and remove only speckles, washout, bloom, mottling, unintended gradients, halo, or bleed.
+  Preserve icon silhouettes and intentional bounded details, plus all text, outlines, node
+  dimensions, positions, arrows, relationships, canvas size, and unaffected pixels. A cleanup
+  that changes any of those is a regression, not a repair.
 - Use built-in image edit mode with the current best bitmap as the sole edit target. Save the edit
   as the next immutable `vNN` version; never overwrite the parent. If an edit regresses a correct
   area or introduces an arrow crossing, keep the earlier best as the parent for the next round
@@ -537,8 +544,8 @@ hidden batch, or continue into an open-ended loop inside the same invocation.
   error analysis, success/failure total, or posterior conclusion appears; and
 - decorative marks cannot be mistaken for nodes, ports, arrows, outcomes, or measured data.
 
-**Visual hard checks** — apply the narrow `deferred_fill_cleanup` exception above to
-intermediate PNGs only; other failures trigger another candidate while budget remains:
+**Visual hard checks** — all apply to the PNG itself; failures trigger another candidate or
+bounded local refinement while budget remains:
 
 - the thumbnail reads as an editorial-comic infographic, with soft color in icons or accents
   on a pure white background; it is not a grid of black text boxes or a
@@ -552,7 +559,9 @@ intermediate PNGs only; other failures trigger another candidate while budget re
   compositions, unnumbered groups, true chains, parallel lanes, and feedback layouts are valid;
 - in the initial `neutral_structure` stage, the entire canvas and all major-region
   backdrops are pure white (`#FFFFFF`), with no gray or colored large panel field and no
-  rigid enclosing region frame. This applies to both profiles from v01 onward.
+  rigid enclosing region frame. Reject implicit region tints, off-white clouds, vignettes,
+  dirty patches, and scattered colored pixels in otherwise open white areas. This applies
+  to both profiles from v01 onward.
   The foreground is not forced into the same gray/white treatment: semantic icons,
   mechanism objects, state markers, and compact accents use restrained soft color, and the
   figure does not become visually achromatic merely because its background is white;
@@ -568,12 +577,16 @@ intermediate PNGs only; other failures trigger another candidate while budget re
   visually uniform, continuous, fully opaque flat fill from edge to center. It has no irregular
   bright or dark patch, center white bloom or washout, unintended gradient, watercolor or
   airbrush texture, translucency, vignette, mottling, halo, or color bleeding across its outline.
-  Repeated instances of the same semantic class use the same fill. Shading and highlights may
-  appear inside icon artwork only, never in the background behind text. Inspect this once at
-  native raster scale to catch localized contamination and again at final paper width to catch
-  visible haze or inconsistent semantic colors. Eligible minor PNG defects may be deferred
-  and reported as provisional; on a later vectorization request, the reconstructed SVG and
-  exported PDF must pass this check;
+  Repeated instances of the same semantic class use the same fill. Icon interiors also have
+  clean, bounded colors with no random light or dark speckles. Deliberate icon highlights
+  must be distinct, sharp-edged parts, never fuzzy washout or a patch behind text. Inspect
+  at native PNG scale and final paper width; do not defer visible defects to SVG work;
+- every icon, node, card, connector, and arrowhead has a continuous, distinct boundary at
+  native PNG scale. Adjacent colored parts do not merge, bleed, or leave ambiguous gaps;
+  outlines and arrowheads remain recognizable after reduction to the paper width;
+- every required glyph is correctly spelled, sharply formed, high-contrast, and unobscured
+  by an icon, outline, fill, or effect. Reject fuzzy, doubled, warped, merged, or broken
+  letters rather than shrinking the text or relying on a later SVG to repair it;
 - every major noun or operation has a recognizable glyph, with varied silhouettes rather
   than repeated document/folder icons;
 - ordinary white or gray rectangles are not the default wrapper for icon-label groups. Each
@@ -661,11 +674,9 @@ invocation.
 
 - After reading project rules, reuse the **named run's** `TECHNICAL_FIGURE_BRIEF.md`, `SELECTED.md`,
   exact neutral-base image, and its review. Confirm that the base is a `final`
-  `neutral_structure` figure and still matches the active manuscript. A provisional PNG whose
-  only outstanding issues are minor, unambiguous recorded deferred fills may also be eligible
-  when the user has selected it for coloring; carry those defects forward explicitly and do
-  not require or create an SVG/PDF pair at this stage. For other
-  provisional bases or material paper changes, leave coloring for after structure correction.
+  `neutral_structure` figure and still matches the active manuscript. A provisional PNG with
+  visible fill, edge, or text defects needs PNG correction before recoloring. For material
+  paper changes, leave coloring for after structure correction.
 - Build a two-level recolor plan before editing. **Level 1 is mandatory for existing fields:**
   tint the background fill of every existing major-group field with a coordinated set of
   soft, lightly saturated colors. Related regions may share a tint; they need not all differ.
@@ -693,7 +704,7 @@ invocation.
   against its neutral parent at native raster scale and final paper width; ask the editor to
   preserve the base image's pixel dimensions and record the actual edited dimensions. Reject an
   edit if any selected major-group field remains neutral, optional coloring becomes indiscriminate,
-  a selected fill has non-deferrable non-uniformity, any color bleeds across a boundary, or any locked
+  a selected fill has any visible non-uniformity, any color bleeds across a boundary, or any locked
   or unselected element changes. Also reject lost contrast, changed content, arrow crossings, or any other regression
   in the hard checks.
 - Mark a colored version `final` only if it passes all scientific and visual hard checks.

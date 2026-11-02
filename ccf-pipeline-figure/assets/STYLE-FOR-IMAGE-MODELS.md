@@ -14,16 +14,16 @@ Read `references/composition-profiles.md` from the skill root for the selected
 `topology_first`; for `numbered_regions`, use the selected profile's numbered-region
 composition rules and prompt block. All non-composition rules here apply to both profiles.
 
-The flat-fill constraints here remain the generation target. For PNG review before a
-separately requested SVG/PDF conversion, follow `references/png-svg-pdf.md` (relative to the
-skill root): minor unambiguous fill artifacts may be documented for deliberate later SVG
-cleanup, not used alone to trigger more ImageGen edits. This does not relax vector fill
-quality or permit pollution that obscures content, crosses boundaries, or changes semantic colors.
+The PNG is the possible later SVG reconstruction source, so its fills, object boundaries,
+and lettering must already be clean. For PNG review before a separately requested SVG/PDF
+conversion, follow the hard checks in `SKILL.md`; record visible defects and use the bounded
+PNG refinement route rather than assuming vector work will remove them. The later vector
+reference is `references/png-svg-pdf.md` relative to the skill root.
 
 The target is a **playful editorial-comic scientific infographic**. From the first PNG,
 the canvas and all major-region backdrops are pure white (`#FFFFFF`), without gray or colored
-large panel fields or rigid enclosing region frames. Use lively but restrained soft color in
-semantic foreground objects. A white backdrop does not require white/gray cards around
+large panel fields, tinted haze, vignettes, or rigid enclosing region frames. Use lively but
+restrained soft color in semantic foreground objects. A white backdrop does not require white/gray cards around
 icon-label groups. On a later explicit color-edit invocation, tint eligible existing
 surfaces selectively; do not invent large panel fields merely to color them.
 The figure should feel like a polished illustrated magazine roadmap or a high-quality
@@ -136,6 +136,14 @@ educational comic, without candy-bright colors or large dark background fills.
   surfaces forbid unintended gradients, center white bloom or washout, bright/dark blotches,
   watercolor or airbrush texture, mottling, vignette, reflection, glow, shadow tint,
   translucency, and color bleeding. Soft color means low saturation, not uneven opacity.
+- **SVG-friendly PNG source / 便于后续矢量重建:** use flat, opaque, visually uniform colors
+  across every intended fill, including colored icon parts; no isolated light or dark specks
+  inside a shape. Draw neighboring icon parts, nodes, arrowheads, and labels with distinct,
+  continuous boundaries and enough separation that their contours and ownership remain clear
+  at native PNG scale. Any intentional icon highlight is a separate, crisp shape with a
+  definite boundary, not a blurred glow or irregular patch. Keep letters unwarped,
+  correctly spelled, high-contrast, and large enough to read at the final paper width.
+  These are PNG acceptance requirements, not a request to generate SVG in this phase.
 
 ## 3 · Comic depth and shape grammar
 
@@ -155,10 +163,11 @@ educational comic, without candy-bright colors or large dark background fills.
   repeat one dominant `centered icon above centered label inside a white rectangle` pattern.
 - Use rounded sticker capsules, playful banners, chunky tabs, speech bubbles, file cards,
   ribbons, tags, badges, and varied silhouettes selectively, according to their semantic role.
-- Keep region, node, card, pill, tag, label, and callout fills flat in every stage. Gentle cel
-  shading or small highlights may add depth **inside icon artwork only**; they may not spill
-  onto a text-bearing background or sit behind a label. A shallow offset shadow may separate
-  an entire closed object from the page only if the object's interior fill remains uniform.
+- Keep region, node, card, pill, tag, label, and callout fills flat in every stage. Deliberate
+  cel shading or small highlights may add depth **inside icon artwork only** as separate
+  sharp-edged shapes; they may not spill onto a text-bearing background or sit behind a label.
+  An offset shadow may separate an entire closed object from the page only if it is a
+  bounded solid shape without blur and the object's interior fill remains uniform.
 - Keep the rendering illustrative and flat enough for a paper figure. Avoid photorealism,
   glossy product-render surfaces, glassmorphism, metallic materials, deep perspective, and
   heavy 3-D extrusion.
@@ -265,13 +274,15 @@ educational comic, without candy-bright colors or large dark background fills.
 - No topology invented for visual convenience. No decorative connector may look causal.
 - No photograph, realistic person, cinematic scene, heavy 3-D, strong glow, deep drop shadow,
   glossy interface mockup, watermark, logo, citation, or decorative legend.
-- No non-uniform fill, white bloom, washout, unintended gradient, mottling, watercolor or
+- No non-uniform fill, interior speckle, white bloom, washout, unintended gradient, mottling, watercolor or
   airbrush texture, translucency, halo, vignette, reflection, shadow tint, or color bleeding
   inside or across any text-bearing enclosed surface.
 - No UI-like wall in which most primary nodes repeat the same white/gray rectangle with a
   centered icon above a centered label, unless the repeated card form itself encodes a genuine
   repeated scientific class.
 - No tiny text that becomes unreadable at the intended paper width.
+- No fuzzy, broken, merged, doubled, or distorted glyphs or ambiguous boundaries between
+  adjacent icons, shapes, connectors, and arrowheads.
 
 ---
 
@@ -324,7 +335,9 @@ before the shared size/connector instructions. Never combine the two profile blo
 >
 > Keep the entire canvas and every major-region backdrop pure white (`#FFFFFF`) from this
 > first PNG. Do not add a gray or colored large panel field or a rigid enclosing region
-> frame. The semantic foreground should still feel lively: use restrained soft color in
+> frame, and do not imply one with pastel haze, vignette, or off-white clouds. The white
+> open areas must remain visually uniform and free of colored specks. The semantic foreground
+> should still feel lively: use restrained soft color in
 > icons, distinctive mechanism objects, state markers, small accent plates, banners, and other
 > compact foreground elements. A white background does not require neutral foregrounds or
 > white/gray cards around icon-label groups. Use deep navy or near-black for readable text and
@@ -338,7 +351,12 @@ before the shared size/connector instructions. Never combine the two profile blo
 > means low saturation, not transparency or illumination. Behind text, forbid all unintended
 > gradient, center white bloom, washout, bright or dark blotches, mottling, watercolor or
 > airbrush texture, glow, highlight, reflection, shadow tint, translucency, vignette, and color
-> bleeding. Confine cel shading and highlights to the interior artwork of icons only.
+> bleeding. Keep icon-part colors uniform too; any deliberate cel shading or highlight
+> must be a separate, crisp, bounded shape within the icon, not a random light patch.
+> Make adjacent icon parts, nodes, connectors, and arrowheads visibly separable with
+> continuous clean edges. Render every required label with sharp, unwarped, correctly
+> formed, high-contrast letters at the final paper size. Do not reduce text size to fit
+> a large icon. Treat this PNG as possible later SVG source artwork, while saving PNG only now.
 >
 > Give every major noun and operation a distinct, easy-to-name cartoon icon from one coherent
 > family. Use varied silhouettes rather than repeating document and folder icons. Build a varied
@@ -368,9 +386,9 @@ before the shared size/connector instructions. Never combine the two profile blo
 > connectors. Decorative accents stay local to relevant objects or groups and must not
 > consume a separate row or margin.
 >
-> Keep all region and text-card fills flat, without gradients or internal lighting. Light cel
-> shading and small highlights may decorate icon artwork only; a shallow offset shadow may sit
-> outside a closed object only when its interior fill stays uniform. Do not use
+> Keep all region and text-card fills flat, without gradients or internal lighting. Crisp,
+> bounded cel-shading shapes may decorate icon artwork only; an offset shadow may sit outside
+> a closed object only as a bounded solid shape without blur. Do not use
 > photorealism, glossy 3-D rendering, glassmorphism, metallic materials,
 > heavy shadows, strong glow, or cinematic scenery. Decorative marks must never resemble
 > scientific nodes or arrows.

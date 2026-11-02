@@ -2,8 +2,9 @@
 
 ## Scope and invariants
 
-Use the normal built-in ImageGen workflow for the initial and recolor invocations; do not
-simplify its prompt, icons, or style to make subsequent tracing easier. Preserve every
+Use the normal built-in ImageGen workflow for the initial and recolor invocations. Make
+its PNG fills, icon boundaries, and lettering clean enough for later reconstruction without
+deleting scientific content or flattening meaningful icons. Preserve every
 original PNG, even rejected versions. **Those invocations produce no SVG or PDF.** Enter
 this route only when the user later invokes the skill to convert an explicitly approved
 `vNN.png`, or the unambiguous selected PNG in one **named run directory's** `SELECTED.md`,
@@ -44,21 +45,19 @@ visual fidelity. A failed gate leaves the vector pair provisional/failed, never 
 
 ## Stage-specific fill cleanup
 
-Keep the existing flat-fill prevention prompt. The exception below changes review/repair
-priority, not the requested aesthetic or scientific standard. It applies only when SVG
-reconstruction is actually being completed, not to PNG-only delivery or a failed vector stage.
+Keep the existing flat-fill prevention prompt and the PNG hard checks. Vector cleanup
+is available only after a separate SVG/PDF request; it is never a reason to accept a
+visibly dirty, blurry, or ambiguous newly generated PNG as final.
 
-- **PNG triage:** small white speckles, mild internal washout or incidental fill variation may
-  be marked `deferred_fill_cleanup` if the intended uniform color and object boundary are
-  unambiguous, labels/arrows remain legible, and no semantic color distinction is affected.
-  Record each affected surface, intended color (from the palette/brief or clear clean regions),
-  and the planned cleanup. Mark that source PNG provisional with the defect still visible;
-  do not spend ImageGen refinement rounds solely on these cosmetic defects unless the user
-  wants a clean PNG. The later SVG cleanup happens only after explicit user selection.
-- **Not deferrable:** contamination that obscures text, arrowheads or outlines, crosses object
-  boundaries, changes scientific color coding, or makes the intended shape/color uncertain.
-  Resolve such defects under the existing bounded repair policy; if unresolved, keep the
-  candidate provisional/rejected. Do not guess missing content or claim SVG will recover it.
+- **PNG triage:** visible interior speckles, washout, color variation, blurred icon boundaries,
+  or malformed glyphs fail PNG acceptance. Record the exact location and intended appearance;
+  repair within the bounded ImageGen route. If unresolved, retain the source as provisional
+  or rejected. An older PNG explicitly selected by the user for vector work can still be
+  reconstructed, but that request does not change its original PNG review status.
+- **Ambiguity:** if contamination obscures text, arrowheads or outlines, crosses object
+  boundaries, changes scientific color coding, or makes the intended shape/color uncertain,
+  do not guess missing content or claim SVG will recover it. Check the technical brief and
+  ask about any remaining material ambiguity.
 - **SVG reconstruction:** deliberately rebuild each affected background as its intended single,
   opaque, uniform fill. Preserve the semantic palette and containment; do not sample a polluted
   spot as the target color or trace white speckles into extra shapes. Removing recorded
@@ -69,14 +68,14 @@ reconstruction is actually being completed, not to PNG-only delivery or a failed
 - **Final SVG/PDF:** inspect the actual renders for uniform text-bearing surfaces, stray light
   or dark patches, accidental overlays, gaps and boundary bleed, at native scale and paper width.
   Vector format and exporter success alone cannot establish this: a white shape over a blue
-  fill is still possible. Record each deferred item's cleanup result and visible deviations.
-  No unresolved deferred item may pass final vector acceptance; inspect ordinary antialiasing
+  fill is still possible. Record each source defect's cleanup result and visible deviations.
+  No unresolved defect may pass final vector acceptance; inspect ordinary antialiasing
   at edges separately from genuine interior spots.
 - **Disposition:** retain the original PNG unchanged and label its remaining defects. The cleaned
   SVG/PDF pair may be `final` only after all scientific, visual and export checks pass; never
-  present that verdict as proof that the source PNG was cleaned. If the user needs a clean
-  raster, a verified SVG/PDF rasterization can be a separately named derivative, not a silent
-  replacement of `vNN.png`. If vector cleanup fails, report it rather than granting a waiver.
+  present that verdict as proof that the source PNG was cleaned. A verified SVG/PDF
+  rasterization can be a separately named derivative, not a silent replacement of `vNN.png`.
+  If vector cleanup fails, report it rather than granting a waiver.
 
 ## Author and export
 
