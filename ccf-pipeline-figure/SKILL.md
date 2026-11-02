@@ -10,7 +10,8 @@ description: >-
   neutral-gray fields for the chosen major groups and lively restrained
   foreground color; recolor existing backgrounds only on a later explicit request.
   Keep labels sparse and readable, preserve all scientific relationships, and save each
-  version's PNG, real-text SVG/PDF, review, and paired manuscript-description reference.
+  candidate's PNG, review, and paired manuscript-description reference. Only after the user
+  approves a chosen PNG in a later invocation, reconstruct its real-text SVG and export PDF.
   Not for data figures where position, length, angle, or color encodes a measured quantity.
 metadata:
   short-description: One-line project-to-pipeline figure workflow
@@ -51,6 +52,7 @@ Native explicit invocation is:
 $ccf-pipeline-figure /path/to/project
 $ccf-pipeline-figure /path/to/project — portrait, single-column, emphasize the two evidence lanes
 $ccf-pipeline-figure /path/to/project — 给选中的灰底图上色
+$ccf-pipeline-figure /path/to/project — 把我选中的 vNN.png 重建成 SVG，再导出 PDF
 ```
 
 In Codex, `/skills` opens the skill picker and `$ccf-pipeline-figure` mentions this skill.
@@ -81,34 +83,49 @@ path as an aesthetic or emphasis override, not as a requirement to restate the m
 
 ### End-to-end workflow
 
-### Experimental branch: PNG + real-text SVG + PDF
+### Staged workflow: PNG now; real-text SVG and PDF only on a later request
 
-This branch retains the built-in ImageGen first pass and its existing style unchanged, then
-adds a reconstruction/export stage for **every** generated version, including provisional or
-rejected candidates. Read [references/png-svg-pdf.md](references/png-svg-pdf.md) before this
-stage. Preserve the original PNG and deliver a same-stem SVG and text-preserving PDF, with a
-reconstruction review and validation evidence. This is an agent-authored vector reconstruction,
-not a lossless format conversion. Never wrap the PNG in SVG, trace letters into paths, or add
-an invisible OCR layer and call that a reconstructed figure.
+During initial generation, local refinement, and later background-color edits, create and
+review **PNG versions only**. Do not reconstruct SVG or export PDF for every candidate,
+including the internally selected best or the last version in the budget. Preserve all PNGs,
+prompts, reviews, descriptions, and the selection index. Wait until the user explicitly accepts
+a particular PNG and invokes this skill again to request SVG/PDF conversion. That request
+authorizes vectorization of the named version, or the selected PNG in `SELECTED.md` if the
+version is unambiguous; it does not start a new ImageGen batch or ask for candidate limits.
 
-Keep anti-contamination constraints in the ImageGen prompt, but apply the stage-specific
-fill policy in `references/png-svg-pdf.md`: minor, unambiguous PNG fill speckles/washout may
-be recorded as `deferred_fill_cleanup` and cleaned during SVG reconstruction instead of
-spending ImageGen refinements on them alone. This narrow exception overrides the raster
-fill-rejection rules below, including recolor review; it does not waive scientific checks,
-legibility, boundary integrity, or final SVG/PDF fill checks. SVG does not clean colors
-automatically, and a deferred PNG is not a clean final raster deliverable.
+For that later vectorization invocation, read
+[references/png-svg-pdf.md](references/png-svg-pdf.md). Reconstruct **only the approved PNG**
+as a same-stem SVG with real visible text, then export and verify its PDF. Keep the PNG
+immutable. This is an agent-authored vector reconstruction, not a lossless format conversion.
+Never wrap the PNG in SVG, trace letters into paths, or add an invisible OCR layer and call
+that a reconstructed figure. The SVG/PDF must preserve the source's prominent icons,
+silhouettes, internal details, geometry, labels, colors, and connectors at the intended paper
+size; a structurally correct but visibly simplified redraw fails visual fidelity. Report an
+unmet gate rather than presenting such a derivative as the accepted figure.
 
-This self-contained extension takes precedence over the legacy vector route below; it does
+Keep anti-contamination constraints in the ImageGen prompt. Minor, unambiguous PNG fill
+speckles/washout may be recorded as `deferred_fill_cleanup` and left for the **later,
+explicitly requested** SVG reconstruction instead of spending ImageGen refinements on them
+alone. Such a PNG remains visibly imperfect and must be reported as provisional; this
+exception does not waive scientific checks, legibility, boundary integrity, or the final
+SVG/PDF fill checks. SVG does not clean colors automatically: the vector author must build
+the intended flat fill and verify it. If the user wants a clean PNG, repair that PNG under
+the bounded edit route rather than assuming a future SVG will fix it.
+
+This self-contained staged route takes precedence over the legacy vector route below; it does
 not use or enable Figure Smith. A successful export does not make a scientifically incorrect
 candidate publication-ready. If reconstruction/export cannot pass, keep the source and report
-the missing or failed artifact rather than fabricating success. Do not merge this experimental
-branch, switch the installed skill, or modify a manuscript without a separate request.
+the missing or failed artifact rather than fabricating success. Do not switch the installed
+skill or modify a manuscript without a separate request.
 
 #### 1. Resolve and inspect the project
 
-- First determine whether the user requests a new conceptual figure or explicitly asks to add
-  background colors to an existing selected neutral figure. For a new figure, parse an
+- First determine whether the user requests a new conceptual figure, explicitly asks to add
+  background colors to an existing selected neutral figure, or invokes this skill again to
+  convert an approved PNG to real-text SVG and PDF. On a vectorization-only invocation, use
+  the selected or explicitly named PNG, read its brief/review and the vector reference, and
+  follow the later SVG/PDF stage above without ImageGen or candidate-limit questions.
+  For a new figure, parse an
   explicit composition token and candidate/refinement budget directly from the user's
   request before asking anything. Accept `分区` or `3–6分区` as `numbered_regions`; accept
   `非分区` or `自由构图` as `topology_first`. Match `非分区` before the shorter `分区` and treat
@@ -132,6 +149,8 @@ branch, switch the installed skill, or modify a manuscript without a separate re
   policy, or equivalent instruction file before other project content.
 - On a later color-only invocation, continue with §8 after reading those rules; reuse the
   existing brief and selected image rather than restarting the manuscript-to-figure workflow.
+  On a vectorization-only invocation, inspect the exact approved PNG and its original brief,
+  review, and selection record before building any SVG.
 - Never open a file that project rules prohibit. Never open secrets, credentials, private
   keys, environment files, or unrelated personal data.
 - Inventory with `rg --files` before reading. Cover the paper, README files, method/design
@@ -353,10 +372,6 @@ Use this immutable layout inside the target project:
 output/imagegen/<project-name>/<figure-name>/
   v01.prompt.md
   v01.png
-  v01.svg
-  v01.pdf
-  v01.vector-review.md
-  v01.export.json
   v01.review.md
   v01.description.md
   v02.prompt.md
@@ -366,6 +381,10 @@ output/imagegen/<project-name>/<figure-name>/
   ...
   SELECTED.md
 ```
+
+Only after a later explicit vectorization request, add `vNN.svg`, `vNN.pdf`,
+`vNN.vector-review.md`, `vNN.export.json`, and previews beside the **one approved**
+`vNN.png`. Do not create these for ordinary candidates or overwrite existing artifacts.
 
 - Scan existing versions and continue at the next unused number. Never restart at `v01` when
   earlier files exist.
@@ -402,9 +421,10 @@ output/imagegen/<project-name>/<figure-name>/
   Retain the selected
   neutral-base version in this index after later coloring. Link the selected `vNN.png` and
   its paired `vNN.description.md`.
-  It may say `final` only after every hard check passes, including zero arrow crossings.
-  If PNG fill cleanup was deferred, report separate PNG and SVG/PDF dispositions: the
-  original PNG retains its documented defect even when the cleaned vector pair passes.
+  It may say `final` only after every PNG hard check passes, including zero arrow crossings.
+  Record `vector_status: not_requested` until the user approves a PNG for conversion; after
+  vectorization, record the separate SVG/PDF disposition. If PNG fill cleanup was deferred,
+  the PNG remains `provisional` with that defect even if a later vector pair passes.
   It is an index, not a replacement for the versioned files.
 
 #### 5. Iterate in two bounded phases, then stop
@@ -422,8 +442,9 @@ output/imagegen/<project-name>/<figure-name>/
 
 - Enter this phase automatically only when the selected fresh-candidate count is exhausted and
   no candidate passes after eligible `deferred_fill_cleanup` items are set aside. If the best
-  candidate's only remaining defects are those items, proceed to SVG reconstruction without
-  a raster-only cleanup round. Do not ask the user to authorize the transition.
+  candidate's only remaining defects are those items, stop PNG refinement and show that
+  provisional source to the user; do not start SVG reconstruction in this invocation. Do not
+  ask the user to authorize the transition between the fresh-candidate and PNG-refinement phases.
 - Rank the fresh candidates using scientific correctness first, then the number and severity of
   remaining visual defects. Select one best base and record the choice in its review and
   `SELECTED.md` as provisional.
@@ -505,8 +526,9 @@ intermediate PNGs only; other failures trigger another candidate while budget re
   Repeated instances of the same semantic class use the same fill. Shading and highlights may
   appear inside icon artwork only, never in the background behind text. Inspect this once at
   native raster scale to catch localized contamination and again at final paper width to catch
-  visible haze or inconsistent semantic colors. Eligible minor PNG defects may be deferred,
-  but the reconstructed SVG and exported PDF must pass this check before final acceptance;
+  visible haze or inconsistent semantic colors. Eligible minor PNG defects may be deferred
+  and reported as provisional; on a later vectorization request, the reconstructed SVG and
+  exported PDF must pass this check;
 - every major noun or operation has a recognizable glyph, with varied silhouettes rather
   than repeated document/folder icons;
 - ordinary white or gray rectangles are not the default wrapper for icon-label groups. Each
@@ -575,9 +597,11 @@ each conceptual figure. Also report the project brief path, prompt/review paths,
 selected fresh-candidate and refinement limits and counts, the best version and its `final` or
 `provisional` status, color stage, and parent chain, the stopping reason, and whether the
 backend model was explicit or host-managed. Report the selected PNG's actual pixel dimensions.
-In this experimental branch also link every version's SVG, PDF and vector review; distinguish
-scientific acceptance, reconstruction fidelity, and text/export checks. The PNG remains the
-generator's original output, not a rasterization of the reconstructed SVG.
+For a PNG-generation or recolor invocation, report `vector_status: not_requested` and do
+not imply that SVG/PDF already exist. For a later vectorization invocation, link only the
+approved version's SVG, PDF, and vector review; distinguish scientific acceptance,
+reconstruction fidelity, and text/export checks. The PNG remains the generator's original
+output, not a rasterization of the reconstructed SVG.
 Do not insert the figure into a paper, edit its LaTeX, create PPTX/draw.io, commit the
 project, or push anything unless the user
 separately asks for those actions.
@@ -591,9 +615,10 @@ invocation.
 
 - After reading project rules, reuse the current `TECHNICAL_FIGURE_BRIEF.md`, `SELECTED.md`,
   exact neutral-base image, and its review. Confirm that the base is a `final`
-  `neutral_structure` figure and still matches the active manuscript. A PNG whose only
-  outstanding issues are recorded deferred fills is eligible if its corresponding cleaned
-  SVG/PDF pair has passed final review; carry those defects forward explicitly. For other
+  `neutral_structure` figure and still matches the active manuscript. A provisional PNG whose
+  only outstanding issues are minor, unambiguous recorded deferred fills may also be eligible
+  when the user has selected it for coloring; carry those defects forward explicitly and do
+  not require or create an SVG/PDF pair at this stage. For other
   provisional bases or material paper changes, leave coloring for after structure correction.
 - Build a two-level recolor plan before editing. **Level 1 is mandatory for existing fields:**
   tint the background fill of every existing major-group field with a coordinated set of
@@ -633,20 +658,16 @@ invocation.
 
 ## 0 · Two things to settle before any rule
 
-### 0.1 Legacy vector route — `ccf-figuresmith-skills` owns its production half
+### 0.1 Inactive historical vector-route notes
 
-The fast path above is self-contained and does not require `ccf-figuresmith-skills`. Use this
-legacy route only when the user explicitly asks for editable/vector output, deterministic
-code-native generation, draw.io, or PDF rather than a built-in-imagegen raster.
+**Historical reference only; do not run this route.** The installed Figure Smith skill is
+globally disabled. A later request to turn an approved ImageGen PNG into SVG/PDF uses the
+self-contained staged route above and `references/png-svg-pdf.md`; it never invokes Figure
+Smith. The material below records earlier comparisons and does not override that route.
 
-⭐ **Vector genre and taste → here. Vector production and gating → `ccf-figuresmith-skills`.** Both skills
-state the split, in those words. This file deliberately does **not** restate what figuresmith
-already covers: two copies of a rule drift apart, and nobody notices until a figure ships
-wrong. Where the rule is figuresmith's, you get **one line of invariant plus a pointer** —
-enough that this file still works alone, not enough to drift.
-
-**Delegated wholesale. Read them there before shipping anything; none of them is optional.**
-Paths are relative to the `ccf-figuresmith-skills` skill directory.
+The following table documents the former delegation for archival comparison. Its pointers
+are inactive; do not load the named skill or follow its production steps. The active
+PNG-to-SVG/PDF route is fully specified above and in `references/png-svg-pdf.md`.
 
 | what | the invariant, in one line | read |
 |---|---|---|

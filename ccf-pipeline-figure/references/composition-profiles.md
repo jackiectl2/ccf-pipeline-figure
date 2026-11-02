@@ -3,7 +3,8 @@
 Choose exactly one profile when planning a **new** conceptual figure. These are visual
 composition choices within one skill; do not switch Git branches. The scientific brief,
 complete relationship inventory, no-crossing connector policy, final-size typography,
-balanced canvas coverage, and PNG → real-text SVG → PDF export apply to both.
+balanced canvas coverage, and staged PNG-first / later selected-version SVG/PDF workflow
+apply to both.
 
 The short command tokens are `分区` → `numbered_regions` and `非分区` →
 `topology_first`; also accept `3–6分区` and `自由构图`, respectively. Match `非分区` before

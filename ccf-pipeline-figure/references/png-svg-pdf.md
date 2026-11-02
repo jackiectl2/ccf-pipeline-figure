@@ -1,26 +1,44 @@
-# Experimental raster-first vector reconstruction
+# Selected-PNG vector reconstruction on a later invocation
 
 ## Scope and invariants
 
-Use the normal built-in ImageGen workflow first; do not simplify its prompt, icons or style
-to make subsequent tracing easier. Preserve every original PNG, even rejected versions.
-Keep PNG generation budget separate from vector work. Default to at most three visual
-reconstruction passes per candidate, then hand off a clearly identified provisional result.
+Use the normal built-in ImageGen workflow for the initial and recolor invocations; do not
+simplify its prompt, icons, or style to make subsequent tracing easier. Preserve every
+original PNG, even rejected versions. **Those invocations produce no SVG or PDF.** Enter
+this route only when the user later invokes the skill to convert an explicitly approved
+`vNN.png`, or the unambiguous selected PNG in `SELECTED.md`, to SVG and PDF. Reconstruct
+only that version; do not create vector files for all prior candidates or call ImageGen here.
+Keep PNG generation budget separate from vector work. Allow targeted reconstruction passes
+until the fidelity gate below passes or a concrete limitation is identified. A pass limit,
+time pressure, or successful PDF export never licenses a visibly simplified final artifact.
 Deterministic exporter/font debugging is separate; stop after three consecutive attempts with
 the same unresolved failure, report it, and do not publish an unchecked PDF.
 
-Reconstruct the saved PNG with actual SVG shapes, paths, groups and visible `<text>`/`<tspan>`
+Reconstruct the approved PNG with actual SVG shapes, paths, groups and visible `<text>`/`<tspan>`
 elements. PNG is the visual reference; the technical brief is the scientific reference.
-Preserve panel arrangement, node silhouettes, geometry, labels, colors and connector endpoints.
-Keep a label inventory and a node/edge inventory before rebuilding. Identify ambiguous glyphs
-against the brief but disclose any correction; never silently repair topology in the SVG while
-presenting it as an equivalent conversion. A corrected design is a separately named revision.
+Preserve panel arrangement, prominent icon silhouettes and internal details, geometry, labels,
+colors, line weight, visual hierarchy and connector endpoints. Keep a label inventory, a
+node/edge inventory, and a list of the large or distinctive icons before rebuilding.
+Identify ambiguous glyphs against the brief but disclose any correction; never silently
+repair topology in the SVG while presenting it as an equivalent conversion. A corrected
+design is a separately named revision.
 
 No embedded/linked bitmap, traced glyph outlines, invisible text overlay, whole-figure image,
-or unreported replacement of lively icons by generic boxes. Pixel identity is not expected:
-font substitution, hand-drawn contours and icon shading may differ. Document those differences
-and visually judge whether identity, topology and readability survive. If faithful vectorization
-is impractical, report that limitation rather than delivering a raster wrapper.
+or replacement of prominent icons by generic boxes. Pixel identity is not expected:
+font antialiasing, hand-drawn contours, and deliberate cleanup of incidental fill pollution
+may differ. These allowances do not permit a flatter, emptier, or visibly less polished
+redraw. If faithful vectorization is impractical, report that limitation rather than delivering
+a raster wrapper or claiming the SVG/PDF are accepted.
+
+**Visual fidelity gate:** Compare the SVG and PDF render side by side with the approved PNG
+at native scale and intended printed width. Every large or distinctive icon must retain its
+recognizable silhouette, significant internal parts, color treatment, and visual weight;
+every connector, label, and group must retain its meaning and placement. Reject substantial
+missing artwork, generic replacements, altered spatial balance, or noticeably reduced
+legibility even if all labels extract and the scientific topology is intact. Record every
+intentional difference, especially uniform flat-fill cleanup. Do not claim a literal 99.99%
+pixel match: real text rendering and approved color cleanup can change pixels without losing
+visual fidelity. A failed gate leaves the vector pair provisional/failed, never `final`.
 
 ## Stage-specific fill cleanup
 
@@ -32,8 +50,9 @@ reconstruction is actually being completed, not to PNG-only delivery or a failed
   be marked `deferred_fill_cleanup` if the intended uniform color and object boundary are
   unambiguous, labels/arrows remain legible, and no semantic color distinction is affected.
   Record each affected surface, intended color (from the palette/brief or clear clean regions),
-  and the planned cleanup. Do not reject an otherwise acceptable source or spend ImageGen
-  refinement rounds solely on these cosmetic defects. Keep the agreed fresh-candidate budget.
+  and the planned cleanup. Mark that source PNG provisional with the defect still visible;
+  do not spend ImageGen refinement rounds solely on these cosmetic defects unless the user
+  wants a clean PNG. The later SVG cleanup happens only after explicit user selection.
 - **Not deferrable:** contamination that obscures text, arrowheads or outlines, crosses object
   boundaries, changes scientific color coding, or makes the intended shape/color uncertain.
   Resolve such defects under the existing bounded repair policy; if unresolved, keep the
@@ -59,7 +78,9 @@ reconstruction is actually being completed, not to PNG-only delivery or a failed
 
 ## Author and export
 
-- Save `vNN.svg` beside immutable `vNN.png`; use a fixed `viewBox` matching the PNG canvas.
+- Save `vNN.svg` beside the one approved, immutable `vNN.png`; use a fixed `viewBox` matching
+  the PNG canvas. Do not overwrite earlier vector files from a prior attempt; retain their
+  diagnostics and use a separately named revision when needed.
   Use stable element/group IDs for semantic nodes and edges. Live text includes mathematical
   symbols; a path-only equation is not selectable text. Keep superscripts/subscripts as text.
 - Choose installed embeddable fonts that cover every character. Register the same fonts in
@@ -92,10 +113,11 @@ reconstruction is actually being completed, not to PNG-only delivery or a failed
    against the reviewed inventory. Check accents, Greek symbols, minus/inequalities, subscripts
    and reading order. `pdffonts` must show embedded fonts and Unicode mapping for used text fonts.
    Report failed symbols explicitly; mere presence of some extracted text is insufficient.
-3. Rendering: render the PDF and view it beside the original PNG at native scale and intended
-   printed width. Check the entire canvas, typography, icon fidelity, fill integrity, all arrow
-   endpoints, branch/join semantics, clipping and any missing SVG feature. Inspect SVG render
-   too when a different engine will be used by the recipient.
+3. Rendering: render both the SVG and PDF and view each beside the approved PNG at native
+   scale and intended printed width. Apply the visual fidelity gate above to the entire
+   canvas, prominent icons, typography, fills, all arrow endpoints, branch/join semantics,
+   clipping, and missing SVG features. Include side-by-side previews or equivalent review
+   evidence; do not substitute a text/structure check for appearance review.
 4. Scientific review remains independent. A faithful copy of a wrong PNG is still wrong. Mark
    that version provisional/rejected and withhold manuscript prose even if export checks pass.
 5. When requested, compile an **isolated** LaTeX inclusion proof using `\includegraphics{vNN.pdf}`
@@ -105,8 +127,9 @@ reconstruction is actually being completed, not to PNG-only delivery or a failed
 
 ## Handoff
 
-Keep `vNN.png`, `vNN.svg`, `vNN.pdf`, prompt, description, PNG review, vector review, independent
-label inventory and export report together. Previews must be named `vNN.svg-preview.png` or
+Keep the approved `vNN.png`, its `vNN.svg`, `vNN.pdf`, prompt, description, PNG review,
+vector review, independent label/icon inventories, and export report together. Previews
+must be named `vNN.svg-preview.png` or
 `vNN.pdf-preview.png`, never overwrite the generated PNG. In `vNN.vector-review.md` report
 scientific status, fidelity deviations, renderer/fonts, extraction/font evidence, actual size,
 and whether a LaTeX inclusion proof was tested. A review may say “text/export passed; scientific

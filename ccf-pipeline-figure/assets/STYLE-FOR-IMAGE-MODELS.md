@@ -13,11 +13,11 @@ Read `references/composition-profiles.md` from the skill root for the selected
 `topology_first`; for `numbered_regions`, use the selected profile's numbered-region
 composition rules and prompt block. All non-composition rules here apply to both profiles.
 
-The flat-fill constraints here remain the generation target. For intermediate PNG review in
-the PNG→SVG→PDF workflow, follow `references/png-svg-pdf.md` (relative to the skill root):
-minor unambiguous fill artifacts may be deferred to deliberate SVG cleanup, not used alone
-to trigger more ImageGen edits. This does not relax final vector fill quality or permit
-pollution that obscures content, crosses boundaries, or changes semantic colors.
+The flat-fill constraints here remain the generation target. For PNG review before a
+separately requested SVG/PDF conversion, follow `references/png-svg-pdf.md` (relative to the
+skill root): minor unambiguous fill artifacts may be documented for deliberate later SVG
+cleanup, not used alone to trigger more ImageGen edits. This does not relax vector fill
+quality or permit pollution that obscures content, crosses boundaries, or changes semantic colors.
 
 The target is a **playful editorial-comic scientific infographic**. The initial structure
 pass uses a three-layer color system: a white or near-white page, optional achromatic near-white-gray
