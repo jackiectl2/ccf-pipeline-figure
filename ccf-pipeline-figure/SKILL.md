@@ -5,8 +5,9 @@ description: >-
   mechanism, data-flow, or system figure for a paper's Intro/Method. Use for 论文流程图 /
   框架图 / 机制图 / 架构图 / pipeline 图. Derive the technical brief, use built-in ImageGen,
   preserve every candidate, and ask for fresh-candidate/refinement limits (default: 7/3).
-  Ask the user to choose either 3–6 numbered regions or topology-first composition for
-  each new figure. Use neutral-gray fields for the chosen major groups and lively restrained
+  For each new figure, accept short composition tokens 分区 (3–6 numbered regions) or
+  非分区 (topology-first, regions optional); ask only if the choice is missing. Use
+  neutral-gray fields for the chosen major groups and lively restrained
   foreground color; recolor existing backgrounds only on a later explicit request.
   Keep labels sparse and readable, preserve all scientific relationships, and save each
   version's PNG, real-text SVG/PDF, review, and paired manuscript-description reference.
@@ -107,12 +108,16 @@ branch, switch the installed skill, or modify a manuscript without a separate re
 #### 1. Resolve and inspect the project
 
 - First determine whether the user requests a new conceptual figure or explicitly asks to add
-  background colors to an existing selected neutral figure. For a new figure, ask in **one
-  bundled question** which composition profile the user wants (`numbered_regions`: 3–6
-  numbered major regions; `topology_first`: free composition from the scientific graph),
-  the number of fresh candidates, and the maximum local-refinement rounds before project
-  work. If the user has already chosen a profile in their request, use it without asking
-  again; ask only for missing candidate/refinement limits. Offer
+  background colors to an existing selected neutral figure. For a new figure, parse an
+  explicit composition token and candidate/refinement budget directly from the user's
+  request before asking anything. Accept `分区` or `3–6分区` as `numbered_regions`; accept
+  `非分区` or `自由构图` as `topology_first`. Match `非分区` before the shorter `分区` and treat
+  these as deliberate mode tokens, not ordinary mentions of a region in figure content.
+  `非分区` means **no fixed partition requirement**: meaningful regions are still allowed.
+  Parse `N+R` (spaces around `+` are fine), such as `6+3`, as N fresh candidates and up to
+  R local-refinement rounds. A complete one-line request such as `画流程图，分区，6+3` or
+  `画流程图，非分区，6+3` needs no follow-up on these settings. If a setting is missing, ask
+  in **one bundled question** for only the missing composition profile or limit(s). Offer
   **Default: 7 fresh candidates; up to 3 refinements**. The user may choose 1–7 fresh candidates
   and 0–3 refinements; “default” selects 7 and 3. For a later background-color invocation, ask only
   for the maximum number of local color edits (**default: up to 3**, selectable 1–3). Wait for

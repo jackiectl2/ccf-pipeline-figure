@@ -5,6 +5,13 @@ composition choices within one skill; do not switch Git branches. The scientific
 complete relationship inventory, no-crossing connector policy, final-size typography,
 balanced canvas coverage, and PNG → real-text SVG → PDF export apply to both.
 
+The short command tokens are `分区` → `numbered_regions` and `非分区` →
+`topology_first`; also accept `3–6分区` and `自由构图`, respectively. Match `非分区` before
+`分区`. The latter token means that the figure **may** have scientifically useful regions,
+not that regions are prohibited. Example: `画流程图，非分区，6+3` chooses the flexible profile,
+six fresh candidates, and up to three refinements. Use a deliberate command token, not an
+incidental mention of a region in the method description.
+
 Record `composition_profile: numbered_regions` or `composition_profile: topology_first` in
 `TECHNICAL_FIGURE_BRIEF.md`, every new version's prompt/review/description, and `SELECTED.md`.
 The chosen profile must govern the actual figure. The later background-color route inherits
